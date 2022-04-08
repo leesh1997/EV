@@ -31,7 +31,7 @@
 	background-color: #fff;
 }
 
-.existing-picks {
+.palette_colors {
 	display: flex;
 	position: relative;
 	flex-direction: row;
@@ -94,13 +94,17 @@
 	color: #f1f5fc;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
+.btn_create {
+	display: block;
+	margin-top: 70px;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="header">
-			<h1>palette</h1>
+			<h1>My palette 생성</h1>
 		</div>
 		<div class="draft-details">
 			<a href="http://www.khroma.co">
@@ -114,7 +118,7 @@
           /> -->
 				</div>
 			</a>
-			<div class="existing-picks">
+			<div class="palette_colors">
 				<div class="chosen_colors"
 					style="background-color: rgb(84, 17, 193)" data-index="31"></div>
 				<div class="chosen_colors"
@@ -126,7 +130,7 @@
 				<div class="chosen_colors"
 					style="background-color: rgb(207, 206, 245)" data-index="24"></div>
 				<br>
-				<div id="trainSet">
+				<div id="create">
 					<button class="btn_create">팔레트 생성하기</button>
 				</div>
 			</div>
