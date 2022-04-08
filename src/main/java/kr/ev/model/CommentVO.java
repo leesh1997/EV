@@ -6,19 +6,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 
-public class BoardVO {
-	
+public class CommentVO {
+
+	private int cmt_seq;
 	private int b_seq;
-	private String b_title;
-	private String b_content;
-	private String b_file;
-	private Date b_date;
+	private String cmt_content;
+	private Date cmt_date;
 	private String m_nick;
-	private int b_cnt;
-	private int b_likes;
-
+	
 }
