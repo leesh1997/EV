@@ -11,7 +11,7 @@
 <body>
   <div class="hero">
    <div class="sidebar">
-        <div class="sidetext-top"><h1>EV</h1></div>
+        <div class="sidetext-top"><a href="main.do"><h1>EV</h1></a></div>
         <div>
             <div class="main-text-box"> <a href="login.do">Login</a></div>
             <div class="main-text-box">  <a href="#"> MyPage</a></div>
@@ -26,7 +26,7 @@
    </div>
    <div class="topbar">
        <ul>
-        <li style="padding-left: 20px;"><h1>EV</h1></li>
+        <li style="padding-left: 20px;"><a href="main.do"><h1>EV</h1></a></li>
         <li style="float: right; margin-top: 20px; margin-right: 20px;"> <button class="open topbt">=</button></li>
 
        </ul>
@@ -37,9 +37,9 @@
    <div class="ggaggong ">
     
     
-    <div class="he st1"> <A href="color.html"><img src="resources/img/bora.png" class="he-img st1im" alt="content"><div class="he-text">color</div></A></div>
+    <div class="he st1"> <A href="palette.do"><img src="resources/img/bora.png" class="he-img st1im" alt="content"><div class="he-text">color</div></A></div>
     <div class="he st2"><a href="#"><img src="resources/img/inte1.png" class="he-img st2im"><div class="he-text">li</div></a></div>
-    <div class="he st3"><a href="#"></a><img src="resources/img/inte2222.PNG" class="he-img st3im"><div class="he-text">content</div></a></div>
+    <div class="he st3"><a href="magazine.do"><img src="resources/img/inte2222.PNG" class="he-img st3im"><div class="he-text">magazine</div></a></div>
     <div class="he st4"><a href="#"></a><img src="resources/img/inte3.png" class="he-img st4im"><div class="he-text">content</div></a></div>
     
    </div>
