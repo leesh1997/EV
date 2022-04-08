@@ -52,6 +52,7 @@
 }
 
 .block {
+	display: table;
 	position: relative;
 	width: 7vw;
 	height: 7vw;
@@ -79,17 +80,16 @@
 }
 
 .block .block-description {
+	display: table-cell;
 	position: absolute;
-	bottom: 10px;
-	left: 10px;
+	margin: 45px 15px 0px 15px;
 	padding: 10px;
 	text-align: center;
-	margin: 0px 5px 20px 0px;
+	/* margin: 0px 10px 10px 0px; */
 	width: 100%
 	color: #02142b;
 	font-size: 0.7em;
 	text-transform: uppercase;
-	font-weight: bold;
 	line-height: 1.2em;
 	color: #f1f5fc;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
