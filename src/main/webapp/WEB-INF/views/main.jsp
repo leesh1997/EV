@@ -7,7 +7,11 @@
     <title>Document</title>
     <link rel = "stylesheet" href="resources/css/main.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
+   <style>
+   	body{
+   		overflow: hidden;
+   	}
+   </style>
 </head>
 <body >
 	<jsp:include page = "side_topbar.jsp"></jsp:include>
