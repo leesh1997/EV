@@ -8,9 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
 <style>
-.palette_wrap{
-	margin-left:100px;
+.palette_wrap {
+	margin-left: 100px;
 }
+
 .header {
 	display: block;
 	position: relative;
@@ -37,6 +38,7 @@
 	width: 100%;
 	padding: 20px;
 	transition: transform 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	justify-content: center;
 }
 
 .gallery-container {
@@ -67,6 +69,30 @@
 	border: 10px solid #fff;
 	cursor: pointer;
 	border-radius: 50%;
+}
+
+.btn_create {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+}
+
+.block .block-description {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	padding: 10px;
+	text-align: center;
+	margin: 0px 5px 20px 0px;
+	width: 100%
+	color: #02142b;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1.2em;
+	color: #f1f5fc;
+	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 </style>
 </head>
@@ -99,8 +125,10 @@
 					style="background-color: rgb(254, 170, 130)" data-index="28"></div>
 				<div class="chosen_colors"
 					style="background-color: rgb(207, 206, 245)" data-index="24"></div>
-				<div class="count">five colors are selected</div>
-				<div id="trainSet" class="btn_create">팔레트 생성하기</div>
+				<br>
+				<div id="trainSet">
+					<button class="btn_create">팔레트 생성하기</button>
+				</div>
 			</div>
 		</div>
 		<div id="colorGallery" class="gallery-container">
