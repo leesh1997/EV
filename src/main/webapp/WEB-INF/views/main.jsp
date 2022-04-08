@@ -52,7 +52,7 @@
 <div class="list-care"><img src="resources/img/ma.jpg" class="main-img to2"> </div>
 <div class="list-care"><img src="resources/img/ma2.jpg" class="main-img to3"></div>
 
-    </li> 
+     
   
  </div>
 
