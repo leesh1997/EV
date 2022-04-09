@@ -30,7 +30,7 @@
 						<img src="resources/img/ev_icon.png" width="150" height="auto"
 							alt="demo" id="btn_goMain" />
 					</div>
-					<hr style="opacity:0.5;">
+					<hr style="opacity: 0.5;">
 					<table>
 						<tr>
 							<td class="join_title">아이디</td>
@@ -115,9 +115,13 @@
 								height="120px" placeholder="ex) 1인" /></td>
 						</tr>
 					</table>
-					<hr style="opacity:0.5;">
+					<hr style="opacity: 0.5;">
 					<button type="submit" class="join_btn"
 						style="width: 450px; height: 60px; font-size: 18px; color: white; font-weight: bold; text-align: center; background-color: #7f7f7f;">회원가입</button>
+					<p style="text-align: center; font-weight: bold; 
+					">
+						이미 아이디가 있으신가요? <a href=login.do><u>로그인</u></a>
+					</p>
 
 				</div>
 			</div>

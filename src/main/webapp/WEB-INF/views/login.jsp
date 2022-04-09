@@ -51,7 +51,7 @@
 						<tr>
 							<td class="login_title"></td>
 							<td class="login_input"><input class="form-control"
-								type="password" name="pw" placeholder="비밀번호를 입력하세요">
+								type="password" name="pw" placeholder="비밀번호를 입력하세요.">
 							</td>
 						</tr>	
 						<tr >
@@ -61,6 +61,10 @@
 						</tr>
 					</table>
 					<br>
+					<p style="text-align: center; font-weight: bold; 
+					">
+						아직 회원이 아니신가요? <a href=join.do><u>회원가입</u></a>
+					</p>
 					
 
 				</div>
