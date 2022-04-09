@@ -31,7 +31,7 @@
     </div>
     <div class="menu_wrap">
       <div class="menu_choice">
-        <butoon class="menu">나만의 팔레트 만들기</button>
+        <button class="menu">나만의 팔레트 만들기</button>
       </div>
       <div class="menu_choice">
         <button class="menu">추천 팔레트 고르기</button>
