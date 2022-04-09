@@ -63,6 +63,8 @@
 	transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
+
+
 .chosen_colors {
 	width: 7vw;
 	height: 7vw;
@@ -135,6 +137,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div id="colorGallery" class="gallery-container">
 			<div class="block" data-index="0"
 				style="background-color: rgb(208, 197, 236); color: rgb(208, 197, 236)">
