@@ -22,46 +22,7 @@
 </style>
 </head>
 <body>
-	<div class="hero">
-		<div class="sidebar">
-			<div class="sidetext-top">
-				<h1>EV</h1>
-			</div>
-			<div>
-				<div class="main-text-box">Login</div>
-				<div class="main-text-box">Join</div>
-				<div class="main-text-box">HeHe</div>
-			</div>
-			<div class="hambuger">
-				<button class="open">></button>
-			</div>
-		</div>
-		<div class="topbar">
-			<div>EV</div>
-
-			<div class="topbtn">
-				<button class="open topbt">=</button>
-			</div>
-		</div>
-		<div class="ggaggong">
-			<div class="he st1">
-				<img src="img/bora.png" class="he-img st1im" alt="content" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st2">
-				<img src="img/inte1.png" class="he-img st2im" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st3">
-				<img src="img/inte2222.PNG" class="he-img st3im" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st4">
-				<img src="img/inte3.png" class="he-img st4im" />
-				<div class="he-text">content</div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page = "side_topbar.jsp"></jsp:include>
 	<section class="header">
 		<div class=" "></div>
 	</section>
@@ -85,12 +46,12 @@
 						<tr>
 							<td class="login_title" name="id"></td>
 							<td class="login_input"><input class="form-control"
-								type="text" name="id" placeholder="아이디"></td>
+								type="text" name="id" placeholder="아이디를 입력하세요."></td>
 						</tr>
 						<tr>
 							<td class="login_title"></td>
 							<td class="login_input"><input class="form-control"
-								type="password" name="pw" placeholder="비밀번호">
+								type="password" name="pw" placeholder="비밀번호를 입력하세요">
 							</td>
 						</tr>	
 						<tr >
@@ -106,26 +67,6 @@
 			</form>
 	</section>
 
-	<script>
-		$(document).ready(function() {
-			$(".he").hide();
-		});
-		var bt = $(".open");
-		bt.click(function() {
-			$(".st1").toggle(500);
-			$(".st2").toggle(600);
-			$(".st3").toggle(700);
-			$(".st4").toggle(800);
-			if (bt.text() == ">") {
-				
-				bt.text("<");
-			} else {
-				bt.text(">");
-			}
-		});
-		//    $('.st1').hover(function(){
-		//        $('.st1im').css('opacity','0.5')
-		//    },500)
-	</script>
+	
 </body>
 </html>

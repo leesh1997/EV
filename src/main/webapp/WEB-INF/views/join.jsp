@@ -16,8 +16,8 @@
 </style>
 </head>
 <body>
-<jsp:include page = "side_topbar.jsp"></jsp:include>
-	
+	<jsp:include page="side_topbar.jsp"></jsp:include>
+
 	<section class="header">
 		<div class=" "></div>
 	</section>
@@ -30,7 +30,7 @@
 						<img src="resources/img/ev_icon.png" width="150" height="auto"
 							alt="demo" id="btn_goMain" />
 					</div>
-					<hr>
+					<hr style="opacity:0.5;">
 					<table>
 						<tr>
 							<td class="join_title">아이디</td>
@@ -115,15 +115,15 @@
 								height="120px" placeholder="ex) 1인" /></td>
 						</tr>
 					</table>
-					<hr>
+					<hr style="opacity:0.5;">
 					<button type="submit" class="join_btn"
-						style="width: 450px; height: 60px; font-size: 18px; text-align: center; background-color: #c9c9c9;">회원가입</button>
+						style="width: 450px; height: 60px; font-size: 18px; color: white; font-weight: bold; text-align: center; background-color: #7f7f7f;">회원가입</button>
 
 				</div>
 			</div>
 		</form>
 	</section>
 
-	
+
 </body>
 </html>
