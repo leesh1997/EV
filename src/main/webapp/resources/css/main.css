@@ -52,7 +52,7 @@ div{
     display: flex;
     margin-left: 100px;
     height: 1000px;
-    /* z-index: 1; */
+    z-index: 1; 
     width: calc(100vw - 100px);
 }
 .he{
@@ -84,8 +84,8 @@ div{
 .hero{
     position: absolute;
     
-    
 }
+
 .he-text{
     position:absolute;
     

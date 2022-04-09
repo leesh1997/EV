@@ -20,7 +20,7 @@
       
         </div>
         <div class="hambuger">
-            <button class="open" >></button>
+            <button class="open" > > </button>
         </div>
       
    </div>
@@ -49,22 +49,18 @@
        
        $(document).ready(function(){
            $('.he').hide();
-           $('.ggaggong').hide();
+         
        })
     
        var bt = $('.open');
       bt.click(function(){
-    	 if($('.ggaggong').hide()){
-    		 $('.ggaggong').show();
-    	 }
-    	 else{
-    		 $('.ggaggong').hide(800);
-    	 }
     	
-        $('.st1').toggle(500);
-        $('.st2').toggle(600);
-        $('.st3').toggle(700);
-        $('.st4').toggle(800);
+    	        $('.st1').toggle(500);
+    	        $('.st2').toggle(600);
+    	        $('.st3').toggle(700);
+    	        $('.st4').toggle(800);
+    	
+    	
        })
      
        $(document).ready(function(){
