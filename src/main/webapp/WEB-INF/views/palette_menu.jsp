@@ -18,9 +18,40 @@
       .menu_choice {
         margin-top: 300px;
       }
-      .menu{
-        background-color: #e8e8e8;
-        border-radius: 5px;
+      .menu {
+        background: #000;
+        color: #fff;
+        line-height: 42px;
+        padding: 0;
+        border: none;
+      }
+      .menu:hover {
+        background: transparent;
+        color: #000;
+        box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+          7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+      }
+      .menu:before,
+      .menu:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2px;
+        width: 0;
+        background: #000;
+        transition: 400ms ease all;
+      }
+      .menu:after {
+        right: inherit;
+        top: inherit;
+        left: 0;
+        bottom: 0;
+      }
+      .menu:hover:before,
+      .menu:hover:after {
+        width: 100%;
+        transition: 800ms ease all;
       }
     </style>
   </head>
