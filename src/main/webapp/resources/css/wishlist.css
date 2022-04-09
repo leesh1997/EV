@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.main-content{
+    display: block;
+    position: relative;
+    margin-left: 100px;
+    height: 100vw;
+    width: calc(100vw - 100px);
+    z-index: 50;    
+}
+.choose{
+	display: flex;
+	position: relative;
+	
+}
+.half{
+	width: 50%;
+	justify-content: center;
+}
+.half-img{
+	width: 50%;
+	height: auto;
+}
