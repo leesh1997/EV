@@ -49,11 +49,18 @@
        
        $(document).ready(function(){
            $('.he').hide();
+           $('.ggaggong').hide();
        })
     
        var bt = $('.open');
       bt.click(function(){
-        
+    	 if($('.ggaggong').hide()){
+    		 $('.ggaggong').show();
+    	 }
+    	 else{
+    		 $('.ggaggong').hide(800);
+    	 }
+    	
         $('.st1').toggle(500);
         $('.st2').toggle(600);
         $('.st3').toggle(700);
