@@ -1,7 +1,22 @@
-input,select{
-	width:200px;
-	height:25px;
-	margin-top: 8px;
-    margin-bottom: 15px;	
+input,#ftype{
+	width:320px;
+	height:30px;
+	margin-top: 15px;
+    margin-bottom: 10px;
+    margin-left:15px;
+    border:1px solid #d1d1d1;
+    border-radius: 5%;
+
 }
 
+input.gender{
+	width:15px;
+	height:15px;
+	margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left:15px;
+}
+
+.join_title{
+	font-weight: bold
+}

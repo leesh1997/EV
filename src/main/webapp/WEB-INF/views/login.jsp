@@ -20,7 +20,7 @@
 <style>
 </style>
 </head>
-<body>
+<body style="background-color: #ededed;">
 	<div class="hero">
 		<div class="sidebar">
 			<div class="sidetext-top">
@@ -68,30 +68,37 @@
 	<section>
 		<div class="container">
 
-
 			<!-- loginSelect.do로 요청시 회원의 정보를 일치하는 것을 찾아서
 		    	 회원의 모든 정보를 info라는 이름의 session에 저장한 후 
 		    	 boardList.jsp로 이동
 		     -->
-			<form action="loginSelect.do" method="post">			
+			<form action="loginSelect.do" method="post">
 				<div class="join_wrapper"
 					style="margin: calc(50vh - 300px) auto 0px">
-					<div style="text-align:center;">
-						<img
-						src="resources/img/ev_icon.png" width="120" height="auto"
-						alt="demo" id="btn_goMain"  />
-					</div> 
-					<br>
-					<input class="form-control" type="text" name="id" placeholder="아이디"
-						style="width: 400px; height: 60px; margin: auto; font-size:18px;"> <input
-						class="form-control" type="password" name="pw" placeholder="비밀번호"
-						style="width: 400px; height: 60px; margin: auto; font-size:18px;"> <br>
-					<div class="login" style="text-align: center;">
-						<button type="submit" class="btn btn-info btn-md"
-							style="width: 400px; height: 60px; font-size:18px;">로그인</button>
-						<br>
-						<br> <a href="join.do">회원가입</a>
+					<div style="text-align: center;">
+						<img src="resources/img/ev_icon.png" width="120" height="auto"
+							alt="demo" id="btn_goMain" />
 					</div>
+					<br>
+					<table style="width: 400px; margin: auto; text-align: center;">
+						<tr>
+							<td class="login_title" name="id"></td>
+							<td class="login_input"><input class="form-control"
+								type="text" name="id" placeholder="아이디"
+								style="width: 400px; height: 60px; margin: auto; font-size: 18px;"></td>
+						</tr>
+						<tr>
+							<td class="login_title"></td>
+							<td class="login_input"><input class="form-control"
+								type="password" name="pw" placeholder="비밀번호"
+								style="width: 400px; height: 60px; margin: auto; font-size: 18px;">
+							</td>
+						</tr>
+					</table>
+					<br>
+							<button type="submit" class="join_btn" style="width: 400px; height: 60px; font-size: 18px; text-align: center;margin: auto; background-color:#c9c9c9
+;">로그인</button>
+
 				</div>
 			</form>
 	</section>
