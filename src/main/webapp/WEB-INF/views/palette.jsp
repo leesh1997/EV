@@ -106,7 +106,7 @@
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="header">
-			<h1>My palette 생성</h1>
+			<h1 style="margin-top: 0; padding-top: 20px">My palette 생성</h1>
 		</div>
 		<div class="draft-details">
 			<a href="http://www.khroma.co">
