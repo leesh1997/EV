@@ -1,1 +1,18 @@
-@charset "UTF-8";
+.form-control {
+	width: 400px;
+	height: 60px;
+	margin: auto;
+	font-size: 18px;
+}
+
+.join_btn {
+	width: 400px;
+	height: 60px;
+	font-size: 18px;
+	color: white;
+	font-weight: bold; 
+	/* 	text-align: center;*/ 
+	 justify-content: center;
+	margin: auto;
+	background-color: #7f7f7f;
+}

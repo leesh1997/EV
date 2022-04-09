@@ -12,6 +12,7 @@
 <title>Document</title>
 <script src="common-script.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
+<link rel="stylesheet" href="resources/css/login.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -20,7 +21,7 @@
 <style>
 </style>
 </head>
-<body style="background-color: #ededed;">
+<body>
 	<div class="hero">
 		<div class="sidebar">
 			<div class="sidetext-top">
@@ -66,7 +67,7 @@
 	</section>
 
 	<section>
-		<div class="container">
+		<div class="container login_main">
 
 			<!-- loginSelect.do로 요청시 회원의 정보를 일치하는 것을 찾아서
 		    	 회원의 모든 정보를 info라는 이름의 session에 저장한 후 
@@ -84,20 +85,22 @@
 						<tr>
 							<td class="login_title" name="id"></td>
 							<td class="login_input"><input class="form-control"
-								type="text" name="id" placeholder="아이디"
-								style="width: 400px; height: 60px; margin: auto; font-size: 18px;"></td>
+								type="text" name="id" placeholder="아이디"></td>
 						</tr>
 						<tr>
 							<td class="login_title"></td>
 							<td class="login_input"><input class="form-control"
-								type="password" name="pw" placeholder="비밀번호"
-								style="width: 400px; height: 60px; margin: auto; font-size: 18px;">
+								type="password" name="pw" placeholder="비밀번호">
 							</td>
+						</tr>	
+						<tr >
+							<td colspan="2" style="margin-top: 50px;">
+							<button type="submit" class="join_btn"
+						>로그인</button></td>
 						</tr>
 					</table>
 					<br>
-							<button type="submit" class="join_btn" style="width: 400px; height: 60px; font-size: 18px; text-align: center;margin: auto; background-color:#c9c9c9
-;">로그인</button>
+					
 
 				</div>
 			</form>
@@ -114,6 +117,7 @@
 			$(".st3").toggle(700);
 			$(".st4").toggle(800);
 			if (bt.text() == ">") {
+				
 				bt.text("<");
 			} else {
 				bt.text(">");

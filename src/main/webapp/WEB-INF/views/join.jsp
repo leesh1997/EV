@@ -16,46 +16,8 @@
 </style>
 </head>
 <body>
-	<div class="hero">
-		<div class="sidebar">
-			<div class="sidetext-top">
-				<h1>EV</h1>
-			</div>
-			<div>
-				<div class="main-text-box">Login</div>
-				<div class="main-text-box">Join</div>
-				<div class="main-text-box">HeHe</div>
-			</div>
-			<div class="hambuger">
-				<button class="open">></button>
-			</div>
-		</div>
-		<div class="topbar">
-			<div>EV</div>
-
-			<div class="topbtn">
-				<button class="open topbt">=</button>
-			</div>
-		</div>
-		<div class="ggaggong">
-			<div class="he st1">
-				<img src="img/bora.png" class="he-img st1im" alt="content" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st2">
-				<img src="img/inte1.png" class="he-img st2im" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st3">
-				<img src="img/inte2222.PNG" class="he-img st3im" />
-				<div class="he-text">content</div>
-			</div>
-			<div class="he st4">
-				<img src="img/inte3.png" class="he-img st4im" />
-				<div class="he-text">content</div>
-			</div>
-		</div>
-	</div>
+<jsp:include page = "side_topbar.jsp"></jsp:include>
+	
 	<section class="header">
 		<div class=" "></div>
 	</section>
@@ -77,8 +39,8 @@
 									value="" style="width: 165px; height: 30px;"></span><span
 								class="email-input__separator"> @ </span><span
 								class="email-input__domain"><select
-									class="form-control empty" style="width: 130px; height: 30px; border:1px solid #d1d1d1; border-radius: 5%;
-									"><option
+									class="form-control empty"
+									style="width: 130px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;"><option
 											value="" disabled="">선택해주세요</option>
 										<option value="naver.com">naver.com</option>
 										<option value="hanmail.net">hanmail.net</option>
@@ -154,34 +116,14 @@
 						</tr>
 					</table>
 					<hr>
-						<button type="submit" class="join_btn" style="width: 450px; height: 60px; font-size: 18px; text-align: center; background-color:#c9c9c9
+					<button type="submit" class="join_btn"
+						style="width: 450px; height: 60px; font-size: 18px; text-align: center; background-color: #c9c9c9;">회원가입</button>
 
-;">회원가입</button>
-					
 				</div>
 			</div>
 		</form>
 	</section>
 
-	<script>
-		$(document).ready(function() {
-			$(".he").hide();
-		});
-		var bt = $(".open");
-		bt.click(function() {
-			$(".st1").toggle(500);
-			$(".st2").toggle(600);
-			$(".st3").toggle(700);
-			$(".st4").toggle(800);
-			if (bt.text() == ">") {
-				bt.text("<");
-			} else {
-				bt.text(">");
-			}
-		});
-		//    $('.st1').hover(function(){
-		//        $('.st1im').css('opacity','0.5')
-		//    },500)
-	</script>
+	
 </body>
 </html>

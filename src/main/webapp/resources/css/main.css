@@ -42,6 +42,11 @@ div{
     z-index: 50;
     
 }
+.login_main{
+	z-index: 50;
+	display : flex;
+	position: relative;
+}
 .ggaggong{
     position: absolute;
     display: flex;
