@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ev.model.VideoMapper">
+    
+    <select id="video" resultType="kr.ev.model.VideoVO">
+        select v_url from t_video order by v_seq DESC
+    </select>
+    
+    
+</mapper>
