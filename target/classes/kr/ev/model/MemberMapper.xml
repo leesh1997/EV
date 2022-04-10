@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ev.model.MemberMapper">
+
+	<!-- 회원가입 -->
+	<insert id="joinInsert" parameterType="kr.ev.model.MemberVO">
+		insert into t_member(m_email, m_pw,m_name,m_nick,m_birthdate,m_gender,m_addr,m_ftype,m_fsize)
+		 values(#{m_email},#{m_pw},#{m_name},#{m_nick},#{m_birthdate},#{m_gender},#{m_addr},#{m_ftype},#{m_fsize})
+	</insert>
+
+	<select id="idCheck"
+    parameterType="kr.ev.model.MemberVO"
+    resultType="kr.ev.model.MemberVO">
+    SELECT NVL(COUNT(*),0)
+    FROM t_member WHERE id=#{m_email}
+	</select>
+	
+	
+</mapper> 
