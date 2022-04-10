@@ -10,13 +10,22 @@
 .choose{
 	display: flex;
 	position: relative;
+	margin-top: 50px;
 	
 }
 .half{
+	display: flex;
+	position:relative;
 	width: 50%;
 	justify-content: center;
 }
 .half-img{
-	width: 50%;
+	margin-top: 10%;
+	max-width: 50%;
 	height: auto;
+}
+body{
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
 }
