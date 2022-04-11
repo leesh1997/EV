@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PalleteVO {
+public class PaletteVO {
 
 	private int pl_seq;
 	private String pl_c1;

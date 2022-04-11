@@ -27,18 +27,28 @@ h2 {
 .maga-img1 {
 	width: 350px;
 }
-.panel-body{
+
+.panel-body {
 	width: max-content;
 	height: 310px;
 }
 
-
+.magazine {
+	/* display: flex; */
+	position: absolute;
+	width: 100%;
+	/*  margin-left: 100px;
+    height: 100vw;
+    width: calc(100vw - 100px); */
+	z-index: 50;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 
-	<div class="container-md main_content" style="margin-left: 150px">
+	<div class="container-md main_content magazine"
+		style="margin-left: 150px;">
 		<h2>Magazine Site</h2>
 		<div class="panel-default">
 			<!-- 시작 -->
@@ -46,9 +56,8 @@ h2 {
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=8"
-						target="_blank"> <img
-							src="resources/img/maga1.png" class="img-thumbnail" /></a>
-					</td>
+						target="_blank"> <img src="resources/img/maga1.png"
+							class="img-thumbnail" /></a></td>
 				</div>
 				<div class="panel-body"
 					style="float: left; margin-top: 10px; margin-left: 30px">
@@ -61,13 +70,12 @@ h2 {
 				</div>
 			</div>
 			<!-- 끝 -->
-			<div class="Panel with panel-default class row">
+			<div class="Panel with panel-default class">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=7"
-						target="_blank"> <img
-							src="resources/img/maga2.png" class="img-thumbnail" /></a>
-					</td>
+						target="_blank"> <img src="resources/img/maga2.png"
+							class="img-thumbnail" /></a></td>
 				</div>
 				<div class="panel-body"
 					style="float: left; margin-top: 10px; margin-left: 30px">
@@ -84,9 +92,8 @@ h2 {
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=6"
-						target="_blank"> <img
-							src="resources/img/maga3.png" class="img-thumbnail" /></a>
-					</td>
+						target="_blank"> <img src="resources/img/maga3.png"
+							class="img-thumbnail" /></a></td>
 				</div>
 				<div class="panel-body"
 					style="float: left; margin-top: 10px; margin-left: 30px">
@@ -98,14 +105,13 @@ h2 {
 						<p class="content1">여기에 내용이 들어감</p></td>
 				</div>
 			</div>
-			
+
 			<div class="Panel with panel-default class">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=5"
-						target="_blank"> <img
-							src="resources/img/maga4.png" class="img-thumbnail" /></a>
-					</td>
+						target="_blank"> <img src="resources/img/maga4.png"
+							class="img-thumbnail" /></a></td>
 				</div>
 				<div class="panel-body"
 					style="float: left; margin-top: 10px; margin-left: 30px">
@@ -117,14 +123,13 @@ h2 {
 						<p class="content1">여기에 내용이 들어감</p></td>
 				</div>
 			</div>
-			
+
 			<div class="Panel with panel-default class">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=4"
-						target="_blank"> <img
-							src="resources/img/maga5.png" class="img-thumbnail" /></a>
-					</td>
+						target="_blank"> <img src="resources/img/maga5.png"
+							class="img-thumbnail" /></a></td>
 				</div>
 				<div class="panel-body"
 					style="float: left; margin-top: 10px; margin-left: 30px">
@@ -136,7 +141,7 @@ h2 {
 						<p class="content1">여기에 내용이 들어감</p></td>
 				</div>
 			</div>
-			
+
 		</div>
 	</div>
 </body>
