@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ev.model.ColorVO;
 import kr.ev.model.PaletteMapper;
-import kr.ev.model.PaletteVO;
 
 
 
@@ -21,8 +21,10 @@ public class PaletteController {
 	
 	@RequestMapping("/palette.do")
 	public String Main(Model model) {
-		List<PaletteVO> list = mapper.paletteColors(); 
+		System.out.println("된다!");
+		List<ColorVO> list = mapper.colorGallery(); 
 		model.addAttribute("list", list);
+		System.out.println(list.get(0).getC_name());
 		return "palette";
 	}
 	

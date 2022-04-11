@@ -55,8 +55,8 @@
 .block {
 	display: table;
 	position: relative;
-	width: 7vw;
-	height: 7vw;
+	width: 6vw;
+	height: 6vw;
 	margin: 1vw;
 	border: 10px solid #fff;
 	cursor: pointer;
@@ -140,13 +140,13 @@
 		</div>
 		
 		<div id="colorGallery" class="gallery-container">
-	<c:forEach var="palette" items="${list}" varStatus="i">
-	<div class="block" data-index="${i}"
-				style="background-color: ${palette.c_rgb}; color: ${palette.c_rgb}">
-				<span class="block-description">${palette.c_name}</span>
+	<c:forEach var="color" items="${list}" varStatus="i">
+	<div class="block" data-index="${color.c_seq}"
+				style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
+				<span class="block-description">${color.c_name}</span>
 			</div>
 	</c:forEach>
-
+	
 		</div>
 	</div>
 </body>

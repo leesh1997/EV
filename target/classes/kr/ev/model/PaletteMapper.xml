@@ -5,9 +5,9 @@
     
     
     
-    <select id="paletteColors" resultType="kr.ev.model.PaletteVO">
+    <select id="colorGallery" resultType="kr.ev.model.ColorVO">
         
-        select * from t_color 
+        select c_seq, c_rgb, c_name from t_color 
         
     </select>
     

@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PaletteMapper {
 
+	List<ColorVO> colorGallery();
 
 
-	public List<PaletteVO> paletteColors();
 
 }
