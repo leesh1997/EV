@@ -42,6 +42,10 @@
 	justify-content: center;
 }
 
+.colors {
+	display: none;
+}
+
 .gallery-container {
 	width: inherit;
 	height: inherit;
@@ -104,10 +108,6 @@
 	color: #f1f5fc;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
-
-
-
-
 </style>
 </head>
 <body>
@@ -118,7 +118,7 @@
 				palette 생성</h1>
 		</div>
 		<div class="draft-details">
-			<a href="http://www.khroma.co">
+			<a href="">
 				<div class="logo">
 					<!-- <img
             src="/최종/img/ev_icon.png"
@@ -129,25 +129,36 @@
           /> -->
 				</div>
 			</a>
-			<div class="palette_colors">
-				<div class="chosen_colors" style="background-color: rgb()"
-					data-index=""></div>
-				<div class="chosen_colors" style="background-color: rgb()"
-					data-index=""></div>
-				<div class="chosen_colors" style="background-color: rgb()"
-					data-index=""></div>
-				<div class="chosen_colors" style="background-color: rgb()"
-					data-index=""></div>
-				<div class="chosen_colors" style="background-color: rgb()"
-					data-index=""></div>
+			<form action="saveColors.do" method="post">
+				<div class="palette_colors">
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<input type="text" name="pl_c1" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<input type="text" name="pl_c2" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<input type="text" name="pl_c3" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<input type="text" name="pl_c4" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<input type="text" name="pl_c5" class="colors" />
+					</div>
+				
 
-				<br>
-
-				<div >
-				<button class="btn_empty">비우기</button>
-					<button class="btn_create">팔레트 생성</button>
+					<div>
+						<button class="btn_empty">비우기</button>
+						<button class="btn_create" type="submit">팔레트 생성</button>
+					</div>
 				</div>
-			</div>
+			</form>
 
 
 		</div>
@@ -163,18 +174,8 @@
 		</div>
 	</div>
 	<script>
-		/* $(".block").on("click",function(){
-			$.ajax({
-				url:"selectColors.do",
-				type:"post",
-				dataType: "json",
-				success: palette,
-				error:function(e){
-					alert("실패");
-				}
-			});
-		}); */
 		let index = 0;
+		var colorList = "";
 		function palette(data) {
 
 			console.log(data);
@@ -184,9 +185,11 @@
 
 		$(".block").on("click", function() {
 			let color = $(this).css('background-color');
-			console.log(color);
 			colorDiv = $(".chosen_colors");
 			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			console.log(colorList);
 			if (index >= colorDiv.length) {
 				index = 0;
 			}

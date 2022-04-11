@@ -10,7 +10,7 @@
         select c_seq, c_rgb, c_name from t_color 
         
     </select>
-    <select id="chosen_colors" parameterType="kr.ev.model.ColorVO" resultType="kr.ev.model.ColorVO">
-        select c_seq, c_rgb from t_color where color.c_seq=#{c_seq}
-    </select>
+    <insert id="saveColors" parameterType="kr.ev.model.PaletteVO">
+        insert into t_palette(pl_c1, pl_c2, pl_c3, pl_c4, pl_c5) values (#{pl_c1}, #{pl_c2}, #{pl_c3}, #{pl_c4}, #{pl_c5})
+    </insert>
 </mapper>

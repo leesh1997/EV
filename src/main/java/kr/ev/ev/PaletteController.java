@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ev.model.ColorVO;
 import kr.ev.model.PaletteMapper;
+import kr.ev.model.PaletteVO;
 
 
 
@@ -28,12 +29,17 @@ public class PaletteController {
 		return "palette";
 	}
 	
-	@RequestMapping("/selectColors.do")
-	public String selectColors(Model model) {
-		System.out.println("선택된다!");
-		List<ColorVO> list2 = mapper.chosen_colors();
-		return "palette";
+	@RequestMapping("/saveColors.do")
+	public String saveColors(Model model, PaletteVO vo) {
+		System.out.println("팔레트 저장");
+		System.out.println(vo);
+		mapper.saveColors(vo);
+		System.out.println("팔레트 저장완료");
+		return "redirect:/palette.do";
 	}
 	
 	
 }
+
+
+/* List<PaletteVO> colorList */
