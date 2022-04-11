@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,13 +64,11 @@
 	transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
-
-
 .chosen_colors {
 	width: 7vw;
 	height: 7vw;
 	margin: 1vw;
-	border: 10px solid #fff;
+	border: 10px solid #ecf0f1;
 	cursor: pointer;
 	border-radius: 50%;
 }
@@ -80,34 +78,44 @@
 	width: 10vw;
 	height: 2vw;
 	margin: 1vw;
+	display: block;
+}
+
+.btn_empty {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+	margin-top: 3vw;
 }
 
 .block .block-description {
 	display: table-cell;
 	position: absolute;
-	margin: 45px 15px 0px 15px;
-	padding: 10px;
+	left: 50% /* 	margin: 42px 15px 5px 15px; */ 
+	 padding: 10px;
 	text-align: center;
 	/* margin: 0px 10px 10px 0px; */
-	width: 100%
-	color: #02142b;
+	width: 100% color: #02142b;
 	font-size: 0.7em;
 	text-transform: uppercase;
 	line-height: 1.2em;
 	color: #f1f5fc;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
-.btn_create {
-	display: block;
-	margin-top: 70px;
-}
+
+
+
+
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="header">
-			<h1 style="margin-top: 0; padding-top: 20px">My palette 생성</h1>
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
+				palette 생성</h1>
 		</div>
 		<div class="draft-details">
 			<a href="http://www.khroma.co">
@@ -122,32 +130,68 @@
 				</div>
 			</a>
 			<div class="palette_colors">
-				<div class="chosen_colors"
-					style="background-color: rgb(84, 17, 193)" data-index="31"></div>
-				<div class="chosen_colors"
-					style="background-color: rgb(95, 131, 148)" data-index="12"></div>
-				<div class="chosen_colors"
-					style="background-color: rgb(198, 115, 109)" data-index="16"></div>
-				<div class="chosen_colors"
-					style="background-color: rgb(254, 170, 130)" data-index="28"></div>
-				<div class="chosen_colors"
-					style="background-color: rgb(207, 206, 245)" data-index="24"></div>
+				<div class="chosen_colors" style="background-color: rgb()"
+					data-index=""></div>
+				<div class="chosen_colors" style="background-color: rgb()"
+					data-index=""></div>
+				<div class="chosen_colors" style="background-color: rgb()"
+					data-index=""></div>
+				<div class="chosen_colors" style="background-color: rgb()"
+					data-index=""></div>
+				<div class="chosen_colors" style="background-color: rgb()"
+					data-index=""></div>
+
 				<br>
-				<div id="create">
-					<button class="btn_create">팔레트 생성하기</button>
+
+				<div >
+				<button class="btn_empty">비우기</button>
+					<button class="btn_create">팔레트 생성</button>
 				</div>
 			</div>
+
+
 		</div>
-		
+
 		<div id="colorGallery" class="gallery-container">
-	<c:forEach var="color" items="${list}" varStatus="i">
-	<div class="block" data-index="${color.c_seq}"
-				style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
-				<span class="block-description">${color.c_name}</span>
-			</div>
-	</c:forEach>
-	
+			<c:forEach var="color" items="${list}" varStatus="i">
+				<div class="block" data-index="${color.c_seq}" onClick=""
+					style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
+					<span class="block-description">${color.c_name}</span>
+				</div>
+			</c:forEach>
+
 		</div>
 	</div>
+	<script>
+		/* $(".block").on("click",function(){
+			$.ajax({
+				url:"selectColors.do",
+				type:"post",
+				dataType: "json",
+				success: palette,
+				error:function(e){
+					alert("실패");
+				}
+			});
+		}); */
+		let index = 0;
+		function palette(data) {
+
+			console.log(data);
+
+			var palette = $('.chosen_colors')
+		}
+
+		$(".block").on("click", function() {
+			let color = $(this).css('background-color');
+			console.log(color);
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
+
+		})
+	</script>
 </body>
 </html>
