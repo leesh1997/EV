@@ -68,7 +68,7 @@
 						 	<tr>
 							<td class="join_title">비밀번호 확인</td>
 							<td class="join_input"><input type="password" 
-								id="checkpw" class="join_input" onkeyup="passConfirm()" size="20" maxlength="30"
+								id="checkpw" name="checkpw" class="join_input" onkeyup="passConfirm()" size="20" maxlength="30"
 								height="120px" placeholder="비밀번호 확인"/></td>
 						</tr> 
 							<tr>
