@@ -12,7 +12,20 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+ .box1 {
+  margin-top: 50px; margin-left: 150px; margin-right: 50px; max-width:40%}
+ .box2 {
+  display:inline-block; margin-left:500px;}  
+</style>
+
 </head>
+<body>
+     <div class="box1"></div>
+     <div class="box2"></div>
+</body>
+
 <body>
 	<jsp:include page = "side_topbar.jsp"></jsp:include>
 <div style="margin-top: 50px; margin-left: 150px">
@@ -20,7 +33,7 @@
 </div>
 <div class="container-md main_content">
 
-	<div style="margin-top: 50px; margin-left: 150px; margin-right: 50px; max-width:40%">
+	<div class="box1" >
 		<c:forEach var="vd" items="${list}" begin="1" end="5">
 			<div style="position: relative; height:0; padding-bottom: 56.25%;">
 				<iframe width="460" height="260" src="${vd.v_url}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; width:100%; height:100%;"></iframe>
@@ -28,6 +41,12 @@
 			<br>
 		</c:forEach>
 	</div>
+	
+	<div class="box2" style="margin-top: 50px; margin-left: 150px; margin-right: 50px; max-width:40%">
+		<h1>제목 테스트</h1>
+	</div>
+	
+	
 	
 	<div style="margin-top: 50px; margin-left: 150px; margin-right: 50px; max-width:40%; align-content:center">	
 			<span onclick="alert('이전 페이지가 없습니다.');">이전</span>			
