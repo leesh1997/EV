@@ -20,12 +20,20 @@ public class PaletteController {
 	private PaletteMapper mapper;
 	
 	@RequestMapping("/palette.do")
-	public String Main(Model model) {
+	public String showPalette(Model model) {
 		System.out.println("된다!");
 		List<ColorVO> list = mapper.colorGallery(); 
 		model.addAttribute("list", list);
-		System.out.println(list.get(0).getC_name());
+		/* System.out.println(list.get(0).getC_name()); */
 		return "palette";
 	}
+	
+	@RequestMapping("/selectColors.do")
+	public String selectColors(Model model) {
+		System.out.println("선택된다!");
+		List<ColorVO> list2 = mapper.chosen_colors();
+		return "palette";
+	}
+	
 	
 }

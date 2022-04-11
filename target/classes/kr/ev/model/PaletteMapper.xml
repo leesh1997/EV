@@ -10,5 +10,7 @@
         select c_seq, c_rgb, c_name from t_color 
         
     </select>
-    
+    <select id="chosen_colors" parameterType="kr.ev.model.ColorVO" resultType="kr.ev.model.ColorVO">
+        select c_seq, c_rgb from t_color where color.c_seq=#{c_seq}
+    </select>
 </mapper>

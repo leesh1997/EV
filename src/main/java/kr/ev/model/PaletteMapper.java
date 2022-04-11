@@ -9,6 +9,8 @@ public interface PaletteMapper {
 
 	List<ColorVO> colorGallery();
 
+	List<ColorVO> chosen_colors();
+
 
 
 }

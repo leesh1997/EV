@@ -2,6 +2,7 @@ package kr.ev.ev;
 
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,6 @@ public class LoginController {
 }
 	@RequestMapping("/join.do")
 	public void join() {
-	      System.out.println("회원가입 조회");
-
 	}
 
 	@RequestMapping("/joinInsert.do")
@@ -48,4 +47,22 @@ public class LoginController {
 //        else System.out.println("아이디사용가능");
 //        return result;
 //    }
+	
+//	@RequestMapping(value = "checkId.ev", method = { RequestMethod.GET, RequestMethod.POST})
+//    public @ResponseBody int idCheck( MemberVO user, Model model) {
+//        return join.checkId(user);
+//    }//
+
+	// 아이디 중복체크 
+	   @RequestMapping("/idCheck.do")
+	   public @ResponseBody MemberVO idCheck(String id) {
+		   System.out.println(id);
+		   MemberVO vo = mapper.idCheck(id);
+		   if(vo==null) {
+			   vo = new MemberVO();
+		   }
+		   System.out.println(vo);
+		   return vo;
+	   }
+	
 }

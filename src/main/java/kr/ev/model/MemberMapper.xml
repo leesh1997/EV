@@ -4,16 +4,15 @@
 
 	<!-- 회원가입 -->
 	<insert id="joinInsert" parameterType="kr.ev.model.MemberVO">
-		insert into t_member(m_email, m_pw,m_name,m_nick,m_birthdate,m_gender,m_addr,m_ftype,m_fsize)
-		 values(#{m_email},#{m_pw},#{m_name},#{m_nick},#{m_birthdate},#{m_gender},#{m_addr},#{m_ftype},#{m_fsize})
+		insert into
+		t_member(m_email,
+		m_pw,m_name,m_nick,m_birthdate,m_gender,m_addr,m_ftype,m_fsize)
+		values(#{m_email},#{m_pw},#{m_name},#{m_nick},#{m_birthdate},#{m_gender},#{m_addr},#{m_ftype},#{m_fsize})
 	</insert>
 
-	<!-- <select id="idCheck"
-    parameterType="kr.ev.model.MemberVO"
-    resultType="kr.ev.model.MemberVO">
-    SELECT NVL(COUNT(*),0)
-    FROM t_member WHERE id=#{m_email}
-	</select> -->
-	
-	
+	<select id="idCheck" resultType="kr.ev.model.MemberVO">
+		SELECT * FROM t_member WHERE m_email=#{id}
+	</select>
+
+
 </mapper> 
