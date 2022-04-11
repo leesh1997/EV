@@ -9,12 +9,13 @@ public class WishListController {
 	public void wishlist() {
 		
 	}
-	@RequestMapping("/wishlist_product.do")
-	public void product_wishlist() {
-		
-	}
-	@RequestMapping("/wishlist_palette.do")
-	public void palette_wishlist() {
-		
-	}
+	/*
+	 * @RequestMapping("/wishlist_product.do") public void product_wishlist() {
+	 * 
+	 * }
+	 * 
+	 * @RequestMapping("/wishlist_palette.do") public void palette_wishlist() {
+	 * 
+	 * }
+	 */
 }

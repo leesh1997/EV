@@ -5,15 +5,19 @@
     margin-left: 100px;
     height: 100vw;
     width: calc(100vw - 100px);
-    z-index: 50;    
+    z-index: 50; 
+       
 }
 .choose{
-	display: flex;
+	display:block;
 	position: relative;
 	margin-top: 50px;
 	
 }
-.half{
+.title{
+	/* display: block; */
+}
+/* .half{
 	display: flex;
 	position:relative;
 	width: 50%;
@@ -23,9 +27,15 @@
 	margin-top: 10%;
 	max-width: 50%;
 	height: auto;
-}
+} */
 body{
-	overflow: hidden;
+	/* overflow: hidden; */
 	padding: 0;
 	margin: 0;
+}
+.title{
+	width: 80%;
+}
+button{
+	float: right;
 }
