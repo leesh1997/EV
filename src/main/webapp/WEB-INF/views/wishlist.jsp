@@ -13,21 +13,75 @@
 <jsp:include page = "side_topbar.jsp"></jsp:include>
 	<div class = "main-content">
 	
-		<h1 style="margin-top: 0; padding-top: 22px; text-align: left;">My WishList</h1>
+		<h1 style="margin-top: 0; padding-left:20px; padding-top: 22px; text-align: left;">My WishList</h1>
 
 		<br>
 		<div class="choose">
-		<div class="title">애안되<button class="no1 updown">세모</button></div>
-		<div class="title">2</div>
-		<div class="title">3<button class="no2 updown">세모</button></div>
-		<div class="title">4</div>
-		<div class="title">5<button class="no3 updown">세모</button></div>
-		<div class="title">6</div>
+		<div class="list_box">
+		<div class="title">색상 리스트<button class="no1 updown">보기</button></div>
+		<div class="title list1 lis">
+			<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
+			
+				<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
+				<div>
+				색상!
+			</div>
 		
+		
+		</div>
+		</div>
+		<div class="list_box">
+		<div class="title">팔레트<button class="no2 updown">보기</button></div>
+		<div class="title list2 lis">4</div>
+		</div>
+		<div class="list_box">
+		<div class="title">가구<button class="no3 updown">보기</button></div>
+		<div class="title list3 lis">6</div>
+		</div>
 	<!-- 	
 		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
 		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
 		</div>
 	</div>
+	
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.list1, .list2, .list3').hide();
+	})
+	$('.no1').click(function() {
+		
+		$('.list1').toggle(500);
+
+	})
+	$('.no2').click(function() {
+		$('.list2').toggle(500);
+	})
+
+	$('.no3').click(function() {
+		$('.list3').toggle(500);
+	})
+
+
+
+</script>
 </html>

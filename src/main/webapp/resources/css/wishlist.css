@@ -3,7 +3,7 @@
     display: block;
     position: relative;
     margin-left: 100px;
-    height: 100vw;
+    height: max-contents;
     width: calc(100vw - 100px);
     z-index: 50; 
 
@@ -15,6 +15,7 @@
 	justify-content: center;
 	flex-direction: column;
 	margin: 0 auto;
+
 	}
 .title{
 	/* display: block; */
@@ -37,13 +38,26 @@ body{
 }
 .title{
 	width: 80%;
-	margin-left: 10%;
+	margin-left: 5%;
+/* 	font-size: 30px; */
+	border-bottom: 1px solid rgba(0,0,0,.2);
 }
 button.updown{
 	float: right;
+}
+.list_box{
+	margin-bottom: 20px;
+}
+.lis{
+	
 }
 @media (max-width: 768px){
 	.main-content{
 		margin-left: 0;
 	}
+}
+button.updown{
+	background-color: white;
+	border: none;
+	border-radius: 5%;
 }
