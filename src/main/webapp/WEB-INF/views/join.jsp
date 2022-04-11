@@ -68,9 +68,14 @@
 						 	<tr>
 							<td class="join_title">비밀번호 확인</td>
 							<td class="join_input"><input type="password" 
-								id="checkpw" class="join_input" size="20" maxlength="30"
+								id="checkpw" class="join_input" onkeyup="passConfirm()" size="20" maxlength="30"
 								height="120px" placeholder="비밀번호 확인"/></td>
 						</tr> 
+							<tr>
+							<td></td>
+							<td><p id="resultpwCheck"   style="text-align: left;">테스트!</p>
+							</td>
+						</tr>
 						<tr>
 							<td class="join_title">이름</td>
 							<td class="join_input"><input type="text" name="m_name"
@@ -250,6 +255,26 @@
 
 			}
 		}
+		
+		function passConfirm() {
+			/* 비밀번호, 비밀번호 확인 입력창에 입력된 값을 비교해서 같다면 비밀번호 일치, 그렇지 않으면 불일치 라는 텍스트 출력.*/
+			/* document : 현재 문서를 의미함. 작성되고 있는 문서를 뜻함. */
+			/* getElementByID('아이디') : 아이디에 적힌 값을 가진 id의 value를 get을 해서 password 변수 넣기 */
+				var password = document.getElementById('pw');					//비밀번호 
+				var passwordConfirm = document.getElementById('checkpw');	//비밀번호 확인 값
+				var confrimMsg = document.getElementById('resultpwCheck');				//확인 메세지
+				var correctColor = "#00ff00";	//맞았을 때 출력되는 색깔.
+				var wrongColor ="#ff0000";	//틀렸을 때 출력되는 색깔
+				
+				if(password.value == passwordConfirm.value){//password 변수의 값과 passwordConfirm 변수의 값과 동일하다.
+					confirmMsg.style.color = correctColor;/* span 태그의 ID(confirmMsg) 사용  */
+					confirmMsg.innerHTML ="비밀번호 일치";/* innerHTML : HTML 내부에 추가적인 내용을 넣을 때 사용하는 것. */
+				}else{
+					confirmMsg.style.color = wrongColor;
+					confirmMsg.innerHTML ="비밀번호 불일치";
+				}
+			}
+		
 	</script>
 
 
