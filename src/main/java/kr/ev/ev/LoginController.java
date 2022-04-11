@@ -24,7 +24,8 @@ public class LoginController {
 }
 	@RequestMapping("/join.do")
 	public void join() {
-		
+	      System.out.println("회원가입 조회");
+
 	}
 
 	@RequestMapping("/joinInsert.do")
@@ -37,14 +38,14 @@ public class LoginController {
 	   }
 
 	 // 아이디 중복체크
-	@ResponseBody
-    @RequestMapping(value="/idCheck.do")
-    public int idCheck(MemberVO vo,ModelAndView mav) {
-        System.out.println("Controller.idCheck() 호출");
-        int result=0;
-        MemberVO user=MemberMapper.getUser(vo);
-        if(user!=null) result=1;
-        else System.out.println("아이디사용가능");
-        return result;
-    }
+//	@ResponseBody
+//    @RequestMapping(value="/idCheck.do")
+//    public int idCheck(MemberVO vo,ModelAndView mav) {
+//        System.out.println("Controller.idCheck() 호출");
+//        int result=0;
+//        MemberVO user=MemberMapper.getUser(vo);
+//        if(user!=null) result=1;
+//        else System.out.println("아이디사용가능");
+//        return result;
+//    }
 }

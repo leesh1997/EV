@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="resources/css/join.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 <style>
 </style>
 </head>
@@ -34,53 +35,49 @@
 					<table>
 						<tr>
 							<td class="join_title">아이디</td>
-							<td class="join_input"><span class="email-input__local"><input
-									class="form-control" id="checkaa" placeholder="이메일을 입력하세요." size="1"
-									value="id" style="width: 165px; height: 30px;" name="m_email"></span><span
-								class="email-input__separator"> @ </span><span
-								class="email-input__domain"><select
-									class="form-control empty"
-									style="width: 130px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;"><option
-											value="선택" >선택해주세요</option>
-										<option value="naver.com">naver.com</option>
-										<option value="hanmail.net">hanmail.net</option>
-										<option value="daum.net">daum.net</option>
-										<option value="gmail.com">gmail.com</option>
-										<option value="nate.com">nate.com</option>
-										<option value="hotmail.com">hotmail.com</option>
-										<option value="outlook.com">outlook.com</option>
-										<option value="icloud.com">icloud.com</option>
-										<option value="_manual">직접입력</option></select> </span></td>
+							<td class="join_input"><input type="text" name="user_email" id="user_email"
+								required style="width: 150px; height: 30px;"placeholder="이메일 주소"><span id="middle">@</span><input type="text"
+								id="email_address" name=email_address list="user_email_address" style="width: 130px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;"> <datalist
+									id="user_email_address">
+									<option value="naver.com">naver.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="daum.net">daum.net</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="icloud.com">icloud.com</option>
+									<option value="직접입력">직접입력</option>
+								</datalist> <input type="hidden" id="m_email" name="m_email" value="">
+							</td>
 						</tr>
 						<tr>
 							<td class="join_title">비밀번호</td>
 							<td class="join_input"><input type="password" name="m_pw"
 								id="pw" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
+								height="120px" placeholder="비밀번호" /></td>
 						</tr>
-						<tr>
+					<!-- 	<tr>
 							<td class="join_title">비밀번호 확인</td>
 							<td class="join_input"><input type="password" name="m_pw"
 								id="checkpw" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
-						</tr>
+								height="120px" placeholder="비밀번호 확인"/></td>
+						</tr> -->
 						<tr>
 							<td class="join_title">이름</td>
 							<td class="join_input"><input type="text" name="m_name"
 								id="name" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
+								height="120px" placeholder="이름" /></td>
 						</tr>
 						<tr>
 							<td class="join_title">닉네임</td>
 							<td class="join_input"><input type="text" name="m_nick"
 								id="nick" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
+								height="120px" placeholder="닉네임" /></td>
 						</tr>
 						<tr>
 							<td class="join_title">생년월일</td>
 							<td class="join_input"><input type="date" name="m_birthdate"
 								id="birthdate" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
+								height="120px" placeholder=""/></td>
 						</tr>
 						<tr>
 							<td class="join_title">성별</td>
@@ -94,7 +91,7 @@
 							<td class="join_title">주소</td>
 							<td class="join_input"><input type="text" name="m_addr"
 								id="addr" class="join_input" size="20" maxlength="30"
-								height="120px" /></td>
+								height="120px" placeholder="주소"/></td>
 						</tr>
 						<tr>
 							<td class="join_title">주거 형태</td>
@@ -118,8 +115,7 @@
 					<hr style="opacity: 0.5;">
 					<button type="submit" class="join_btn"
 						style="width: 450px; height: 60px; font-size: 18px; color: white; font-weight: bold; text-align: center; background-color: #7f7f7f;">회원가입</button>
-					<p style="text-align: center; font-weight: bold; 
-					">
+					<p style="text-align: center; font-weight: bold;">
 						이미 아이디가 있으신가요? <a href=login.do><u> 로그인</u></a>
 					</p>
 
@@ -128,45 +124,26 @@
 		</form>
 	</section>
 	<script>
-	// 아이디와 비밀번호가 맞지 않을 경우 가입버튼 비활성화를 위한 변수설정
-    var idCheck = 0;
-    var nickCheck = 0;
-    var pwdCheck = 0;
-    //아이디 체크하여 가입버튼 비활성화, 중복확인.
-    function checkId() {
-        var inputed = $('.id').val();
-        console.log(inputed);
-        $.ajax({
-            data : {
-                id : inputed
-            },
-            url : "checkId.do",
-            success : function(data) {
-                if(inputed=="" && data=='0') {
-                    $(".join_btn").prop("disabled", true);
-                    $(".join_btn").css("background-color", "#aaaaaa");
-                    $("#checkaa").css("background-color", "#FFCECE");
-                    idCheck = 0;
-                } else if (data == '0') {
-                    $("#checkaa").css("background-color", "#B0F6AC");
-                    idCheck = 1;
-                    if(idCheck==1 && pwdCheck == 1) {
-                        $(".join_btn").prop("disabled", false);
-                        $(".join_btn").css("background-color", "#4CAF50");
-                    } 
-                } else if (data == '1') {
-                    $(".join_btn").prop("disabled", true);
-                    $(".join_btn").css("background-color", "#aaaaaa");
-                    $("#checkaa").css("background-color", "#FFCECE");
-                    idCheck = 0;
-                } 
-            }
-        });
-    }
+	//이메일주소 가져오기
+	$("#user_email").blur(function(){
+		email();	
+	});
 	
+	$("#email_address").change(function(){
+		email();	
+	});
+
+	function email() {
+		const email = $("#user_email").val();
+		const middle = $("#middle").text();
+		const address = $("#email_address").val();
+		if(email != "" && address != "") {
+			$("#m_email").val(email+middle+address);
+		}
+	};
 	</script>
-	
-	
+
+
 
 </body>
 </html>
