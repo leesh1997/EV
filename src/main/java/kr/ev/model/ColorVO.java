@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class ColorVO {
 
 	private int c_seq;
-	private String c_ocde;
+	private String c_code;
 	private String c_rgb;
 	private String c_name;
 	private String m_email;
