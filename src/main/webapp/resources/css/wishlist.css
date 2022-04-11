@@ -6,14 +6,16 @@
     height: 100vw;
     width: calc(100vw - 100px);
     z-index: 50; 
-       
+
 }
 .choose{
-	display:block;
+	display:flex;
 	position: relative;
 	margin-top: 50px;
-	
-}
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	}
 .title{
 	/* display: block; */
 }
@@ -35,7 +37,13 @@ body{
 }
 .title{
 	width: 80%;
+	margin-left: 10%;
 }
-button{
+button.updown{
 	float: right;
+}
+@media (max-width: 768px){
+	.main-content{
+		margin-left: 0;
+	}
 }

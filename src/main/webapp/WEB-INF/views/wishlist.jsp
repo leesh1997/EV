@@ -27,7 +27,7 @@
 	<!-- 	
 		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
 		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
-	</div>
+		</div>
 	</div>
 </body>
 </html>
