@@ -88,49 +88,7 @@
 				</div>
 			</form>
 	</section>
-<script type="text/javascript">
-$('#login_btn').click(function() {
-	 
-    var mid = $('#id').val();
 
-    var psw = $('#pw').val();
-
-    $.ajax({
-
-        type : "POST",
-
-        url : "loginCheck.do",
-
-        data : "mid=" + mid + "&psw=" + psw,
-
-        dataType : "text",
-
-        success : function(data, textStatus, xhr) {
-
-           if (data == 'loginFail') {
-				consol.log("실패")
-                alert('로그인에 실패하였습니다.')
-                
-
-            } else {
-
-                window.location.href = 'main.do';
-
-            }
-
-        },
-
-        error : function(request, status, error) {
-
-            alert("code:" + request.status + "\n" + "error:" + error);
-
-        }
-
-    })
-
-});
-
-</script>
 	
 </body>
 </html>

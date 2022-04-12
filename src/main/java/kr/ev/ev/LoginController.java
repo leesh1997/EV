@@ -1,6 +1,10 @@
 package kr.ev.ev;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +71,7 @@ public class LoginController {
 	
 	// 로그인
 	  @RequestMapping("/loginSelect.do")
-	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw) {
+	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw,HttpServletResponse response) {
 		  System.out.println(id);
 		  System.out.println(pw);
 		  vo.setM_email(id);;
@@ -82,23 +86,28 @@ public class LoginController {
 			   return "redirect:/main.do";
 		   }
 		   else {
-			   return "login.do";
-			   
-		   }
-		   //info 잘 들어왔는지 확인
+		         response.setContentType("text/html; charset = UTF-8");
+		         PrintWriter out;
+		         try {
+		            out = response.getWriter();
+		            out.print("<script>alert('로그인 정보를 확인해주세요'); history.go(-1);");
+		            out.print("</script>");
+		            out.flush();
+		         } catch (IOException e) {
+		            e.printStackTrace();
+		         }
+		      }
+		      
+		      return "redirect:/login.do";
 		   
 		   
 	   }
 	
 	// 로그인 체크
-	  @RequestMapping("/loginCheck.do")
-	  public @ResponseBody MemberVO loginCheck(String loginCheck) {
-			MemberVO vo = mapper.loginCheck(loginCheck);
-			if (vo == null) {
-				vo = new MemberVO();
-			}
-			System.out.println(vo);
-			return vo;
-		}
+	/*
+	 * @RequestMapping("/loginCheck.do") public @ResponseBody MemberVO
+	 * loginCheck(String loginCheck) { MemberVO vo = mapper.loginCheck(loginCheck);
+	 * if (vo == null) { vo = new MemberVO(); } System.out.println(vo); return vo; }
+	 */
 	
 }
