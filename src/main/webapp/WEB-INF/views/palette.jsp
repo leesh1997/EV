@@ -133,23 +133,23 @@
 				<div class="palette_colors">
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<input type="text" name="pl_c1" class="colors" />
+						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<input type="text" name="pl_c2" class="colors" />
+						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<input type="text" name="pl_c3" class="colors" />
+						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<input type="text" name="pl_c4" class="colors" />
+						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<input type="text" name="pl_c5" class="colors" />
+						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
 					</div>
 				
 
@@ -184,12 +184,21 @@
 		}
 
 		$(".block").on("click", function() {
+			
 			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
 			colorDiv = $(".chosen_colors");
 			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
 			/* colorList.push(color); */
 			colorList = color;
+			
+			document.ge
 			console.log(colorList);
+			console.log()
 			if (index >= colorDiv.length) {
 				index = 0;
 			}
