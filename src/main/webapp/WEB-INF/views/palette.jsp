@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,198 +10,225 @@
 <title>Document</title>
 <style>
 .palette_wrap {
-   margin-left: 100px;
+	margin-left: 100px;
 }
 
 .header {
-   display: block;
-   position: relative;
+	display: block;
+	position: relative;
 }
 
 .draft-details {
-   position: relative;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   top: 0;
-   /* width: max-content; */
-   height: max-content;
-   padding: 0 20px;
-   /* z-index: 999; */
-   background-color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	/* width: max-content; */
+	height: max-content;
+	padding: 0 20px;
+	/* z-index: 999; */
+	background-color: #fff;
 }
 
 .palette_colors {
-   display: flex;
-   position: relative;
-   flex-direction: row;
-   width: 100%;
-   padding: 20px;
-   transition: transform 0.5s cubic-bezier(0, 0.99, 0, 0.99);
-   justify-content: center;
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	width: 100%;
+	padding: 20px;
+	transition: transform 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	justify-content: center;
+	vertical-align: middle;
 }
 
 .colors {
-   display: none;
+	display: none;
 }
 
 .gallery-container {
-   width: inherit;
-   height: inherit;
-   display: flex;
-   flex-direction: row;
-   flex-flow: wrap;
-   justify-content: space-around;
-   background-color: #f1f5fc;
+	width: inherit;
+	height: inherit;
+	display: flex;
+	flex-direction: row;
+	flex-flow: wrap;
+	justify-content: space-around;
+	background-color: #f1f5fc;
 }
 
 .block {
-   display: table;
-   position: relative;
-   width: 6vw;
-   height: 6vw;
-   margin: 1vw;
-   border: 10px solid #fff;
-   cursor: pointer;
-   justify-content: center;
-   border-radius: 50%;
-   transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	display: table;
+	position: relative;
+	width: 6vw;
+	height: 6vw;
+	margin: 1vw;
+	border: 10px solid #fff;
+	cursor: pointer;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
 .chosen_colors {
-   width: 7vw;
-   height: 7vw;
-   margin: 1vw;
-   border: 10px solid #ecf0f1;
-   cursor: pointer;
-   border-radius: 50%;
+	width: 7vw;
+	height: 7vw;
+	margin: 1vw;
+	border: 10px solid #ecf0f1;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.color_name {
+	vertical-align: middle;
+	text-align: center;
+	margin-top: 3vw;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	color: white;
+	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
 .btn_create {
-   vertical-align: middle;
-   width: 10vw;
-   height: 2vw;
-   margin: 1vw;
-   display: block;
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
 }
 
 .btn_empty {
-   vertical-align: middle;
-   width: 10vw;
-   height: 2vw;
-   margin: 1vw;
-   display: block;
-   margin-top: 3vw;
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+	margin-top: 3vw;
 }
 
 .block .block-description {
-   display: table-cell;
-   position: relative;
-   vertical-align: middle;
-   text-align: center;
-   width: 100% color: #02142b;
-   font-size: 0.7em;
-   text-transform: uppercase;
-   line-height: 1.2em;
-   color: white;
-   transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	width: 100% color: #02142b;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	color: white;
+	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 </style>
 </head>
 <body>
-   <jsp:include page="side_topbar.jsp"></jsp:include>
-   <div class="palette_wrap">
-      <div class="header">
-         <h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
-            palette 생성</h1>
-      </div>
-      <div class="draft-details">
-         <a href="">
-            <div class="logo">
-               <!-- <img
+	<jsp:include page="side_topbar.jsp"></jsp:include>
+	<div class="palette_wrap">
+		<div class="header">
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
+				palette 생성</h1>
+		</div>
+		<div class="draft-details">
+			<a href="">
+				<div class="logo">
+					<!-- <img
             src="/최종/img/ev_icon.png"
             width="200"
             height="auto"
             alt="demo"
             id="btn_goMain"
           /> -->
-            </div>
-         </a>
-         <form action="saveColors.do" method="post">
-            <div class="palette_colors">
-               <div class="chosen_colors" style="background-color: rgb()"
-                  data-index="">
-                  <input type="text" name="pl_c1" id="pl_c1" class="colors" />
-               </div>
-               <div class="chosen_colors" style="background-color: rgb()"
-                  data-index="">
-                  <input type="text" name="pl_c2" id="pl_c2" class="colors" />
-               </div>
-               <div class="chosen_colors" style="background-color: rgb()"
-                  data-index="">
-                  <input type="text" name="pl_c3" id="pl_c3" class="colors" />
-               </div>
-               <div class="chosen_colors" style="background-color: rgb()"
-                  data-index="">
-                  <input type="text" name="pl_c4" id="pl_c4" class="colors" />
-               </div>
-               <div class="chosen_colors" style="background-color: rgb()"
-                  data-index="">
-                  <input type="text" name="pl_c5" id="pl_c5" class="colors" />
-               </div>
-            
-
-               <div>
-                  <button class="btn_empty">비우기</button>
-                  <button class="btn_create" type="submit">팔레트 생성</button>
-               </div>
-            </div>
-         </form>
+				</div>
+			</a>
+			<form action="saveColors.do" method="post">
+				<div class="palette_colors">
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<div class="color_name" ></div>
+						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<div class="color_name" ></div>
+						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<div class="color_name" ></div>
+						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<div class="color_name" ></div>
+						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
+					</div>
+					<div class="chosen_colors" style="background-color: rgb()"
+						data-index="">
+						<div class="color_name" ></div>
+						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
+					</div>
 
 
-      </div>
+					<div>
+						<button class="btn_empty">비우기</button>
+						<button class="btn_create" type="submit">팔레트 생성</button>
+					</div>
+				</div>
+			</form>
 
-      <div id="colorGallery" class="gallery-container">
-         <c:forEach var="color" items="${list}" varStatus="i">
-            <div class="block" data-index="${color.c_seq}" onClick=""
-               style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
-               <div class="block-description">${color.c_name}</div>
-            </div>
-         </c:forEach>
 
-      </div>
-   </div>
-   <script>
-      let index = 0;
-      var colorList = "";
-      function palette(data) {
+		</div>
 
-         console.log(data);
+		<div id="colorGallery" class="gallery-container">
+			<c:forEach var="color" items="${list}" varStatus="i">
+				<div class="block" data-index="${color.c_seq}" onClick=""
+					style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
+					<div class="block-description">${color.c_name}</div>
+				</div>
+			</c:forEach>
 
-         var palette = $('.chosen_colors')
-      }
+		</div>
+	</div>
+	<script>
+		let index = 0;
+		var colorList = "";
+		function palette(data) {
 
-      $(".block").on("click", function() {
-         
-         let color = $(this).css('background-color');
-         
-         let color_in = $(this).val('colors');
-         document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-         
-         colorDiv = $(".chosen_colors");
-         $(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-         colorList = color;
-         
-         document.ge
-         console.log(colorList);
-         console.log()
-         if (index >= colorDiv.length) {
-            index = 0;
-         }
+			console.log(data);
 
-      })
-   </script>
+			var palette = $('.chosen_colors')
+		}
+
+		$(".block").on(
+				"click",
+				function() {
+
+					let color = $(this).css('background-color');
+					let color_text = $(this).children().text()
+					console.log(color_text);
+
+					let color_in = $(this).val('colors');
+					document.getElementById("pl_c" + (index + 1)).setAttribute(
+							"value", color);
+
+	
+
+					colorDiv = $(".chosen_colors");
+					$(colorDiv[index]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+					colorList = color;
+
+					colorText = $(".color_name");
+					$(colorText[index++]).text(color_text);
+
+					document.ge
+					console.log(colorList);
+					console.log()
+					if (index >= colorDiv.length) {
+						index = 0;
+					}
+
+				})
+	</script>
 </body>
 
 </html>
