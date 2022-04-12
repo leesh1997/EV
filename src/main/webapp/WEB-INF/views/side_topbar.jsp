@@ -41,7 +41,8 @@
     <div class="he st2"><a href="#"><img src="resources/img/inte1.png" class="he-img st2im"><div class="he-text">interior</div></a></div>
     <div class="he st3"><a href="magazine.do"><img src="resources/img/inte2222.PNG" class="he-img st3im"><div class="he-text">information</div></a></div>
     <div class="he st4"><a href="wishlist.do"><img src="resources/img/inte3.png" class="he-img st4im"><div class="he-text">wishlist</div></a></div>
-    
+     <div class="he st5"><a href="#"><img src="resources/img/inte3.png" class="he-img st5im"><div class="he-text">community</div></a></div>
+   
    </div>
   
 </div>
@@ -56,9 +57,10 @@
       bt.click(function(){
     	
     	        $('.st1').toggle(500);
-    	        $('.st2').toggle(600);
-    	        $('.st3').toggle(700);
-    	        $('.st4').toggle(800);
+    	        $('.st2').toggle(550);
+    	        $('.st3').toggle(600);
+    	        $('.st4').toggle(650);
+    	        $('.st5').toggle(700);
     	
     	
        })
