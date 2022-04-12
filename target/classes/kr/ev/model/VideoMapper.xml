@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.VideoMapper">
     
     <select id="video" resultType="kr.ev.model.VideoVO">
-        select v_url from t_video order by v_seq DESC
+        select * from t_video order by v_seq DESC
     </select>
     
     
