@@ -42,6 +42,11 @@ public class PaletteController {
 	public void createPalette(Model model) {
 
 	}
+	
+	@RequestMapping("/paletteRecommend.do")
+	public void viewPalette(Model model) {
+
+	}
 }
 
 
