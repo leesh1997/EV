@@ -42,14 +42,28 @@ body{
 /* 	font-size: 30px; */
 	border-bottom: 1px solid rgba(0,0,0,.2);
 }
+button.delete{
+	float: right;
+	border: none;
+	background-color: white;
+	margin-right: 5px;
+}
 button.updown{
 	float: right;
 }
+
 .list_box{
 	margin-bottom: 20px;
 }
+.trashimg{
+	height: 16px;
+	width: auto;
+}
 .lis{
+	
 	display: block;
+	position: relative;
+	justify-content: center;
 }
 @media (max-width: 768px){
 	.main-content{
@@ -73,13 +87,17 @@ button.updown{
 	height: auto
 }
 .eeun-ae{
-	display: inline;
+	display: inline-block;
 	position: relative;
+	vertical-align: top;
+	
 }
 .jjim_img_list{
+	
 	width: max-content;
 	height: max-content;
 }
 .jjim_text_list{
+	
 	width: auto;
 }

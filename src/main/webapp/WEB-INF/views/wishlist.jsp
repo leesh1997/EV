@@ -18,7 +18,8 @@
 		<br>
 		<div class="choose">
 		<div class="list_box">
-		<div class="title">색상 리스트<button class="no1 updown">보기</button></div>
+		<div class="title">색상 리스트<button class="no1 updown">보기</button>
+		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
 		<div class="title list1 lis">
 			<div class="color_list">
 				응애..
@@ -27,23 +28,56 @@
 			에?
 			</div>
 		
-			<div class="delete">
-				삭제
+		</div>
+		</div>
+		<div class="list_box">
+		<div class="title">팔레트<button class="no2 updown">보기</button>
+		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
+		<div class="title list2 lis">
+			<div class="wish_pallete">
+					
+				
 			</div>
-			
+		
 		</div>
 		</div>
 		<div class="list_box">
-		<div class="title">팔레트<button class="no2 updown">보기</button></div>
-		<div class="title list2 lis">4</div>
-		</div>
-		<div class="list_box">
-		<div class="title">가구<button class="no3 updown">보기</button></div>
+		<div class="title">가구<button class="no3 updown">보기</button>
+		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
 		<div class="title list3 lis">
 			<div class= "eeun-ae">
 			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-			<div class= "jjim_text_list">텍스트가들어갑니다?</div>
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
 			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+			
 		</div>
 		</div>
 	<!-- 	
@@ -57,16 +91,38 @@
 	$(document).ready(function(){
 		$('.list1, .list2, .list3').hide();
 	})
-	$('.no1').click(function() {
+		$('.no1').click(function() {
+		if($('.no1').text()=='보기'){
+			$('.no1').text('닫기');
+			$('.list1').slideDown(500);
+		}
+		else if($('.no1').text()=='닫기'){
+			$('.no1').text('보기');
+			$('.list1').slideUp(500);
+		}
+		})
 		
-		$('.list1').slideDown(500);
-	})
-	$('.no2').click(function() {
-		$('.list2').toggle(500);
-	})
+		$('.no2').click(function() {
+		if($('.no2').text()=='보기'){
+			$('.no2').text('닫기');
+			$('.list2').slideDown(500);
+		}
+		else if($('.no2').text()=='닫기'){
+			$('.no2').text('보기');
+			$('.list2').slideUp(500);
+		}
+		})
 
 	$('.no3').click(function() {
-		$('.list3').toggle(500);
+		if($('.no3').text()=='보기'){
+			$('.no3').text('닫기');
+			$('.list3').slideDown(500);
+		}
+		else if($('.no3').text()=='닫기'){
+			$('.no3').text('보기');
+			$('.list3').slideUp(500);
+		}
+			
 	})
 
 
