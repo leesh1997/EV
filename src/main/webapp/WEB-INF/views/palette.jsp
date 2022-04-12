@@ -23,7 +23,7 @@
    display: flex;
    flex-direction: row;
    align-items: center;
-   justify-content: space-between;
+   justify-content: center;
    top: 0;
    /* width: max-content; */
    height: max-content;
@@ -97,7 +97,7 @@
 .block .block-description {
    display: table-cell;
    position: absolute;
-   left: 50% /*    margin: 42px 15px 5px 15px; */ 
+   margin: 42px 15px 5px 15px;
     padding: 10px;
    text-align: center;
    /* margin: 0px 10px 10px 0px; */
@@ -190,10 +190,8 @@
          let color_in = $(this).val('colors');
          document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
          
-         /* document.getElementById($(this)).setAttribute("value",color); */
          colorDiv = $(".chosen_colors");
          $(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-         /* colorList.push(color); */
          colorList = color;
          
          document.ge
@@ -202,103 +200,9 @@
          if (index >= colorDiv.length) {
             index = 0;
          }
-		$(".block").on("click", function() {
-			
-			let color = $(this).css('background-color');
-			
-			let color_in = $(this).val('colors');
-			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-			
-			/* document.getElementById($(this)).setAttribute("value",color); */
-			colorDiv = $(".chosen_colors");
-			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-			/* colorList.push(color); */
-			colorList = color;
-			
-			document.ge
-			console.log(colorList);
-			console.log()
-			if (index >= colorDiv.length) {
-				index = 0;
-			}
-		$(".block").on("click", function() {
-			
-			let color = $(this).css('background-color');
-			
-			let color_in = $(this).val('colors');
-			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-			
-			/* document.getElementById($(this)).setAttribute("value",color); */
-			colorDiv = $(".chosen_colors");
-			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-			/* colorList.push(color); */
-			colorList = color;
-			
-			document.ge
-			console.log(colorList);
-			console.log()
-			if (index >= colorDiv.length) {
-				index = 0;
-			}
-		$(".block").on("click", function() {
-			
-			let color = $(this).css('background-color');
-			
-			let color_in = $(this).val('colors');
-			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-			
-			/* document.getElementById($(this)).setAttribute("value",color); */
-			colorDiv = $(".chosen_colors");
-			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-			/* colorList.push(color); */
-			colorList = color;
-			
-			document.ge
-			console.log(colorList);
-			console.log()
-			if (index >= colorDiv.length) {
-				index = 0;
-			}
-		$(".block").on("click", function() {
-			
-			let color = $(this).css('background-color');
-			
-			let color_in = $(this).val('colors');
-			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-			
-			/* document.getElementById($(this)).setAttribute("value",color); */
-			colorDiv = $(".chosen_colors");
-			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-			/* colorList.push(color); */
-			colorList = color;
-			
-			document.ge
-			console.log(colorList);
-			console.log()
-			if (index >= colorDiv.length) {
-				index = 0;
-			}
-		$(".block").on("click", function() {
-			
-			let color = $(this).css('background-color');
-			
-			let color_in = $(this).val('colors');
-			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
-			
-			/* document.getElementById($(this)).setAttribute("value",color); */
-			colorDiv = $(".chosen_colors");
-			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-			/* colorList.push(color); */
-			colorList = color;
-			
-			document.ge
-			console.log(colorList);
-			console.log()
-			if (index >= colorDiv.length) {
-				index = 0;
-			}
 
-		})
-	</script>
+      })
+   </script>
 </body>
+
 </html>
