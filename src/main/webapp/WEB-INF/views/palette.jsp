@@ -80,14 +80,14 @@
 }
 
 .color_name {
-	vertical-align: middle;
 	text-align: center;
 	margin-top: 3vw;
-	font-size: 0.7em;
+	vertical-align: middle; font-size : 0.7em;
 	text-transform: uppercase;
 	line-height: 1.2em;
 	color: white;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	font-size: 0.7em;
 }
 
 .btn_create {
@@ -130,47 +130,39 @@
 		</div>
 		<div class="draft-details">
 			<a href="">
-				<div class="logo">
-					<!-- <img
-            src="/최종/img/ev_icon.png"
-            width="200"
-            height="auto"
-            alt="demo"
-            id="btn_goMain"
-          /> -->
-				</div>
+				<div class="logo"></div>
 			</a>
 			<form action="saveColors.do" method="post">
 				<div class="palette_colors">
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name" ></div>
+						<div class="color_name"></div>
 						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name" ></div>
+						<div class="color_name"></div>
 						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name" ></div>
+						<div class="color_name"></div>
 						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name" ></div>
+						<div class="color_name"></div>
 						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
 					</div>
 					<div class="chosen_colors" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name" ></div>
+						<div class="color_name"></div>
 						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
 					</div>
 
 
 					<div>
-						<button class="btn_empty">비우기</button>
+						<button class="btn_empty" type="button" onclick="">비우기</button>
 						<button class="btn_create" type="submit">팔레트 생성</button>
 					</div>
 				</div>
@@ -190,6 +182,8 @@
 		</div>
 	</div>
 	<script>
+		
+		
 		let index = 0;
 		var colorList = "";
 		function palette(data) {
@@ -198,6 +192,7 @@
 
 			var palette = $('.chosen_colors')
 		}
+		
 
 		$(".block").on(
 				"click",
@@ -228,6 +223,11 @@
 					}
 
 				})
+				
+		$(".btn_empty").on("click", function(){
+			$(".chosen_colors").css('background-color', "white");
+		})
+
 	</script>
 </body>
 

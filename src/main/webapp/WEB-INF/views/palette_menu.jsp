@@ -40,8 +40,8 @@ button {
 }
 
 .custom-btn {
-	width: 130px;
-	height: 40px;
+	width: 250px;
+	height: 80px;
 	padding: 10px 25px;
 	border: 2px solid #000;
 	font-family: "Lato", sans-serif;
@@ -51,6 +51,7 @@ button {
 	transition: all 0.3s ease;
 	position: relative;
 	display: inline-block;
+	
 }
 
 .menu {
@@ -94,9 +95,7 @@ button {
 	background-color: #000;
 }
 
-.menu_choice{
-	background-color: 000;
-}
+
 </style>
 </head>
 <body>
