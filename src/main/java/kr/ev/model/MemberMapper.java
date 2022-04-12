@@ -16,6 +16,10 @@ public interface MemberMapper {
 		return null;
 	}
 
+	public MemberVO nickCheck(String nick);
+
+	public MemberVO loginSelect(MemberVO vo);
+
 
 
 

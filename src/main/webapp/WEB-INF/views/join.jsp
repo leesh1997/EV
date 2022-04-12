@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Document</title>
-<script src="common-script.js"></script>
+<!-- <script src="common-script.js"></script> -->
 <link rel="stylesheet" href="resources/css/main.css" />
 <link rel="stylesheet" href="resources/css/join.css" />
 <script
@@ -50,14 +50,12 @@
 									<option value="icloud.com">icloud.com</option>
 									<option value="직접입력">직접입력</option>
 								</datalist> <input type="hidden" id="m_email" name="m_email" value=""
-								oninput="checkId()">
-								<button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button>
+								oninput="checkId()"> <!-- <button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button> -->
 							</td>
 						</tr>
 						<tr>
 							<td></td>
-							<td><p id="resultIdCheck" style="text-align: left;">테스트!</p>
-							</td>
+							<td><p id="idCheck" style="text-align: left;"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">비밀번호</td>
@@ -65,16 +63,15 @@
 								id="pw" class="join_input" size="20" maxlength="30"
 								height="120px" placeholder="비밀번호" /></td>
 						</tr>
-						 	<tr>
+						<tr>
 							<td class="join_title">비밀번호 확인</td>
-							<td class="join_input"><input type="password" 
-								id="checkpw" name="checkpw" class="join_input" onkeyup="passConfirm()" size="20" maxlength="30"
-								height="120px" placeholder="비밀번호 확인"/></td>
-						</tr> 
-							<tr>
+							<td class="join_input"><input type="password" id="checkpw"
+								name="checkpw" class="join_input" onkeyup="passConfirm()"
+								size="20" maxlength="30" height="120px" placeholder="비밀번호 확인" /></td>
+						</tr>
+						<tr>
 							<td></td>
-							<td><p id="resultpwCheck"   style="text-align: left;">테스트!</p>
-							</td>
+							<td><p id="pwCheck" style="text-align: left;"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">이름</td>
@@ -87,6 +84,10 @@
 							<td class="join_input"><input type="text" name="m_nick"
 								id="nick" class="join_input" size="20" maxlength="30"
 								height="120px" placeholder="닉네임" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><p id="nickCheck" style="text-align: left;"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">생년월일</td>
@@ -139,7 +140,8 @@
 		</form>
 	</section>
 	<script>
-		//이메일주소 가져오기
+		// 이메일주소 하나로 가져오기
+
 		$("#user_email").blur(function() {
 			email();
 		});
@@ -157,84 +159,29 @@
 			}
 		};
 
-		/* //  아이디와 비밀번호가 맞지 않을 경우 가입버튼 비활성화를 위한 변수설정
-		 var idCheck = 0;
-		 var pwdCheck = 0;
-		 //아이디 체크하여 가입버튼 비활성화, 중복확인.
-		 function checkId() {
-		 var inputed = $('.id').val();
-		 $.ajax({
-		 data : {
-		 id : inputed
-		 },
-		 url : "checkId.ev",
-		 success : function(data) {
-		 if(inputed=="" && data=='0') {
-		 $(".signupbtn").prop("disabled", true);
-		 $(".signupbtn").css("background-color", "#aaaaaa");
-		 $(".join_input").css("background-color", "#FFCECE");
-		 idCheck = 0;
-		 } else if (data == '0') {
-		 $(".join_input").css("background-color", "#B0F6AC");
-		 idCheck = 1;
-		 if(idCheck==1 && pwdCheck == 1) {
-		 $(".signupbtn").prop("disabled", false);
-		 $(".signupbtn").css("background-color", "#4CAF50");
-		 signupCheck();
-		 } 
-		 } else if (data == '1') {
-		 $(".signupbtn").prop("disabled", true);
-		 $(".signupbtn").css("background-color", "#aaaaaa");
-		 $(".join_input").css("background-color", "#FFCECE");
-		 idCheck = 0;
-		 } 
-		 }
-		 });
-		 } */
-
-		/*     $('#join_input').keyup(function(){
-		 let memberid=$('#input_id').val();
-		 $.ajax({
-		 url : "idCheck.do",
-		 type: "post",
-		 data : {memberid : memberid},
-		 dataType : 'json',
-		 success : function(result){
-		 if(result==0){
-		 $("#checkId").html('사용불가');
-		 $("#checkId").attr('color', 'red');
-		 } else {
-		 $("#checkId").html('사용가능');
-		 $("#checkId").attr('color', 'green');
-		 }
-		 },
-		 error : function(){
-		 alert("서버요청실패");
-		 }
-		 })
-		 })
-		
-		 */
-		//중복체크 버튼 눌렀을때 console에 버튼눌림 이라는 글씨 출력(jquery 사용)
-		$('#idCheck').on('click', function() {
+		// 아이디 중복체크
+		$(email).keyup(function() {
 
 			var id = $('#m_email').val();
-			// val() -> 제이쿼리에서 value
 
-			$.ajax({
+			if (id == "") {
+				console(id);
+			} else {
+				$.ajax({
 
-				url : "idCheck.do",
-				type : "POST",
-				dataType : "JSON",
-				data : {
-					"id" : id
-				},
-				success : resultJson,
-				error : function(e) {
-					console.log(e);
-				}
+					url : "idCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"id" : id
+					},
+					success : resultJson,
+					error : function(e) {
+						console.log(e);
+					}
 
-			});
+				});
+			}
 
 		});
 
@@ -244,37 +191,72 @@
 			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
 			if (data.m_email == undefined) {
 				// 사용 가능
-				console.log(data.id)
-				$('#resultIdCheck').text('사용 가능한 아이디 입니다.');
-				$('#resultIdCheck').css('color', 'skyblue');
-
+				$('#idCheck').html('사용 가능한 아이디 입니다.');
+				$('#idCheck').css('color', 'skyblue');
+				console.log(data.m_email)
 			} else {
 				// 사용 불가능
-				$('#resultIdCheck').text('이미 등록된 아이디 입니다.');
-				$('#resultIdCheck').css('color', 'red');
+				$('#idCheck').html('이미 등록된 아이디 입니다.');
+				$('#idCheck').css('color', 'red');
+			}
+		};
+
+		// 비밀번호 일치 확인
+		$("#pw, #checkpw").on("change", function() {
+			var password = $('#pw').val();
+			var passwordcheck = $('#checkpw').val();
+			if (password != passwordcheck) {
+				$('#pwCheck').text('비밀번호가 불일치합니다.')
+				$('#pwCheck').css('color', 'red');
+
+			} else {
+				$('#pwCheck').text('비밀번호가 일치합니다.')
+				$('#pwCheck').css('color', 'skyblue');
 
 			}
-		}
-		
-		function passConfirm() {
-			/* 비밀번호, 비밀번호 확인 입력창에 입력된 값을 비교해서 같다면 비밀번호 일치, 그렇지 않으면 불일치 라는 텍스트 출력.*/
-			/* document : 현재 문서를 의미함. 작성되고 있는 문서를 뜻함. */
-			/* getElementByID('아이디') : 아이디에 적힌 값을 가진 id의 value를 get을 해서 password 변수 넣기 */
-				var password = document.getElementById('pw');					//비밀번호 
-				var passwordConfirm = document.getElementById('checkpw');	//비밀번호 확인 값
-				var confrimMsg = document.getElementById('resultpwCheck');				//확인 메세지
-				var correctColor = "#00ff00";	//맞았을 때 출력되는 색깔.
-				var wrongColor ="#ff0000";	//틀렸을 때 출력되는 색깔
-				
-				if(password.value == passwordConfirm.value){//password 변수의 값과 passwordConfirm 변수의 값과 동일하다.
-					confirmMsg.style.color = correctColor;/* span 태그의 ID(confirmMsg) 사용  */
-					confirmMsg.innerHTML ="비밀번호 일치";/* innerHTML : HTML 내부에 추가적인 내용을 넣을 때 사용하는 것. */
-				}else{
-					confirmMsg.style.color = wrongColor;
-					confirmMsg.innerHTML ="비밀번호 불일치";
-				}
+		});
+
+		// 닉네임 중복체크
+		$(nick).keyup(function() {
+
+			var nick = $('#m_nick').val();
+
+			if (nick == "") {
+				console(nick);
+			} else {
+				$.ajax({
+
+					url : "nickCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"nick" : nick
+					},
+					success : resultJson2,
+					error : function(e) {
+						console.log(e);
+					}
+
+				});
 			}
-		
+
+		});
+
+		function resultJson2(data) {
+			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+			// 이미 존재하는 아이디 입니다 글자를
+			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+			if (data.m_nick == undefined) {
+				// 사용 가능
+				$('#nickCheck').html('사용 가능한 닉네임 입니다.');
+				$('#nickCheck').css('color', 'skyblue');
+				console.log(data.m_nick)
+			} else {
+				// 사용 불가능
+				$('#nickCheck').html('이미 등록된 닉네임 입니다.');
+				$('#nickCheck').css('color', 'red');
+			}
+		};
 	</script>
 
 
