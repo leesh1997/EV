@@ -9,5 +9,4 @@ public interface VideoMapper {
 
 	public List<VideoVO> video();
 	
-	
 }
