@@ -49,7 +49,7 @@ button.updown{
 	margin-bottom: 20px;
 }
 .lis{
-	
+	display: block;
 }
 @media (max-width: 768px){
 	.main-content{
@@ -60,4 +60,26 @@ button.updown{
 	background-color: white;
 	border: none;
 	border-radius: 5%;
+}
+.colore_list{
+	position: relative;
+	display: inline-block;
+}
+.delete{
+	float:right;
+}
+.jjim_img{
+	width: 20vw;
+	height: auto
+}
+.eeun-ae{
+	display: inline;
+	position: relative;
+}
+.jjim_img_list{
+	width: max-content;
+	height: max-content;
+}
+.jjim_text_list{
+	width: auto;
 }

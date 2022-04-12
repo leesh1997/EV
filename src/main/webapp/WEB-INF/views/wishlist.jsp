@@ -20,33 +20,17 @@
 		<div class="list_box">
 		<div class="title">색상 리스트<button class="no1 updown">보기</button></div>
 		<div class="title list1 lis">
+			<div class="color_list">
+				응애..
+			</div>
 			<div>
-				색상!
+			에?
 			</div>
-				<div>
-				색상!
-			</div>
-				<div>
-				색상!
-			</div>
-				<div>
-				색상!
+		
+			<div class="delete">
+				삭제
 			</div>
 			
-				<div>
-				색상!
-			</div>
-				<div>
-				색상!
-			</div>
-				<div>
-				색상!
-			</div>
-				<div>
-				색상!
-			</div>
-		
-		
 		</div>
 		</div>
 		<div class="list_box">
@@ -55,7 +39,12 @@
 		</div>
 		<div class="list_box">
 		<div class="title">가구<button class="no3 updown">보기</button></div>
-		<div class="title list3 lis">6</div>
+		<div class="title list3 lis">
+			<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+			<div class= "jjim_text_list">텍스트가들어갑니다?</div>
+			</div>
+		</div>
 		</div>
 	<!-- 	
 		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
@@ -70,8 +59,7 @@
 	})
 	$('.no1').click(function() {
 		
-		$('.list1').toggle(500);
-
+		$('.list1').slideDown(500);
 	})
 	$('.no2').click(function() {
 		$('.list2').toggle(500);
