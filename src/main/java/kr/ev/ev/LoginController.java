@@ -44,12 +44,12 @@ public class LoginController {
 	// 아이디 중복체크
 	@RequestMapping("/idCheck.do")
 	public @ResponseBody MemberVO idCheck(String id) {
-		System.out.println(id);
+		/* System.out.println(id); */
 		MemberVO vo = mapper.idCheck(id);
 		if (vo == null) {
 			vo = new MemberVO();
 		}
-		System.out.println(vo);
+		/* System.out.println(vo); */
 		return vo;
 	}
 

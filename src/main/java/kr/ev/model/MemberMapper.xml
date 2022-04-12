@@ -25,5 +25,7 @@
 		resultType="kr.ev.model.MemberVO">
 		select * from t_member where m_email=#{m_email} and m_pw= #{m_pw}
 	</select>
+	
+	
 
 </mapper> 

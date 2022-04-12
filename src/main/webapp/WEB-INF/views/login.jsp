@@ -17,8 +17,26 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>로그인</title>
+<link rel="icon" href="img/ev_icon.png" />	
 
 <style>
+.form-control {
+	width: 400px;
+	height: 60px;
+	margin-top: 10px;
+	font-size: 18px;
+}
+
+.join_btn {
+	width: 400px;
+	height: 60px;
+	font-size: 18px;
+	color: white;
+	font-weight: bold; 
+	 margin-top:20px;
+	background-color: #7f7f7f;
+}
 </style>
 </head>
 <body>

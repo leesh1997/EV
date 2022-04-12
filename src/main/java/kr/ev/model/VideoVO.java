@@ -18,5 +18,6 @@ public class VideoVO {
 	private String v_channel;
 	private String v_upload_dt;
 	private String m_email;
+	private String v_img;
 	
 }
