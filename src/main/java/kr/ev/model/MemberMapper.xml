@@ -20,12 +20,15 @@
 		SELECT * FROM t_member WHERE m_nick=#{nick}
 	</select>
 
-	<!-- 로그인 성공 -->
+	<!-- 로그인  -->
 	<select id="loginSelect" parameterType="kr.ev.model.MemberVO"
 		resultType="kr.ev.model.MemberVO">
 		select * from t_member where m_email=#{m_email} and m_pw= #{m_pw}
 	</select>
 	
-	
+	<!-- 로그인 체크 -->
+	<select id="loginCheck" parameterType="kr.ev.model.MemberVO"  resultType="kr.ev.model.MemberVO">
+		select * from t_member where m_email=#{m_email} and m_pw= #{m_pw}
+	</select>
 
 </mapper> 

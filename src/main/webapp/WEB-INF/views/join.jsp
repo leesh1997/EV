@@ -9,9 +9,12 @@
 <title>Document</title>
 <!-- <script src="common-script.js"></script> -->
 <link rel="stylesheet" href="resources/css/main.css" />
-<link rel="stylesheet" href="resources/css/join.css" />
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+	rel="stylesheet">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <title>회원가입</title>
 <link rel="icon" href="img/ev_icon.png" />
 
@@ -38,14 +41,113 @@ input.gender {
 	font-weight: bold;
 }
 
-.join_btn {
-	width: 450px;
+/*  .join_btn {
+  width: 450px;
 	height: 60px;
 	font-size: 18px;
 	color: white;
 	font-weight: bold;
 	text-align: center;
-	background-color: #7f7f7f;
+	background-color: #7f7f7f; 
+} */
+//
+회원가입 버튼
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Box colors */
+.bg-1 {
+	color: #37474f;
+}
+
+/* Common button styles */
+.button {
+	min-width: 150px;
+	max-width: 250px;
+	display: block;
+	margin: auto;
+	padding: 1em 2em;
+	border: none;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: bold;
+	width: 300px;
+	height: 50px;
+	font-size: 15px
+}
+
+.bg-1 .button {
+	color: #37474f;
+	border-color: #37474f;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button>span {
+	vertical-align: middle;
+}
+/* Wapasha */
+.button.button--wapasha {
+	background: #37474f;
+	color: #fff;
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.button--wapasha.button--inverted {
+	background: #fff;
+	color: #37474f;
+}
+
+.button--wapasha::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #3f51b5;
+	z-index: -1;
+	border-radius: inherit;
+	opacity: 0;
+	-webkit-transform: scale3d(0.6, 0.6, 1);
+	transform: scale3d(0.6, 0.6, 1);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--wapasha.button--inverted::before {
+	border-color: #7986cb;
+}
+
+.button--wapasha:hover {
+	background-color: #fff;
+	color: #3f51b5;
+}
+
+.button--wapasha.button--inverted:hover {
+	background-color: #37474f;
+	color: #7986cb;
+}
+
+.button--wapasha:hover::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	opacity: 1;
+}
+
+.button--round-s {
+	border-radius: 5px;
 }
 </style>
 </head>
@@ -165,136 +267,148 @@ input.gender {
 						</tr>
 					</table>
 					<hr style="opacity: 0.5;">
-					<button type="submit" class="join_btn">회원가입</button>
-					<p style="text-align: center; font-weight: bold;">
-						이미 아이디가 있으신가요? <a href=login.do><u> 로그인</u></a>
-					</p>
+					<!-- 					<button type="submit" class="join_btn">회원가입</button>
+ -->
+					<div class="box bg-1">
+						<p>
+							<button class="button button--wapasha button--round-s"
+								type="submit" style="text-align: center;">회원가입</button>
+						</p>
+					</div>
+
+					<div>
+						<p style="text-align: center; font-weight: bold;">
+							이미 아이디가 있으신가요? <a href=login.do><u> 로그인</u></a>
+						</p>
+					</div>
+
 
 				</div>
 			</div>
 		</form>
 	</section>
-	<script>
-	
-		// 이메일주소 하나로 가져오기
-		$("#user_email").blur(function() {
-			email();
-		});
 
-		$("#email_address").change(function() {
-			email();
-		});
+		<script>
+			// 이메일주소 하나로 가져오기
+			$("#user_email").blur(function() {
+				email();
+			});
 
-		function email() {
-			const email = $("#user_email").val();
-			const middle = $("#middle").text();
-			const address = $("#email_address").val();
-			if (email != "" && address != "") {
-				$("#m_email").val(email + middle + address);
-			}
-		};
+			$("#email_address").change(function() {
+				email();
+			});
 
-		// 아이디 중복체크
-		$(email).keyup(function() {
+			function email() {
+				const email = $("#user_email").val();
+				const middle = $("#middle").text();
+				const address = $("#email_address").val();
+				if (email != "" && address != "") {
+					$("#m_email").val(email + middle + address);
+				}
+			};
 
-			var id = $('#m_email').val();
+			// 아이디 중복체크
+			$(email).keyup(function() {
 
-			if (id == "") {
-				console(id);
-			} else {
-				$.ajax({
+				var id = $('#m_email').val();
 
-					url : "idCheck.do",
-					type : "POST",
-					dataType : "JSON",
-					data : {
-						"id" : id
-					},
-					success : resultJson,
-					error : function(e) {
-						console.log(e);
-					}
+				if (id == "") {
+					console(id);
+				} else {
+					$.ajax({
 
-				});
-			}
+						url : "idCheck.do",
+						type : "POST",
+						dataType : "JSON",
+						data : {
+							"id" : id
+						},
+						success : resultJson,
+						error : function(e) {
+							console.log(e);
+						}
 
-		});
+					});
+				}
 
-		function resultJson(data) {
-			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
-			// 이미 존재하는 아이디 입니다 글자를
-			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
-			if (data.m_email == undefined) {
-				// 사용 가능
-				$('#idCheck').html('사용 가능한 아이디 입니다.');
-				$('#idCheck').css('color', '#6999e5');
-				console.log(data.m_email)
-			} else {
-				// 사용 불가능
-				$('#idCheck').html('이미 등록된 아이디 입니다.');
-				$('#idCheck').css('color', '#ef8183');
-			}
-		};
+			});
 
-		// 비밀번호 일치 확인
-		$("#pw, #checkpw").on("change", function() {
-			var password = $('#pw').val();
-			var passwordcheck = $('#checkpw').val();
-			if (password != passwordcheck) {
-				$('#pwCheck').text('비밀번호가 불일치합니다.')
-				$('#pwCheck').css('color', '#ef8183');
+			function resultJson(data) {
+				// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+				// 이미 존재하는 아이디 입니다 글자를
+				// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+				if (data.m_email == undefined) {
+					// 사용 가능
+					$('#idCheck').html('사용 가능한 아이디 입니다.');
+					$('#idCheck').css('color', '#6999e5');
+					console.log(data.m_email)
+				} else {
+					// 사용 불가능
+					$('#idCheck').html('이미 등록된 아이디 입니다.');
+					$('#idCheck').css('color', '#ef8183');
+				}
+			};
 
-			} else {
-				$('#pwCheck').text('비밀번호가 일치합니다.')
-				$('#pwCheck').css('color', '#6999e5');
+			
+			// 비밀번호 일치 확인
+			$("#pw, #checkpw").on("change", function() {
+				var password = $('#pw').val();
+				var passwordcheck = $('#checkpw').val();
+				if (password != passwordcheck) {
+					$('#pwCheck').text('비밀번호가 불일치합니다.')
+					$('#pwCheck').css('color', '#ef8183');
 
-			}
-		});
+				} else {
+					$('#pwCheck').text('비밀번호가 일치합니다.')
+					$('#pwCheck').css('color', '#6999e5');
 
-		// 닉네임 중복체크
-		$(nick).keyup(function() {
+				}
+			});
 
-			var nick = $('#nick').val();
+			// 닉네임 중복체크
+			$(nick).keyup(function() {
 
-			if (nick == "") {
-				console(nick);
-			} else {
-				$.ajax({
+				var nick = $('#nick').val();
 
-					url : "nickCheck.do",
-					type : "POST",
-					dataType : "JSON",
-					data : {
-						"nick" : nick
-					},
-					success : resultJson2,
-					error : function(e) {
-						console.log(e);
-					}
+				if (nick == "") {
+					console(nick);
+				} else {
+					$.ajax({
 
-				});
-			}
+						url : "nickCheck.do",
+						type : "POST",
+						dataType : "JSON",
+						data : {
+							"nick" : nick
+						},
+						success : resultJson2,
+						error : function(e) {
+							console.log(e);
+						}
 
-		});
+					});
+				}
 
-		function resultJson2(data) {
-			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
-			// 이미 존재하는 아이디 입니다 글자를
-			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
-			if (data.m_nick == undefined) {
-				// 사용 가능
-				$('#nickCheck').html('사용 가능한 닉네임 입니다.');
-				$('#nickCheck').css('color', '#6999e5');
-				console.log(data.m_nick)
-			} else {
-				// 사용 불가능
-				$('#nickCheck').html('이미 등록된 닉네임 입니다.');
-				$('#nickCheck').css('color', '#ef8183');
-			}
-		};
-	</script>
+			});
 
+			function resultJson2(data) {
+				// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+				// 이미 존재하는 아이디 입니다 글자를
+				// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+				if (data.m_nick == undefined) {
+					// 사용 가능
+					$('#nickCheck').html('사용 가능한 닉네임 입니다.');
+					$('#nickCheck').css('color', '#6999e5');
+					console.log(data.m_nick)
+				} else {
+					// 사용 불가능
+					$('#nickCheck').html('이미 등록된 닉네임 입니다.');
+					$('#nickCheck').css('color', '#ef8183');
+				}
+			};
 
+			
+		</script>
 
 </body>
 </html>
