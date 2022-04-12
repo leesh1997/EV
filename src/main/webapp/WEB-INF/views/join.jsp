@@ -12,8 +12,41 @@
 <link rel="stylesheet" href="resources/css/join.css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<title>회원가입</title>
+<link rel="icon" href="img/ev_icon.png" />
 
 <style>
+input, #ftype {
+	width: 320px;
+	height: 30px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	border: 1px solid #d1d1d1;
+	border-radius: 5%;
+}
+
+input.gender {
+	width: 15px;
+	height: 15px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+}
+
+.join_title {
+	font-weight: bold;
+}
+
+.join_btn {
+	width: 450px;
+	height: 60px;
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	background-color: #7f7f7f;
+}
 </style>
 </head>
 <body>
@@ -55,7 +88,8 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><p id="idCheck" style="text-align: left;"></p></td>
+							<td><p id="idCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">비밀번호</td>
@@ -71,7 +105,8 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><p id="pwCheck" style="text-align: left;"></p></td>
+							<td><p id="pwCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">이름</td>
@@ -87,7 +122,8 @@
 						</tr>
 						<tr>
 							<td></td>
-							<td><p id="nickCheck" style="text-align: left;"></p></td>
+							<td><p id="nickCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
 						</tr>
 						<tr>
 							<td class="join_title">생년월일</td>
@@ -129,8 +165,7 @@
 						</tr>
 					</table>
 					<hr style="opacity: 0.5;">
-					<button type="submit" class="join_btn"
-						style="width: 450px; height: 60px; font-size: 18px; color: white; font-weight: bold; text-align: center; background-color: #7f7f7f;">회원가입</button>
+					<button type="submit" class="join_btn">회원가입</button>
 					<p style="text-align: center; font-weight: bold;">
 						이미 아이디가 있으신가요? <a href=login.do><u> 로그인</u></a>
 					</p>
@@ -140,8 +175,8 @@
 		</form>
 	</section>
 	<script>
+	
 		// 이메일주소 하나로 가져오기
-
 		$("#user_email").blur(function() {
 			email();
 		});
@@ -192,12 +227,12 @@
 			if (data.m_email == undefined) {
 				// 사용 가능
 				$('#idCheck').html('사용 가능한 아이디 입니다.');
-				$('#idCheck').css('color', 'skyblue');
+				$('#idCheck').css('color', '#6999e5');
 				console.log(data.m_email)
 			} else {
 				// 사용 불가능
 				$('#idCheck').html('이미 등록된 아이디 입니다.');
-				$('#idCheck').css('color', 'red');
+				$('#idCheck').css('color', '#ef8183');
 			}
 		};
 
@@ -207,11 +242,11 @@
 			var passwordcheck = $('#checkpw').val();
 			if (password != passwordcheck) {
 				$('#pwCheck').text('비밀번호가 불일치합니다.')
-				$('#pwCheck').css('color', 'red');
+				$('#pwCheck').css('color', '#ef8183');
 
 			} else {
 				$('#pwCheck').text('비밀번호가 일치합니다.')
-				$('#pwCheck').css('color', 'skyblue');
+				$('#pwCheck').css('color', '#6999e5');
 
 			}
 		});
@@ -219,7 +254,7 @@
 		// 닉네임 중복체크
 		$(nick).keyup(function() {
 
-			var nick = $('#m_nick').val();
+			var nick = $('#nick').val();
 
 			if (nick == "") {
 				console(nick);
@@ -249,12 +284,12 @@
 			if (data.m_nick == undefined) {
 				// 사용 가능
 				$('#nickCheck').html('사용 가능한 닉네임 입니다.');
-				$('#nickCheck').css('color', 'skyblue');
+				$('#nickCheck').css('color', '#6999e5');
 				console.log(data.m_nick)
 			} else {
 				// 사용 불가능
 				$('#nickCheck').html('이미 등록된 닉네임 입니다.');
-				$('#nickCheck').css('color', 'red');
+				$('#nickCheck').css('color', '#ef8183');
 			}
 		};
 	</script>
