@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
+
 
 <style>
  
@@ -89,7 +91,7 @@ display: inline;
 
 
 <div>
-		<c:forEach var="vd" items="${list}" begin="1" end="20">
+		<c:forEach var="vd" items="${list}" begin="1" end="5">
 
 		<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
 		    <a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
@@ -101,6 +103,25 @@ display: inline;
 		
 		</div>	
 		</c:forEach>
+		
+		<div style="display: block; text-align: center;">		
+		<c:if test="${paging.startPage != 1 }">
+			<a href="/boardList?nowPage=${paging.startPage - 1 }&cntPerPage=${paging.cntPerPage}">&lt;</a>
+		</c:if>
+		<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="p">
+			<c:choose>
+				<c:when test="${p == paging.nowPage }">
+					<b>${p }</b>
+				</c:when>
+				<c:when test="${p != paging.nowPage }">
+					<a href="/boardList?nowPage=${p }&cntPerPage=${paging.cntPerPage}">${p }</a>
+				</c:when>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${paging.endPage != paging.lastPage}">
+			<a href="/boardList?nowPage=${paging.endPage+1 }&cntPerPage=${paging.cntPerPage}">&gt;</a>
+		</c:if>
+	</div>
 		
 </div>
 
@@ -115,7 +136,10 @@ $(".video_modal_popup-closer").click(function() {
     $(".video_modal_popup").removeClass("reveal")
 });
 
-
+function selChange() {
+	var sel = document.getElementById('cntPerPage').value;
+	location.href="video?nowPage=${paging.nowPage}&cntPerPage="+sel;
+}
 
 
 

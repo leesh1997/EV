@@ -18,15 +18,15 @@ public class VideoController {
 	@Inject
 	private VideoMapper mapper;
 	
-
 	@RequestMapping("video.do")
 	public String MainSelect(Model model) {
+		
 		System.out.println("영상 페이지 접근");
+
 		List<VideoVO> list = mapper.video();
 		model.addAttribute("list",list);
-		System.out.println(list.get(1).getV_url());
+		//System.out.println(list.get(1).getV_url());
 		
 		return "video";
 	}
-	
 }

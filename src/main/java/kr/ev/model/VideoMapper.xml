@@ -3,8 +3,16 @@
 <mapper namespace="kr.ev.model.VideoMapper">
     
     <select id="video" resultType="kr.ev.model.VideoVO">
-        select * from t_video order by v_seq DESC
+        select * from t_video 
+        order by v_seq DESC
+       
     </select>
     
+	    <!-- 총 게시글 갯수 출력 -->
+	<select id="countBoard" resultType="int">
+		SELECT COUNT(*) FROM t_video
+	</select>
+	
+	
     
 </mapper>
