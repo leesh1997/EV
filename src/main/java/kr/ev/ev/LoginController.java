@@ -67,19 +67,38 @@ public class LoginController {
 	
 	// 로그인
 	  @RequestMapping("/loginSelect.do")
-	   public String loginSelect(MemberVO vo, HttpSession session) {
+	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw) {
+		  System.out.println(id);
+		  System.out.println(pw);
+		  vo.setM_email(id);;
+		  vo.setM_pw(pw);;
 		   MemberVO info = mapper.loginSelect(vo);
+		   System.out.println(vo);
 		   // MemberVO info에 모든 정보 들어있음
 		   
 		   if(info!=null) {
 			   session.setAttribute("info", info);
+			   System.out.println(info.toString());
+			   return "redirect:/main.do";
+		   }
+		   else {
+			   return "login.do";
+			   
 		   }
 		   //info 잘 들어왔는지 확인
-		   System.out.println(info.toString());
-		   return "redirect:/main.do";
+		   
 		   
 	   }
 	
-	
+	// 로그인 체크
+	  @RequestMapping("/loginCheck.do")
+	  public @ResponseBody MemberVO loginCheck(String loginCheck) {
+			MemberVO vo = mapper.loginCheck(loginCheck);
+			if (vo == null) {
+				vo = new MemberVO();
+			}
+			System.out.println(vo);
+			return vo;
+		}
 	
 }

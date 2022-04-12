@@ -28,7 +28,7 @@
 	font-size: 18px;
 }
 
-.join_btn {
+.login_btn {
 	width: 400px;
 	height: 60px;
 	font-size: 18px;
@@ -64,17 +64,17 @@
 						<tr>
 							<td class="login_title" name="id"></td>
 							<td class="login_input"><input class="form-control"
-								type="text" name="id" placeholder="아이디를 입력하세요."></td>
+								type="text" name="id" id="id"  placeholder="아이디를 입력하세요."></td>
 						</tr>
 						<tr>
 							<td class="login_title"></td>
 							<td class="login_input"><input class="form-control"
-								type="password" name="pw" placeholder="비밀번호를 입력하세요.">
+								type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
 							</td>
 						</tr>	
 						<tr >
 							<td colspan="2" style="margin-top: 50px;">
-							<button type="submit" class="join_btn"
+							<button type="submit" class="login_btn"
 						>로그인</button></td>
 						</tr>
 					</table>
@@ -88,7 +88,49 @@
 				</div>
 			</form>
 	</section>
+<script type="text/javascript">
+$('#login_btn').click(function() {
+	 
+    var mid = $('#id').val();
 
+    var psw = $('#pw').val();
+
+    $.ajax({
+
+        type : "POST",
+
+        url : "loginCheck.do",
+
+        data : "mid=" + mid + "&psw=" + psw,
+
+        dataType : "text",
+
+        success : function(data, textStatus, xhr) {
+
+           if (data == 'loginFail') {
+				consol.log("실패")
+                alert('로그인에 실패하였습니다.')
+                
+
+            } else {
+
+                window.location.href = 'main.do';
+
+            }
+
+        },
+
+        error : function(request, status, error) {
+
+            alert("code:" + request.status + "\n" + "error:" + error);
+
+        }
+
+    })
+
+});
+
+</script>
 	
 </body>
 </html>

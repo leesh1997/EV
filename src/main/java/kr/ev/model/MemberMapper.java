@@ -20,6 +20,8 @@ public interface MemberMapper {
 
 	public MemberVO loginSelect(MemberVO vo);
 
+	public MemberVO loginCheck(String loginCheck);
+
 
 
 
