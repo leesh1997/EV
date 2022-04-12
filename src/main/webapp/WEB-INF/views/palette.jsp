@@ -202,8 +202,103 @@
          if (index >= colorDiv.length) {
             index = 0;
          }
+		$(".block").on("click", function() {
+			
+			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			
+			document.ge
+			console.log(colorList);
+			console.log()
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
+		$(".block").on("click", function() {
+			
+			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			
+			document.ge
+			console.log(colorList);
+			console.log()
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
+		$(".block").on("click", function() {
+			
+			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			
+			document.ge
+			console.log(colorList);
+			console.log()
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
+		$(".block").on("click", function() {
+			
+			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			
+			document.ge
+			console.log(colorList);
+			console.log()
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
+		$(".block").on("click", function() {
+			
+			let color = $(this).css('background-color');
+			
+			let color_in = $(this).val('colors');
+			document.getElementById("pl_c"+(index+1)).setAttribute("value",color);
+			
+			/* document.getElementById($(this)).setAttribute("value",color); */
+			colorDiv = $(".chosen_colors");
+			$(colorDiv[index++]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+			/* colorList.push(color); */
+			colorList = color;
+			
+			document.ge
+			console.log(colorList);
+			console.log()
+			if (index >= colorDiv.length) {
+				index = 0;
+			}
 
-      })
-   </script>
+		})
+	</script>
 </body>
 </html>
