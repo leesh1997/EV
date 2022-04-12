@@ -64,6 +64,7 @@
    margin: 1vw;
    border: 10px solid #fff;
    cursor: pointer;
+   justify-content: center;
    border-radius: 50%;
    transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
@@ -96,11 +97,9 @@
 
 .block .block-description {
    display: table-cell;
-   position: absolute;
-   margin: 42px 15px 5px 15px;
-    padding: 10px;
+   position: relative;
+   vertical-align: middle;
    text-align: center;
-   /* margin: 0px 10px 10px 0px; */
    width: 100% color: #02142b;
    font-size: 0.7em;
    text-transform: uppercase;
@@ -167,7 +166,7 @@
          <c:forEach var="color" items="${list}" varStatus="i">
             <div class="block" data-index="${color.c_seq}" onClick=""
                style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
-               <span class="block-description">${color.c_name}</span>
+               <div class="block-description">${color.c_name}</div>
             </div>
          </c:forEach>
 
