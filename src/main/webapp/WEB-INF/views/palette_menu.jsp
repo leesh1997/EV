@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,57 +18,85 @@
       .menu_choice {
         margin-top: 300px;
       }
+
+      .frame {
+        width: 90%;
+        margin: 40px auto;
+        text-align: center;
+      }
+      button {
+        margin: 20px;
+        outline: none;
+      }
+      .custom-btn {
+        width: 130px;
+        height: 40px;
+        padding: 10px 25px;
+        border: 2px solid #000;
+        font-family: "Lato", sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+      }
+
       .menu {
         background: #000;
         color: #fff;
         line-height: 42px;
         padding: 0;
         border: none;
+        z-index: 1;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
       }
+
       .menu:hover {
         background: transparent;
         color: #000;
-        box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
-          7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
       }
-      .menu:before,
-      .menu:after {
-        content: "";
+
+      #menu:before,
+      #menu:after {
         position: absolute;
-        top: 0;
-        right: 0;
-        height: 2px;
-        width: 0;
-        background: #000;
-        transition: 400ms ease all;
-      }
-      .menu:after {
-        right: inherit;
-        top: inherit;
+        content: "";
         left: 0;
+        width: 100%;
+        height: 50%;
+        right: 0;
+        z-index: -1;
+        background: #000;
+        transition: all 0.3s ease;
+      }
+
+      .menu:before {
+        top: 0;
+      }
+
+      .menu:after {
         bottom: 0;
       }
+
       .menu:hover:before,
       .menu:hover:after {
-        width: 100%;
-        transition: 800ms ease all;
+        height: 0;
+        background-color: #000;
       }
     </style>
   </head>
   <body>
-  <jsp:include page="side_topbar.jsp"></jsp:include>
-    <div class="header">
+    <div class="header">	
       <h1>My palette</h1>
     </div>
     <div class="menu_wrap">
       <div class="menu_choice">
-        <button class="menu">나만의 팔레트 만들기</button>
+        <a href="palette.do"><button class="custom-btn menu">나만의 팔레트 만들기</button></a>
       </div>
       <div class="menu_choice">
-        <button class="menu">추천 팔레트 고르기</button>
+        <a href="paletteRecommend.do"><button class="custom-btn menu">추천 팔레트 고르기</button></a>
       </div>
     </div>
   </body>
-</html>
-</body>
 </html>

@@ -104,7 +104,7 @@
    font-size: 0.7em;
    text-transform: uppercase;
    line-height: 1.2em;
-   color: #f1f5fc;
+   color: white;
    transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 </style>

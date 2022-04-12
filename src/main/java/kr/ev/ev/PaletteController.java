@@ -38,7 +38,10 @@ public class PaletteController {
 		return "redirect:/palette.do";
 	}
 	
-	
+	@RequestMapping("/palette_menu.do")
+	public void createPalette(Model model) {
+
+	}
 }
 
 
