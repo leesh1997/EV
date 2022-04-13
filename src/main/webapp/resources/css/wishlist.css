@@ -46,7 +46,7 @@ button.delete{
 	float: right;
 	border: none;
 	background-color: white;
-	margin-right: 5px;
+	margin-right: 10px;
 }
 button.updown{
 	float: right;
@@ -82,6 +82,7 @@ button.updown{
 .delete{
 	float:right;
 }
+
 .jjim_img{
 	width: 20vw;
 	height: auto
@@ -100,4 +101,40 @@ button.updown{
 .jjim_text_list{
 	
 	width: auto;
+}
+.palette{
+	width: 8vw;
+	height: 8vw;
+	border-radius:50%; 	
+	margin-right: 10px;
+	
+}
+.inpalette{
+	margin-top:5px;
+	margin-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+	
+}
+.palette-name{
+	margin-top: 5px;
+}
+.point{
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+input[type='checkbox']{
+	margin-top: 3vw;
+	padding-right: 20px;
+}
+@media (max-width : 768px){
+	.main-content{
+	 width:100vw;
+	 }
+	 .title{
+	 width: 95%;
+	 margin-left: 0;
+	 }
 }
