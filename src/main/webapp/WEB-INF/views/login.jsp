@@ -79,7 +79,7 @@
 						</tr>
 					</table>
 					<br>
-					<p style="text-align: center; font-weight: bold; 
+					<p style="text-align: center; font-weight: bold;font-size: 15px; 
 					">
 						아직 회원이 아니신가요? <a href=join.do><u> 회원가입</u></a>
 					</p>
