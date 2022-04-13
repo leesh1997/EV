@@ -90,7 +90,7 @@ public class LoginController {
 		         PrintWriter out;
 		         try {
 		            out = response.getWriter();
-		            out.print("<script>alert('로그인 정보를 확인해주세요'); history.go(-1);");
+		            out.print("<script>alert('아이디, 비밀번호를 정확히 입력해 주세요.'); history.go(-1);");
 		            out.print("</script>");
 		            out.flush();
 		         } catch (IOException e) {

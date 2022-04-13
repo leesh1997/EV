@@ -64,7 +64,7 @@ input.gender {
 /* Common button styles */
 .button {
 	min-width: 150px;
-	max-width: 250px;
+	/* max-width: 250px; */
 	display: block;
 	margin: auto;
 	padding: 1em 2em;
@@ -77,9 +77,9 @@ input.gender {
 	-webkit-backface-visibility: hidden;
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: bold;
-	width: 300px;
-	height: 50px;
-	font-size: 15px
+	width: 450px;
+    height: 60px;
+    font-size: 18px;
 }
 
 .bg-1 .button {
