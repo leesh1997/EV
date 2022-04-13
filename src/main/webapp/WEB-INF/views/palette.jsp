@@ -225,7 +225,20 @@
 				})
 				
 		$(".btn_empty").on("click", function(){
+			colorDiv = $(".chosen_colors");
+			colorText = $(".color_name");
 			$(".chosen_colors").css('background-color', "white");
+			document.getElementById("pl_c" + 1).setAttribute(
+					"value", "");
+			document.getElementById("pl_c" + 2).setAttribute(
+					"value", "");
+			document.getElementById("pl_c" + 3).setAttribute(
+					"value", "");
+			document.getElementById("pl_c" + 4).setAttribute(
+					"value", "");
+			document.getElementById("pl_c" + 5).setAttribute(
+					"value", "");
+			colorText.html("");
 		})
 
 	</script>
