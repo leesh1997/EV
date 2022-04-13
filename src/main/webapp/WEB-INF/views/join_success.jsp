@@ -69,7 +69,7 @@ border: solid 4px #30467c;
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<ul>
-					<li class="joinsuc"><img src="img.ev_icon.png" width="180"
+					<li class="joinsuc"><img src="resources/img/ev_icon.png" width="180"
 						style="display: block; margin: auto;"></li>
 					<li class="joinsuc"><h1>환영합니다!</h1></li>
 					<li class="joinsuc"><h2>EV 회원이 되신 것을 축하합니다.</h2></li>
