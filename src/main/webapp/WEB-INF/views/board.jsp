@@ -13,22 +13,40 @@
 	z-index: 50;
 }
 
-.board_indicate {
+#line {
+	margin-left: 20px;
+}
+
+.board_indication {
 	justify-content: center;
 	margin-left: 100px;
-	padding: 20px;
 	font-size: 8px;
+}
+
+.board_service {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.board_search {
+	padding: 15px;
+}
+
+.board_btn_writingform {
+	padding: 15px;
 }
 
 .board_list_gallery {
 	justify-content: center;
 	margin-left: 100px;
+	padding: 10px;
 }
 
 .board_list_gallery ul {
-	overflow: visible;
-	margin-right: -20px;
-	margin-left: -20px;
+	width: 100%;
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .board_list_gallery ul li {
@@ -41,6 +59,10 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
+.gallery_items {
+	
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -50,19 +72,30 @@
 			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Interior
 				Gallery</h1>
 		</div>
-		<div class="board_indicate">
-			<span style="margin-top: 0; margin-left: 50px; padding-top: 20px">으음
-				예쁜사진좀 올려봐~!</span>
+		<hr id="line" />
+		<div class="board_indication">
+			<!-- 			<span style="margin-top: 0; margin-left: 50px; padding-top: 20px">으음
+				예쁜사진좀 올려봐~!</span> -->
+			<div class="board_service">
+				<div class="board_search">
+					<input type="text">
+					<button>검색</button>
+				</div>
+				<div class="board_btn_writingform">
+					<a href="board_writing_form.do"><button>게시물 작성</button></a>
+				</div>
+			</div>
 		</div>
-		<form action="#" method="post">
+		<hr id="line" />
+		
 			<div class="board_list_gallery">
 				<ul>
-					<li style="width: 25%">
-						<div class="gallery_cont">
+					<li style="width: 22%">
+						<div class="gallery_container">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -76,12 +109,12 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
-					<li style="width: 25%">
+					<li style="width: 22%">
 						<div class="gallery_cont">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -95,12 +128,12 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
-					<li style="width: 25%">
+					<li style="width: 22%">
 						<div class="gallery_cont">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -114,12 +147,12 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
-					<li style="width: 25%">
+					<li style="width: 22%">
 						<div class="gallery_cont">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -133,12 +166,12 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
-					<li style="width: 25%">
+					<li style="width: 22%">
 						<div class="gallery_cont">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -152,12 +185,12 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
-					<li style="width: 25%">
+					<li style="width: 22%">
 						<div class="gallery_cont">
 							<div class="board_img">
 								<a href="#"> <img
 									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-									width="320" height="320" class="js_image_load">
+									width="100%" height="300" class="gallery_items">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
@@ -171,10 +204,47 @@
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
+					<li style="width: 22%">
+						<div class="gallery_container">
+							<div class="board_img">
+								<a href="#"> <img
+									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
+									width="100%" height="300" class="gallery_items">
+								</a>
+							</div>
+							<div class="gallery_info_cont">
 
+								<div class="board_tit">
+									<a href="#"> <strong>title</strong>
+									</a>
+									<p>writer</p>
+								</div>
+							</div>
+							<!-- //gallery_info_cont -->
+						</div> <!-- //gallery_cont -->
+					</li>
+					<li style="width: 22%">
+						<div class="gallery_cont">
+							<div class="board_img">
+								<a href="#"> <img
+									src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
+									width="100%" height="300" class="gallery_items">
+								</a>
+							</div>
+							<div class="gallery_info_cont">
+
+								<div class="board_tit">
+									<a href="#"> <strong>title</strong>
+									</a>
+									<p>writer</p>
+								</div>
+							</div>
+							<!-- //gallery_info_cont -->
+						</div> <!-- //gallery_cont -->
+					</li>
 				</ul>
 			</div>
-		</form>
+		
 	</div>
 
 </body>

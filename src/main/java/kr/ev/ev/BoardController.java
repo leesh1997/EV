@@ -14,7 +14,17 @@ public class BoardController {
 
 	@RequestMapping("/board.do")
 	public void showBoard() {
-		System.out.println("게시판");
+		System.out.println("게시판 보기");
+	}
+	
+	@RequestMapping("/board_writing_form.do")
+	public void boardInsertForm() {
+		System.out.println("글 작성 기능");
+	}
+	
+	@RequestMapping("/boardInsert.do")
+	public void boardInsert() {
+		System.out.println("글 작성 후 입력");
 	}
 
 }
