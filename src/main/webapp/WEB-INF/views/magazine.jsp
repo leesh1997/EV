@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,6 +53,45 @@ h2 {
 		<h2>Magazine Site</h2>
 		<div class="panel-default">
 			<!-- 시작 -->
+<!-- 
+			<%-- <c:forEach var="mg" items="${mzList}" varStatus="${mz_seq}">
+				<c:if test="${mz_seq % 2 != 0}">
+					<div class="Panel with panel-default class">
+						<div class="panel-body" style="float: left; margin-left: 20px">
+							<td class="maga-img1"><a href="${mz_site }" target="_blank">
+									<img src="${mz_img }" class="img-thumbnail" />
+							</a></td>
+						</div>
+						<div class="panel-body"
+							style="float: left; margin-top: 10px; margin-left: 30px">
+							<td class="maga-con1"><a href="${mz_site }" target="_blank">
+									<p class="content1">${mz_title }</p>
+							</a> <br /> <br /> <br />
+								<p class="content1">${mz_content }</p></td>
+						</div>
+
+					</div>
+				</c:if>
+				<c:otherwise>
+					<div class="Panel with panel-default class row">
+						<div class="panel-body" style="float: left; margin-left: 20px">
+							<td class="maga-img1"><a href="${mz_site }" target="_blank">
+									<img src="${mz_img }" class="img-thumbnail" />
+							</a></td>
+						</div>
+						<div class="panel-body"
+							style="float: left; margin-top: 10px; margin-left: 30px">
+							<td class="maga-con1"><a href="${mz_site }" target="_blank">
+									<p class="content1">${mz_title }</p>
+							</a> <br /> <br /> <br />
+								<p class="content1">${mz_content }</p></td>
+						</div>
+					</div>
+				</c:otherwise>
+			</c:forEach> --%>
+ -->
+
+
 			<div class="Panel with panel-default class">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
@@ -70,7 +110,7 @@ h2 {
 				</div>
 			</div>
 			<!-- 끝 -->
-			<div class="Panel with panel-default class">
+			<div class="Panel with panel-default class row">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=7"
@@ -106,7 +146,7 @@ h2 {
 				</div>
 			</div>
 
-			<div class="Panel with panel-default class">
+			<div class="Panel with panel-default class row">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=5"
