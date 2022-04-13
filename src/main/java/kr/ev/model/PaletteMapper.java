@@ -12,6 +12,4 @@ public interface PaletteMapper {
 
 	void saveColors(PaletteVO vo);
 
-
-
 }

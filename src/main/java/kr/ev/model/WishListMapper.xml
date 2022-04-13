@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ev.model.WishListMapper">
+    
+    <select id="wishlist" resultType="kr.ev.model.PaletteVO">
+        select * from t_palette;
+    </select>
+    <delete id="pwish_delete"></delete>
+</mapper>

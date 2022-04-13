@@ -103,10 +103,11 @@ button.updown{
 	width: auto;
 }
 .palette{
-	width: 8vw;
-	height: 8vw;
+	width: 6vw;
+	height: 6vw;
 	border-radius:50%; 	
 	margin-right: 10px;
+	border: 10px solid #f1f5fc;
 	
 }
 .inpalette{
@@ -125,8 +126,9 @@ button.updown{
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+
 input[type='checkbox']{
-	margin-top: 3vw;
+	margin-top: 2vw;
 	padding-right: 20px;
 }
 @media (max-width : 768px){
@@ -137,4 +139,7 @@ input[type='checkbox']{
 	 width: 95%;
 	 margin-left: 0;
 	 }
+}
+.check{
+	margin-right: 10px;
 }
