@@ -24,7 +24,7 @@
 							<a href="login.do">Login</a>
 						</c:when>
 						<c:when test="${info != null}">
-							<a href=#>Logout</a>
+							<a href="logout.do">Logout</a>
 						</c:when>
 					</c:choose>
 				</div>

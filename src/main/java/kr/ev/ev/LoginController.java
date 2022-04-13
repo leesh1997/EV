@@ -36,15 +36,27 @@ public class LoginController {
 
 	}
 
+	
 	@RequestMapping("/joinInsert.do")
-	public String joinInsert(MemberVO vo) {
+	public String joinInsert(MemberVO vo,HttpSession session) {
 		System.out.println("회원가입 입력");
 		// 회원정보를 입력받아 tmember 테이블에 회원정보 저장
 		// MemberVO, MemberMapper (interface, xml)
-		mapper.joinInsert(vo);
-		return "redirect:/main.do";
+		MemberVO info = vo;
+		   session.setAttribute("info", info);
+
+		mapper.joinInsert(vo);		
+		return "redirect:/join_success.do";
 	}
 
+
+	@RequestMapping("/join_success.do")
+	public void join_success(MemberVO vo, HttpSession session) {
+		System.out.println("회원가입 성공~!");
+		
+
+	}
+	
 	// 아이디 중복체크
 	@RequestMapping("/idCheck.do")
 	public @ResponseBody MemberVO idCheck(String id) {
@@ -74,8 +86,8 @@ public class LoginController {
 	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw,HttpServletResponse response) {
 		  System.out.println(id);
 		  System.out.println(pw);
-		  vo.setM_email(id);;
-		  vo.setM_pw(pw);;
+		  vo.setM_email(id);
+		  vo.setM_pw(pw);
 		   MemberVO info = mapper.loginSelect(vo);
 		   System.out.println(vo);
 		   // MemberVO info에 모든 정보 들어있음
@@ -98,9 +110,7 @@ public class LoginController {
 		         }
 		      }
 		      
-		      return "redirect:/login.do";
-		   
-		   
+		      return "redirect:/login.do";		   	   
 	   }
 	
 	// 로그인 체크
@@ -110,4 +120,18 @@ public class LoginController {
 	 * if (vo == null) { vo = new MemberVO(); } System.out.println(vo); return vo; }
 	 */
 	
+	   // 로그아웃 기능 -> 세션을 삭제한다!
+	   @RequestMapping("/logout.do")
+	   public String logout(HttpSession session) {
+		   System.out.println("로그아웃 완료");
+		   // 하나만 삭제됨
+		    session.removeAttribute("info");
+		   // 지금은 둘 다 사용해도 되지만 remove사용하는것이 조금 더 좋음
+		   // 모든 세션 만료 됨,전체 삭제 -> 최후의 수단으로 사용
+		   // session.invalidate();
+		   
+		   return "redirect:/main.do";
+	   }
+	  
+	   
 }

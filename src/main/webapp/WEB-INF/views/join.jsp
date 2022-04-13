@@ -6,7 +6,10 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Document</title>
+<link rel="icon" href="img/ev_icon.png" />
+<title>회원가입</title>
+<link rel="icon" href="img/ev_icon.png" />
+
 <!-- <script src="common-script.js"></script> -->
 <link rel="stylesheet" href="resources/css/main.css" />
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
@@ -15,8 +18,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<title>회원가입</title>
-<link rel="icon" href="img/ev_icon.png" />
 
 <style>
 input, #ftype {
@@ -50,8 +51,8 @@ input.gender {
 	text-align: center;
 	background-color: #7f7f7f; 
 } */
-//
-회원가입 버튼
+
+/* 회원가입 버튼 */
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -78,8 +79,8 @@ input.gender {
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: bold;
 	width: 450px;
-    height: 60px;
-    font-size: 18px;
+	height: 60px;
+	font-size: 18px;
 }
 
 .bg-1 .button {
@@ -116,7 +117,7 @@ input.gender {
 	height: 100%;
 	border: 2px solid #3f51b5;
 	z-index: -1;
-	border-radius: inherit;
+	border-radius:;
 	opacity: 0;
 	-webkit-transform: scale3d(0.6, 0.6, 1);
 	transform: scale3d(0.6, 0.6, 1);
@@ -146,9 +147,14 @@ input.gender {
 	opacity: 1;
 }
 
-.button--round-s {
+/* .button--round-s {
 	border-radius: 5px;
+} */
+#pw,#checkpw {
+	background: url(resources/img/lockCheck.png) no-repeat right;
+	background-size: 20px;
 }
+
 </style>
 </head>
 <body>
@@ -175,7 +181,7 @@ input.gender {
 								placeholder="이메일 주소"><span id="middle">@</span><input
 								type="text" id="email_address" name=email_address
 								list="user_email_address"
-								style="width: 130px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
+								style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
 								<datalist id="user_email_address">
 									<option value="naver.com">naver.com</option>
 									<option value="hanmail.net">hanmail.net</option>
@@ -250,7 +256,7 @@ input.gender {
 						<tr>
 							<td class="join_title">주거 형태</td>
 							<td class="join_input"><select id="ftype" name="m_ftype"
-								style="width: 330px; height: 40px;">
+								style="width: 320px; height: 30px;">
 									<option value="원룸">원룸</option>
 									<option value="오피스텔">오피스텔</option>
 									<option value="아파트">아파트</option>
@@ -288,127 +294,148 @@ input.gender {
 		</form>
 	</section>
 
-		<script>
-			// 이메일주소 하나로 가져오기
-			$("#user_email").blur(function() {
-				email();
-			});
+	<script>
+		// 이메일주소 하나로 가져오기
+		$("#user_email").blur(function() {
+			email();
+		});
 
-			$("#email_address").change(function() {
-				email();
-			});
+		$("#email_address").change(function() {
+			email();
+		});
 
-			function email() {
-				const email = $("#user_email").val();
-				const middle = $("#middle").text();
-				const address = $("#email_address").val();
-				if (email != "" && address != "") {
-					$("#m_email").val(email + middle + address);
-				}
-			};
+		function email() {
+			const email = $("#user_email").val();
+			const middle = $("#middle").text();
+			const address = $("#email_address").val();
+			if (email != "" && address != "") {
+				$("#m_email").val(email + middle + address);
+			}
+		};
 
-			// 아이디 중복체크
-			$(email).keyup(function() {
+		// 아이디 중복체크
+		$(email).keyup(function() {
 
-				var id = $('#m_email').val();
+			var id = $('#m_email').val();
 
-				if (id == "") {
-					console(id);
-				} else {
-					$.ajax({
+			if (id == "") {
+				console(id);
+			} else {
+				$.ajax({
 
-						url : "idCheck.do",
-						type : "POST",
-						dataType : "JSON",
-						data : {
-							"id" : id
-						},
-						success : resultJson,
-						error : function(e) {
-							console.log(e);
-						}
+					url : "idCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"id" : id
+					},
+					success : resultJson,
+					error : function(e) {
+						console.log(e);
+					}
 
-					});
-				}
+				});
+			}
 
-			});
+		});
 
-			function resultJson(data) {
-				// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
-				// 이미 존재하는 아이디 입니다 글자를
-				// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
-				if (data.m_email == undefined) {
-					// 사용 가능
-					$('#idCheck').html('사용 가능한 아이디 입니다.');
-					$('#idCheck').css('color', '#6999e5');
-					console.log(data.m_email)
-				} else {
-					// 사용 불가능
-					$('#idCheck').html('이미 등록된 아이디 입니다.');
-					$('#idCheck').css('color', '#ef8183');
-				}
-			};
+		function resultJson(data) {
+			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+			// 이미 존재하는 아이디 입니다 글자를
+			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+			if (data.m_email == undefined) {
+				// 사용 가능
+				$('#idCheck').html('사용 가능한 아이디 입니다.');
+				$('#idCheck').css('color', '#6999e5');
+				console.log(data.m_email)
+			} else {
+				// 사용 불가능
+				$('#idCheck').html('이미 등록된 아이디 입니다.');
+				$('#idCheck').css('color', '#ef8183');
+			}
+		};
 
-			
-			// 비밀번호 일치 확인
-			$("#pw, #checkpw").on("change", function() {
-				var password = $('#pw').val();
-				var passwordcheck = $('#checkpw').val();
-				if (password != passwordcheck) {
-					$('#pwCheck').text('비밀번호가 불일치합니다.')
-					$('#pwCheck').css('color', '#ef8183');
+		// 비밀번호 일치 확인
+		$("#pw, #checkpw").on("change", function() {
+			var password = $('#pw').val();
+			var passwordcheck = $('#checkpw').val();
+			if (password != passwordcheck) {
+				$('#pwCheck').text('비밀번호가 불일치합니다.')
+				$('#pwCheck').css('color', '#ef8183');
 
-				} else {
-					$('#pwCheck').text('비밀번호가 일치합니다.')
-					$('#pwCheck').css('color', '#6999e5');
+			} else {
+				$('#pwCheck').text('비밀번호가 일치합니다.')
+				$('#pwCheck').css('color', '#6999e5');
 
-				}
-			});
+			}
+		});
 
-			// 닉네임 중복체크
-			$(nick).keyup(function() {
+		// 닉네임 중복체크
+		$(nick).keyup(function() {
 
-				var nick = $('#nick').val();
+			var nick = $('#nick').val();
 
-				if (nick == "") {
-					console(nick);
-				} else {
-					$.ajax({
+			if (nick == "") {
+				console(nick);
+			} else {
+				$.ajax({
 
-						url : "nickCheck.do",
-						type : "POST",
-						dataType : "JSON",
-						data : {
-							"nick" : nick
-						},
-						success : resultJson2,
-						error : function(e) {
-							console.log(e);
-						}
+					url : "nickCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"nick" : nick
+					},
+					success : resultJson2,
+					error : function(e) {
+						console.log(e);
+					}
 
-					});
-				}
+				});
+			}
 
-			});
+		});
 
-			function resultJson2(data) {
-				// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
-				// 이미 존재하는 아이디 입니다 글자를
-				// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
-				if (data.m_nick == undefined) {
-					// 사용 가능
-					$('#nickCheck').html('사용 가능한 닉네임 입니다.');
-					$('#nickCheck').css('color', '#6999e5');
-					console.log(data.m_nick)
-				} else {
-					// 사용 불가능
-					$('#nickCheck').html('이미 등록된 닉네임 입니다.');
-					$('#nickCheck').css('color', '#ef8183');
-				}
-			};
+		function resultJson2(data) {
+			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+			// 이미 존재하는 아이디 입니다 글자를
+			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+			if (data.m_nick == undefined) {
+				// 사용 가능
+				$('#nickCheck').html('사용 가능한 닉네임 입니다.');
+				$('#nickCheck').css('color', '#6999e5');
+				console.log(data.m_nick)
+			} else {
+				// 사용 불가능
+				$('#nickCheck').html('이미 등록된 닉네임 입니다.');
+				$('#nickCheck').css('color', '#ef8183');
+			}
+		};
 
-			
-		</script>
+		/* function requestRegister(event) {
+			if(formCheck(event)){
+				$.ajax({
+					url : $('#.box bg-1').attr('action'),
+					type : 'POST',
+					data : $('.box bg-1').serialize(),
+					success : function(responseData, status, xhr) {
+						console.log("회원가입 성공")
+						alert(responseData);
+		                                if(responseData=="회원가입 성공"){
+						       location.href="login.do";
+		                                }
+					}, 
+					error:function(e){  
+						console.log("에러 테스트")
+
+			        }
+					
+				});
+			}else{
+				event.preventDefault();
+			}
+		}
+ */	</script>
 
 </body>
 </html>
