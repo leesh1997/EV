@@ -314,7 +314,7 @@ input.gender {
 		};
 
 		// 아이디 중복체크
-		$(email).keypress(function() {
+		$(email).keyup(function() {
 
 			var id = $('#m_email').val();
 
