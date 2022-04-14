@@ -29,41 +29,49 @@
 		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
 		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
 		<div class= "list-full">
-		<c:forEach var="p_list" items="${p_list}" begin="0" end="9" varStatus="i">
+		<c:forEach var="p_list" items="${p_list}"  varStatus="i">
 			<div class="inpalette"> 
-			<div class="check"><input type="checkbox"></div>
+			<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
+<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
+					
 			
 				<div class= "point">
 		
-					<div class="palette cl1" style="background-color:${p_list.pl_c1}; ">
+					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
+				
 					</div>
-					<div class ="palette-name">${page}</div>
+					<div class ="palette-name">${p_list.pl_seq}</div>
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl2" style="background-color: ${p_list.pl_c2}">
+	
+
 					</div>
 					<div class ="palette-name">${cnt }</div>
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
+				
 					</div>
 					<div class ="palette-name"> 색상</div>
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
+					
 					</div>
 					<div class ="palette-name"> 색상</div>
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
+					
 					</div>
 					<div class ="palette-name"> 색상</div>
 				</div>
-			
+			</div>
 			</div>
 				</c:forEach>
 			</div> 

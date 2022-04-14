@@ -69,6 +69,14 @@ button.updown{
 	.main-content{
 		margin-left: 0;
 	}
+	.main-content{
+	 width:100vw;
+	 }
+	 .title{
+	 width: 95%;
+	 margin-left: 0;
+	 }
+	 
 }
 button.updown{
 	background-color: white;
@@ -107,7 +115,7 @@ button.updown{
 	height: 6vw;
 	border-radius:50%; 	
 	margin-right: 10px;
-	border: 10px solid #f1f5fc;
+	border: 0.7vw solid #f1f5fc;
 	
 }
 .inpalette{
@@ -122,30 +130,30 @@ button.updown{
 }
 .point{
 	display: flex;
-	flex-direction: column;
+	flex-direction:column;
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
 input[type='checkbox']{
-	margin-top: 2vw;
+	margin-top: 3vw;
 	padding-right: 20px;
 }
-@media (max-width : 768px){
-	.main-content{
-	 width:100vw;
-	 }
-	 .title{
-	 width: 95%;
-	 margin-left: 0;
-	 }
-}
+
 .check{
 	margin-right: 10px;
+	display: flex;
+	flex-direction: row;
 }
 .list-full{
 	width: auto;
 	height: auto;
 	max-height: 500px;
 	overflow: auto;
+}
+.cl1{
+	margin-left: 10px;
+}
+input[type='text']{
+	display:none;
 }

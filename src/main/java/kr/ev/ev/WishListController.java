@@ -26,8 +26,11 @@ public class WishListController {
 		
 	}
 	@RequestMapping("/pwish_delete.do")
-	public void pwish_delete() {
-		
+	public String pwish_delete(PaletteVO vo, String delete_seq[]) {
+		for(int i =0; i<delete_seq.length; i++) {
+			mapper.pwish_delete(delete_seq[i]);
+		}
+		return "redirect:/wishlist.do";
 	}
 	
 	

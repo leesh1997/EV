@@ -6,4 +6,6 @@ public interface WishListMapper {
 
 	List<PaletteVO> wishlist();
 
+	void pwish_delete(String string);
+
 }
