@@ -26,8 +26,9 @@
 		<div class="title">My Palette<button type="button" class="no1 updown">Open</button>
 		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
 		<div class="title list1 lis">
-		<fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
-		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/>
+		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
+		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
+		<div class= "list-full">
 		<c:forEach var="p_list" items="${p_list}" begin="0" end="9" varStatus="i">
 			<div class="inpalette"> 
 			<div class="check"><input type="checkbox"></div>
@@ -65,8 +66,8 @@
 			
 			</div>
 				</c:forEach>
-			
-				<div>
+			</div> 
+				<%-- <div>
 					<ul>
 						<c:forEach var="pg_num" begin="1" end="${cnt }">
 							<li>${pg_num}</li>
@@ -74,7 +75,7 @@
 						
 					</ul>
 				</div>
-			
+			 --%>
 		</div>
 		</form>
 		</div>
