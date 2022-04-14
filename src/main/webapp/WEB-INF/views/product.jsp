@@ -101,176 +101,24 @@ button {
 					<li style="width: 22%">
 						<div class="gallery_container">
 							<div class="board_img">
-								<a href="#"> <img src="${post.b_file}" width="100%"
-									height="300" class="gallery_items">
+								<a href="${post.p_url }"> <img src="${post.p_imgurl}" width="130%"
+									height="auto" class="gallery_items" style="margin-left: -15%">
 								</a>
 							</div>
 							<div class="gallery_info_cont">
 
 								<div class="board_tit">
-									<a href="#"> <strong>${post.b_title}</strong>
+									<a href="#"> <strong>${post.p_name}</strong>
 									</a>
-									<p>${post.m_nick}</p>
+									<p>${post.p_brand}</p>
+									<p>${post.p_price } 원</p>
 								</div>
 							</div>
 							<!-- //gallery_info_cont -->
 						</div> <!-- //gallery_cont -->
 					</li>
 				</c:forEach>
-
-
-				<li style="width: 22%">
-					<div class="gallery_container">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_container">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
+			
 			</ul>
 		</div>
 
