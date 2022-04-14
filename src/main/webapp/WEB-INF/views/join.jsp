@@ -97,7 +97,7 @@ input.gender {
 }
 /* Wapasha */
 .button.button--wapasha {
-	background: #37474f;
+	background: black;
 	color: #fff;
 	-webkit-transition: background-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, color 0.3s;
