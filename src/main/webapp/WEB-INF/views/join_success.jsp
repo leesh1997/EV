@@ -21,40 +21,133 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
- 	.wrap-login100 {
-	border: solid 4px #30467c;
-	width: 490px;
-	height: 490px;
-	padding: 30px 55px 33px 55px;
-	text-align: center;
-}
-
 .joinsuc {
-line-height:2;}
-
-#main{
-background-color: black;
-    font-family: -webkit-body;
-   
-    border-style: none;
-    height: 33px;
-    width: 95px;
-    border-radius: 3px;
-    color: white;
-
-}
-.wrap-login100{
-border: solid 4px #30467c;
-    width: 489px;
-    height: 490px;
-    padding: 30px 55px 33px 55px;
-    text-align: center;
-    position: relative;
-    z-index: 50;
-    margin-left: 100px;
+	line-height: 2;
 }
 
- 
+#main {
+	background-color: black;
+	font-family: -webkit-body;
+	border-style: none;
+	height: 33px;
+	width: 95px;
+	border-radius: 3px;
+	color: white;
+}
+
+.wrap-login100 {
+	/* border: solid 4px #30467c;
+ */
+	width: 489px;
+	height: 490px;
+	padding: 150px 55px 33px 55px;
+	text-align: center;
+	position: relative;
+	z-index: 50;
+	margin: auto;
+}
+
+p {
+	font-size: 25px;
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Box colors */
+.bg-1 {
+	color: #37474f;
+}
+
+/* Common button styles */
+.button {
+	min-width: 150px;
+	/* max-width: 250px; */
+	display: block;
+	margin: auto;
+	padding: 1em 2em;
+	border: none;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: bold;
+	width: 400px;
+	height: 60px;
+	font-size: 18px;
+	border-radius: 30px;
+}
+
+.bg-1 .button {
+	color: #37474f;
+	border-color: #37474f;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button>span {
+	vertical-align: middle;
+}
+
+/* Wapasha */
+.button.button--wapasha {
+	background: black;
+	color: #fff;
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.button--wapasha.button--inverted {
+	background: #fff;
+	color: #37474f;
+}
+
+.button--wapasha::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #3f51b5;
+	z-index: -1;
+	border-radius:;
+	opacity: 0;
+	-webkit-transform: scale3d(0.6, 0.6, 1);
+	transform: scale3d(0.6, 0.6, 1);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	border-radius: 30px;
+}
+
+.button--wapasha.button--inverted::before {
+	border-color: #7986cb;
+}
+
+.button--wapasha:hover {
+	background-color: #fff;
+	color: #3f51b5;
+}
+
+.button--wapasha.button--inverted:hover {
+	background-color: #37474f;
+	color: #7986cb;
+}
+
+.button--wapasha:hover::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	opacity: 1;
+}
+
 </style>
 </head>
 <body>
@@ -64,24 +157,34 @@ border: solid 4px #30467c;
 	</section>
 
 	<section>
-	
+
 		<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<ul>
-					<li class="joinsuc"><img src="resources/img/ev_icon.png" width="180"
-						style="display: block; margin: auto;"></li>
-					<li class="joinsuc"><h1>환영합니다!</h1></li>
-					<li class="joinsuc"><h2>EV 회원이 되신 것을 축하합니다.</h2></li>
-					<li class="joinsuc"><h2>아이디는 ${info.m_email}입니다.</h2></li>
-					<li class="joinsuc"><h2>닉네임은 ${info.m_nick }입니다.</h2></li>
-					<br>
-					<li class="joinsuc"><a href=main.do><u>메인으로</u></a></li>
-					
-				</ul>
+			<div class="container-login100">
+				<div class="wrap-login100">
+					<ul>
+						<li class="joinsuc"><img src="resources/img/ev_icon.png"
+							width="150" style="display: block; margin: auto;"></li>
+						<li class="joinsuc"><h1>환영합니다!</h1></li>
+						<li class="joinsuc"><p>EV 회원이 되신 것을 축하합니다.</p></li>
+						<li class="joinsuc"><p>아이디는 ${info.m_email}입니다.</p></li>
+						<li class="joinsuc"><p>닉네임은 ${info.m_nick }입니다.</p></li>
+						<br>
+
+						<div class="box bg-1">
+							<p>
+								<button class="button button--wapasha button--round-s"
+									type="button" onclick="location.href='main.do' "
+									style="text-align: center;">메인으로</button>
+							</p>
+						</div>
+
+
+<!-- 						<li class="joinsuc"><a href=main.do><u>메인으로</u></a></li>
+ -->
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 
 

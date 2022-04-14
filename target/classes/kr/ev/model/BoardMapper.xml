@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ev.model.BoardMapper">
     
-    
+     <select id="showBoard" resultType="kr.ev.model.BoardVO">
+        select b_title, b_file, m_nick from t_board
+    </select>
 
-    
-    
 </mapper>

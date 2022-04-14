@@ -21,14 +21,95 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
-.form-control {
+/*  body {
+        background-image: url("resources/img/login.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      } */ 
+
+/* .form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid black;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
+  left: 50%;
+  margin: 5px 0 0 -100px;
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  width: 300px;
+
+  &:focus {
+    outline: none;    
+  }
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.form-control:focus+.underline {
+  transform: scale(1);
+}
+    */
+
+/* .form-control {
 	width: 400px;
 	height: 60px;
 	margin-top: 10px;
 	font-size: 18px;
+} */
+.input-box {
+	position: relative;
+	margin: 10px 0;
 }
 
-.login_btn {
+.input-box>input {
+	background: transparent;
+	border: none;
+	border-bottom: solid 1px #ccc;
+	padding: 20px 0px 5px 0px;
+	font-size: 14pt;
+	width: 100%;
+}
+
+input::placeholder {
+	color: transparent;
+}
+
+input:placeholder-shown+label {
+	color: #aaa;
+	font-size: 14pt;
+	top: 15px;
+}
+
+input:focus+label, label {
+	color: #8aa1a1;
+	font-size: 10pt;
+	pointer-events: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+}
+
+input:focus, input:not(:placeholder-shown) {
+	border-bottom: solid 1px #8aa1a1;
+	outline: none;
+}
+
+/* .login_btn {
 	width: 400px;
 	height: 60px;
 	font-size: 18px;
@@ -36,7 +117,7 @@
 	font-weight: bold;
 	margin-top: 20px;
 	background-color: #7f7f7f;
-}
+} */
 
 *, *:after, *:before {
 	-webkit-box-sizing: border-box;
@@ -66,6 +147,7 @@
 	width: 400px;
 	height: 60px;
 	font-size: 18px;
+	border-radius: 30px;
 }
 
 .bg-1 .button {
@@ -82,7 +164,7 @@
 }
 /* Wapasha */
 .button.button--wapasha {
-	background: #37474f;
+	background: black;
 	color: #fff;
 	-webkit-transition: background-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, color 0.3s;
@@ -110,6 +192,7 @@
 	transition: transform 0.3s, opacity 0.3s;
 	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
 	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	border-radius: 30px;
 }
 
 .button--wapasha.button--inverted::before {
@@ -131,8 +214,6 @@
 	transform: scale3d(1, 1, 1);
 	opacity: 1;
 }
-
-
 </style>
 </head>
 <body>
@@ -159,14 +240,22 @@
 					<table style="width: 400px; margin: auto; text-align: center;">
 						<tr>
 							<td class="login_title" name="id"></td>
-							<td class="login_input"><input class="form-control"
-								type="text" name="id" id="id" placeholder="아이디를 입력하세요."></td>
+							<td><div class="input-box">
+									<input id="id" type="text" name="id" placeholder="아이디">
+									<label for="username">아이디</label>
+								</div></td>
 						</tr>
+
 						<tr>
 							<td class="login_title"></td>
-							<td class="login_input"><input class="form-control"
-								type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요.">
+							<td class="login_input">
+								<div class="input-box">
+									<input id="pw" type="password" name="pw" placeholder="비밀번호">
+									<label for="password">비밀번호</label>
+								</div>
+
 							</td>
+
 						</tr>
 
 						<!-- 	<td colspan="2" style="margin-top: 50px;">
