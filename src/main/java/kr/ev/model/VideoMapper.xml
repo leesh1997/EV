@@ -2,17 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ev.model.VideoMapper">
     
-    <select id="video" resultType="kr.ev.model.VideoVO">
-        select * from t_video 
-        order by v_seq DESC
-       
-    </select>
-    
-	    <!-- 총 게시글 갯수 출력 -->
-	<select id="countBoard" resultType="int">
-		SELECT COUNT(*) FROM t_video
+
+	<select id="video" parameterType="kr.ev.model.VideoVO"
+		resultType="kr.ev.model.VideoVO">
+		<!--select * from t_qna order by q_date desc  -->
+		 select * from t_video order by v_seq desc Limit 10 Offset #{postStart}
 	</select>
 	
 	
+	<select id="boardAmount" resultType="int">
+	    select count(*) from t_video
+	</select>
+	
+	<select id="Select" resultType="kr.ev.model.VideoVO">
+		select * from t_video where q_num = #{q_num}
+	</select>
+
     
 </mapper>

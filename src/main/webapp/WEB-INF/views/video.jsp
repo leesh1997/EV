@@ -87,20 +87,54 @@ display: inline;
 </div>
 
 <div>
-		<c:forEach var="vd" items="${list}" begin="1" end="8">
-
-		<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
+		
+		<c:set var="p" value="${postStart}" />
+		<c:set var="plus" value="1" />
+			<c:forEach var="vd" items="${requestScope.list}">
+					
+			<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
 		    <a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
-		    <p class="vdtitle">${vd.v_title }</p>
+		    <p class="vdtitle">${vd.v_title}</p>
 		    </div>
 		    
-		<div class="video_modal_popup" style="margin-left: 150px">
-		  <div class="video_modal_popup-closer"></div>
-		
-		</div>	
-		</c:forEach>
+			<div class="video_modal_popup" style="margin-left: 150px">
+		  		<div class="video_modal_popup-closer"></div>
+					
+				<c:set var="plus" value="${plus +1}" />
+			</div>
+				</c:forEach>
 				
 </div>
+
+<!-- 페이징 구간 -->
+		<nav aria-label="Page navigation example">
+
+			<ul style="justify-content: center" class="pagination">
+				<c:set var="back" value="${postStart/10}" />
+				<li class="page-item"><a class="page-link"
+					href="video.do?pageNum=
+					
+					<fmt:formatNumber type="number" maxFractionDigits="0"  value="${back }" />"
+					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+				</a></li>
+				<c:forEach begin="1" end="${endPageNum}" var="i">
+					<c:choose>
+						<c:when test="${postEnd eq 10 }">
+							<li class="page-item"><a class="page-link"
+								href="video.do?pageNum=${i}">${i}</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="page-item"><a class="page-link"
+								href="video.do?pageNum=${i}">${i}</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+
+				<li class="page-item"><a class="page-link"
+					href="video.do?pageNum=<fmt:formatNumber type="number" maxFractionDigits="0"  value="${back+2 }" />" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+				</a></li>
+			</ul>
+		</nav>
 
 <script>
 $(".popupModalVideo a").click(function() {
@@ -113,7 +147,10 @@ $(".video_modal_popup-closer").click(function() {
     $(".video_modal_popup").removeClass("reveal")
 });
 
+
+
 </script> 
+
 
 </body>
 </html>
