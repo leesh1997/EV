@@ -39,7 +39,7 @@ public class LoginController {
 	
 	@RequestMapping("/joinInsert.do")
 	public String joinInsert(MemberVO vo,HttpSession session) {
-		System.out.println("회원가입 입력");
+		System.out.println("회원가입 입력~!");
 		// 회원정보를 입력받아 tmember 테이블에 회원정보 저장
 		// MemberVO, MemberMapper (interface, xml)
 		MemberVO info = vo;
@@ -123,7 +123,7 @@ public class LoginController {
 	   // 로그아웃 기능 -> 세션을 삭제한다!
 	   @RequestMapping("/logout.do")
 	   public String logout(HttpSession session) {
-		   System.out.println("로그아웃 완료");
+		   System.out.println("로그아웃 완료~!");
 		   // 하나만 삭제됨
 		    session.removeAttribute("info");
 		   // 지금은 둘 다 사용해도 되지만 remove사용하는것이 조금 더 좋음
