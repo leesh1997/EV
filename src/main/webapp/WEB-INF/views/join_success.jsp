@@ -38,7 +38,7 @@
 .wrap-login100 {
 	/* border: solid 4px #30467c;
  */
-	width: 489px;
+	width: 800px;
 	height: 490px;
 	padding: 150px 55px 33px 55px;
 	text-align: center;
@@ -49,6 +49,7 @@
 
 p {
 	font-size: 25px;
+	margin-top: 20px;
 }
 
 *, *:after, *:before {
@@ -148,6 +149,17 @@ p {
 	opacity: 1;
 }
 
+hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0;
+	border-top: 1px solid #d3d3d3;
+}
+
+span {
+	font-weight: bold;
+	text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -161,27 +173,31 @@ p {
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-login100">
-					<ul>
-						<li class="joinsuc"><img src="resources/img/ev_icon.png"
-							width="150" style="display: block; margin: auto;"></li>
-						<li class="joinsuc"><h1>환영합니다!</h1></li>
-						<li class="joinsuc"><p>EV 회원이 되신 것을 축하합니다.</p></li>
-						<li class="joinsuc"><p>아이디는 ${info.m_email}입니다.</p></li>
-						<li class="joinsuc"><p>닉네임은 ${info.m_nick }입니다.</p></li>
-						<br>
+					<img src="resources/img/ev_icon.png" width="150"
+						style="display: block; margin: auto;">
+					<hr>
+					<p style="color: black; font-weight: bold; font-size: 45px;">환영합니다!</p>
+					<p>EV 회원가입이 완료되었습니다.</p>
+					<p>
+						아이디는<span> ${info.m_email} </span>입니다.
+					</p>
+					<p>
+						닉네임은<span> ${info.m_nick } </span> 입니다.
+					</p>
+					<br>
 
-						<div class="box bg-1">
-							<p>
-								<button class="button button--wapasha button--round-s"
-									type="button" onclick="location.href='main.do' "
-									style="text-align: center;">메인으로</button>
-							</p>
-						</div>
+					<div class="box bg-1">
+						<p>
+							<button class="button button--wapasha button--round-s"
+								type="button" onclick="location.href='main.do' "
+								style="text-align: center;">메인으로</button>
+						</p>
+					</div>
 
 
-<!-- 						<li class="joinsuc"><a href=main.do><u>메인으로</u></a></li>
+					<!-- 						<li class="joinsuc"><a href=main.do><u>메인으로</u></a></li>
  -->
-					</ul>
+
 				</div>
 			</div>
 		</div>
