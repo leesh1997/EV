@@ -7,10 +7,14 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface VideoMapper {
 
-	public List<VideoVO> video(int postStart);
+	//public List<VideoVO> video(int postStart);
+	
+	public List<VideoVO> video(int pageCount);
 
 	public int boardAmount();
 	
 	VideoVO Select(int q_num);
+
+	public int getVisitCount();
 	
 }
