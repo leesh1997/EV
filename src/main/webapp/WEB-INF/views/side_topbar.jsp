@@ -77,8 +77,8 @@
 					class="he-img st4im">
 				<div class="he-text">wishlist</div></a>
 			</div>
-			<div class="board.do">
-				<a href="#"><img src="resources/img/inte3.png"
+			<div class="he st5">
+				<a href="board.do"><img src="resources/img/inte3.png"
 					class="he-img st5im">
 				<div class="he-text">community</div></a>
 			</div>
