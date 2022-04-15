@@ -16,8 +16,8 @@
 <style>
  
 .video_view{
-position:relative;
-display: inline;
+	position:relative;
+	display: inline;
 }
 
 .video_modal_popup.reveal {
@@ -51,7 +51,7 @@ display: inline;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .9);
     z-index: 300
 }
 
@@ -71,7 +71,9 @@ display: inline;
 
 .paging{
 	position: relative;
-	z-index: 50;
+	z-index: 1;
+	margin-left: 150px; 
+	margin-bottom: 15px;
 }
 
 .vdtitle{
@@ -79,18 +81,14 @@ display: inline;
 	white-space: normal;
 	overflow : hidden;
 	text-overflow : ellipsis; 
-	width: 400px;
+	width: 450px;
 	height : 20px;
-	
+	position: relative;
+	z-index: 50;
 	word-wrap : brek-word; 
-	
 	display : -webkit-box;
-	
 	-webkit-line-clamp : 1;
-	
 	-webkit-box-orient: vertical; 
-
-
 }
 
 </style>
@@ -107,14 +105,14 @@ display: inline;
 
 	<div class="item">
 			<c:forEach var="vd" items="${requestScope.list}">
-				<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
+				<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 250px; margin-bottom: 15px; z-index: 50; ">
 			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
 			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
 			    </div>
-				<div class="video_modal_popup" style="margin-left: 150px">
+			</c:forEach>
+			<div class="video_modal_popup" style="margin-left: 150px">
 			  	<div class="video_modal_popup-closer"></div>
-				</div>
-			</c:forEach>		
+				</div>		
 	</div>
 	
 	<div class="paging" style="text-align: center; font-size: 15px">
