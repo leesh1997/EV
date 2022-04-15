@@ -86,6 +86,19 @@ font-size: 11px;}
 	flex-direction: column;
 	
 }
+.search_list{
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.search_list ul{
+width: 40%;
+}
+.search_list ul li{
+	display: inline-block;	
+	margin-right: 10px; 
+	font-size: 13px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -111,7 +124,9 @@ font-size: 11px;}
 			</div>
 			<div class= "search_list">
 				<ul>
-					<li><a href="#">헤헤 화난다</a></li>
+					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
+					<li><a href="product_search.do" type="submit" value="${list_type.p_type}">${list_type.p_type}</a></li>
+					</c:forEach>
 				</ul>
 				</div>
 		</div>
@@ -152,7 +167,7 @@ font-size: 11px;}
 				
 			</c:forEach>
 			<li class="right_btn"><a href="product.do?pageNum=${paging.endPage+1}">&gt;</a></li>
-			<li><a href="product.do?pageNum=292">&gt;&gt;</a></li>
+			<li><a href="product.do?pageNum=${paging.totalPage }">&gt;&gt;</a></li>
 			</ul>
 		</div>
 
