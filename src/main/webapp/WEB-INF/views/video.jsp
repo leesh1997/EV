@@ -12,8 +12,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="path_to/jquery.js"></script>
-<script type="text/javascript" src="path_to/jquery.simplePagination.js"></script>
 
 <style>
  
@@ -77,7 +75,22 @@ display: inline;
 }
 
 .vdtitle{
-	font-size : 18px;
+	font-size : 13px;
+	white-space: normal;
+	overflow : hidden;
+	text-overflow : ellipsis; 
+	width: 400px;
+	height : 20px;
+	
+	word-wrap : brek-word; 
+	
+	display : -webkit-box;
+	
+	-webkit-line-clamp : 1;
+	
+	-webkit-box-orient: vertical; 
+
+
 }
 
 </style>
@@ -93,82 +106,36 @@ display: inline;
 </div>
 
 	<div class="item">
-			
-<%-- 		<c:set var="p" value="${postStart}" />
-		<c:set var="plus" value="1" /> --%>
 			<c:forEach var="vd" items="${requestScope.list}">
-					
-			<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
-		    <a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
-		    <p class="vdtitle">${vd.v_title}</p>
-		    </div>
-		    
-			<div class="video_modal_popup" style="margin-left: 150px">
-		  		<div class="video_modal_popup-closer"></div>
-					
-				<%-- <c:set var="plus" value="${plus +1}" /> --%>
-			</div>
-				</c:forEach>
-					
+				<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 150px; margin-bottom: 15px; z-index: 50; ">
+			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
+			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
+			    </div>
+				<div class="video_modal_popup" style="margin-left: 150px">
+			  	<div class="video_modal_popup-closer"></div>
+				</div>
+			</c:forEach>		
 	</div>
 	
-	<div class="paging" style="text-align: center; font-size: 30px">
+	<div class="paging" style="text-align: center; font-size: 15px">
+		<ul class="pagination pager">
 			<c:choose>
 				<c:when test="${paging.prev}">
-					<a
-						href="video.do?pageNum=${paging.beginPage-1}">◀</a>
+					<li><a href="video.do?pageNum=${paging.beginPage-1}">Previous</a></li>
 				</c:when>
 			</c:choose>
 			<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
 				step="1" varStatus="status">
-				<a
-					href="video.do?pageNum=${status.index}"
-					class="bottom_count${status.index}">${status.index}</a>
+					<li><a href="video.do?pageNum=${status.index}"
+						class="bottom_count${status.index}">${status.index}</a></li>
 			</c:forEach>
 			<c:choose>
 				<c:when test="${paging.next}">
-					<a
-						href="video.do?pageNum=${paging.endPage+1}">▶</a>
+					<li><a href="video.do?pageNum=${paging.endPage+1}">Next</a></li>
 				</c:when>
 			</c:choose>
-
-		</div>
-
-<%-- <!-- 페이징 구간 -->
-		<nav aria-label="Page navigation example">
-
-			<ul style="justify-content: center" class="pagination">
-				<c:set var="back" value="${postStart/10}" />
-				<li class="page-item"><a class="page-link"
-					href="video.do?pageNum=
-					
-					<fmt:formatNumber type="number" maxFractionDigits="0"  value="${back }" />"
-					aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-				</a></li>
-				<c:forEach begin="1" end="${endPageNum}" var="i">
-					<c:choose>
-						<c:when test="${postEnd eq 10 }">
-							<li class="page-item"><a class="page-link"
-								href="video.do?pageNum=${i}">${i}</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="page-item"><a class="page-link"
-								href="video.do?pageNum=${i}">${i}</a></li>
-						</c:otherwise>
-					</c:choose>
-				</c:forEach>
-
-				<li class="page-item"><a class="page-link"
-					href="video.do?pageNum=<fmt:formatNumber type="number" maxFractionDigits="0"  value="${back+2 }" />" aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-				</a></li>
-			</ul>
-		</nav>
-
-
-
-<div class="pagination-holder clearfix">
-			<div id="light-pagination" class="pagination"></div>
-</div> --%>
+		</ul>
+	</div>
 
 <script>
 
