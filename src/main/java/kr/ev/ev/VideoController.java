@@ -26,11 +26,7 @@ public class VideoController {
 	public String MainSelect(@RequestParam("pageNum") int pageNum, Model model, VideoVO page, HttpServletRequest request) {
 		
 		System.out.println("영상 페이지 접근");
-
-		//System.out.println(list.get(1).getV_url());
-		
 		System.out.println("게시물 수" + pageNum );
-		
 
 		int pages;
 		
@@ -45,7 +41,6 @@ public class VideoController {
 		Paging paging = new Paging();
 		paging.setPage(pages);
 		
-		
 		int pageCount = 0;
 		pageCount = mapper.getVisitCount();
 		model.addAttribute("pageCount", pageCount);
@@ -54,14 +49,12 @@ public class VideoController {
 		paging.setTotalCount(pageCount);
 		paging.setPage(pages);
 		
-		
 		int startNum = (pages - 1) * 9 + 1;
 		int endNum = pages * 9;		
 		
 		List<VideoVO> list = mapper.video(startNum);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
-		
 		
 //		// 종뱅
 //		
@@ -71,8 +64,6 @@ public class VideoController {
 //		if (pageNum >= 1) {
 //			postStart = (pageNum - 1) * 10 ;
 //		}
-//		
-//		
 //		// 전체 게시글 수
 //		int amount = mapper.boardAmount();
 //		System.out.println(amount);
@@ -81,11 +72,7 @@ public class VideoController {
 //		
 //		int postStart1 = postStart;
 //		System.out.println(postStart1);
-//
-//
-//		List<VideoVO> list = mapper.video(postStart);
-		
-//		System.out.println("문의 게시판 이동 동작");
+//		List<VideoVO> list = mapper.video(postStart);		
 //		model.addAttribute("endPageNum", endPageNum);
 //		model.addAttribute("postStart", postStart1);
 		
