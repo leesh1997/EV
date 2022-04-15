@@ -23,11 +23,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
-/*   body {
-        background-image: url("resources/img/do2.png");
+ /*   body {
+         background-image: url("resources/img/do2.png");
         background-repeat: no-repeat;
-        background-size: cover;
-      }  */ 
+        background-size: cover; 
+        background-color: #f6f6f6;
+      }   */
 
 /* .form-control {
   background-color: transparent;
@@ -235,7 +236,7 @@ input:focus, input:not(:placeholder-shown) {
 				<div class="join_wrapper"
 					style="margin: calc(50vh - 300px) auto 0px">
 					<div style="text-align: center;">
-						<img src="resources/img/ev_icon.png" width="120" height="auto"
+						<img src="resources/img/ev_icon-removebg-preview.png" width="120" height="auto"
 							alt="demo" id="btn_goMain" />
 					</div>
 					<br>
