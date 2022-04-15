@@ -6,7 +6,7 @@
 	<select id="video" parameterType="kr.ev.model.VideoVO"
 		resultType="kr.ev.model.VideoVO">
 		<!--select * from t_qna order by q_date desc  -->
-		 select * from t_video order by v_seq desc Limit 10 Offset #{postStart}
+		 select * from t_video order by v_seq desc Limit 10 Offset #{pageCount}
 	</select>
 	
 	
@@ -16,6 +16,10 @@
 	
 	<select id="Select" resultType="kr.ev.model.VideoVO">
 		select * from t_video where q_num = #{q_num}
+	</select>
+	
+	<select id="getVisitCount" resultType="int">
+	    select count(*) from t_video
 	</select>
 
     
