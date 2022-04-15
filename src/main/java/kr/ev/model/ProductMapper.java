@@ -9,5 +9,10 @@ public interface ProductMapper {
 
 	List<ProductVO> product();
 
+	public int getVisitCount();
+
+	List<VideoVO> product(int startNum);
+
+
 	
 }

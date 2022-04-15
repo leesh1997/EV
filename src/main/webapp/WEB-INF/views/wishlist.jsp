@@ -29,7 +29,7 @@
 		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
 		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
 		<div class= "list-full">
-		<c:forEach var="p_list" items="${p_list}"  varStatus="i">
+		<c:forEach var="p_list" items="${ p_list}"  varStatus="i">
 			<div class="inpalette"> 
 			<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
 <%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>

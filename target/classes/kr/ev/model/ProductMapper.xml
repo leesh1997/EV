@@ -3,7 +3,10 @@
 <mapper namespace="kr.ev.model.ProductMapper">
     
     <select id="product" resultType="kr.ev.model.ProductVO">
-        
-        select * from t_product;        
+         select * from t_product order by p_seq desc Limit 16 Offset #{pageCount}
+          
+    </select>
+    <select id="getVisitCount" resultType="int">
+         select count(*) from t_product;
     </select>
 </mapper>

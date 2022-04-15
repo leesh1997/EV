@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <style>
+
 .board_wrap {
 	margin-left: 100px;
 	position: relative;
@@ -41,6 +42,7 @@
 	justify-content: center;
 	margin-left: 100px;
 	padding: 10px;
+	
 }
 
 .board_list_gallery ul {
@@ -48,6 +50,7 @@
 	display: inline-block;
 	margin-right: 20px;
 	margin-left: 20px;
+	justify-content: center;
 }
 
 .board_list_gallery ul li {
@@ -67,9 +70,17 @@ button {
 	height: 25px;
 	border-radius: 15px;
 	font-size: 10px;
+
+
 }
-
-
+.hehe{
+	text-align: center;
+}
+ul.hehe li{
+	padding : 10px;
+}
+.gallery_container{
+font-size: 11px;}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -97,7 +108,7 @@ button {
 
 		<div class="board_list_gallery">
 			<ul>
-				<c:forEach var="post" items="${list}" varStatus="i">
+				<c:forEach var="post" items="${requestScope.list}" varStatus="i">
 					<li style="width: 22%">
 						<div class="gallery_container">
 							<div class="board_img">
@@ -108,7 +119,7 @@ button {
 							<div class="gallery_info_cont">
 
 								<div class="board_tit">
-									<a href="#"> <strong>${post.p_name}</strong>
+									<a href="#"> <strong style="font-size: 14px">${post.p_name}</strong>
 									</a>
 									<p>${post.p_brand}</p>
 									<p>${post.p_price } 원</p>
@@ -120,9 +131,27 @@ button {
 				</c:forEach>
 			
 			</ul>
+			<ul class="hehe">
+			<li><a href="product.do?pageNum=1">&lt;&lt;</a></li>
+			<li class="left_btn"><a href="product.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
+			<c:forEach var="i" begin="${paging.beginPage }" end="${paging.endPage }"
+				varStatus = "status">
+				<li><a href="http://localhost:8081/ev/product.do?pageNum=${status.index}"
+				class= "btn_count${status.index}">${status.index}</a></li>
+				
+			</c:forEach>
+			<li class="right_btn"><a href="product.do?pageNum=${paging.endPage+1}">&gt;</a></li>
+			<li><a href="product.do?pageNum=292">&gt;&gt;</a></li>
+			</ul>
 		</div>
 
 	</div>
-
+	<script>
+		$(".btn_count"+${page}).css('color','violet');
+		$(".btn_count"+${page}).css('border-bottom','solid 1px violet');
+		var pgn = ${page}/10;
+		
+	
+	</script>
 </body>
 </html>
