@@ -40,6 +40,7 @@ public class VideoController {
 		System.out.println("page : " + pages);
 		Paging paging = new Paging();
 		paging.setPage(pages);
+
 		
 		int pageCount = 0;
 		pageCount = mapper.getVisitCount();
@@ -49,8 +50,15 @@ public class VideoController {
 		paging.setTotalCount(pageCount);
 		paging.setPage(pages);
 		
+		System.out.println("총 끝페이지는 !!!!!!!"+ paging.getTotalPage());
+		int totalPage = paging.getTotalPage();
+		System.out.println("끝페이지 뜨나?" + totalPage);
+		model.addAttribute("totalPage", totalPage);
+		
 		int startNum = (pages - 1) * 9 + 1;
 		int endNum = pages * 9;		
+		
+		
 		
 		List<VideoVO> list = mapper.video(startNum);
 		model.addAttribute("list", list);
