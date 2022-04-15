@@ -81,6 +81,11 @@ ul.hehe li{
 }
 .gallery_container{
 font-size: 11px;}
+.board_indication{
+	display:flex;
+	flex-direction: column;
+	
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -96,13 +101,19 @@ font-size: 11px;}
 				예쁜사진좀 올려봐~!</span> -->
 			<div class="board_service">
 				<div class="board_search">
-					<input type="text">
+					<input type="text" style="width: 600px; height: 15px;">
 					<button>검색</button>
 				</div>
 				<div class="board_btn_writingform">
 					<a href="board_writing_form.do"><button>게시물 작성</button></a>
 				</div>
+				
 			</div>
+			<div class= "search_list">
+				<ul>
+					<li><a href="#">헤헤 화난다</a></li>
+				</ul>
+				</div>
 		</div>
 		<hr id="line" />
 
