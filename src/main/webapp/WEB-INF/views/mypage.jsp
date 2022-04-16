@@ -54,7 +54,7 @@
 }
 .page-navigation__item>a {
     display: block;
-    padding: 0 10px;
+    padding: 0 100px;
     font-weight: 700;
     position: relative;
     height: 60px;
@@ -79,14 +79,26 @@ ol, ul {
 
  @media (min-width: 768px) 
 .css-itjaqv {
-    padding: 30px 25px 18px;
+   padding: 30px 25px 18px;
     border-radius: 4px;
     border: 1px solid rgb(218, 220, 224);
     box-shadow: rgb(63 71 77 / 6%) 0px 2px 4px 0px;
 }
+
 .css-itjaqv {
-    position: relative;
+ /*    position: relative;
     padding: 0px;
+    border: 1px solid rgb(219, 219, 219); */
+       padding: 55px 25px 18px;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: rgb(63 71 77 / 6%) 0px 2px 4px 0px;
+    width: 400px;
+    height: 330px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+    
 }
  @media (min-width: 768px) 
 .css-1xbefvf {
@@ -192,6 +204,8 @@ fieldset, img {
 .page-navigation>ul {
     text-align: center;
     white-space: nowrap;
+    margin-top: 8px;
+	font-size: 18px;
 }
 .page-navigation__item {
     display: inline-block;
@@ -233,7 +247,7 @@ a {
 }
 .css-i5en0t {
     box-sizing: border-box;
-    width: 100%;
+/*     width: 100%; */
     position: relative;
     padding-top: 30px;
 }
@@ -391,9 +405,10 @@ display: none;
 }
 .css-1ecfa5v {
     max-width: 700px;
-    margin: 0px auto;
-    padding: 50px 0px 0px;
+/*     margin: 0px auto;
+ */    padding: 50px 0px 0px;
     color: rgb(41, 41, 41);
+    margin-left: 150px;
 }
 .css-j2mjq4 {
     margin: 0px 0px 60px;
@@ -484,6 +499,44 @@ position: relative;
 z-index: 50;
 margin-left: 100px;
 }
+.myhome-nav__owner .page-navigation__item>a.active:after {
+    margin-top: -8px;
+    border-color: transparent transparent #fff;
+}
+
+// 회원정보 수정
+/*  input, #ftype {
+	width: 320px;
+	height: 30px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	border: 1px solid #d1d1d1;
+	border-radius: 5%;
+} */
+ 
+/* input.gender {
+	width: 15px;
+	height: 15px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	margin-left: 15px;
+} */
+
+td.join_title {
+	font-weight: bold;
+}
+
+.join_input2{
+width: 320px;
+	height: 30px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+/* 	border: 1px solid #d1d1d1;
+ */	border-radius: 5%;
+}
+
 </style>
 </head>
 <body>
@@ -491,34 +544,54 @@ margin-left: 100px;
 	<div class="main2">
 		<div class="css-18dsw15 e1ivswjr4">
 			<div class="myhome-nav myhome-nav--owner">
+			<h1 style="margin-left:50px;"> My Page</h1>
 				<nav class="page-navigation myhome-nav__owner">
-					<ul style="transform: translateX(0px);">
-						<li class="page-navigation__item"><a class="active"
-							href="/users/12467282" target="_self">프로필</a></li>
+					 <ul style="transform: translateX(0px);">
+						<li class="page-navigation__item"><button class="m_info"
+							href="/users/12467282" target="_self">회원정보</button></li>
 						<li class="page-navigation__item"><a class=""
-							href="/user_shopping_pages/order_list" target="_self">나의 쇼핑</a></li>
+							href="/user_shopping_pages/order_list" target="_self">최근 조회</a></li>
 						<li class="page-navigation__item"><a class=""
-							href="/production_reviews/write" target="_self">나의 리뷰</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/edit" target="_self">설정</a></li>
-					</ul>
+							href="whishlist.do" target="_self">위시리스트</a></li>
+						<li class="page-navigation__item"><button class="m_active"
+							href="/users/12467282/edit" target="_self">나의활동</button></li>
+					</ul> 
 				</nav>
-				<nav class="page-navigation myhome-nav__contents">
+				<nav class="page-navigation myhome-nav__contents m_info11">
 					<ul style="transform: translateX(0px);">
 						<li class="page-navigation__item"><a class="active"
-							href="/users/12467282" target="_self">모두보기</a></li>
+							href="/users/12467282" target="_self">회원정보 수정</a></li>
 						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/card_collections" target="_self">사진</a></li>
+							href="/users/12467282/card_collections" target="_self">회원 탈퇴</a></li>
+						<!-- <li class="page-navigation__item"><a class=""
+							href="/users/12467282/projects" target="_self">최근 조회</a></li>
 						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/projects" target="_self">집들이</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/advices" target="_self">노하우</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/questions" target="_self">질문과답변</a></li>
-						<li class="page-navigation__item"><a class=""
+							href="/users/12467282/advices" target="_self">나의 활동</a></li> -->
+						<!-- <li class="page-navigation__item"><a class=""
+							href="/users/12467282/questions" target="_self">나의 활동</a></li>
+						 <li class="page-navigation__item"><a class=""
 							href="/users/12467282/collections" target="_self">스크랩북</a></li>
 						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/praises" target="_self">좋아요</a></li>
+							href="/users/12467282/praises" target="_self">좋아요</a></li>  -->
+					</ul>
+				</nav>
+				
+				<nav class="page-navigation myhome-nav__contents m_active11">
+					<ul style="transform: translateX(0px);">
+						<li class="page-navigation__item"><a class="active"
+							href="/users/12467282" target="_self">내가 쓴 글</a></li>
+						<li class="page-navigation__item"><a class=""
+							href="/users/12467282/card_collections" target="_self">댓글</a></li>
+						<!-- <li class="page-navigation__item"><a class=""
+							href="/users/12467282/projects" target="_self">최근 조회</a></li>
+						<li class="page-navigation__item"><a class=""
+							href="/users/12467282/advices" target="_self">나의 활동</a></li> -->
+						<!-- <li class="page-navigation__item"><a class=""
+							href="/users/12467282/questions" target="_self">나의 활동</a></li>
+						 <li class="page-navigation__item"><a class=""
+							href="/users/12467282/collections" target="_self">스크랩북</a></li>
+						<li class="page-navigation__item"><a class=""
+							href="/users/12467282/praises" target="_self">좋아요</a></li>  -->
 					</ul>
 				</nav>
 			</div>
@@ -530,7 +603,7 @@ margin-left: 100px;
 							<div class="sticky-child" style="position: relative;">
 								<div class="css-0 e1ejty664">
 									<div class="css-itjaqv e1ejty663">
-										<div class="css-1xbefvf e1ejty662">
+										<!-- <div class="css-1xbefvf e1ejty662">
 											<div class="drop-down css-0 e1ejty661">
 												<button type="button" aria-pressed="false" aria-label="공유"
 													class="css-rmsnvz e1ejty660">
@@ -540,34 +613,33 @@ margin-left: 100px;
 															d="M9.64 14.646a4.5 4.5 0 1 1 0-5.292l4.54-2.476a4.5 4.5 0 1 1 .63.795l-4.675 2.55c.235.545.365 1.146.365 1.777s-.13 1.232-.365 1.777l4.675 2.55a4.5 4.5 0 1 1-.63.795l-4.54-2.476zM18 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM6 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM18 23a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"></path></svg>
 												</button>
 											</div>
-										</div>
+										</div> -->
 										<div class="css-hdhsoq e18gdfbl4">
 											<div class="css-1uebeg0 e18gdfbl3">
 												<img class="css-1cqverl e18gdfbl2"
-													src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=144&amp;h=144&amp;c=c"
-													srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=240&amp;h=240&amp;c=c 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=320&amp;h=320&amp;c=c 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&amp;w=480&amp;h=480&amp;c=c 3x">
+													src="resources/img/user2.png">
 											</div>
 											<div class="css-oycm3d e18gdfbl1">
-												<div class="css-n5l119 etfm1it0">히힣22</div>
+												<div class="css-n5l119 etfm1it0">닉네임</div>
 												<div class="css-oycm3d e1iro1t99">
 													<dl class="css-1uy49c8 e1iro1t98">
-														<dt class="css-7haicw e1iro1t97">팔로워</dt>
+														<dt class="css-7haicw e1iro1t97">작성글</dt>
 														<dd class="css-7i5a5g e1iro1t96">
 															<a class="css-d2ibel e1iro1t95"
 																href="/users/12467282/follower">0</a>
 														</dd>
-														<dt class="css-7haicw e1iro1t97">팔로잉</dt>
+														<dt class="css-7haicw e1iro1t97">댓글</dt>
 														<dd class="css-7i5a5g e1iro1t96">
 															<a class="css-d2ibel e1iro1t95"
 																href="/users/12467282/followee">0</a>
 														</dd>
 													</dl>
-													<div class="css-0 e1iro1t94">
+													<!-- <div class="css-0 e1iro1t94">
 														<a class="_3Z6oR _1zLQC _1XHs9 css-h9lcdg e1iro1t93"
 															href="/users/12467282/edit">설정</a><a
 															class="css-gb61jx e1iro1t91"
 															href="/invite_codes/recommend_code">친구 초대 <b>5,000P</b></a>
-													</div>
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -621,9 +693,9 @@ margin-left: 100px;
 					<div class="css-1dm5gv7 e15wafbq0">
 						<div class="css-vb69r7 e1ivswjr2"></div>
 					</div>
-					<div class="css-1ltj86z e15wafbq0">
+				 	<div class="css-1ltj86z e15wafbq0">
 						<div class="css-1ecfa5v emjsage0">
-							<div>
+							<!--  <div>
 								<section class="css-j2mjq4 e17n0xi4">
 									<div class="css-rd2t8e e17n0xi3">
 										<h1 class="css-dyhp2o e17n0xi2">
@@ -653,13 +725,152 @@ margin-left: 100px;
 											<path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg>첫
 										번째 집들이를 올려보세요</a>
 								</section>
-							</div>
-						</div>
+							</div> -->
+							<form action="joinInsert.do" method="post">
+			<div class="main3">
+				<div class="join_wrapper" style="margin: 40px auto">
+					<!-- <div style="text-align: center;">
+						<img src="resources/img/ev_icon.png" width="150" height="auto"
+							alt="demo" id="btn_goMain" />
 					</div>
+					<hr style="opacity: 0.5;"> -->
+					<form>
+					<table>
+						<tr>
+							<td class="join_title">아이디</td>
+							<td class="join_input"><input type="text" name="user_email"
+								id="user_email" required style="width: 150px; height: 30px;"
+								placeholder="이메일 주소"><span id="middle">@</span><input
+								type="text" id="email_address" name=email_address
+								list="user_email_address"
+								style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
+								<datalist id="user_email_address">
+									<option value="naver.com">naver.com</option>
+									<option value="hanmail.net">hanmail.net</option>
+									<option value="daum.net">daum.net</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="hotmail.com">hotmail.com</option>
+									<option value="icloud.com">icloud.com</option>
+									<option value="직접입력">직접입력</option>
+								</datalist> <input type="hidden" id="m_email" name="m_email" value=""
+								oninput="checkId()"> <!-- <button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button> -->
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><p id="idCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
+						</tr>
+						<tr>
+							<td class="join_title">비밀번호</td>
+							<td class="join_input"><input type="password" name="m_pw"
+								id="pw" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="비밀번호" /></td>
+						</tr>
+						<tr>
+							<td class="join_title">비밀번호 확인</td>
+							<td class="join_input"><input type="password" id="checkpw"
+								name="checkpw" class="join_input2" onkeyup="passConfirm()"
+								size="20" maxlength="30" height="120px" placeholder="비밀번호 확인" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><p id="pwCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px"></p></td>
+						</tr>
+						<tr>
+							<td class="join_title">이름</td>
+							<td class="join_input"><input type="text" name="m_name"
+								id="name" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="이름" /></td>
+						</tr>
+						<tr>
+							<td class="join_title">닉네임</td>
+							<td class="join_input"><input type="text" name="m_nick"
+								id="nick" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="닉네임" /></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><p id="nickCheck"
+									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
+						</tr>
+						<tr>
+							<td class="join_title">생년월일</td>
+							<td class="join_input"><input type="date" name="m_birthdate"
+								id="birthdate" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="" /></td>
+						</tr>
+						<tr>
+							<td class="join_title">성별</td>
+							<td class="join_input" colspan="2"><input type="radio"
+								name="m_gender" value="남" class="gender">남자<input
+								type="radio" name="m_gender" value="여" class="gender">여자<input
+								type="radio" name="m_gender" value="x" class="gender">선택
+								안함</td>
+						</tr>
+						<tr>
+							<td class="join_title">주소</td>
+							<td class="join_input"><input type="text" name="m_addr"
+								id="addr" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="주소" /></td>
+						</tr>
+						<tr>
+							<td class="join_title">주거 형태</td>
+							<td class="join_input"><select id="ftype" name="m_ftype"
+								style="width: 320px; height: 30px;">
+									<option value="원룸">원룸</option>
+									<option value="오피스텔">오피스텔</option>
+									<option value="아파트">아파트</option>
+									<option value="연립">연립</option>
+									<option value="빌라">빌라</option>
+									<option value="주택">주택</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td class="join_title">가구 수</td>
+							<td class="join_input"><input type="text" name="m_fsize"
+								id="size" class="join_input2" size="20" maxlength="30"
+								height="120px" placeholder="ex) 1인" /></td>
+						</tr>
+					</table>
+					</form>
+					
+					<hr style="opacity: 0.5;">
+					<!-- 					<button type="submit" class="join_btn">회원가입</button>
+ -->
+					<div class="box bg-1">
+						<p>
+							<button class="button button--wapasha button--round-s"
+								type="submit" style="text-align: center;">회원정보 수정</button>
+						</p>
+					</div>
+				</div>
+			</div>
+		</form>
+						</div>
+					</div> 
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<script>
+		$(document).ready(function () {
+			$('.m_info11').show();
+			$('.m_active11').hide();
+			$('.ekbdbra0').show();
+		})
+		$('.m_info').click(function() {
+			$('.m_info11').show();
+			$('.m_active11').hide();
+			$('.ekbdbra0').show();
+		})
+		$('.m_active').click(function () {
+			$('.m_info11').hide();
+			$('.m_active11').show();
+			$('.ekbdbra0').hide();
+		})
+	
+	</script>
 </body>
 </html>
