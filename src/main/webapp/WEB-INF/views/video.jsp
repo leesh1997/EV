@@ -46,6 +46,7 @@
     position: relative;
     width: 80%;
     padding-bottom: 45%;
+    margin-right: 150px;
     z-index: 500
 }
 
@@ -125,8 +126,11 @@
 			    </div>
 			</c:forEach>
 			<div class="video_modal_popup" style="margin-left: 150px">
-			  	<div class="video_modal_popup-closer"></div>
-				</div>		
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  	<div class="video_modal_popup-closer"></div>
+				  	<div class="modal-footer">
+	      		</div>
+			</div>		
 	</div>
 	
 	<div class="paging" style="text-align: center; font-size: 15px">
