@@ -125,7 +125,7 @@ width: 40%;
 			<div class= "search_list">
 				<ul>
 					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
-					<li><a href="product_search.do" type="submit" value="${list_type.p_type}">${list_type.p_type}</a></li>
+					<li><a href="product_search.do?pageNum1" type="submit" value="${list_type.p_type}">${list_type.p_type}</a></li>
 					</c:forEach>
 				</ul>
 				</div>

@@ -11,4 +11,8 @@ public class MagazineController {
 	public String Main(Model model) {
 		return "magazine";
 	}
+	@RequestMapping("choise_product_or_magazine.do")
+	public void choise_product_or_magazine() {
+		
+	}
 }

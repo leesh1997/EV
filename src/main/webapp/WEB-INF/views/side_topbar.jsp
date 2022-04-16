@@ -68,7 +68,7 @@
 				<div class="he-text">interior</div></a>
 			</div>
 			<div class="he st3">
-				<a href="magazine.do"><img src="resources/img/inte2222.PNG"
+				<a href="choise_product_or_magazine.do"><img src="resources/img/inte2222.PNG"
 					class="he-img st3im">
 				<div class="he-text">information</div></a>
 			</div>

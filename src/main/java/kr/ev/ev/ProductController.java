@@ -107,5 +107,5 @@ public class ProductController {
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		return "product";
-	}
+		}
 }
