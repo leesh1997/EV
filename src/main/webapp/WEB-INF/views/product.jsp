@@ -148,7 +148,7 @@ width: 40%;
 									<a href="#"> <strong style="font-size: 14px">${post.p_name}</strong>
 									</a>
 									<p>${post.p_brand}</p>
-									<p>${post.p_price } 원</p>
+									<p>${post.p_price } 원 </p>
 								</div>
 							</div>
 							<!-- //gallery_info_cont -->
