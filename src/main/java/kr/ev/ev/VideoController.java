@@ -54,8 +54,8 @@ public class VideoController {
 		System.out.println("끝페이지 뜨나?" + totalPage);
 		model.addAttribute("totalPage", totalPage);
 		
-		int startNum = (pages - 1) * 9 + 1;
-		int endNum = pages * 9;		
+		int startNum = (pages - 1) * 15 + 1;
+		int endNum = pages * 15;		
 
 		List<VideoVO> list = mapper.video(startNum);
 		model.addAttribute("list", list);
