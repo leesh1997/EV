@@ -73,6 +73,7 @@
 	flex-flow: wrap;
 	justify-content: space-around;
 	background-color: #f1f5fc;
+	padding-top: 294px;
 }
 
 .block {
@@ -120,14 +121,19 @@
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 	font-size: 0.7em;
 }
-
-
+.ninja{
+position: fixed;
+z-index: 50;
+width: 100%;
+background-color: white;
+}
 
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
+	<div class="ninja">
 		<div class="header">
 			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
 				palette 생성</h1>
@@ -172,7 +178,8 @@
 				</div>
 			</form>
 		</div>
-
+		</div>
+		
 		<div id="colorGallery" class="gallery-container">
 			<c:forEach var="color" items="${list}" varStatus="i">
 				<div class="block" data-index="${color.c_seq}" onClick=""
@@ -182,6 +189,7 @@
 			</c:forEach>
 
 		</div>
+
 	</div>
 	<script>
 		
