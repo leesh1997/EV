@@ -204,10 +204,37 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
+<!-- aws 서버위해 추가된 톰켓 라이브러리 -->
+<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
+<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-servlet-api</artifactId>
+    <version>8.5.78</version>
+</dependency>
 
 	</dependencies>
 	<build>
+	<finalName>final_EV</finalName>
+<pluginManagement>
+<plugins>
+<!-- 서버 배포 셋팅 -->
+<plugin>
+<groupId>org.apache.tomcat.maven</groupId>
+<artifactId>tomcat7-maven-plugin</artifactId>
+<version>2.2</version>
+<configuration>
+<server>github</server>
+<path>/${project.build.finalName}</path>
+<url>${mvn_project.url}</url>
+<username>${mvn_project.username}</username>
+<password>${mvn_project.password}</password>
+<update>true</update>
+</configuration>
+</plugin>
+</plugins>
+</pluginManagement>
 		<plugins>
+		
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.9</version>
@@ -225,10 +252,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>3.8.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<encoding>UTF-8</encoding>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
