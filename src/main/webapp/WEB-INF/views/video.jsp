@@ -22,9 +22,12 @@
 
 .popupModalVideo{
 	position:relative;
-	margin-left: 250px;
 	margin-bottom: 15px;
 	z-index: 50
+}
+
+.item{
+	margin-left: 150px;
 }
 
 .video_modal_popup.reveal {
@@ -85,17 +88,17 @@
 }
 
 .vdtitle{
-	font-size : 13px;
+	font-size : large;
 	white-space: normal;
 	overflow : hidden;
 	text-overflow : ellipsis; 
-	width: 100%;
-	height : 20px;
+	width: 73%;
+
 	position: relative;
 	z-index: 50;
 	word-wrap : brek-word; 
 	display : -webkit-box;
-	-webkit-line-clamp : 1;
+	-webkit-line-clamp : 2;
 	-webkit-box-orient: vertical; 
 }
 
@@ -108,7 +111,9 @@
 <body>
 	<jsp:include page = "side_topbar.jsp"></jsp:include>
 <div style="margin-top: 50px; margin-left: 150px">
-	<h3>인테리어 영상</h3>
+	<h1 style="font-weight: bold">Information</h1>
+	<h3>video</h3>
+	
 </div>
 
 	<div class="item">
@@ -116,6 +121,7 @@
 				<div class="col-sm-4 popupModalVideo">
 			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
 			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
+			    	<br>
 			    </div>
 			</c:forEach>
 			<div class="video_modal_popup" style="margin-left: 150px">
@@ -142,6 +148,13 @@
 			</c:choose>
 		</ul>
 	</div>
+	
+		<div class="search_line" style="text-align: center;">
+			<form action="search.do">
+				<input type="text" name="search_word" class="search_bar">
+				<button type="submit" class="search_button">검색</button>
+			</form>
+		</div>
 
 <script>
 

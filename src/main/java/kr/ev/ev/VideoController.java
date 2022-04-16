@@ -40,7 +40,6 @@ public class VideoController {
 		System.out.println("page : " + pages);
 		Paging paging = new Paging();
 		paging.setPage(pages);
-
 		
 		int pageCount = 0;
 		pageCount = mapper.getVisitCount();
@@ -57,13 +56,10 @@ public class VideoController {
 		
 		int startNum = (pages - 1) * 9 + 1;
 		int endNum = pages * 9;		
-		
-		
-		
+
 		List<VideoVO> list = mapper.video(startNum);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
-		
 //		// 종뱅
 //		
 //		//시작 게시물
@@ -85,9 +81,12 @@ public class VideoController {
 //		model.addAttribute("postStart", postStart1);
 		
 //		System.out.println("끝");
-		return "video";
-		
-		
+		return "video";		
 	}
+	
+	
+	
+	
+	
 
 }

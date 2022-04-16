@@ -16,5 +16,9 @@ public interface VideoMapper {
 	VideoVO Select(int q_num);
 
 	public int getVisitCount();
+
+	public List<VideoVO> search_video(String search_word, int pageCount);
+
+	public int getSearchVisitCount(String serach_word);
 	
 }
