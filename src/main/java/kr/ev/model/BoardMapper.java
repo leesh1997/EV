@@ -10,4 +10,5 @@ public interface BoardMapper {
 	
 	public List<BoardVO> showBoard();
 
+
 }

@@ -5,5 +5,4 @@
      <select id="showBoard" resultType="kr.ev.model.BoardVO">
         select b_title, b_file, m_nick from t_board
     </select>
-
 </mapper>
