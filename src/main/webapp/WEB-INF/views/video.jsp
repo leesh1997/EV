@@ -23,7 +23,8 @@
 .popupModalVideo{
 	position:relative;
 	margin-bottom: 15px;
-	z-index: 50
+	z-index: 50;
+	height: 350.7px;
 }
 
 .item{
@@ -78,6 +79,7 @@
     max-width: 100%;
     z-index: 50;
     height: auto;
+
 }
 
 .paging{
@@ -94,13 +96,22 @@
 	overflow : hidden;
 	text-overflow : ellipsis; 
 	width: 73%;
-
+	
 	position: relative;
 	z-index: 50;
 	word-wrap : brek-word; 
 	display : -webkit-box;
 	-webkit-line-clamp : 2;
 	-webkit-box-orient: vertical; 
+	padding-bottom: 50px;
+}
+
+.pager li>a, .pager li>span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0px;
 }
 
 </style>
@@ -122,11 +133,10 @@
 				<div class="col-sm-4 popupModalVideo">
 			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
 			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
-			    	<br>
+			    	<!-- <div style="margin-bottom: 100px"></div> -->
 			    </div>
 			</c:forEach>
 			<div class="video_modal_popup" style="margin-left: 150px">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				  	<div class="video_modal_popup-closer"></div>
 				  	<div class="modal-footer">
 	      		</div>
