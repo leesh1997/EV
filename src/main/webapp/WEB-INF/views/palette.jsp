@@ -47,6 +47,24 @@
 	display: none;
 }
 
+.btn_create {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+}
+
+.btn_empty {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+	margin-top: 3vw;
+}
+
+
 .gallery-container {
 	width: inherit;
 	height: inherit;
@@ -70,6 +88,19 @@
 	transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
+.block .block-description {
+	display: table-cell;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	width: 100% color: #02142b;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	line-height: 1.2em;
+	color: white;
+	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+}
+
 .chosen_colors {
 	width: 7vw;
 	height: 7vw;
@@ -90,35 +121,8 @@
 	font-size: 0.7em;
 }
 
-.btn_create {
-	vertical-align: middle;
-	width: 10vw;
-	height: 2vw;
-	margin: 1vw;
-	display: block;
-}
 
-.btn_empty {
-	vertical-align: middle;
-	width: 10vw;
-	height: 2vw;
-	margin: 1vw;
-	display: block;
-	margin-top: 3vw;
-}
 
-.block .block-description {
-	display: table-cell;
-	position: relative;
-	vertical-align: middle;
-	text-align: center;
-	width: 100% color: #02142b;
-	font-size: 0.7em;
-	text-transform: uppercase;
-	line-height: 1.2em;
-	color: white;
-	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
-}
 </style>
 </head>
 <body>
@@ -167,8 +171,6 @@
 					</div>
 				</div>
 			</form>
-
-
 		</div>
 
 		<div id="colorGallery" class="gallery-container">
