@@ -277,10 +277,9 @@ input:focus, input:not(:placeholder-shown) {
 					<p style="text-align: center; font-weight: bold; font-size: 16px;">
 						아직 회원이 아니신가요? <a href=join.do><u> 회원가입</u></a>
 					</p>
-
-
 				</div>
 			</form>
+			</div>
 	</section>
 
 

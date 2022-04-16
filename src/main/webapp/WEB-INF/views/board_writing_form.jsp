@@ -90,8 +90,8 @@
 			</div>
 		</div>
 		<hr id="line" />
-
-		<form action="fileUpload.do" method="post" enctype="multipart/form-data">
+<!--  enctype="multipart/form-data" -->
+		<form action="boardInsert.do" method="post" enctype="multipart/form-data">
 			<div class="gallery_writing_form_wrap">
 				<div class="gallery_writing_form">
 					<div class="blocks">
@@ -99,7 +99,8 @@
 					</div>
 					<div class="blocks">
 						<input class="title_box" type="text" class="input_text"
-							name="title" id="title">
+							name="b_title" id="title">
+							<input type="hidden" name = "m_nick" value="${infoNick}"/> 
 					</div>
 				</div>
 
@@ -109,16 +110,16 @@
 					</div>
 					<div class="blocks">
 						<textarea class="text_box" rows="10" class="input_text"
-							name="content" id="content"></textarea>
+							name="b_content" id="content"></textarea>
 					</div>
 				</div>
 				<div class="gallery_writing_form">
 					<div class="blocks">
-						<label for="img_up">파일첨부</label>
-					</div>
+						<label for="img_up" >파일첨부</label>
+						<input type="file" name="b_file" style="margin-left: 100px" multiple /><br/><br/>
+				 	</div>
 					<div class="blocks">
-						<input type="file" name="file" multiple /><br/><br/>
-						<button class="img_up_btn" name="file" id="img_up">이미지 업로드</button>
+						
 							
 					</div>
 				</div>
@@ -127,9 +128,10 @@
 						<label for="insert_btn"></label>
 					</div>
 					<div class="blocks">
-						<input type="submit" class="insert_btn" name="insert_btn" id="insert_btn" value="작성 완료" formaction="complete.do" />
+						<input type="submit" class="insert_btn" id="insert_btn" value="작성 완료"/>
 					</div>
 				</div>
+				
 			</div>
 		</form>
 	</div>

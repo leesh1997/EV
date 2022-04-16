@@ -1,3 +1,5 @@
+<%@page import="com.mysql.cj.Session"%>
+<%@page import="kr.ev.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -89,7 +91,18 @@ button {
 					<button>검색</button>
 				</div>
 				<div class="board_btn_writingform">
+				<c:choose>
+						<c:when test="${info != null}">
 					<a href="board_writing_form.do"><button>게시물 작성</button></a>
+						</c:when>
+						<c:when test="${info == null}">
+						<script type="text/javascript">
+						<a href="board_writing_form.do"><button>게시물 작성</button></a>
+							alert("로그인 시 이용해주세요");
+							history.go(-1);
+						</script>
+						</c:when>
+					</c:choose>
 				</div>
 			</div>
 		</div>

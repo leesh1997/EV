@@ -83,11 +83,12 @@ public class LoginController {
 	
 	// 로그인
 	  @RequestMapping("/loginSelect.do")
-	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw,HttpServletResponse response) {
+	   public String loginSelect(MemberVO vo, HttpSession session, String id,String pw,String nick,HttpServletResponse response) {
 		  System.out.println(id);
 		  System.out.println(pw);
 		  vo.setM_email(id);
 		  vo.setM_pw(pw);
+		  vo.setM_nick(nick);
 		   MemberVO info = mapper.loginSelect(vo);
 		   System.out.println(vo);
 		   // MemberVO info에 모든 정보 들어있음

@@ -44,7 +44,7 @@ public class FileUploadController {
         String msg = file.getOriginalFilename() + " is saved in server db";
         redirectAttributes.addFlashAttribute("msg", msg);
         logger.info("fileUpload={}", msg);
-        return "redirect:board_writing_form.do";
+        return "redirect:board.do";
     }
 
 }
