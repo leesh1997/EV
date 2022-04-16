@@ -9,4 +9,7 @@
     <select id="getVisitCount" resultType="int">
          select count(*) from t_product;
     </select>
+    <select id="product_dis" resultType="kr.ev.model.ProductVO" >
+        select distinct p_type from t_product;
+    </select>
 </mapper>

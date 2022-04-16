@@ -20,6 +20,13 @@
 	display: inline;
 }
 
+.popupModalVideo{
+	position:relative;
+	margin-left: 250px;
+	margin-bottom: 15px;
+	z-index: 50
+}
+
 .video_modal_popup.reveal {
     display: flex;
     position: fixed;
@@ -74,6 +81,7 @@
 	z-index: 1;
 	margin-left: 150px; 
 	margin-bottom: 15px;
+	margin-right: 150px;
 }
 
 .vdtitle{
@@ -81,7 +89,7 @@
 	white-space: normal;
 	overflow : hidden;
 	text-overflow : ellipsis; 
-	width: 450px;
+	width: 100%;
 	height : 20px;
 	position: relative;
 	z-index: 50;
@@ -105,7 +113,7 @@
 
 	<div class="item">
 			<c:forEach var="vd" items="${requestScope.list}">
-				<div class="col-sm-4 popupModalVideo" style="position:relative; margin-left: 250px; margin-bottom: 15px; z-index: 50; ">
+				<div class="col-sm-4 popupModalVideo">
 			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
 			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
 			    </div>

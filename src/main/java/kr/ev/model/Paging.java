@@ -10,6 +10,7 @@ public class Paging {
     private int displayPage =10;  //한 페이지에 몇 개의 페이지 (선택 set)
     boolean prev; //prev 버튼이 보일건지 안보일건지
     boolean next; //next 버튼이 보일건지 안보일건지
+    private int tP;
     
     private int startNum = (page-1)*displayRow+1;
     private int endNum =page*displayRow;
@@ -59,6 +60,7 @@ public class Paging {
     public boolean isNext() {
         return next;
     }
+    
     private void paging(){
         endPage = ((int)Math.ceil(page/(double)displayPage))*displayPage;
 //    or  endPage = (((page + (displayPage -1)) / displayPage) * displayPage;
@@ -77,8 +79,11 @@ public class Paging {
         System.out.println("beginPage : " + beginPage);
         System.out.println("endPage : " + endPage);
         System.out.println("totalPage : " + totalPage);
+        tP = totalPage;
         System.out.println("---------------------");
-        
     }
+	public int getTotalPage() {
+		return tP;
+	}
 
 }

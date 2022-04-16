@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 작성</title>
 <style>
 .board_wrap {
 	margin-left: 100px;
@@ -89,7 +91,7 @@
 		</div>
 		<hr id="line" />
 
-		<form action="boardInsert.do" method="post">
+		<form action="fileUpload.do" method="post" enctype="multipart/form-data">
 			<div class="gallery_writing_form_wrap">
 				<div class="gallery_writing_form">
 					<div class="blocks">
@@ -115,9 +117,8 @@
 						<label for="img_up">파일첨부</label>
 					</div>
 					<div class="blocks">
-					
-						<button class="img_up_btn" name="img_up" id="img_up">이미지
-							업로드</button>
+						<input type="file" name="file" multiple /><br/><br/>
+						<button class="img_up_btn" name="file" id="img_up">이미지 업로드</button>
 							
 					</div>
 				</div>
@@ -126,8 +127,7 @@
 						<label for="insert_btn"></label>
 					</div>
 					<div class="blocks">
-						<button class="insert_btn" name="insert_btn" id="insert_btn">작성
-							완료</button>
+						<input type="submit" class="insert_btn" name="insert_btn" id="insert_btn" value="작성 완료" formaction="complete.do" />
 					</div>
 				</div>
 			</div>

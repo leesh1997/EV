@@ -13,6 +13,8 @@ public interface ProductMapper {
 
 	List<VideoVO> product(int startNum);
 
+	List<VideoVO> product_dis();
+
 
 	
 }

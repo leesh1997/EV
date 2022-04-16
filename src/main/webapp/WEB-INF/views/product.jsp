@@ -81,6 +81,24 @@ ul.hehe li{
 }
 .gallery_container{
 font-size: 11px;}
+.board_indication{
+	display:flex;
+	flex-direction: column;
+	
+}
+.search_list{
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.search_list ul{
+width: 40%;
+}
+.search_list ul li{
+	display: inline-block;	
+	margin-right: 10px; 
+	font-size: 13px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -96,13 +114,21 @@ font-size: 11px;}
 				예쁜사진좀 올려봐~!</span> -->
 			<div class="board_service">
 				<div class="board_search">
-					<input type="text">
+					<input type="text" style="width: 600px; height: 15px;">
 					<button>검색</button>
 				</div>
 				<div class="board_btn_writingform">
 					<a href="board_writing_form.do"><button>게시물 작성</button></a>
 				</div>
+				
 			</div>
+			<div class= "search_list">
+				<ul>
+					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
+					<li><a href="product_search.do" type="submit" value="${list_type.p_type}">${list_type.p_type}</a></li>
+					</c:forEach>
+				</ul>
+				</div>
 		</div>
 		<hr id="line" />
 
@@ -141,7 +167,7 @@ font-size: 11px;}
 				
 			</c:forEach>
 			<li class="right_btn"><a href="product.do?pageNum=${paging.endPage+1}">&gt;</a></li>
-			<li><a href="product.do?pageNum=292">&gt;&gt;</a></li>
+			<li><a href="product.do?pageNum=${paging.totalPage }">&gt;&gt;</a></li>
 			</ul>
 		</div>
 
