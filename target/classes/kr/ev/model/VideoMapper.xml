@@ -6,7 +6,7 @@
 	<select id="video" parameterType="kr.ev.model.VideoVO"
 		resultType="kr.ev.model.VideoVO">
 		<!--select * from t_qna order by q_date desc  -->
-		 select * from t_video order by v_seq desc Limit 12 Offset #{pageCount}
+		 select * from t_video order by v_seq desc Limit 15 Offset #{pageCount}
 	</select>
 	
 	

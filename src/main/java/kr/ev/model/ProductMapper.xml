@@ -12,4 +12,11 @@
     <select id="product_dis" resultType="kr.ev.model.ProductVO" >
         select distinct p_type from t_product;
     </select>
+    <select id="getVisitCount_result" resultType="int">
+          select count(*) from t_product where p_type=#{searchinfo};
+    </select>
+    <select id="product_result" resultType="kr.ev.model.ProductVO">
+        select * from t_product where p_type=#{searchinfo} 
+       <!--  order by p_seq desc Limit 16 Offset #{pageCount} -->
+    </select>
 </mapper>

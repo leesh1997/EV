@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,8 +51,8 @@ public class ProductController {
 		paging.setTotalCount(pageCount);
 		paging.setPage(pages);
 		
-		int startNum = (pages - 1) * 9 + 1;
-		int endNum = pages * 9;		
+		int startNum = (pages - 1) *16 + 1;
+		int endNum = pages * 16;		
 		List<VideoVO> type_list = mapper.product_dis();
 		/*
 		 * for(int i =0; i<type_list.size();i++) { System.out.println(type_list.get(i));
@@ -65,7 +66,8 @@ public class ProductController {
 		
 	}
 	@RequestMapping("/product_search.do")
-	public String product_search(@RequestParam("pageNum") int pageNum, Model model, ProductVO page, HttpServletRequest request,String hehe) {
+	public String product_search(@RequestParam("pageNum") int pageNum, Model model, ProductVO page,
+			HttpServletRequest request,@Param("searchinfo") String searchinfo) {
 		/*
 		 * List<ProductVO> list = mapper.product(); model.addAttribute("list",list);
 		 */
@@ -73,7 +75,7 @@ public class ProductController {
 		/* System.out.println("에에?"); */
 		System.out.println("게시물 수" + pageNum );
 		
-		System.out.println(hehe);
+		System.out.println("서치 넘어온값"+ searchinfo);
 		int pages;
 		if (request.getParameter("pageNum") != null) {
 			pages = Integer.parseInt(request.getParameter("pageNum"));
@@ -87,7 +89,7 @@ public class ProductController {
 		paging.setPage(pages);
 		
 		int pageCount = 0;
-		pageCount = mapper.getVisitCount();
+		pageCount = mapper.getVisitCount_result(searchinfo);
 		System.out.println(pageCount);
 		model.addAttribute("pageCount", pageCount);
 		
@@ -95,15 +97,15 @@ public class ProductController {
 		paging.setTotalCount(pageCount);
 		paging.setPage(pages);
 		
-		int startNum = (pages - 1) * 9 + 1;
-		int endNum = pages * 9;		
+		int startNum = (pages - 1) * 16 + 1;
+		int endNum = pages * 16;		
 		List<VideoVO> type_list = mapper.product_dis();
 		/*
 		 * for(int i =0; i<type_list.size();i++) { System.out.println(type_list.get(i));
 		 * }
 		 */
 		model.addAttribute("type_list",type_list);
-		List<VideoVO> list = mapper.product(startNum);
+		List<VideoVO> list = mapper.product_result(searchinfo);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		return "product";
