@@ -3,17 +3,16 @@
 <mapper namespace="kr.ev.model.VideoMapper">
     
 
-	<select id="video" parameterType="kr.ev.model.VideoVO"
-		resultType="kr.ev.model.VideoVO">
+	<select id="video" resultType="kr.ev.model.VideoVO">
 		<!--select * from t_qna order by q_date desc  -->
 		 select * from t_video order by v_seq desc Limit 15 Offset #{pageCount}
 	</select>
 	
 	
-	<select id="search_video" parameterType="kr.ev.model.VideoVO"
+	<select id="search_video" parameterType="String"
 		resultType="kr.ev.model.VideoVO">
 		<!--select * from t_qna order by q_date desc  -->
-		 select * from t_video where v_title like #{search_word} order by v_seq desc Limit 10 Offset 2
+		 select * from t_video where v_title like concat('%',#{search_word}, '%') order by v_seq desc Limit 15 Offset #{pageCount}
 	</select>
 	
 	
@@ -30,7 +29,7 @@
 	</select>
 
 	<select id="getSearchVisitCount" resultType="int" parameterType="String">
-	    select count(*) from t_video where v_title like #{search_word}
+	    select count(*) from t_video where v_title like concat('%',#{search_word}, '%')
 	</select>
     
 </mapper>

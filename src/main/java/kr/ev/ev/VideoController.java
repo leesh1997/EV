@@ -29,12 +29,15 @@ public class VideoController {
 		System.out.println("게시물 수" + pageNum );
 
 		int pages;
+		String search_word;
 		
 		if (request.getParameter("pageNum") != null) {
 			pages = Integer.parseInt(request.getParameter("pageNum"));
 		} else {
 			pages = 1;
 		}
+		
+		
 		
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
@@ -85,6 +88,44 @@ public class VideoController {
 	}
 	
 	
+	// 서치
+	@RequestMapping("/search.do")
+	public String search(@RequestParam("pageNum") int pageNum, String search_word, Model model, HttpServletRequest request) {
+		
+		System.out.println("서치 접근");
+		System.out.println("서치 게시물 수" + pageNum );
+
+		int pages;
+		
+		if (request.getParameter("pageNum") != null) {
+			pages = Integer.parseInt(request.getParameter("pageNum"));
+		} else {
+			pages = 1;
+		}
+		
+		model.addAttribute("page", pages);
+		System.out.println("page : " + pages);
+		Paging paging = new Paging();
+		paging.setPage(pages);
+		
+		int pageCount = 0;
+		pageCount = mapper.getSearchVisitCount(search_word);
+		model.addAttribute("search_word", search_word);
+		model.addAttribute("pageCount", pageCount);
+
+		System.out.println("pageCount : " + pageCount);
+		paging.setTotalCount(pageCount);
+		paging.setPage(pages);
+		
+		int startNum = (pages - 1) * 15 + 1;
+		int endNum = pages * 159;		
+
+		List<VideoVO> list = mapper.search_video(search_word, startNum);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		
+		return "video";
+	}
 	
 	
 	
