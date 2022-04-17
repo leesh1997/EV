@@ -7,6 +7,8 @@
     </select>
     
      <insert id="boardInsert" parameterType="kr.ev.model.BoardVO">
-      insert into t_board (b_title, b_content, b_file, m_nick) values (#{b_title}, #{b_content}, #{b_file}, #{m_nick})
+         insert all
+      into t_board (b_title, b_content, b_file) values (#{b_title}, #{b_content}, #{b_file}
+      into t_board (m_nick) select #{m_nick} from t_member
      </insert>
 </mapper>

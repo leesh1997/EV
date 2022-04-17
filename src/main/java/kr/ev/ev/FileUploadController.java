@@ -44,6 +44,7 @@ public class FileUploadController {
         String msg = file.getOriginalFilename() + " is saved in server db";
         redirectAttributes.addFlashAttribute("msg", msg);
         logger.info("fileUpload={}", msg);
+        System.out.println("들어오니?");
         return "redirect:board.do";
     }
 
