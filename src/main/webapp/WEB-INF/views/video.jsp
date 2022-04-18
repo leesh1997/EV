@@ -168,7 +168,7 @@
 				<input type="text" name="search_word" class="search_bar">
 				<button type="submit" class="search_button">검색</button>
 			</form>
-			<a href="video.do?pageNum=1?search_word=인테리어">검색 테스트 링크</a>
+			<a href="videoSearch.do?pageNum=1?search_word=인테리어">검색 테스트 링크</a>
 		</div>
 
 	
