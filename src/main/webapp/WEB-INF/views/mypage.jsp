@@ -515,13 +515,13 @@ margin-left: 100px;
 	border-radius: 5%;
 } */
  
-/* input.gender {
+/* .input_gender {
 	width: 15px;
 	height: 15px;
 	margin-top: 30px;
 	margin-bottom: 15px;
-	margin-left: 15px;
-} */
+	margin-left: 7px;
+}  */
 
 td.join_title {
 	font-weight: bold;
@@ -533,8 +533,7 @@ width: 320px;
 	margin-top: 15px;
 	margin-bottom: 5px;
 	margin-left: 15px;
-/* 	border: 1px solid #d1d1d1;
- */	border-radius: 5%;
+ 	border: 1px solid #d1d1d1;
 }
 
 </style>
@@ -552,7 +551,7 @@ width: 320px;
 						<li class="page-navigation__item"><a class=""
 							href="/user_shopping_pages/order_list" target="_self">최근 조회</a></li>
 						<li class="page-navigation__item"><a class=""
-							href="whishlist.do" target="_self">위시리스트</a></li>
+							href="wishlist.do" target="_self">위시리스트</a></li>
 						<li class="page-navigation__item"><button class="m_active"
 							href="/users/12467282/edit" target="_self">나의활동</button></li>
 					</ul> 
@@ -739,7 +738,7 @@ width: 320px;
 						<tr>
 							<td class="join_title">아이디</td>
 							<td class="join_input"><input type="text" name="user_email"
-								id="user_email" required style="width: 150px; height: 30px;"
+								id="user_email" required style="width: 165px; height: 30px; margin-left:15px; border: 1px solid #d1d1d1" 
 								placeholder="이메일 주소"><span id="middle">@</span><input
 								type="text" id="email_address" name=email_address
 								list="user_email_address"
@@ -804,9 +803,12 @@ width: 320px;
 						<tr>
 							<td class="join_title">성별</td>
 							<td class="join_input" colspan="2"><input type="radio"
-								name="m_gender" value="남" class="gender">남자<input
-								type="radio" name="m_gender" value="여" class="gender">여자<input
-								type="radio" name="m_gender" value="x" class="gender">선택
+								name="m_gender" value="남" class="gender"style="margin-top: 15px;
+    margin-left: 20px;">남자<input
+								type="radio" name="m_gender" value="여" class="gender"  style="margin-top: 15px;
+    margin-left: 20px;">여자<input
+								type="radio" name="m_gender" value="x" class="gender"style="margin-top: 15px;
+    margin-left: 20px;">선택
 								안함</td>
 						</tr>
 						<tr>
@@ -818,7 +820,8 @@ width: 320px;
 						<tr>
 							<td class="join_title">주거 형태</td>
 							<td class="join_input"><select id="ftype" name="m_ftype"
-								style="width: 320px; height: 30px;">
+								style="width: 320px; height: 30px;  border: 1px solid #d1d1d1; margin-left: 15px;
+    margin-top: 15px;">
 									<option value="원룸">원룸</option>
 									<option value="오피스텔">오피스텔</option>
 									<option value="아파트">아파트</option>
