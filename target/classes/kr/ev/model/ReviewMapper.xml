@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.ReviewMapper">
     
     <insert id="writeReview" parameterType="kr.ev.model.BoardVO">
-         insert into t_board (b_title, b_content, b_file) values (#{b_title}, #{b_content}, #{b_file})
+         insert into t_board (b_title, b_content, b_file) values (#{b_title}, #{b_content}, 'D:/')
     </insert>
     
 </mapper>

@@ -1,5 +1,6 @@
 package kr.ev.ev;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -19,8 +22,10 @@ import kr.ev.model.MemberVO;
 import kr.ev.model.Paging;
 import kr.ev.model.ReviewMapper;
 import kr.ev.model.VideoVO;
+import lombok.extern.log4j.Log4j;
 
 @Controller
+@Log4j
 public class WriteReviewController {
 	
 	@Inject
@@ -33,33 +38,33 @@ public class WriteReviewController {
 		return "review";		
 	}
 	
-	@RequestMapping("WriteReview.do")
-	public String WriteReview(Model model, BoardVO Bvo, MemberVO Mvo, HttpServletRequest request) {
+	@PostMapping("WriteReview.do")
+	public void WriteReview(MultipartFile[] uploadFile, Model model) {
 		
 		System.out.println("리뷰 작성 버튼 접근");
-		String visit_name = request.getParameter("visit_name");
-		String visit_img = request.getParameter("visit_img");
-		String mem_nick = Mvo.getM_nick();
-		String dir = "D:/";
-		String realDir = request.getRealPath(dir);
 		
-		try {
-			MultipartRequest multi = new MultipartRequest(request, realDir, 1024*1024*10, "utf-8", new DefaultFileRenamePolicy());
-			String title = multi.getParameter("title");
-			String content = multi.getParameter("content");
-			String reviewImgName = multi.getFilesystemName("reviewImg");
-			String reviewImgPath = dir+"/"+reviewImgName;
+		String uploadFolder = "D:\\upload";
+		
+		for (MultipartFile multipartFile : uploadFile) {
 			
-			mapper.writeReview(Bvo);
-		} catch (IOException e) {
+			log.info("=======================");
+			log.info("Upload File Name : " +multipartFile.getOriginalFilename());
+			log.info("Upload File Size: " + multipartFile.getSize());
 			
-			e.printStackTrace();
-		}
+			File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
+			
+			// IE has file path
+			// uploadFileName = 
+			
+			try {
+				multipartFile.transferTo(saveFile);
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}// end catch
+			
+		}// end for
 		
-		
-		
-		
-		return "redirect:/board.do";		
+		//return "redirect:/board.do";		
 	}
 	
 }
