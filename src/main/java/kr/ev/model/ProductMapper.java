@@ -15,11 +15,13 @@ public interface ProductMapper {
 
 	List<VideoVO> product_dis();
 
-	List<VideoVO> product_result(int startNum,String searchinfo);
+	/* List<VideoVO> product_result(int startNum,String searchinfo); */
 
 	int getVisitCount_result(String searchinfo);
 
-	List<VideoVO> product_result(String searchinfo);
+	/* List<VideoVO> product_result(String searchinfo); */
+
+	List<VideoVO> product_result(SearchPageVO spvo);
 
 
 	
