@@ -12,4 +12,6 @@ public interface PaletteMapper {
 
 	void saveColors(PaletteVO vo);
 
+	List<InteriorVO> paletteGallery();
+
 }

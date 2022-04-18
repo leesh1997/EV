@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ev.model.ColorVO;
+import kr.ev.model.InteriorVO;
 import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
 
@@ -44,8 +45,11 @@ public class PaletteController {
 	}
 	
 	@RequestMapping("/paletteRecommend.do")
-	public void viewPalette(Model model) {
-
+	public String viewPalette(Model model) {
+		System.out.println("문다!!! 왕!");
+		List<InteriorVO> list= mapper.paletteGallery();
+		model.addAttribute("list", list);
+		return "paletteRecommend";
 	}
 }
 

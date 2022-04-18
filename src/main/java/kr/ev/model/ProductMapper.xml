@@ -15,8 +15,7 @@
     <select id="getVisitCount_result" resultType="int">
           select count(*) from t_product where p_type=#{searchinfo};
     </select>
-    <select id="product_result" resultType="kr.ev.model.ProductVO">
-        select * from t_product where p_type=#{searchinfo} 
-       <!--  order by p_seq desc Limit 16 Offset #{pageCount} -->
+    <select id="product_result" parameterType="kr.ev.model.SearchPageVO" resultType="kr.ev.model.ProductVO">
+        select * from t_product where p_type=#{searchinfo} order by p_seq desc Limit 16 Offset #{startNum}
     </select>
 </mapper>

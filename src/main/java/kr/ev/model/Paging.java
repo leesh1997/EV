@@ -2,6 +2,7 @@ package kr.ev.model;
 
 public class Paging {
 	
+	
 	private int page =1; //현재 페이지 (get)
     private int totalCount; //row 전체의 수 (get)
     private int beginPage;  //출력 시작
@@ -11,12 +12,18 @@ public class Paging {
     boolean prev; //prev 버튼이 보일건지 안보일건지
     boolean next; //next 버튼이 보일건지 안보일건지
     private int tP;
+    private String searchinfo;
     
     private int startNum = (page-1)*displayRow+1;
     private int endNum =page*displayRow;
     
     
-    
+    public String getSearchinfo() {
+		return searchinfo;
+	}
+	public void setSearchinfo(String searchinfo) {
+		this.searchinfo = searchinfo;
+	}
     public int getStartNum() {
     	return startNum;
     }

@@ -125,7 +125,7 @@ width: 40%;
 			<div class= "search_list">
 				<ul>
 					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
-					<form action="product_search.do?pageNum=1" method="post">
+					<form action="product_search.do?pageNum=1?searchinfo=${list_type.p_type}" method="post">
 					<li><input type="submit" name="searchinfo" value="${list_type.p_type}"></li>
 					</form>
 					</c:forEach>
@@ -157,8 +157,10 @@ width: 40%;
 						</div> <!-- //gallery_cont -->
 					</li>
 				</c:forEach>
-			
-			</ul>
+				</ul>
+	<c:choose>
+		<c:when test="${empty search_info}">
+		
 			<ul class="hehe">
 			<li><a href="product.do?pageNum=1">&lt;&lt;</a></li>
 			<li class="left_btn"><a href="product.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
@@ -171,15 +173,35 @@ width: 40%;
 			<li class="right_btn"><a href="product.do?pageNum=${paging.endPage+1}">&gt;</a></li>
 			<li><a href="product.do?pageNum=${paging.totalPage }">&gt;&gt;</a></li>
 			</ul>
+			
+		</c:when>
+		
+		
+		<c:otherwise>
+			<ul class="hehe">
+			<li><a href="product_search.do?pageNum=1">&lt;&lt;</a></li>
+			<li class="left_btn"><a href="product_search.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
+			<c:forEach var="i" begin="${paging.beginPage }" end="${paging.endPage }"
+				varStatus = "status">
+				<li><a href="product_search.do?pageNum=${status.index}?searchinfo=${search_info}"
+				 class= "btn_count${status.index}">${status.index}</a></li>
+				
+			</c:forEach>
+			<li class="right_btn"><a href="product_search.do?pageNum=${paging.endPage+1}" >&gt;</a></li>
+			<li><a href="product_search.do?pageNum=${paging.totalPage }">&gt;&gt;</a></li>
+			</ul>
+		
+		</c:otherwise>
+	
+	</c:choose>
+			
 		</div>
 
 	</div>
 	<script>
 		$(".btn_count"+${page}).css('color','violet');
 		$(".btn_count"+${page}).css('border-bottom','solid 1px violet');
-		var pgn = ${page}/10;
-		
-	
+
 	</script>
 </body>
 </html>

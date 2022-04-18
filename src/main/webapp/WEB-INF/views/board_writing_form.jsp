@@ -131,10 +131,9 @@
 						<label for="img_up">파일첨부</label> <input type="file" name="b_file"
 							style="margin-left: 100px" multiple value="이미지 첨부" id="b_file"/><br /> <br />
 					</div>
-					<div class="blocks"></div>
+					<div class="select_img"><img src="" /></div>
 				</div>
-				
-				
+				<%=request.getRealPath("/") %>
 				
 				<div class="gallery_writing_form">
 					<div class="blocks">
@@ -167,11 +166,21 @@
 				document.form1.content.focus();
 				return;
 			}
+		
 			// 폼에 입력한 데이터를 서버로 전송
 			document.form1.submit();
 		});
 	});
 	
+	 $("#b_file").change(function(){
+		   if(this.files && this.files[0]) {
+		    var reader = new FileReader;
+		    reader.onload = function(data) {
+		     $(".select_img img").attr("src", data.target.result).width(500);        
+		    }
+		    reader.readAsDataURL(this.files[0]);
+		   }
+		  });
 /* 	$("#b_file").on("click", function(){
 		var index = $("#b_file").index(this);
 		if(filecheck[index]==0){

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,11 @@
 	background-color: #fff;
 }
 
-.chosen_colors {
+#paletteGallery {
+	justify-content: center;
+}
+
+.chosen_palette {
 	width: 7vw;
 	height: 7vw;
 	margin: 1vw;
@@ -103,7 +108,7 @@
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
-input[type="checkbox" i] {
+input[type="radio" ] {
 	position: relative;
 	/* vertical-align: bottom; */
 	margin-top: 3.2vw;
@@ -123,29 +128,29 @@ input[type="checkbox" i] {
 			</a>
 			<form action="saveColors.do" method="post">
 				<div class="palette_colors">
-					<div class="chosen_colors" style="background-color: rgb()"
+					<div id="p1" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text1"></div>
 						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
 					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
+					<div id="p2" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text2"></div>
 						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
 					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
+					<div id="p3" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text3"></div>
 						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
 					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
+					<div id="p4" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text4"></div>
 						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
 					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
+					<div id="p5" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text5"></div>
 						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
 					</div>
 
@@ -157,35 +162,83 @@ input[type="checkbox" i] {
 				</div>
 			</form>
 		</div>
-		<div id="colorGallery" class="gallery-container">
-			<div class="select_palette">
-				<input type="checkbox" class="check_palette">
-				<div class="block" data-index="77"
-					style="background-color: rgb(213, 152, 141); color: rgb(213, 152, 141)">
-					<div class="block-description">muted midtone red</div>
+		<div id="paletteGallery" class="gallery-container">
+			<c:forEach var="colors" items="${list}" varStatus="i" begin="0"
+				end="39">
+				<div class="select_palette">
+					<input type="radio" class="selectedPalette" name="selectedPalette" onClick="">
+					<div id="rgb1" class="block" data-index="${colors.i_seq}"
+						style="background-color: rgb(${colors.i_rgb1}); color: rgb(${colors.i_rgb1}">
+						<div id="cl_name1" class="block-description">${colors.i_colorname1}</div>
+					</div>
+					<div id="rgb2" class="block" data-index="${colors.i_seq}"
+						style="background-color: rgb(${colors.i_rgb2}); color: rgb(${colors.i_rgb2}">
+						<div id="cl_name2" class="block-description">${colors.i_colorname2}</div>
+					</div>
+					<div id="rgb3" class="block" data-index="${colors.i_seq}"
+						style="background-color: rgb(${colors.i_rgb3}); color: rgb(${colors.i_rgb3}">
+						<div id="cl_name3" class="block-description">${colors.i_colorname3}</div>
+					</div>
+					<div id="rgb4" class="block" data-index="${colors.i_seq}"
+						style="background-color: rgb(${colors.i_rgb4}); color: rgb(${colors.i_rgb4}">
+						<div id="cl_name4" class="block-description">${colors.i_colorname4}</div>
+					</div>
+					<div id="rgb5" class="block" data-index="${colors.i_seq}"
+						style="background-color: rgb(${colors.i_rgb5}); color: rgb(${colors.i_rgb5}">
+						<div id="cl_name5" class="block-description">${colors.i_colorname5}</div>
+					</div>
 				</div>
-				<div class="block" data-index="77"
-					style="background-color: rgb(213, 152, 141); color: rgb(213, 152, 141)">
-					<div class="block-description">muted midtone red</div>
-				</div>
-				<div class="block" data-index="77"
-					style="background-color: rgb(213, 152, 141); color: rgb(213, 152, 141)">
-					<div class="block-description">muted midtone red</div>
-				</div>
-				<div class="block" data-index="77"
-					style="background-color: rgb(213, 152, 141); color: rgb(213, 152, 141)">
-					<div class="block-description">muted midtone red</div>
-				</div>
-				<div class="block" data-index="77"
-					style="background-color: rgb(213, 152, 141); color: rgb(213, 152, 141)">
-					<div class="block-description">muted midtone red</div>
-				</div>
-			</div>
+			</c:forEach>
 		</div>
-
-
-
-
 	</div>
+	
+	<script>
+	var palette = [];
+	var seq = [];
+	var palette_text = [];
+	var colorDiv = [];
+	var paletteText = [];
+	var elem = document.getElementById("rgb1");
+	seq.push(elem.getAttribute("data-index"));
+	
+	for(var i = 0; i < 5; i++){
+	palette.push($("#rgb" + (i+1)).css("background-color"));
+	
+	palette_text.push($("#cl_name" + (i+1)).text());
+	
+	colorDiv.push($("#p" + (i+1)));
+
+	paletteText.push($("#text" + (i+1)));
+	
+	}
+	
+	/* 팔레트 버튼 선택 */
+	$(".selectedPalette").on(
+			"click",
+			function() {
+				for(var i = 0; i < 5; i++){
+				$(colorDiv[i]).css('background-color', palette[i]);
+
+				$(paletteText[i]).text(palette_text[i]);
+				console.log((i+1) + "번째 : " +palette[i]);
+				console.log((i+1) + "번째 : " +palette_text[i]);
+				console.log((i+1) + "번째 : " +seq[i])
+				}
+				
+			}
+	)
+	
+	/* 비우기 */
+	$(".btn_empty").on("click", function() {
+			colorPal = $(".chosen_palette");
+			colorText = $(".color_name");
+			colorPal.css('background-color', "white");
+			for(var i = 0; i < 5; i++){
+			document.getElementById("pl_c" + (i+1)).setAttribute("value", "");
+			colorText.html("");
+			}
+			index = 0;
+		})
+	</script>
 </body>
 </html>

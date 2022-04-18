@@ -64,7 +64,6 @@
 	margin-top: 3vw;
 }
 
-
 .gallery-container {
 	width: inherit;
 	height: inherit;
@@ -114,73 +113,84 @@
 .color_name {
 	text-align: center;
 	margin-top: 3vw;
-	vertical-align: middle; font-size : 0.7em;
+	vertical-align: middle;
+	font-size: 0.7em;
 	text-transform: uppercase;
 	line-height: 1.2em;
 	color: white;
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 	font-size: 0.7em;
 }
-.ninja{
-position: fixed;
-z-index: 50;
-width: 100%;
-background-color: white;
+
+.palette_top {
+	position: fixed;
+	z-index: 50;
+	width: 100%;
+	background-color: white;
 }
+
+.space {
+
+	height: 20px;
+}
+
 
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
-	<div class="ninja">
-		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
-				palette 생성</h1>
-		</div>
-		<div class="draft-details">
-			<a href="">
-				<div class="logo"></div>
-			</a>
-			<form action="saveColors.do" method="post">
-				<div class="palette_colors">
-					<div class="chosen_colors" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name"></div>
-						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
-					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name"></div>
-						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
-					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name"></div>
-						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
-					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name"></div>
-						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
-					</div>
-					<div class="chosen_colors" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name"></div>
-						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
-					</div>
+		<div class="palette_top">
+			<div class="header">
+				<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
+					palette 생성</h1>
+			</div>
+			<div class="draft-details">
+				<a href="">
+					<div class="logo"></div>
+				</a>
+				<form action="saveColors.do" method="post">
+					<div class="palette_colors">
+						<div class="chosen_colors" style="background-color: rgb()"
+							data-index="">
+							<div class="color_name"></div>
+							<input type="text" name="pl_c1" id="pl_c1" class="colors" />
+						</div>
+						<div class="chosen_colors" style="background-color: rgb()"
+							data-index="">
+							<div class="color_name"></div>
+							<input type="text" name="pl_c2" id="pl_c2" class="colors" />
+						</div>
+						<div class="chosen_colors" style="background-color: rgb()"
+							data-index="">
+							<div class="color_name"></div>
+							<input type="text" name="pl_c3" id="pl_c3" class="colors" />
+						</div>
+						<div class="chosen_colors" style="background-color: rgb()"
+							data-index="">
+							<div class="color_name"></div>
+							<input type="text" name="pl_c4" id="pl_c4" class="colors" />
+						</div>
+						<div class="chosen_colors" style="background-color: rgb()"
+							data-index="">
+							<div class="color_name"></div>
+							<input type="text" name="pl_c5" id="pl_c5" class="colors" />
+						</div>
 
 
-					<div>
-						<button class="btn_empty" type="button" onclick="">비우기</button>
-						<button class="btn_create" type="submit">팔레트 생성</button>
+						<div>
+							<button class="btn_empty" type="button" onclick="">비우기</button>
+							<button class="btn_create" type="submit">팔레트 생성</button>
+						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
+		<div class="space">
 		</div>
-		
+
 		<div id="colorGallery" class="gallery-container">
+
 			<c:forEach var="color" items="${list}" varStatus="i">
 				<div class="block" data-index="${color.c_seq}" onClick=""
 					style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
@@ -192,8 +202,6 @@ background-color: white;
 
 	</div>
 	<script>
-		
-		
 		let index = 0;
 		var colorList = "";
 		function palette(data) {
@@ -202,7 +210,6 @@ background-color: white;
 
 			var palette = $('.chosen_colors')
 		}
-		
 
 		$(".block").on(
 				"click",
@@ -216,16 +223,12 @@ background-color: white;
 					document.getElementById("pl_c" + (index + 1)).setAttribute(
 							"value", color);
 
-	
-
 					colorDiv = $(".chosen_colors");
 					$(colorDiv[index]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
-					colorList = color;
 
 					colorText = $(".color_name");
 					$(colorText[index++]).text(color_text);
 
-					document.ge
 					console.log(colorList);
 					console.log()
 					if (index >= colorDiv.length) {
@@ -233,24 +236,17 @@ background-color: white;
 					}
 
 				})
-				
-		$(".btn_empty").on("click", function(){
+
+		$(".btn_empty").on("click", function() {
 			colorDiv = $(".chosen_colors");
 			colorText = $(".color_name");
-			$(".chosen_colors").css('background-color', "white");
-			document.getElementById("pl_c" + 1).setAttribute(
-					"value", "");
-			document.getElementById("pl_c" + 2).setAttribute(
-					"value", "");
-			document.getElementById("pl_c" + 3).setAttribute(
-					"value", "");
-			document.getElementById("pl_c" + 4).setAttribute(
-					"value", "");
-			document.getElementById("pl_c" + 5).setAttribute(
-					"value", "");
+			colorDiv.css('background-color', "white");
+			for(var i = 0; i < 5; i++){
+			document.getElementById("pl_c" + (i+1)).setAttribute("value", "");
 			colorText.html("");
+			}
+			index = 0;
 		})
-
 	</script>
 </body>
 

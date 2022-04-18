@@ -17,6 +17,7 @@ public class MagazineVO {
 	private String mz_img;
 	private String mz_site;
 	private String mz_url;
+	private String mz_content;
 	private Date mz_date;
 	private String m_email;
 	
