@@ -111,6 +111,9 @@ button {
 			<div class="menu_choice">
 				<a href="product.do?pageNum=1"><button class="custom-btn menu">소품</button></a>
 			</div>
+			<div class="menu_choice">
+				<a href="video.do?pageNum=1"><button class="custom-btn menu">영상</button></a>
+			</div>
 		</div>
 	</div>
 </body>
