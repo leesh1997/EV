@@ -91,7 +91,7 @@
 		</div>
 		<hr id="line" />
 		<!--  enctype="multipart/form-data" -->
-		<form action="boardInsert.do" name="form1" id="form1" method="post"
+		<form action="fileUpload.do" name="form1" id="form1" method="post"
 			enctype="multipart/form-data">
 			<div class="gallery_writing_form_wrap">
 
@@ -133,6 +133,9 @@
 					</div>
 					<div class="blocks"></div>
 				</div>
+				
+				
+				
 				<div class="gallery_writing_form">
 					<div class="blocks">
 						<label for="insert_btn"></label>

@@ -30,8 +30,8 @@ public class FileUploadController {
 	// 파일 저장할 위치
     // 파일 등록 매핑
     @RequestMapping(value = "/fileUpload.do", method = RequestMethod.POST)
-    public String fileUpload(@RequestParam MultipartFile file,
-            RedirectAttributes redirectAttributes, HttpSession session) throws IOException {
+    public String fileUpload(@RequestParam("b_file") MultipartFile file,
+            RedirectAttributes redirectAttributes, HttpSession session ) throws IOException {
     	System.out.println(session.getServletContext().getRealPath("resources/test"));
     	String savePath = session.getServletContext().getRealPath("resources/test");
         logger.info("fileUpload={}", file);
@@ -44,8 +44,8 @@ public class FileUploadController {
         String msg = file.getOriginalFilename() + " is saved in server db";
         redirectAttributes.addFlashAttribute("msg", msg);
         logger.info("fileUpload={}", msg);
-        System.out.println("들어오니?");
-        return "redirect:board.do";
+        System.out.println("url : " + savePath);
+        return "redirect:board_writing_form.do";
     }
 
 }
