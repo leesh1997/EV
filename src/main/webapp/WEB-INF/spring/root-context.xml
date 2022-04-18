@@ -33,7 +33,8 @@
 		</constructor-arg>
 	</bean>
 
-
-
+	<!-- 패키지 -->
+	
 	<mybatis-spring:scan base-package="kr.ev.model" />
+	<mybatis-spring:scan base-package="kr.ev.utils"/>
 </beans>

@@ -163,8 +163,8 @@ input[type="radio" ] {
 			</form>
 		</div>
 		<div id="paletteGallery" class="gallery-container">
-			<c:forEach var="colors" items="${list}" varStatus="i" begin="1"
-				end="40">
+			<c:forEach var="colors" items="${list}" varStatus="i" begin="0"
+				end="39">
 				<div class="select_palette">
 					<input type="radio" class="selectedPalette" name="selectedPalette" onClick="">
 					<div id="rgb1" class="block" data-index="${colors.i_seq}"
@@ -193,79 +193,52 @@ input[type="radio" ] {
 	</div>
 	
 	<script>
-	var palette1 = []
-	var palette2 = []
-	var palette3 = []
-	var palette4 = []
-	var palette5 = []
-	var seq = []
-	
-	var palette_text1 = []
-	var palette_text2 = []
-	var palette_text3 = []
-	var palette_text4 = []
-	var palette_text5 = []
-	
-	let index = 0;
+	var palette = [];
+	var seq = [];
+	var palette_text = [];
+	var colorDiv = [];
+	var paletteText = [];
 	var elem = document.getElementById("rgb1");
-	seq = elem.getAttribute("data-index");
+	seq.push(elem.getAttribute("data-index"));
 	
+	for(var i = 0; i < 5; i++){
+	palette.push($("#rgb" + (i+1)).css("background-color"));
 	
-	palette1 = $("#rgb1").css("background-color");
-	palette2 = $("#rgb2").css("background-color");
-	palette3 = $("#rgb3").css("background-color");
-	palette4 = $("#rgb4").css("background-color");
-	palette5 = $("#rgb5").css("background-color");
+	palette_text.push($("#cl_name" + (i+1)).text());
 	
-	palette_text1 = $("#cl_name1").text();
-	palette_text2 = $("#cl_name2").text();
-	palette_text3 = $("#cl_name3").text();
-	palette_text4 = $("#cl_name4").text();
-	palette_text5 = $("#cl_name5").text();
+	colorDiv.push($("#p" + (i+1)));
 
-	colorDiv1 = $("#p1");
-	colorDiv2 = $("#p2");
-	colorDiv3 = $("#p3");
-	colorDiv4 = $("#p4");
-	colorDiv5 = $("#p5");
+	paletteText.push($("#text" + (i+1)));
 	
-	paletteText1 = $("#text1");
-	paletteText2 = $("#text2");
-	paletteText3 = $("#text3");
-	paletteText4 = $("#text4");
-	paletteText5 = $("#text5");
-	function palette(data) {
-
-		
-
-		
-		console.log(palette1);
 	}
 	
+	/* 팔레트 버튼 선택 */
 	$(".selectedPalette").on(
-	
 			"click",
 			function() {
-				console.log(palette1);
-				console.log(palette_text1);
-				console.log(seq)
-				$(colorDiv1).css('background-color', palette1);
-				$(colorDiv2).css('background-color', palette2);
-				$(colorDiv3).css('background-color', palette3);
-				$(colorDiv4).css('background-color', palette4);
-				$(colorDiv5).css('background-color', palette5);
+				for(var i = 0; i < 5; i++){
+				$(colorDiv[i]).css('background-color', palette[i]);
 
-				$(paletteText1).text(palette_text1);
-				$(paletteText2).text(palette_text2);
-				$(paletteText3).text(palette_text3);
-				$(paletteText4).text(palette_text4);
-				$(paletteText5).text(palette_text5);
+				$(paletteText[i]).text(palette_text[i]);
+				console.log((i+1) + "번째 : " +palette[i]);
+				console.log((i+1) + "번째 : " +palette_text[i]);
+				console.log((i+1) + "번째 : " +seq[i])
+				}
 				
 			}
-	
 	)
 	
-	
+	/* 비우기 */
+	$(".btn_empty").on("click", function() {
+			colorPal = $(".chosen_palette");
+			colorText = $(".color_name");
+			colorPal.css('background-color', "white");
+			for(var i = 0; i < 5; i++){
+			document.getElementById("pl_c" + (i+1)).setAttribute("value", "");
+			colorText.html("");
+			}
+			index = 0;
+		})
 	</script>
 </body>
 </html>
