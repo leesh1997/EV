@@ -20,4 +20,6 @@ public class VideoVO {
 	private String m_email;
 	private String v_img;
 	
+	private String search_word;
+	
 }
