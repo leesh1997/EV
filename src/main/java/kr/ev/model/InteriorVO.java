@@ -19,11 +19,16 @@ public class InteriorVO {
 	private String i_rgb3;
 	private String i_rgb4;
 	private String i_rgb5;
+	private String i_colorname1;
+	private String i_colorname2;
+	private String i_colorname3;
+	private String i_colorname4;
+	private String i_colorname5;
 	private String i_style;
 	private String i_purpose;
 	private String i_url;
 	private String i_name;
 	private String i_hashtag;
-	private Date i_date;
+	private String i_date;
 	
 }
