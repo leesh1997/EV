@@ -128,29 +128,29 @@ input[type="radio" ] {
 			</a>
 			<form action="saveColors.do" method="post">
 				<div class="palette_colors">
-					<div class="chosen_palette" style="background-color: rgb()"
+					<div id="p1" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text1"></div>
 						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
 					</div>
-					<div class="chosen_palette" style="background-color: rgb()"
+					<div id="p2" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text2"></div>
 						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
 					</div>
-					<div class="chosen_palette" style="background-color: rgb()"
+					<div id="p3" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text3"></div>
 						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
 					</div>
-					<div class="chosen_palette" style="background-color: rgb()"
+					<div id="p4" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text4"></div>
 						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
 					</div>
-					<div class="chosen_palette" style="background-color: rgb()"
+					<div id="p5" class="chosen_palette" style="background-color: rgb()"
 						data-index="">
-						<div class="color_name"></div>
+						<div class="color_name" id="text5"></div>
 						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
 					</div>
 
@@ -193,11 +193,47 @@ input[type="radio" ] {
 	</div>
 	
 	<script>
+	var palette1 = []
+	var palette2 = []
+	var palette3 = []
+	var palette4 = []
+	var palette5 = []
+	var seq = []
 	
+	var palette_text1 = []
+	var palette_text2 = []
+	var palette_text3 = []
+	var palette_text4 = []
+	var palette_text5 = []
 	
 	let index = 0;
+	var elem = document.getElementById("rgb1");
+	seq = elem.getAttribute("data-index");
+	
+	
+	palette1 = $("#rgb1").css("background-color");
+	palette2 = $("#rgb2").css("background-color");
+	palette3 = $("#rgb3").css("background-color");
+	palette4 = $("#rgb4").css("background-color");
+	palette5 = $("#rgb5").css("background-color");
+	
+	palette_text1 = $("#cl_name1").text();
+	palette_text2 = $("#cl_name2").text();
+	palette_text3 = $("#cl_name3").text();
+	palette_text4 = $("#cl_name4").text();
+	palette_text5 = $("#cl_name5").text();
 
-
+	colorDiv1 = $("#p1");
+	colorDiv2 = $("#p2");
+	colorDiv3 = $("#p3");
+	colorDiv4 = $("#p4");
+	colorDiv5 = $("#p5");
+	
+	paletteText1 = $("#text1");
+	paletteText2 = $("#text2");
+	paletteText3 = $("#text3");
+	paletteText4 = $("#text4");
+	paletteText5 = $("#text5");
 	function palette(data) {
 
 		
@@ -210,21 +246,20 @@ input[type="radio" ] {
 	
 			"click",
 			function() {
-				
-			
-				var palette = $(".block").css("background-color");
-				var palette_text = $(".block-description").text();
-				console.log(palette);
-				console.log(palette_text); 
-				for(var i = 0; i < 40; i++){
-				colorDiv = $(".chosen_palette");
-				$(colorDiv).css('background-color', palette);
-				
-				paletteText = $(".color_name");
-				$(paletteText).text(palette_text);
-				}
-				
-				
+				console.log(palette1);
+				console.log(palette_text1);
+				console.log(seq)
+				$(colorDiv1).css('background-color', palette1);
+				$(colorDiv2).css('background-color', palette2);
+				$(colorDiv3).css('background-color', palette3);
+				$(colorDiv4).css('background-color', palette4);
+				$(colorDiv5).css('background-color', palette5);
+
+				$(paletteText1).text(palette_text1);
+				$(paletteText2).text(palette_text2);
+				$(paletteText3).text(palette_text3);
+				$(paletteText4).text(palette_text4);
+				$(paletteText5).text(palette_text5);
 				
 			}
 	
