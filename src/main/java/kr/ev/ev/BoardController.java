@@ -44,7 +44,7 @@ public class BoardController {
 		MemberVO infor = (MemberVO)session.getAttribute("info");
 		String infoNick = infor.getM_nick();
 		System.out.println("닉네임 : " + infoNick);
-		return "redirect:/fileUpload.do";
+		return "redirect:/board.do";
 	}
 
 
