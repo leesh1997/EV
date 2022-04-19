@@ -12,6 +12,11 @@
 <div class='uploadDiv'>
 	<input type = 'file' name = 'uploadFile' multiple>
 </div>
+<div class='uploadResult'>
+	<ul>
+	
+	</ul>
+</div>
 
 <button id='uploadBtn'>Upload</button>
 
@@ -39,11 +44,21 @@ $(document).ready(function(){
 		return true;
 	}
 	
+	var cloneObj = $(".uploadDiv").clone();
+	
+	var uploadResult = $(".uploadResult ul");
+		function showUploadedFile(uploadResultArr){
+			var str = "";
+			$(uploadResultArr).each(function(i, obj){
+				str += "<li>" + obj.fileName + "</li>";
+			});
+			uploadResult.append(str);
+		}
+	
 	$("#uploadBtn").on("click", function(e){
+		
 		var formData = new FormData();
-		
 		var inputFile = $("input[name='uploadFile']");
-		
 		var files = inputFile[0].files;
 		
 		console.log(files);
@@ -57,14 +72,17 @@ $(document).ready(function(){
 		}
 		
 		$.ajax({
-			url: 'WriteReview.do',
+			url: '/WriteReview',
 			processData: false,
 			contentType: false,
 			data: formData,
-					type: 'POST',
-					success: function(result){
-						alert("Uploaded");
-					}
+			type: 'POST',
+			dataType:'json',
+			success: function(result){
+				console.log(result);
+				showUploadedFile(result);
+				$(".uploadDiv").html(cloneObj.html());					
+			}
 		}); // $.ajax
 	});
 });

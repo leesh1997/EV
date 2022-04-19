@@ -106,7 +106,7 @@ button {
 		</div>
 		<div class="menu_wrap">
 			<div class="menu_choice">
-				<a href="magazine.do"><button class="custom-btn menu">매거진</button></a>
+				<a href="magazine.do?pageNum=1"><button class="custom-btn menu">매거진</button></a>
 			</div>
 			<div class="menu_choice">
 				<a href="product.do?pageNum=1"><button class="custom-btn menu">소품</button></a>

@@ -2,8 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ev.model.MagazineMapper">
     
-    <select id="showMagazine" resultType="kr.ev.model.MagazineVO">
-		select mz_seq, mz_title, mz_img, mz_site, mz_content from t_magazine 
+    <select id="magazine" resultType="kr.ev.model.MagazineVO">
+		select mz_seq, mz_title, mz_img, mz_site, mz_content from t_magazine order by mz_seq desc Limit 12 Offset #{pageCount}
     </select>
+    
+    <select id="getMagaVisitCount" resultType="int">
+	    select count(*) from t_magazine
+	</select>
     
 </mapper>

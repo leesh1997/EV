@@ -9,4 +9,8 @@ public interface MagazineMapper {
 
 	List<MagazineVO> showMagazine();
 
+	public List<MagazineVO> magazine(int startNum);
+
+	public int getMagaVisitCount();
+
 }
