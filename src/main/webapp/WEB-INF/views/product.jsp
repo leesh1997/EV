@@ -92,12 +92,24 @@ font-size: 11px;}
 	justify-content: center;
 }
 .search_list ul{
-width: 40%;
+width: 60%;
 }
 .search_list ul li{
 	display: inline-block;	
 	margin-right: 10px; 
 	font-size: 13px;
+}
+input[type="submit"]{
+	border:none;
+	background-color: white;
+}
+input[type="submit"]:hover{
+	border:none;
+	background-color: violet;
+}
+.fromstyle{
+	display: flex;
+	flex-direction: row;
 }
 </style>
 <body>
@@ -114,8 +126,15 @@ width: 40%;
 				예쁜사진좀 올려봐~!</span> -->
 			<div class="board_service">
 				<div class="board_search">
-					<input type="text" style="width: 600px; height: 15px;">
-					<button>검색</button>
+				<form action="product_search.do?pageNum=1" method="post"  
+				id="search_text" >
+					<input type="text"name="searchinfo" style="width: 600px; height: 15px;">	
+					<button>검색</button>				
+				</form>
+			
+				</div>
+				<div>
+					<a href="product.do?pageNum=1">전체결과 보기</a>
 				</div>
 				<div class="board_btn_writingform">
 					<a href="board_writing_form.do"><button>게시물 작성</button></a>
@@ -125,9 +144,11 @@ width: 40%;
 			<div class= "search_list">
 				<ul>
 					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
-					<form action="product_search.do?pageNum=1" method="post">
-					<li><input type="submit" name="searchinfo" value="${list_type.p_type}"></li>
+					<li>
+					<form action="product_search.do?pageNum=1" method="post" class="formstyle">
+					<input type="submit" name="searchinfo" value="${list_type.p_type}">
 					</form>
+					</li>
 					</c:forEach>
 				</ul>
 				</div>
@@ -149,7 +170,7 @@ width: 40%;
 								<div class="board_tit">
 									<a href="#"> <strong style="font-size: 14px">${post.p_name}</strong>
 									</a>
-									<p>${post.p_brand}</p>
+									<p>${post.p_brand} /  종류: ${post.p_type }</p>
 									<p>${post.p_price } 원  </p>
 								</div>
 							</div>
@@ -179,16 +200,16 @@ width: 40%;
 		
 		<c:otherwise>
 			<ul class="hehe">
-			<li><a href="product_search.do?pageNum=1">&lt;&lt;</a></li>
-			<li class="left_btn"><a href="product_search.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
+			<li><a href="product_search.do?searchinfo=${search_info}&pageNum=1">&lt;&lt;</a></li>
+			<li class="left_btn"><a href="product_search.do?searchinfo=${search_info}&pageNum=${paging.beginPage-1}">&lt;</a></li>
 			<c:forEach var="i" begin="${paging.beginPage }" end="${paging.endPage }"
 				varStatus = "status">
-				<li><a href="product_search.do?pageNum=${status.index}"
+				<li><a href="product_search.do?searchinfo=${search_info}&pageNum=${status.index}"
 				 class= "btn_count${status.index}">${status.index}</a></li>
 				
 			</c:forEach>
-			<li class="right_btn"><a href="product_search.do?pageNum=${paging.endPage+1}" >&gt;</a></li>
-			<li><a href="product_search.do?pageNum=${paging.totalPage }">&gt;&gt;</a></li>
+			<li class="right_btn"><a href="product_search.do?searchinfo=${search_info}&pageNum=${paging.endPage+1}" >&gt;</a></li>
+			<li><a href="product_search.do?searchinfo=${search_info}&pageNum=${paging.totalPage }">&gt;&gt;</a></li>
 			</ul>
 		
 		</c:otherwise>

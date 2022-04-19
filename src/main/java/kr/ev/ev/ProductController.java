@@ -67,55 +67,62 @@ public class ProductController {
 		
 	}
 	@RequestMapping("/product_search.do")
-	public String product_search(@RequestParam("pageNum") int pageNum,String searchinfo , Model model, ProductVO page,
+	public String product_search(@RequestParam("pageNum") int pageNum,@RequestParam("searchinfo")String searchinfo , Model model, ProductVO page,
 			HttpServletRequest request, SearchPageVO spvo) {
 		
 		/*
 		 * List<ProductVO> list = mapper.product(); model.addAttribute("list",list);
 		 */
-		Paging paging= new Paging();
-		System.out.println("게시물 수" + pageNum );
-		
-		System.out.println("서치 넘어온값"+ searchinfo);
-		int pages;
-		if (request.getParameter("pageNum") != null) {
-			pages = Integer.parseInt(request.getParameter("pageNum"));
-		} else {
-			pages = 1;
+		try {
+			Paging paging= new Paging();
+			System.out.println("게시물 수" + pageNum );	
+			System.out.println("서치 넘어온값"+ searchinfo);
+			int pages;
+			if (request.getParameter("pageNum") != null) {
+				pages = Integer.parseInt(request.getParameter("pageNum"));
+			} else {
+				pages = 1;
+			}
+			String search;
+			if (request.getParameter("searchinfo") != null) {
+				search = request.getParameter("searchinfo");
+			} else {
+				search=null;
+			}
+			int v = paging.getTotalPage();
+			model.addAttribute("totalPage", v);
+			model.addAttribute("page", pages);
+			System.out.println("page : " + pages);
+			paging.setPage(pages);
+			paging.setSearchinfo(search);
+			int pageCount = 0;
+			pageCount = mapper.getVisitCount_result(searchinfo);
+			System.out.println(pageCount);
+			model.addAttribute("pageCount", pageCount);
+			
+			System.out.println("pageCount : " + pageCount);
+			paging.setTotalCount(pageCount);
+			paging.setPage(pages);
+			int startNum = (pages - 1) * 16 + 1;
+			System.out.println("startNum = " + startNum);
+			int endNum = pages * 16;		
+			List<VideoVO> type_list = mapper.product_dis();
+			/*
+			 * for(int i =0; i<type_list.size();i++) { System.out.println(type_list.get(i));
+			 * }
+			 */
+			spvo.setStartNum(startNum);
+			spvo.setSearchinfo(searchinfo);
+			model.addAttribute("search_info",searchinfo);
+			model.addAttribute("type_list",type_list);
+			List<VideoVO> list = mapper.product_result(spvo);
+			model.addAttribute("list", list);
+			model.addAttribute("paging", paging);
+			return "product";
 		}
-		String search;
-		if (request.getParameter("searchinfo") != null) {
-			search = request.getParameter("searchinfo");
-		} else {
-			search=null;
+		catch (Exception e) {
+			return "redirect:/product.do?pageNum=1";
 		}
-		int v = paging.getTotalPage();
-		model.addAttribute("totalPage", v);
-		model.addAttribute("page", pages);
-		System.out.println("page : " + pages);
-		paging.setPage(pages);
-		paging.setSearchinfo(search);
-		int pageCount = 0;
-		pageCount = mapper.getVisitCount_result(searchinfo);
-		System.out.println(pageCount);
-		model.addAttribute("pageCount", pageCount);
 		
-		System.out.println("pageCount : " + pageCount);
-		paging.setTotalCount(pageCount);
-		paging.setPage(pages);
-		int startNum = (pages - 1) * 16 + 1;
-		System.out.println("startNum = " + startNum);
-		int endNum = pages * 16;		
-		List<VideoVO> type_list = mapper.product_dis();
-		/*
-		 * for(int i =0; i<type_list.size();i++) { System.out.println(type_list.get(i));
-		 * }
-		 */
-		model.addAttribute("search_info",searchinfo);
-		model.addAttribute("type_list",type_list);
-		List<VideoVO> list = mapper.product_result(spvo);
-		model.addAttribute("list", list);
-		model.addAttribute("paging", paging);
-		return "product";
 		}
 }
