@@ -38,7 +38,7 @@
 
 			</div>
 			<div class="hambuger">
-				<button class="open"><a href="#">></a></button>
+				<button class="open">></button>
 			</div>
 
 		</div>
