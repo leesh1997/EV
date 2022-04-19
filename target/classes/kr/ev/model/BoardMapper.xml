@@ -6,7 +6,9 @@
         select b_title, b_file, m_nick from t_board
     </select>
     
-     <insert id="boardInsert" parameterType="kr.ev.model.BoardVO">
-         insert into t_board (b_title, b_content, b_file, b_thumbImg) values (#{b_title}, #{b_content}, #{b_file}, #{b_thumbImg})
+     <insert id="fileboard" parameterType="kr.ev.model.BoardVO">
+         insert into t_board (b_title, b_content, b_file, m_nick) values (#{b_title}, #{b_content}, #{b_file}, #{m_nick})
      </insert>
+     
+     
 </mapper>

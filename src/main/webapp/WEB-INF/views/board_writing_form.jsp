@@ -101,8 +101,11 @@
 					</div> -->
 					<div class="blocks">
 						<input type="hidden" class="title_box" class="input_text"
-							name="b_title" id="writer" value="${sessionScope.infoNick}">
+							name="m_nick" id="writer" value="${info.m_nick}">
 					</div>
+					<script type="text/javascript">
+					console.log("${info.m_nick}");
+					</script>
 				</div>
 
 
@@ -128,12 +131,11 @@
 
 				<div class="gallery_writing_form">
 					<div class="blocks">
-						<label for="img_up">파일첨부</label> <input type="file" name="b_file"
+						<label for="img_up">파일첨부</label> <input type="file" name="file"
 							style="margin-left: 100px" multiple value="이미지 첨부" id="b_file"/><br /> <br />
 					</div>
 					<div class="select_img"><img src="" /></div>
 				</div>
-				<%=request.getRealPath("/") %>
 				
 				<div class="gallery_writing_form">
 					<div class="blocks">
