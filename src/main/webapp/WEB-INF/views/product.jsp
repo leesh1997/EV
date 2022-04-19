@@ -125,7 +125,7 @@ width: 40%;
 			<div class= "search_list">
 				<ul>
 					<c:forEach var = "list_type" items="${type_list }" varStatus="i">
-					<form action="product_search.do?pageNum=1?searchinfo=${list_type.p_type}" method="post">
+					<form action="product_search.do?pageNum=1" method="post">
 					<li><input type="submit" name="searchinfo" value="${list_type.p_type}"></li>
 					</form>
 					</c:forEach>
@@ -183,7 +183,7 @@ width: 40%;
 			<li class="left_btn"><a href="product_search.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
 			<c:forEach var="i" begin="${paging.beginPage }" end="${paging.endPage }"
 				varStatus = "status">
-				<li><a href="product_search.do?pageNum=${status.index}?searchinfo=${search_info}"
+				<li><a href="product_search.do?pageNum=${status.index}"
 				 class= "btn_count${status.index}">${status.index}</a></li>
 				
 			</c:forEach>

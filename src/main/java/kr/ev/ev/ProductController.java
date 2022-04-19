@@ -67,7 +67,7 @@ public class ProductController {
 		
 	}
 	@RequestMapping("/product_search.do")
-	public String product_search(@RequestParam("pageNum") int pageNum,@RequestParam("searchinfo") String searchinfo , Model model, ProductVO page,
+	public String product_search(@RequestParam("pageNum") int pageNum,String searchinfo , Model model, ProductVO page,
 			HttpServletRequest request, SearchPageVO spvo) {
 		
 		/*
