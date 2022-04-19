@@ -127,7 +127,7 @@
 		</div>
 		</div>
 		<div class="list_box">
-		<div class="title">My Furniture<button  type="button" class="no3 updown">Open</button>
+		<div class="title">My Product<button  type="button" class="no3 updown">Open</button>
 		<button class="delete" href="#"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
 		<div class="title list3 lis">
 			<div class= "eeun-ae">
