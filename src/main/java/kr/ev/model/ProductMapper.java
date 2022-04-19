@@ -29,6 +29,8 @@ public interface ProductMapper {
 
 	WishlistVO deletelike(int likeint);
 
+	WishlistVO startcheck(int likeint);
+
 
 	
 }

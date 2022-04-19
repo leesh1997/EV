@@ -242,6 +242,27 @@ input[type="submit"]:hover{
 		$(".btn_count"+${page}).css('color','violet');
 		$(".btn_count"+${page}).css('border-bottom','solid 1px violet');
 		
+		 $('.gallery_items_like').ready(function() {
+
+		      /*   var likee = $(this).val(); */
+		        console.log("눌림");
+				console.log(likee);
+		         $.ajax({
+		            url : "wishlistcheck.do",
+		            type : "post",
+		            dataType : "json",
+		         /*    data : {
+		               "likee" : likee
+		            }, */
+		            success : resultJson,
+		            error : function(e) {
+		               console.log(e);
+		            }
+		         });
+		      }); 
+		      function resultJson(data){
+				  $('#like').find("#Layer_1").css({ fill: 'pink' });
+			  };
 		  $('.gallery_items_like').on('click', function() {
 
 		        var likee = $(this).val();
@@ -260,9 +281,7 @@ input[type="submit"]:hover{
 		            }
 		         });
 		      });
-		  function resultJson(data){
-			  $('#like').find("#Layer_1").css({ fill: 'pink' });
-		  };
+		
 		
 		/* $(".gallery_items_like").click(function () {
 			if($(this).find("#Layer_1").css({ fill: 'black' })){

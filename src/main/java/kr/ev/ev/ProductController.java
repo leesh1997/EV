@@ -144,4 +144,25 @@ public class ProductController {
 	
 		return vo;
 	}
+	@RequestMapping("/wishlistcheck.do")
+	public @ResponseBody String wishlistcheck(String likee) {
+		if(likee==null) {
+			return "";
+		}
+		else {
+			System.out.println("시작!" + likee);
+			int likeint= Integer.parseInt(likee);
+			WishlistVO vo;
+			vo = mapper.startcheck(likeint);
+			if (vo.getW_seq()==0) {
+				System.out.println(vo);
+				return "";
+				
+			}
+			else {
+				return "a";	
+			}
+		
+		}
+	}
 }
