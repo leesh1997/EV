@@ -19,7 +19,15 @@
 .content1 {
 	font-size: large;
 	text-align: center;
-	width: 400px;
+	width: 300px;
+}
+
+.paging {
+	position: relative;
+	z-index: 1;
+	margin-left: 150px;
+	margin-bottom: 15px;
+	margin-right: 250px;
 }
 
 h2 {
@@ -32,7 +40,6 @@ h2 {
 
 .panel-body {
 	width: max-content;
-	height: 310px;
 }
 
 .magazine {
@@ -44,145 +51,95 @@ h2 {
     width: calc(100vw - 100px); */
 	z-index: 50;
 }
+
+.board_list_magazine ul li {
+	display: inline-block;
+	position: relative;
+	font-size: 18px;
+	text-align: center;
+	padding: 0 20px 80px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.pager li>a, .pager li>span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 0px;
+}
+
+.img-thumbnail {
+	width: 400px;
+	height: 400px;
+}
+
+#line {
+	border-color: #999;
+}
 </style>
 </head>
-<body>
+<body style="overflow-x: hidden;">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
-
+	
 	<div class="container-md main_content magazine"
 		style="margin-left: 150px;">
 		<h2>Magazine Site</h2>
-		<div class="panel-default">
+		<hr id="line" />
+	<div>
+	<br>
+	<br>
+	</div>
+	<hr id="line" />
+		<div class="board_list_magazine">
 			<!-- 시작 -->
-			<c:forEach var="mz" items="${list}" varStatus="i" begin="0" end="19">
-				<c:if test="${((mz.mz_seq + 1) % 2) == 0}">
-					<div class="Panel with panel-default class">
-						<div class="panel-body" style="float: left; margin-left: 20px">
-							<td class="maga-img1"><a href="${mz.mz_site }" target="_blank">
-									<img src="${mz.mz_img }" class="img-thumbnail" />
-							</a></td>
-						</div>
-						<div class="panel-body"
-							style="float: left; margin-top: 10px; margin-left: 30px">
-							<td class="maga-con1"><a href="${mz.mz_site }" target="_blank">
-									<p class="content1">${mz.mz_title }</p>
-							</a> <br /> <br /> <br />
-								<p class="content1">${mz.mz_content }</p></td>
-						</div>
-
-					</div>
-				</c:if>
-				<c:if test="${((mz.mz_seq + 1) % 2) != 0}">
-					<div class="Panel with panel-default class row">
-						<div class="panel-body" style="float: left; margin-left: 20px">
-							<td class="maga-img1"><a href="${mz.mz_site }" target="_blank">
-									<img src="${mz.mz_img }" class="img-thumbnail" />
-							</a></td>
-						</div>
-						<div class="panel-body"
-							style="float: left; margin-top: 10px; margin-left: 30px">
-							<td class="maga-con1"><a href="${mz.mz_site }" target="_blank">
-									<p class="content1">${mz.mz_title }</p>
-							</a> <br /> <br /> <br />
-								<p class="content1">${mz.mz_content }</p></td>
-						</div>
-					</div>
-				</c:if>
-			</c:forEach>
-
-
-
-		<!-- 	<div class="Panel with panel-default class">
-				<div class="panel-body" style="float: left; margin-left: 20px">
-					<td class="maga-img1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=8"
-						target="_blank"> <img src="resources/img/maga1.png"
-							class="img-thumbnail" /></a></td>
-				</div>
-				<div class="panel-body"
-					style="float: left; margin-top: 10px; margin-left: 30px">
-					<td class="maga-con1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=8"
-						target="_blank">
-							<p class="content1">벤자민 무어 2022 컬러 트렌드</p>
-					</a> <br /> <br /> <br />
-						<p class="content1">여기에 내용이 들어감</p></td>
-				</div>
-			</div>
-			끝
-			<div class="Panel with panel-default class row">
-				<div class="panel-body" style="float: left; margin-left: 20px">
-					<td class="maga-img1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=7"
-						target="_blank"> <img src="resources/img/maga2.png"
-							class="img-thumbnail" /></a></td>
-				</div>
-				<div class="panel-body"
-					style="float: left; margin-top: 10px; margin-left: 30px">
-					<td class="maga-con1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=7"
-						target="_blank">
-							<p class="content1">벤자민 무어 2021 컬러 트렌드</p>
-					</a> <br /> <br /> <br />
-						<p class="content1">여기에 내용이 들어감</p></td>
-				</div>
-			</div>
-
-			<div class="Panel with panel-default class">
-				<div class="panel-body" style="float: left; margin-left: 20px">
-					<td class="maga-img1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=6"
-						target="_blank"> <img src="resources/img/maga3.png"
-							class="img-thumbnail" /></a></td>
-				</div>
-				<div class="panel-body"
-					style="float: left; margin-top: 10px; margin-left: 30px">
-					<td class="maga-con1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=6"
-						target="_blank">
-							<p class="content1">벤자민 무어 2020 컬러 트렌드</p>
-					</a> <br /> <br /> <br />
-						<p class="content1">여기에 내용이 들어감</p></td>
-				</div>
-			</div>
-
-			<div class="Panel with panel-default class row">
-				<div class="panel-body" style="float: left; margin-left: 20px">
-					<td class="maga-img1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=5"
-						target="_blank"> <img src="resources/img/maga4.png"
-							class="img-thumbnail" /></a></td>
-				</div>
-				<div class="panel-body"
-					style="float: left; margin-top: 10px; margin-left: 30px">
-					<td class="maga-con1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=5"
-						target="_blank">
-							<p class="content1">벤자민 무어 2019 컬러 트렌드</p>
-					</a> <br /> <br /> <br />
-						<p class="content1">여기에 내용이 들어감</p></td>
-				</div>
-			</div>
-
-			<div class="Panel with panel-default class">
-				<div class="panel-body" style="float: left; margin-left: 20px">
-					<td class="maga-img1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=4"
-						target="_blank"> <img src="resources/img/maga5.png"
-							class="img-thumbnail" /></a></td>
-				</div>
-				<div class="panel-body"
-					style="float: left; margin-top: 10px; margin-left: 30px">
-					<td class="maga-con1"><a
-						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=4"
-						target="_blank">
-							<p class="content1">벤자민 무어 2018 컬러 트렌드</p>
-					</a> <br /> <br /> <br />
-						<p class="content1">여기에 내용이 들어감</p></td>
-				</div>
-			</div> -->
-
+			<ul>
+				<c:forEach var="mz" items="${list}">
+					<li style="width: 30%">
+						<%-- <c:if test="${((mz.mz_seq + 1) % 2) == 0}"> --%>
+						<div class="Panel with panel-default class">
+							<div class="panel-body" style="float: left; margin-left: 20px;">
+								<a href="${mz.mz_site }" target="_blank"> <img
+									src="${mz.mz_img }" class="img-thumbnail" />
+								</a>
+							</div>
+							<div class="panel-body"
+								style="float: left; margin-top: 10px; margin-left: 30px;">
+								<div class="board_tit">
+									<label style="margin-right: 10px; float: left">제목</label>
+									<br><br>
+									<td class="maga-con1"><a href="${mz.mz_site }"
+										target="_blank"> <strong class="content1">${mz.mz_title }</strong>
+									</a>
+								</div>
+							</div>
+					</li>
+				</c:forEach>
+			</ul>
 		</div>
+
+		<div class="paging" style="text-align: center; font-size: 15px">
+			<ul class="pagination pager">
+				<c:choose>
+					<c:when test="${paging.prev}">
+						<li><a href="magazine.do?pageNum=${paging.beginPage-1}">Previous</a></li>
+					</c:when>
+				</c:choose>
+				<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
+					step="1" varStatus="status">
+					<li><a href="magazine.do?pageNum=${status.index}"
+						class="bottom_count${status.index}">${status.index}</a></li>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${paging.next}">
+						<li><a href="magazine.do?pageNum=${paging.endPage+1}">Next</a></li>
+					</c:when>
+				</c:choose>
+			</ul>
+		</div>
+
 	</div>
 </body>
 </html>
