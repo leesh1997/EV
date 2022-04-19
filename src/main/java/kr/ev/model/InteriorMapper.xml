@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.ev.model.InteriorMapper"></mapper>
+<mapper namespace="kr.ev.model.InteriorMapper">
+    
+    	<select id="showInteriorImg" resultType="kr.ev.model.InteriorVO">
+
+		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior
+
+	</select>
+    
+</mapper>
