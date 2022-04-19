@@ -590,7 +590,7 @@ input[type='checkbox'] {
 								<input type="hidden" name="m_email" value="${info.m_email}">
 								<input type="hidden" name="m_pw" value="${info.m_pw}">
 								<button type="submit" id="delBtn"
-									style="text-decoration: underline;" onclick="mDelete">회원
+									style="text-decoration: underline; background: none;" onclick="mDelete">회원
 									탈퇴</button>
 									<script type="text/javascript">
 										$("#delBtn").click(function(){
@@ -671,7 +671,7 @@ input[type='checkbox'] {
 										name=email_address list="user_email_address"
 										style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;"> -->
 										<p style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1">${info.m_email}</p>
-										
+										<input id="m_id" name="m_email" value="${info.m_email}" style="display: none">
 										<datalist id="user_email_address">
 											<option value="naver.com">naver.com</option>
 											<option value="hanmail.net">hanmail.net</option>
@@ -680,7 +680,7 @@ input[type='checkbox'] {
 											<option value="hotmail.com">hotmail.com</option>
 											<option value="icloud.com">icloud.com</option>
 											<option value="직접입력">직접입력</option>
-										</datalist> <input type="hidden" id="m_email" name="m_email" value=""
+										</datalist> <input type="hidden" id="m_email" value=""
 										oninput="checkId()"> <!-- <button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button> -->
 									</td>
 								</tr>
