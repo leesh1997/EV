@@ -259,8 +259,10 @@ input[type="radio"] {
 			colorNames_in = $("#text" + (i+1))
 		 	$(palette_in).css("background-color", palette[i]);
 		 	$(colorNames_in).text(colorNames[i]);
-		 	document.getElementById("pl_c" + (i + 1)).setAttribute(
-					"value", colors.css('background-color'));
+		 	palette_data = $("#pl_c"+(i+1));
+		 	$(palette_data).val(palette[i]);
+		 	/* document.getElementById("pl_c" + (i + 1)).setAttribute(
+					"value", colors.css('background-color')); */
 		}
 		
 		
@@ -274,7 +276,7 @@ input[type="radio"] {
 				function() {
 					colorPal = $(".chosen_palette");
 					colorText = $(".color_name");
-					colorPal.css('background-color', " ");
+					colorPal.css('background-color', "white");
 					for (var i = 0; i < 5; i++) {
 						document.getElementById("pl_c" + (i + 1)).setAttribute(
 								"value", "");
