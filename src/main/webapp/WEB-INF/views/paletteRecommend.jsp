@@ -146,7 +146,7 @@ input[type="radio"] {
 }
 
 .space {
-	height: 290px;
+	height: 300px;
 }
 </style>
 <body>
@@ -162,29 +162,29 @@ input[type="radio"] {
 					<div class="logo"></div>
 				</a>
 				<form action="savePalette.do" method="post">
-					<div class="palette_colors">
+					<div class="palette_colors" data-index="">
 						<div id="p1" class="chosen_palette"
-							style="background-color: rgb()" data-index="">
+							style="background-color: rgb()">
 							<div class="color_name" id="text1"></div>
 							<input type="text" name="pl_c1" id="pl_c1" class="colors" />
 						</div>
 						<div id="p2" class="chosen_palette"
-							style="background-color: rgb()" data-index="">
+							style="background-color: rgb()">
 							<div class="color_name" id="text2"></div>
 							<input type="text" name="pl_c2" id="pl_c2" class="colors" />
 						</div>
 						<div id="p3" class="chosen_palette"
-							style="background-color: rgb()" data-index="">
+							style="background-color: rgb()">
 							<div class="color_name" id="text3"></div>
 							<input type="text" name="pl_c3" id="pl_c3" class="colors" />
 						</div>
 						<div id="p4" class="chosen_palette"
-							style="background-color: rgb()" data-index="">
+							style="background-color: rgb()">
 							<div class="color_name" id="text4"></div>
 							<input type="text" name="pl_c4" id="pl_c4" class="colors" />
 						</div>
 						<div id="p5" class="chosen_palette"
-							style="background-color: rgb()" data-index="">
+							style="background-color: rgb()" >
 							<div class="color_name" id="text5"></div>
 							<input type="text" name="pl_c5" id="pl_c5" class="colors" />
 						</div>
@@ -203,26 +203,26 @@ input[type="radio"] {
 		<div id="paletteGallery" class="gallery-container">
 			<c:forEach var="colors" items="${list}" varStatus="i" begin="0"
 				end="39">
-				<div class="select_palette">
+				<div class="select_palette" data-index="${colors.i_seq}">
 					<input type="radio" class="selectedPalette" name="selectedPalette"
-						onClick="">
-					<div id="rgb1" class="block" data-index="${colors.i_seq}"
+						>
+					<div id="rgb1" class="block" 
 						style="background-color: rgb(${colors.i_rgb1}); color: rgb(${colors.i_rgb1}">
 						<div id="cl_name1" class="block-description">${colors.i_colorname1}</div>
 					</div>
-					<div id="rgb2" class="block" data-index="${colors.i_seq}"
+					<div id="rgb2" class="block" 
 						style="background-color: rgb(${colors.i_rgb2}); color: rgb(${colors.i_rgb2}">
 						<div id="cl_name2" class="block-description">${colors.i_colorname2}</div>
 					</div>
-					<div id="rgb3" class="block" data-index="${colors.i_seq}"
+					<div id="rgb3" class="block" 
 						style="background-color: rgb(${colors.i_rgb3}); color: rgb(${colors.i_rgb3}">
 						<div id="cl_name3" class="block-description">${colors.i_colorname3}</div>
 					</div>
-					<div id="rgb4" class="block" data-index="${colors.i_seq}"
+					<div id="rgb4" class="block" 
 						style="background-color: rgb(${colors.i_rgb4}); color: rgb(${colors.i_rgb4}">
 						<div id="cl_name4" class="block-description">${colors.i_colorname4}</div>
 					</div>
-					<div id="rgb5" class="block" data-index="${colors.i_seq}"
+					<div id="rgb5" class="block" 
 						style="background-color: rgb(${colors.i_rgb5}); color: rgb(${colors.i_rgb5}">
 						<div id="cl_name5" class="block-description">${colors.i_colorname5}</div>
 					</div>
@@ -232,35 +232,36 @@ input[type="radio"] {
 	</div>
 
 	<script>
-		var palette = [];
-		var seq = [];
-		var palette_text = [];
-		var colorDiv = [];
-		var paletteText = [];
-		var elem = document.getElementById("rgb1");
-		seq.push(elem.getAttribute("data-index"));
+	
 
-		for (var i = 0; i < 5; i++) {
-			palette.push($("#rgb" + (i + 1)).css("background-color"));
 
-			palette_text.push($("#cl_name" + (i + 1)).text());
 
-			colorDiv.push($("#p" + (i + 1)));
-
-			paletteText.push($("#text" + (i + 1)));
-
-		}
 
 		/* 팔레트 버튼 선택 */
+		
 		$(".selectedPalette").on("click", function() {
-			for (var i = 0; i < 5; i++) {
-				$(colorDiv[i]).css('background-color', palette[i]);
-
-				$(paletteText[i]).text(palette_text[i]);
-				console.log((i + 1) + "번째 : " + palette[i]);
-				console.log((i + 1) + "번째 : " + palette_text[i]);
-				console.log((i + 1) + "번째 : " + seq[i])
+			
+			var colors = $(this).nextAll('.block')
+			var palette = [];
+			var colorText = $(this).nextAll('.block').children('.block-description')
+			var colorNames = [];
+			for(var i = 0; i < colors.length; i++){
+				palette.push($(colors[i]).css('background-color'))
+				colorNames.push($(colorText[i]).text())
 			}
+			
+			console.log(palette);
+			console.log(colorNames);
+			
+		/* 선택한 팔레트 전송 색 및 이름 표시 */
+		for(var i = 0; i < 5; i++){
+			palette_in = $("#p" + (i+1));
+			colorNames_in = $("#text" + (i+1))
+		 	$(palette_in).css("background-color", palette[i]);
+		 	$(colorNames_in).text(colorNames[i]);
+		}
+		
+			
 
 		})
 
@@ -276,6 +277,7 @@ input[type="radio"] {
 								"value", "");
 						colorText.html("");
 					}
+					
 					index = 0;
 				})
 	</script>
