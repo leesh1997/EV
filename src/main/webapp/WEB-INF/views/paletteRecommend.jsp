@@ -161,7 +161,7 @@ input[type="radio"] {
 				<a href="">
 					<div class="logo"></div>
 				</a>
-				<form action="saveColors.do" method="post">
+				<form action="savePalette.do" method="post">
 					<div class="palette_colors">
 						<div id="p1" class="chosen_palette"
 							style="background-color: rgb()" data-index="">
@@ -192,7 +192,7 @@ input[type="radio"] {
 
 						<div>
 							<button class="btn_empty" type="button" onclick="">비우기</button>
-							<button class="btn_create" type="submit">팔레트 선택</button>
+							<button class="btn_create" type="submit">팔레트 저장</button>
 						</div>
 					</div>
 				</form>

@@ -14,4 +14,6 @@ public interface PaletteMapper {
 
 	List<InteriorVO> paletteGallery();
 
+	void savePalette(PaletteVO vo);
+
 }
