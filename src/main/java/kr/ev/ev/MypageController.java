@@ -33,6 +33,7 @@ public class MypageController {
 		@RequestMapping("/memberUpdate.do")
 		public String memberUpdate(MemberVO vo,HttpSession session) {
 			System.out.println("회원정보 수정 기능 동작");
+			System.out.println(vo);
 			mapper.memberUpdate(vo);
 			return "redirect:/main.do";
 		}
