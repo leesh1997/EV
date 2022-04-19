@@ -146,7 +146,7 @@ input[type="radio"] {
 }
 
 .space {
-	height: 300px;
+	height: 310px;
 }
 </style>
 <body>
@@ -155,7 +155,7 @@ input[type="radio"] {
 		<div class="palette_top">
 			<div class="header">
 				<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Palette
-					select</h1>
+					선택</h1>
 			</div>
 			<div class="draft-details">
 				<a href="">
