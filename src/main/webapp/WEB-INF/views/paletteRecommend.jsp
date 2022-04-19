@@ -146,7 +146,7 @@ input[type="radio"] {
 }
 
 .space {
-	height: 300px;
+	height: 310px;
 }
 </style>
 <body>
@@ -155,7 +155,7 @@ input[type="radio"] {
 		<div class="palette_top">
 			<div class="header">
 				<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Palette
-					select</h1>
+					선택</h1>
 			</div>
 			<div class="draft-details">
 				<a href="">
@@ -241,13 +241,13 @@ input[type="radio"] {
 		
 		$(".selectedPalette").on("click", function() {
 			
-			var colors = $(this).nextAll('.block')
+			var colors = $(this).nextAll('.block') 
 			var palette = [];
 			var colorText = $(this).nextAll('.block').children('.block-description')
 			var colorNames = [];
 			for(var i = 0; i < colors.length; i++){
-				palette.push($(colors[i]).css('background-color'))
-				colorNames.push($(colorText[i]).text())
+				palette.push($(colors[i]).css('background-color')) // 블락 클래스 배경 rgb 값 담기
+				colorNames.push($(colorText[i]).text()) // 블락 배경 색 이름 텍스트 담기
 			}
 			
 			console.log(palette);
@@ -259,9 +259,14 @@ input[type="radio"] {
 			colorNames_in = $("#text" + (i+1))
 		 	$(palette_in).css("background-color", palette[i]);
 		 	$(colorNames_in).text(colorNames[i]);
+		 	palette_data = $("#pl_c"+(i+1));
+		 	$(palette_data).val(palette[i]);
+		 	/* document.getElementById("pl_c" + (i + 1)).setAttribute(
+					"value", colors.css('background-color')); */
 		}
 		
-			
+		
+	
 
 		})
 
@@ -271,7 +276,7 @@ input[type="radio"] {
 				function() {
 					colorPal = $(".chosen_palette");
 					colorText = $(".color_name");
-					colorPal.css('background-color', " ");
+					colorPal.css('background-color', "white");
 					for (var i = 0; i < 5; i++) {
 						document.getElementById("pl_c" + (i + 1)).setAttribute(
 								"value", "");

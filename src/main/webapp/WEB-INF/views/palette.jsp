@@ -221,7 +221,6 @@
 					let color_text = $(this).children().text()
 					console.log(color_text);
 
-					let color_in = $(this).val('colors');
 					document.getElementById("pl_c" + (index + 1)).setAttribute(
 							"value", color);
 

@@ -23,7 +23,7 @@
 input, #ftype {
 	width: 320px;
 	height: 30px;
-	margin-top: 15px;
+	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 15px;
 	border: 1px solid #d1d1d1;
@@ -202,13 +202,13 @@ input.gender {
 						<tr>
 							<td class="join_title">비밀번호</td>
 							<td class="join_input"><input type="password" name="m_pw"
-								id="pw" class="join_input" size="20" maxlength="30"
+								id="pw" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="비밀번호" /></td>
 						</tr>
 						<tr>
 							<td class="join_title">비밀번호 확인</td>
 							<td class="join_input"><input type="password" id="checkpw"
-								name="checkpw" class="join_input" onkeyup="passConfirm()"
+								name="checkpw" class="join_input2" onkeyup="passConfirm()"
 								size="20" maxlength="30" height="120px" placeholder="비밀번호 확인" /></td>
 						</tr>
 						<tr>
@@ -219,13 +219,13 @@ input.gender {
 						<tr>
 							<td class="join_title">이름</td>
 							<td class="join_input"><input type="text" name="m_name"
-								id="name" class="join_input" size="20" maxlength="30"
+								id="name" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="이름" /></td>
 						</tr>
 						<tr>
 							<td class="join_title">닉네임</td>
 							<td class="join_input"><input type="text" name="m_nick"
-								id="nick" class="join_input" size="20" maxlength="30"
+								id="nick" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="닉네임" /></td>
 						</tr>
 						<tr>
@@ -236,7 +236,7 @@ input.gender {
 						<tr>
 							<td class="join_title">생년월일</td>
 							<td class="join_input"><input type="date" name="m_birthdate"
-								id="birthdate" class="join_input" size="20" maxlength="30"
+								id="birthdate" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="" /></td>
 						</tr>
 						<tr>
@@ -250,12 +250,12 @@ input.gender {
 						<tr>
 							<td class="join_title">주소</td>
 							<td class="join_input"><input type="text" name="m_addr"
-								id="addr" class="join_input" size="20" maxlength="30"
+								id="addr" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="주소" /></td>
 						</tr>
 						<tr>
 							<td class="join_title">주거 형태</td>
-							<td class="join_input"><select id="ftype" name="m_ftype"
+							<td class="join_input"><select id="ftype"  name="m_ftype"
 								style="width: 320px; height: 30px;">
 									<option value="원룸">원룸</option>
 									<option value="오피스텔">오피스텔</option>
@@ -268,7 +268,7 @@ input.gender {
 						<tr>
 							<td class="join_title">가구 수</td>
 							<td class="join_input"><input type="text" name="m_fsize"
-								id="size" class="join_input" size="20" maxlength="30"
+								id="size" class="join_input2" size="20" maxlength="30"
 								height="120px" placeholder="ex) 1인" /></td>
 						</tr>
 					</table>

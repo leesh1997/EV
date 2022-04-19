@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -14,12 +16,14 @@
 
 <script src="common-script.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
-<link rel = "stylesheet" href="resources/css/wishlist.css" type="text/css">
+<!-- <link rel = "stylesheet" href="resources/css/wishlist.css" type="text/css">
+ -->
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 <style>
 .kXGNQj {
@@ -134,9 +138,10 @@ a {
 
 .ebnvat>strong {
 	display: inline-block;
-	font-size: 38px;
+	font-size: 35px;
 	line-height: 87px;
 	color: rgb(255, 255, 255);
+	margin-top: 15px;
 }
 
 .ebnvat>a {
@@ -231,23 +236,26 @@ em {
 	margin-left: 100px;
 }
 
-/* 회원정보 수정 
-input, #ftype {
+/*  회원정보 수정  */
+.join_input, #ftype {
 	width: 320px;
 	height: 30px;
 	margin-top: 15px;
 	margin-bottom: 5px;
 	margin-left: 15px;
-	border: 1px solid #d1d1d1;
+	/* 	border: 1px solid #d1d1d1;
+ */
 	border-radius: 5%;
-}  */
-/* .input_gender {
+}
+
+.input_gender {
 	width: 15px;
 	height: 15px;
 	margin-top: 30px;
 	margin-bottom: 15px;
 	margin-left: 7px;
-}  */
+}
+
 td.join_title {
 	font-weight: bold;
 }
@@ -255,7 +263,7 @@ td.join_title {
 .join_input2 {
 	width: 320px;
 	height: 30px;
-	margin-top: 15px;
+	margin-top: 10px;
 	margin-bottom: 5px;
 	margin-left: 15px;
 	border: 1px solid #d1d1d1;
@@ -363,6 +371,192 @@ td.join_title {
 	padding-top: 235px;
 	font-weight: bold;
 }
+/* 위시리스트 */
+.main-content {
+	display: block;
+	position: relative;
+	margin-left: 100px;
+	height: max-contents;
+	width: calc(100vw - 100px);
+	z-index: 50;
+}
+
+.choose {
+	display: flex;
+	position: relative;
+	margin-top: 50px;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.title {
+	/* display: block; */
+	
+}
+/* .half{
+	display: flex;
+	position:relative;
+	width: 50%;
+	justify-content: center;
+}
+.half-img{
+	margin-top: 10%;
+	max-width: 50%;
+	height: auto;
+} */
+body {
+	/* overflow: hidden; */
+	padding: 0;
+	margin: 0;
+}
+
+.title {
+	width: 80%;
+	margin-left: 5%;
+	/* 	font-size: 30px; */
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+button.delete {
+	float: right;
+	border: none;
+	background-color: white;
+	margin-right: 10px;
+}
+
+button.updown {
+	float: right;
+}
+
+.list_box {
+	margin-bottom: 20px;
+}
+
+.trashimg {
+	height: 16px;
+	width: auto;
+}
+
+.lis {
+	display: block;
+	position: relative;
+	justify-content: center;
+}
+
+@media ( max-width : 768px) {
+	.main-content {
+		margin-left: 0;
+	}
+	.main-content {
+		width: 100vw;
+	}
+	.title {
+		width: 95%;
+		margin-left: 0;
+	}
+}
+
+button.updown {
+	background-color: white;
+	border: none;
+	border-radius: 5%;
+}
+
+.colore_list {
+	position: relative;
+	display: inline-block;
+}
+
+.delete {
+	float: right;
+}
+
+.jjim_img {
+	width: 20vw;
+	height: auto
+}
+
+.eeun-ae {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+
+.jjim_img_list {
+	width: max-content;
+	height: max-content;
+}
+
+.jjim_text_list {
+	width: auto;
+}
+
+.palette {
+	width: 6vw;
+	height: 6vw;
+	border-radius: 50%;
+	margin-right: 10px;
+	border: 0.7vw solid #f1f5fc;
+}
+
+.inpalette {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	flex-direction: row;
+}
+
+.palette-name {
+	margin-top: 5px;
+}
+
+.point {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+input[type='checkbox'] {
+	margin-top: 3vw;
+	padding-right: 20px;
+}
+
+.check {
+	margin-right: 10px;
+	display: flex;
+	flex-direction: row;
+}
+
+.list-full {
+	width: auto;
+	height: auto;
+	max-height: 600px;
+	overflow: auto;
+}
+
+.list-full::-webkit-scrollbar {
+	width: 2px;
+}
+
+.list-full::-webkit-scrollbar-thumb {
+	background-color: black;
+	width: 2px;
+	border-radius: 10px;
+}
+
+.list-full::-webkit-scrollbar-track {
+	background-color: white;
+}
+
+.cl1 {
+	margin-left: 10px;
+}
+/* input[type='text']{
+	display:none;
+}
+ */
 </style>
 </head>
 <body>
@@ -386,12 +580,26 @@ td.join_title {
 					<div class="common-mypage__sc-wme82i-0 cXbinu"></div>
 					<div class="common-mypage__sc-1loaj4c-0 dZrJws">
 						<div class="common-mypage__sc-1loaj4c-1 ebnvat">
-							<strong>닉네임</strong><a
+							<strong>${info.m_nick}</strong><a
 								href="https://www.musinsa.com/member/mypage">회원정보 수정</a>
 						</div>
 						<div class="common-mypage__sc-1loaj4c-2 xMHPc">
-							<!-- <em>LV.3 멤버</em> -->
-							<span>가입일 : 2017.05.17</span>
+					
+					<!-- 회원탈퇴 -->
+							<form action="memberDelete.do" method="post" id="memForm">
+								<input type="hidden" name="m_email" value="${info.m_email}">
+								<input type="hidden" name="m_pw" value="${info.m_pw}">
+								<button type="submit" id="delBtn"
+									style="text-decoration: underline;" onclick="mDelete">회원
+									탈퇴</button>
+									<script type="text/javascript">
+										$("#delBtn").click(function(){
+											alert('탈퇴한다?ㅠㅠ')
+										});
+									</script>
+							</form>
+
+
 						</div>
 						<!-- <p class="common-mypage__sc-1loaj4c-3 dwgQoo">
 							김*정님 다음 등급인 브론즈까지 22,401점 남았습니다.<a
@@ -400,69 +608,70 @@ td.join_title {
 					</div>
 					<div class="common-mypage__sc-1m1vyak-0 fJZyji">
 						<a href="https://www.musinsa.com/billing/point"><svg
-								width="38" height="38" viewBox="0 0 38 38" fill="none"
+								data-name="Layer 1" id="Layer_1" width="35px" height="35px"
+								viewBox="0 0 500 500" style="fill: white"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M12.6667 15.0667L16.4667 23.8555L19.0001 17.2639L21.5334 23.8555L25.3334 15.0667"
-									stroke="white"></path>
-								<path d="M11.3999 18.8333H26.5999" stroke="white"></path>
+									d="M478,256A222,222,0,0,1,99,413,220.55,220.55,0,0,1,34,256H63.92c0,105.91,86.17,192.08,192.08,192.08S448.08,361.91,448.08,256,361.91,63.92,256,63.92A191.8,191.8,0,0,0,116.58,124H175v29.92H70V49H99.93v49.3A221.93,221.93,0,0,1,478,256ZM250,139V280H373V250H280V139Z" /></svg><em>최근
+								조회 &gt;</em> <!-- <strong></strong> --></a><a href="wishlist.do"> <svg
+								enable-background="new 0 0 48 48" height="35px" id="Layer_1"
+								version="1.1" viewBox="0 0 48 48" width="35px" fill="white"
+								xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink">
+								<path clip-rule="evenodd"
+									d="M24.804,43.648L24,44l-0.804-0.352C12.862,37.313,2,22.893,2,14.884  C2.035,8.326,7.404,3.002,14,3.002c4.169,0,7.849,2.128,10,5.349c2.151-3.221,5.831-5.349,10-5.349c6.596,0,11.965,5.324,12,11.882  C46,22.893,35.138,37.313,24.804,43.648z M34,4.993c-3.354,0-6.469,1.667-8.335,4.46L24,11.946l-1.665-2.494  C20.469,6.66,17.354,4.993,14,4.993c-5.484,0-9.971,4.442-10,9.891c0,7.064,10.234,20.808,20,26.917  c9.766-6.109,20-19.852,20-26.907C43.971,9.435,39.484,4.993,34,4.993z"
+									fill-rule="evenodd" /></svg><em>위시리스트 &gt;</em></a> <a
+							href="whishlist.do"><svg enable-background="new 0 0 32 32"
+								height="35px" id="svg2" version="1.1" viewBox="0 0 32 32"
+								width="35px" xml:space="preserve"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:cc="http://creativecommons.org/ns#"
+								xmlns:dc="http://purl.org/dc/elements/1.1/"
+								xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+								xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+								xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+								xmlns:svg="http://www.w3.org/2000/svg">
+								<g id="background">
+								<rect fill="none" height="32" width="32" /></g>
+								<g id="comment_x5F_accept" fill="white">
 								<path
-									d="M5.06665 19.9843C5.65768 27.0734 11.6594 32.6444 18.9761 32.6444C26.6845 32.6444 32.9333 26.461 32.9333 18.8333C32.9333 11.2057 26.6845 5.02222 18.9761 5.02222C11.6594 5.02222 5.65768 10.5932 5.06665 17.6824"
-									stroke="white"></path></svg><em>최근 조회 &gt;</em> <!-- <strong>3,584</strong> --></a><a
-							href="wishlist.do"><svg width="38" height="38"
-								viewBox="0 0 38 38" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M16.7834 25.7389L16.7834 13.8111H20.2369C21.8274 13.8111 23.1168 15.1005 23.1168 16.691V16.691C23.1168 18.2815 21.8274 19.5708 20.2369 19.5708H16.7834"
-									stroke="white"></path>
-								<path
-									d="M5.06665 19.9843C5.65768 27.0734 11.6594 32.6444 18.9761 32.6444C26.6845 32.6444 32.9333 26.461 32.9333 18.8333C32.9333 11.2057 26.6845 5.02222 18.9761 5.02222C11.6594 5.02222 5.65768 10.5932 5.06665 17.6824"
-									stroke="white"></path></svg><em>위시리스트 &gt;</em> <!-- <strong>2,800</strong> --></a><a
-							href="whishlist.do"><svg width="38" height="38"
-								viewBox="0 0 38 38" fill="none"
-								xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M5.06665 28.8778H4.56665V29.3778H5.06665V28.8778ZM32.9333 28.8778V29.3778H33.4333V28.8778H32.9333ZM32.9333 21.3444H33.4333V20.8444H32.9333V21.3444ZM32.9333 16.3222V16.8222H33.4333V16.3222H32.9333ZM32.9333 8.78888L33.4333 8.78888V8.28888H32.9333V8.78888ZM5.06665 8.78888V8.28888H4.56665V8.78888H5.06665ZM5.06665 16.3222H4.56665V16.8222H5.06665V16.3222ZM5.06665 21.3444V20.8444H4.56665V21.3444H5.06665ZM25.3333 28.3778H5.06665V29.3778H25.3333V28.3778ZM32.9333 28.3778H25.3333V29.3778H32.9333V28.3778ZM32.4333 21.3444L32.4333 28.8778H33.4333L33.4333 21.3444H32.4333ZM32.9333 20.8444C31.8062 20.8444 30.9 19.9399 30.9 18.8333H29.9C29.9 20.5005 31.2622 21.8444 32.9333 21.8444V20.8444ZM30.9 18.8333C30.9 17.7268 31.8062 16.8222 32.9333 16.8222V15.8222C31.2622 15.8222 29.9 17.1662 29.9 18.8333H30.9ZM32.4333 8.78888L32.4333 16.3222H33.4333L33.4333 8.78888L32.4333 8.78888ZM25.3333 9.28888H32.9333V8.28888H25.3333V9.28888ZM5.06665 9.28888H25.3333V8.28888H5.06665V9.28888ZM5.56665 16.3222V8.78888H4.56665V16.3222H5.56665ZM8.09998 18.8333C8.09998 17.1662 6.73775 15.8222 5.06665 15.8222V16.8222C6.19379 16.8222 7.09998 17.7268 7.09998 18.8333H8.09998ZM5.06665 21.8444C6.73775 21.8444 8.09998 20.5005 8.09998 18.8333H7.09998C7.09998 19.9399 6.19379 20.8444 5.06665 20.8444V21.8444ZM5.56665 28.8778V21.3444H4.56665V28.8778H5.56665ZM24.8333 8.78888V11.3H25.8333V8.78888H24.8333ZM25.8333 28.8778V26.3667H24.8333V28.8778H25.8333Z"
-									fill="white"></path>
-								<path
-									d="M19.6333 15.0667H17.7C15.6197 15.0667 13.9333 16.753 13.9333 18.8333V18.8333C13.9333 20.9136 15.6197 22.6 17.7 22.6H19.6333"
-									stroke="white"></path>
-								<path d="M25.3333 13.8111L25.3333 17.5778" stroke="white"></path>
-								<path d="M25.3333 20.0889L25.3333 23.8555" stroke="white"></path></svg><em>나의
-								활동 &gt;</em> <!-- <strong>131</strong> --></a><a
+									d="M26,8H8v2h18V8z M26,12H8v2h15h3V12z M30,17.35V2H2l0,28h2.414l6.002-6h3.643c0.498,4.498,4.309,7.998,8.941,8   c4.97-0.002,8.998-4.03,9-9C31.999,20.858,31.248,18.895,30,17.35z M14.059,22H9.584L4,27.583V4h24v11.518   C26.569,14.56,24.851,14,23,14c-2.143,0-4.106,0.751-5.652,2H8v2h7.517C14.734,19.169,14.221,20.531,14.059,22z M23,29.882   c-3.801-0.008-6.876-3.083-6.885-6.882c0.009-3.801,3.084-6.876,6.885-6.885c3.799,0.009,6.874,3.084,6.882,6.885   C29.874,26.799,26.799,29.874,23,29.882z" />
+								<polygon points="18,23 20,21 22,23 26,19 28,21 22,27  " /></g></svg> <em>나의
+								활동 &gt;</em></a> <a
 							href="https://store.musinsa.com/app/mypage/write_review"><svg
 								width="38" height="38" viewBox="0 0 38 38" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M31.6666 31.3889H17.7333M6.33325 24.4617L24.6781 6.27777L31.6666 13.205L13.3218 31.3889H6.33325V24.4617Z"
-									stroke="white"></path></svg><em>회원정보 수정 &gt;</em> <!-- <strong>3</strong> --></a>
+									stroke="white"></path></svg><em>회원정보 수정 &gt;</em></a>
+
 					</div>
 				</div>
 			</section>
 		</div>
-		
-<!-- 회원정보 수정 -->		
+
+		<!-- 회원정보 수정 -->
 		<div class="update">
-			<form action="joinInsert.do" method="post">
+			<form action="memberUpdate.do" method="post">
 				<div class="main3">
 					<p class="mini_title">My Page > 회원정보 수정</p>
-					<div class="join_wrapper" style="margin: 40px auto;">
-						<!-- <div style="text-align: center;">
-						<img src="resources/img/ev_icon.png" width="150" height="auto"
-							alt="demo" id="btn_goMain" />
-					</div>
-					<hr style="opacity: 0.5;"> -->
-						<form>
+					<div class="join_wrapper" style="margin: 15px auto;">
+
+						<hr style="opacity: 0.5;">
+
 							<table style="margin: auto;">
 								<tr>
 									<td class="join_title">아이디</td>
-									<td class="join_input"><input type="text"
-										name="user_email" id="user_email" required
-										style="width: 165px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1"
-										placeholder="이메일 주소"><span id="middle">@</span><input
-										type="text" id="email_address" name=email_address
-										list="user_email_address"
-										style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
+									<td class="join_input"><%-- <input type="text"
+										name="user_email" id="user_email" class="join_input2" required
+										value="${info.m_email}"
+										style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1"
+										placeholder="이메일 주소"> --%><!-- <span id="middle">@</span> --><!-- <input
+										type="text" id="email_address" class="join_input2"
+										name=email_address list="user_email_address"
+										style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;"> -->
+										<p style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1">${info.m_email}</p>
+										
 										<datalist id="user_email_address">
 											<option value="naver.com">naver.com</option>
 											<option value="hanmail.net">hanmail.net</option>
@@ -501,13 +710,13 @@ td.join_title {
 									<td class="join_title">이름</td>
 									<td class="join_input"><input type="text" name="m_name"
 										id="name" class="join_input2" size="20" maxlength="30"
-										height="120px" placeholder="이름" /></td>
+										height="120px" placeholder="이름" value="${info.m_name}" /></td>
 								</tr>
 								<tr>
 									<td class="join_title">닉네임</td>
 									<td class="join_input"><input type="text" name="m_nick"
 										id="nick" class="join_input2" size="20" maxlength="30"
-										height="120px" placeholder="닉네임" /></td>
+										height="120px" placeholder="닉네임" value="${info.m_nick}" /></td>
 								</tr>
 								<tr>
 									<td></td>
@@ -516,29 +725,32 @@ td.join_title {
 								</tr>
 								<tr>
 									<td class="join_title">생년월일</td>
-									<td class="join_input"><input type="date"
+									<td class="join_input"><!-- <input type="date"
 										name="m_birthdate" id="birthdate" class="join_input2"
-										size="20" maxlength="30" height="120px" placeholder="" /></td>
+										size="20" maxlength="30" height="120px" placeholder="" /> -->
+										<p style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1">${info.m_birthdate}</p>
+										</td>
 								</tr>
 								<tr>
 									<td class="join_title">성별</td>
-									<td class="join_input" colspan="2"><input type="radio"
-										name="m_gender" value="남" class="gender"
-										style="margin-top: 15px; margin-left: 20px;">남자<input
+									<td class="join_input" colspan="2"><input
+										type="radio" name="m_gender" value="남" class="gender"
+										style="margin-top: 15px; margin-left: 20px;"<c:if test="${info.m_gender eq '남'}">checked</c:if>/>남자<input
 										type="radio" name="m_gender" value="여" class="gender"
-										style="margin-top: 15px; margin-left: 20px;">여자<input
+										style="margin-top: 15px; margin-left: 20px;"<c:if test="${info.m_gender eq '여'}">checked</c:if>/>여자<input
 										type="radio" name="m_gender" value="x" class="gender"
-										style="margin-top: 15px; margin-left: 20px;">선택 안함</td>
+										style="margin-top: 15px; margin-left: 20px;"<c:if test="${info.m_gender eq 'x'}">checked</c:if>/>선택 안함</td>
 								</tr>
 								<tr>
 									<td class="join_title">주소</td>
 									<td class="join_input"><input type="text" name="m_addr"
 										id="addr" class="join_input2" size="20" maxlength="30"
-										height="120px" placeholder="주소" /></td>
+										height="120px" placeholder="주소" value="${info.m_addr}" /></td>
 								</tr>
 								<tr>
 									<td class="join_title">주거 형태</td>
 									<td class="join_input"><select id="ftype" name="m_ftype"
+										value="${info.m_ftype}"
 										style="width: 320px; height: 30px; border: 1px solid #d1d1d1; margin-left: 15px; margin-top: 15px;">
 											<option value="원룸">원룸</option>
 											<option value="오피스텔">오피스텔</option>
@@ -551,12 +763,11 @@ td.join_title {
 								<tr>
 									<td class="join_title">가구 수</td>
 									<td class="join_input"><input type="text" name="m_fsize"
-										id="size" class="join_input2" size="20" maxlength="30"
-										height="120px" placeholder="ex) 1인" /></td>
+										value="${info.m_fsize}" id="size" class="join_input2"
+										size="20" maxlength="30" height="120px" placeholder="ex) 1인" /></td>
 								</tr>
 							</table>
-						</form>
-
+					
 						<hr style="opacity: 0.5;">
 						<!-- 					<button type="submit" class="join_btn">회원가입</button>
  -->
@@ -570,66 +781,67 @@ td.join_title {
 				</div>
 			</form>
 		</div>
-		
-<!-- 최근 조회 -->		
-		<div class="recent">
-		<p class="mini_title">My Page > 최근 조회</p>
-			<div class="choose">
-		<div class="list_box">
-		<form action="pwish_delete.do" method="post">
-		<div class="title">Interior<button type="button" class="no1 updown">Open</button>
-		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
-		<div class="title list1 lis">
-		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
-		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
-		<div class= "list-full">
-		<c:forEach var="p_list" items="${ p_list}"  varStatus="i">
-			<div class="inpalette"> 
-			<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
-<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
-					
-			
-				<div class= "point">
-		
-					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
-				
-					</div>
-					<div class ="palette-name">${p_list.pl_seq}</div>
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl2" style="background-color: ${p_list.pl_c2}">
-	
 
-					</div>
-					<div class ="palette-name">${cnt }</div>
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
-				
-					</div>
-					<div class ="palette-name"> 색상</div>
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
-					
-					</div>
-					<div class ="palette-name"> 색상</div>
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
-					
-					</div>
-					<div class ="palette-name"> 색상</div>
-				</div>
-			</div>
-			</div>
-				</c:forEach>
-			</div> 
-				<%-- <div>
+		<!-- 최근 조회 -->
+		<div class="recent">
+			<p class="mini_title">My Page > 최근 조회</p>
+			<div class="choose">
+				<div class="list_box">
+					<form action="pwish_delete.do" method="post">
+						<div class="title">
+							Interior
+							<button type="button" class="no1 updown">Open</button>
+							<button class="delete">
+								<img src="resources/img/trash.png" class="trashimg trash1">
+							</button>
+						</div>
+						<div class="title list1 lis">
+							<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
+		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
+							<div class="list-full">
+								<c:forEach var="p_list" items="${ p_list}" varStatus="i">
+									<div class="inpalette">
+										<div class="check">
+											<input type="checkbox" name="delete_seq"
+												value="${p_list.pl_seq}">
+											<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
+
+
+											<div class="point">
+
+												<div class="palette cl1"
+													style="background-color:${p_list.pl_c1};"></div>
+												<div class="palette-name">${p_list.pl_seq}</div>
+											</div>
+											<div class="point">
+
+												<div class="palette cl2"
+													style="background-color: ${p_list.pl_c2}"></div>
+												<div class="palette-name">${cnt }</div>
+											</div>
+											<div class="point">
+
+												<div class="palette cl3"
+													style="background-color: ${p_list.pl_c3}"></div>
+												<div class="palette-name">색상</div>
+											</div>
+											<div class="point">
+
+												<div class="palette cl4"
+													style="background-color:${p_list.pl_c4}"></div>
+												<div class="palette-name">색상</div>
+											</div>
+											<div class="point">
+
+												<div class="palette cl5"
+													style="background-color: ${p_list.pl_c5}"></div>
+												<div class="palette-name">색상</div>
+											</div>
+										</div>
+									</div>
+								</c:forEach>
+							</div>
+							<%-- <div>
 					<ul>
 						<c:forEach var="pg_num" begin="1" end="${cnt }">
 							<li>${pg_num}</li>
@@ -638,95 +850,113 @@ td.join_title {
 					</ul>
 				</div>
 			 --%>
-		</div>
-		</form>
-		</div>
-		</div>
-		<div class="list_box">
-		<div class="title">Video<button type="button" class="no2 updown">Open</button>
-		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
-		<div class="title list2 lis">
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+						</div>
+					</form>
 				</div>
-				
 			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+			<div class="list_box">
+				<div class="title">
+					Video
+					<button type="button" class="no2 updown">Open</button>
+					<button class="delete">
+						<img src="resources/img/trash.png" class="trashimg trash2">
+					</button>
 				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+				<div class="title list2 lis">
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
 				</div>
-				
 			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+			<div class="list_box">
+				<div class="title">
+					Furniture
+					<button type="button" class="no3 updown">Open</button>
+					<button class="delete" href="#">
+						<img src="resources/img/trash.png" class="trashimg trash3">
+					</button>
 				</div>
-				
-			</div>
-		</div>
-		</div>
-		<div class="list_box">
-		<div class="title">Furniture<button  type="button" class="no3 updown">Open</button>
-		<button class="delete" href="#"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
-		<div class="title list3 lis">
-			<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+				<div class="title list3 lis">
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+					<div class="eeun-ae">
+						<div class="jjim_img_list">
+							<img src="resources/img/bora.png" class="jjim_img">
+						</div>
+						<div class="jjim_text_list">
+							<span>제목</span> <span>ㅉㅉㅉ</span>
+						</div>
+
+					</div>
+
 				</div>
-				
 			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
-			
-		</div>
-		</div>
-	<!-- 	
+			<!-- 	
 		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
 		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
 		</div>
 	</div>
-		
-		</div>
-		
+
+	</div>
+
 	</div>
 
 	<script>
@@ -745,70 +975,187 @@ td.join_title {
 			$('.m_active11').show();
 			$('.ekbdbra0').hide();
 		})
-		
+
 		// 최근 조회
-		$(document).ready(function(){
-		$('.list1, .list2, .list3').hide();
-	})
-	/* 1번버튼 */
+		$(document).ready(function() {
+			$('.list1, .list2, .list3').hide();
+		})
+		/* 1번버튼 */
 		$('.no1').click(function() {
-		if($('.no1').text()=='Open'){
-			$('.no1').text('Close');
-			$('.list1').slideDown(500);
-			if($('.no2').text()=="Close"){
-				$('.no2').text('Open');
-				$('.list2').slideUp(500);
+			if ($('.no1').text() == 'Open') {
+				$('.no1').text('Close');
+				$('.list1').slideDown(500);
+				if ($('.no2').text() == "Close") {
+					$('.no2').text('Open');
+					$('.list2').slideUp(500);
+				}
+				if ($('.no3').text() == 'Close') {
+					$('.no3').text('Open');
+					$('.list3').slideUp(500);
+				}
+			} else if ($('.no1').text() == 'Close') {
+				$('.no1').text('Open');
+				$('.list1').slideUp(500);
 			}
-			if($('.no3').text()=='Close'){
-				$('.no3').text('Open');
-				$('.list3').slideUp(500);
-			}
-		}
-		else if($('.no1').text()=='Close'){
-			$('.no1').text('Open');
-			$('.list1').slideUp(500);
-		}
 		})
 		/* 2번버튼 */
 		$('.no2').click(function() {
-		if($('.no2').text()=='Open'){
-			$('.no2').text('Close');
-			$('.list2').slideDown(500);
-			if($('.no1').text()=='Close'){
-				$('.no1').text('Open');
-				$('.list1').slideUp(500);
-			}
-			if($('.no3').text()=='Close'){
-				$('.no3').text('Open');
-				$('.list3').slideUp(500);
-			}
-		}
-		else if($('.no2').text()=='Close'){
-			$('.no2').text('Open');
-			$('.list2').slideUp(500);
-		}
-		})
-	/*3번버튼  */
-	$('.no3').click(function() {
-		if($('.no3').text()=='Open'){
-			$('.no3').text('Close');
-			$('.list3').slideDown(500);
-			if($('.no2').text()=='Close'){
+			if ($('.no2').text() == 'Open') {
+				$('.no2').text('Close');
+				$('.list2').slideDown(500);
+				if ($('.no1').text() == 'Close') {
+					$('.no1').text('Open');
+					$('.list1').slideUp(500);
+				}
+				if ($('.no3').text() == 'Close') {
+					$('.no3').text('Open');
+					$('.list3').slideUp(500);
+				}
+			} else if ($('.no2').text() == 'Close') {
 				$('.no2').text('Open');
 				$('.list2').slideUp(500);
 			}
-			if($('.no1').text()=='Close'){
-				$('.no1').text('Open');
-				$('.list1').slideUp(500);
+		})
+		/*3번버튼  */
+		$('.no3').click(function() {
+			if ($('.no3').text() == 'Open') {
+				$('.no3').text('Close');
+				$('.list3').slideDown(500);
+				if ($('.no2').text() == 'Close') {
+					$('.no2').text('Open');
+					$('.list2').slideUp(500);
+				}
+				if ($('.no1').text() == 'Close') {
+					$('.no1').text('Open');
+					$('.list1').slideUp(500);
+				}
+			} else if ($('.no3').text() == 'Close') {
+				$('.no3').text('Open');
+				$('.list3').slideUp(500);
 			}
-		}
-		else if($('.no3').text()=='Close'){
-			$('.no3').text('Open');
-			$('.list3').slideUp(500);
-		}
-			
-	})
-		
+
+		})
+
+		// 조인
+		// 이메일주소 하나로 가져오기
+		$("#user_email").blur(function() {
+			email();
+		});
+
+		$("#email_address").change(function() {
+			email();
+		});
+
+		function email() {
+			const email = $("#user_email").val();
+			const middle = $("#middle").text();
+			const address = $("#email_address").val();
+			if (email != "" && address != "") {
+				$("#m_email").val(email + middle + address);
+			}
+		};
+
+		// 아이디 중복체크
+		/* $(email).keyup(function() {
+
+			var id = $('#m_email').val();
+
+			if (id == "") {
+				console(id);
+			} else {
+				$.ajax({
+
+					url : "idCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"id" : id
+					},
+					success : resultJson,
+					error : function(e) {
+						console.log(e);
+					}
+
+				});
+			}
+
+		});
+
+		function resultJson(data) {
+			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+			// 이미 존재하는 아이디 입니다 글자를
+			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+			if (data.m_email == undefined) {
+				// 사용 가능
+				$('#idCheck').html('사용 가능한 아이디 입니다.');
+				$('#idCheck').css('color', '#6999e5');
+				console.log(data.m_email)
+			} else {
+				// 사용 불가능
+				$('#idCheck').html('이미 등록된 아이디 입니다.');
+				$('#idCheck').css('color', '#ef8183');
+			}
+		}; */
+
+		// 비밀번호 일치 확인
+		$("#pw, #checkpw").on("change", function() {
+			var password = $('#pw').val();
+			var passwordcheck = $('#checkpw').val();
+			if (password != passwordcheck) {
+				$('#pwCheck').text('비밀번호가 불일치합니다.')
+				$('#pwCheck').css('color', '#ef8183');
+
+			} else {
+				$('#pwCheck').text('비밀번호가 일치합니다.')
+				$('#pwCheck').css('color', '#6999e5');
+
+			}
+		});
+
+		// 닉네임 중복체크
+		$(nick).keyup(function() {
+
+			var nick = $('#nick').val();
+
+			if (nick == "") {
+				console(nick);
+			} else {
+				$.ajax({
+
+					url : "nickCheck.do",
+					type : "POST",
+					dataType : "JSON",
+					data : {
+						"nick" : nick
+					},
+					success : resultJson2,
+					error : function(e) {
+						console.log(e);
+					}
+
+				});
+			}
+
+		});
+
+		function resultJson2(data) {
+			// 이미 있는 id 회원 정보가 넘어오면 resultIdCheck 태그 안에
+			// 이미 존재하는 아이디 입니다 글자를
+			// 아니라면 사용 가능한 아이디 입니다 글자를 넣어주세요
+			if (data.m_nick == undefined) {
+				// 사용 가능
+				$('#nickCheck').html('사용 가능한 닉네임 입니다.');
+				$('#nickCheck').css('color', '#6999e5');
+				console.log(data.m_nick)
+			} else {
+				// 사용 불가능
+				$('#nickCheck').html('이미 등록된 닉네임 입니다.');
+				$('#nickCheck').css('color', '#ef8183');
+			}
+		};
+
+		// 회원 탈퇴
+
 	</script>
 </body>
 </html>
