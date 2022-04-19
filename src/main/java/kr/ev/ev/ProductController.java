@@ -10,12 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ev.model.Paging;
 import kr.ev.model.ProductMapper;
 import kr.ev.model.ProductVO;
 import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
+import kr.ev.model.WishlistVO;
 
 @Controller
 public class ProductController {
@@ -125,4 +127,11 @@ public class ProductController {
 		}
 		
 		}
+	@RequestMapping("/he.do")
+	public @ResponseBody WishlistVO he(String likee) {
+		System.out.println("확인!!"+likee);
+		int likeint= Integer.parseInt(likee);
+		WishlistVO vo = mapper.pluslike(likeint);
+		return vo;
+	}
 }

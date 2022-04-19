@@ -23,6 +23,8 @@ public interface ProductMapper {
 
 	List<VideoVO> product_result(SearchPageVO spvo);
 
+	WishlistVO pluslike(int likeint);
+
 
 	
 }
