@@ -53,6 +53,9 @@
 	height: 2vw;
 	margin: 1vw;
 	display: block;
+	background-color: black;
+	color: white;
+	border-radius: 2px;
 }
 
 .btn_empty {
@@ -62,6 +65,9 @@
 	margin: 1vw;
 	display: block;
 	margin-top: 3vw;
+	background-color: black; 
+	color : white;
+	border-radius: 2px;
 }
 
 .gallery-container {
@@ -130,11 +136,8 @@
 }
 
 .space {
-
 	height: 20px;
 }
-
-
 </style>
 </head>
 <body>
@@ -186,8 +189,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="space">
-		</div>
+		<div class="space"></div>
 
 		<div id="colorGallery" class="gallery-container">
 
@@ -237,16 +239,19 @@
 
 				})
 
-		$(".btn_empty").on("click", function() {
-			colorDiv = $(".chosen_colors");
-			colorText = $(".color_name");
-			colorDiv.css('background-color', "white");
-			for(var i = 0; i < 5; i++){
-			document.getElementById("pl_c" + (i+1)).setAttribute("value", "");
-			colorText.html("");
-			}
-			index = 0;
-		})
+		$(".btn_empty").on(
+				"click",
+				function() {
+					colorDiv = $(".chosen_colors");
+					colorText = $(".color_name");
+					colorDiv.css('background-color', "white");
+					for (var i = 0; i < 5; i++) {
+						document.getElementById("pl_c" + (i + 1)).setAttribute(
+								"value", "");
+						colorText.html("");
+					}
+					index = 0;
+				})
 	</script>
 </body>
 

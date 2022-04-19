@@ -27,4 +27,13 @@
 		i_colorname4, i_colorname5 from t_interior
 
 	</select>
+	
+		<insert id="savePalette" parameterType="kr.ev.model.PaletteVO">
+
+		insert into
+		t_palette(pl_c1, pl_c2, pl_c3, pl_c4, pl_c5) values (#{pl_c1},
+		#{pl_c2}, #{pl_c3}, #{pl_c4}, #{pl_c5})
+
+	</insert>
+	
 </mapper>

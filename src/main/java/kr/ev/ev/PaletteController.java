@@ -51,6 +51,15 @@ public class PaletteController {
 		model.addAttribute("list", list);
 		return "paletteRecommend";
 	}
+	
+	@RequestMapping("/savePalette.do")
+	public String savePalette(Model model, PaletteVO vo) {
+		System.out.println("팔레트 저장");
+		System.out.println(vo);
+		mapper.savePalette(vo);
+		System.out.println("팔레트 저장완료");
+		return "redirect:/paletteRecommend.do";
+	}
 }
 
 
