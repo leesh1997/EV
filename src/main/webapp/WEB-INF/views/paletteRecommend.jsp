@@ -81,6 +81,29 @@
 	flex-direction: row;
 }
 
+.btn_create {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+	background-color: black;
+	color: white;
+	border-radius: 2px;
+}
+
+.btn_empty {
+	vertical-align: middle;
+	width: 10vw;
+	height: 2vw;
+	margin: 1vw;
+	display: block;
+	margin-top: 3vw;
+	background-color: black;
+	color: white;
+	border-radius: 2px;
+}
+
 .block {
 	display: table;
 	position: relative;
@@ -108,65 +131,81 @@
 	transition: border-radius 0.5s cubic-bezier(0, 0.99, 0, 0.99);
 }
 
-input[type="radio" ] {
+input[type="radio"] {
 	position: relative;
 	/* vertical-align: bottom; */
 	margin-top: 3.2vw;
 	margin-left: 3vw;
 }
+
+.palette_top {
+	position: fixed;
+	z-index: 50;
+	width: 100%;
+	background-color: white;
+}
+
+.space {
+	height: 290px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
-		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Palette
-				select</h1>
-		</div>
-		<div class="draft-details">
-			<a href="">
-				<div class="logo"></div>
-			</a>
-			<form action="saveColors.do" method="post">
-				<div class="palette_colors">
-					<div id="p1" class="chosen_palette" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name" id="text1"></div>
-						<input type="text" name="pl_c1" id="pl_c1" class="colors" />
-					</div>
-					<div id="p2" class="chosen_palette" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name" id="text2"></div>
-						<input type="text" name="pl_c2" id="pl_c2" class="colors" />
-					</div>
-					<div id="p3" class="chosen_palette" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name" id="text3"></div>
-						<input type="text" name="pl_c3" id="pl_c3" class="colors" />
-					</div>
-					<div id="p4" class="chosen_palette" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name" id="text4"></div>
-						<input type="text" name="pl_c4" id="pl_c4" class="colors" />
-					</div>
-					<div id="p5" class="chosen_palette" style="background-color: rgb()"
-						data-index="">
-						<div class="color_name" id="text5"></div>
-						<input type="text" name="pl_c5" id="pl_c5" class="colors" />
-					</div>
+		<div class="palette_top">
+			<div class="header">
+				<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Palette
+					select</h1>
+			</div>
+			<div class="draft-details">
+				<a href="">
+					<div class="logo"></div>
+				</a>
+				<form action="saveColors.do" method="post">
+					<div class="palette_colors">
+						<div id="p1" class="chosen_palette"
+							style="background-color: rgb()" data-index="">
+							<div class="color_name" id="text1"></div>
+							<input type="text" name="pl_c1" id="pl_c1" class="colors" />
+						</div>
+						<div id="p2" class="chosen_palette"
+							style="background-color: rgb()" data-index="">
+							<div class="color_name" id="text2"></div>
+							<input type="text" name="pl_c2" id="pl_c2" class="colors" />
+						</div>
+						<div id="p3" class="chosen_palette"
+							style="background-color: rgb()" data-index="">
+							<div class="color_name" id="text3"></div>
+							<input type="text" name="pl_c3" id="pl_c3" class="colors" />
+						</div>
+						<div id="p4" class="chosen_palette"
+							style="background-color: rgb()" data-index="">
+							<div class="color_name" id="text4"></div>
+							<input type="text" name="pl_c4" id="pl_c4" class="colors" />
+						</div>
+						<div id="p5" class="chosen_palette"
+							style="background-color: rgb()" data-index="">
+							<div class="color_name" id="text5"></div>
+							<input type="text" name="pl_c5" id="pl_c5" class="colors" />
+						</div>
 
 
-					<div>
-						<button class="btn_empty" type="button" onclick="">비우기</button>
-						<button class="btn_create" type="submit">팔레트 선택</button>
+						<div>
+							<button class="btn_empty" type="button" onclick="">비우기</button>
+							<button class="btn_create" type="submit">팔레트 선택</button>
+						</div>
 					</div>
-				</div>
-			</form>
+				</form>
+			</div>
 		</div>
+		<div class="space"></div>
+
 		<div id="paletteGallery" class="gallery-container">
 			<c:forEach var="colors" items="${list}" varStatus="i" begin="0"
 				end="39">
 				<div class="select_palette">
-					<input type="radio" class="selectedPalette" name="selectedPalette" onClick="">
+					<input type="radio" class="selectedPalette" name="selectedPalette"
+						onClick="">
 					<div id="rgb1" class="block" data-index="${colors.i_seq}"
 						style="background-color: rgb(${colors.i_rgb1}); color: rgb(${colors.i_rgb1}">
 						<div id="cl_name1" class="block-description">${colors.i_colorname1}</div>
@@ -191,54 +230,54 @@ input[type="radio" ] {
 			</c:forEach>
 		</div>
 	</div>
-	
-	<script>
-	var palette = [];
-	var seq = [];
-	var palette_text = [];
-	var colorDiv = [];
-	var paletteText = [];
-	var elem = document.getElementById("rgb1");
-	seq.push(elem.getAttribute("data-index"));
-	
-	for(var i = 0; i < 5; i++){
-	palette.push($("#rgb" + (i+1)).css("background-color"));
-	
-	palette_text.push($("#cl_name" + (i+1)).text());
-	
-	colorDiv.push($("#p" + (i+1)));
 
-	paletteText.push($("#text" + (i+1)));
-	
-	}
-	
-	/* 팔레트 버튼 선택 */
-	$(".selectedPalette").on(
-			"click",
-			function() {
-				for(var i = 0; i < 5; i++){
+	<script>
+		var palette = [];
+		var seq = [];
+		var palette_text = [];
+		var colorDiv = [];
+		var paletteText = [];
+		var elem = document.getElementById("rgb1");
+		seq.push(elem.getAttribute("data-index"));
+
+		for (var i = 0; i < 5; i++) {
+			palette.push($("#rgb" + (i + 1)).css("background-color"));
+
+			palette_text.push($("#cl_name" + (i + 1)).text());
+
+			colorDiv.push($("#p" + (i + 1)));
+
+			paletteText.push($("#text" + (i + 1)));
+
+		}
+
+		/* 팔레트 버튼 선택 */
+		$(".selectedPalette").on("click", function() {
+			for (var i = 0; i < 5; i++) {
 				$(colorDiv[i]).css('background-color', palette[i]);
 
 				$(paletteText[i]).text(palette_text[i]);
-				console.log((i+1) + "번째 : " +palette[i]);
-				console.log((i+1) + "번째 : " +palette_text[i]);
-				console.log((i+1) + "번째 : " +seq[i])
-				}
-				
+				console.log((i + 1) + "번째 : " + palette[i]);
+				console.log((i + 1) + "번째 : " + palette_text[i]);
+				console.log((i + 1) + "번째 : " + seq[i])
 			}
-	)
-	
-	/* 비우기 */
-	$(".btn_empty").on("click", function() {
-			colorPal = $(".chosen_palette");
-			colorText = $(".color_name");
-			colorPal.css('background-color', "white");
-			for(var i = 0; i < 5; i++){
-			document.getElementById("pl_c" + (i+1)).setAttribute("value", "");
-			colorText.html("");
-			}
-			index = 0;
+
 		})
+
+		/* 비우기 */
+		$(".btn_empty").on(
+				"click",
+				function() {
+					colorPal = $(".chosen_palette");
+					colorText = $(".color_name");
+					colorPal.css('background-color', " ");
+					for (var i = 0; i < 5; i++) {
+						document.getElementById("pl_c" + (i + 1)).setAttribute(
+								"value", "");
+						colorText.html("");
+					}
+					index = 0;
+				})
 	</script>
 </body>
 </html>
