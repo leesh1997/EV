@@ -7,6 +7,10 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface MypageMapper {
+
+	void memberUpdate(MemberVO vo);
+
+	void memberDelete(MemberVO vo);
 	
 
 }
