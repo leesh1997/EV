@@ -141,7 +141,34 @@
 		</div>
 
 
+		<div class="paging" style="text-align: center; font-size: 15px">
+			<ul class="pagination pager">
+				<c:choose>
+					<c:when test="${paging.prev}">
+						<li><a
+							href="interiorGallery.do?pageNum=${paging.beginPage-1}">Previous</a></li>
+					</c:when>
+				</c:choose>
+				<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
+					step="1" varStatus="status">
+					<li><a href="interiorGallery?pageNum=${status.index}"
+						class="bottom_count${status.index}">${status.index}</a></li>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${paging.next}">
+						<li><a href="interiorGallery?pageNum=${paging.endPage+1}">Next</a></li>
+					</c:when>
+				</c:choose>
+			</ul>
+		</div>
+
 	</div>
+
+	<script>
+	
+	$(".bottom_count"+${page}).css('color','red');
+	
+	</script>
 
 </body>
 </html>

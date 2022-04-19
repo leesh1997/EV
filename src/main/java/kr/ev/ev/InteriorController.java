@@ -19,12 +19,11 @@ public class InteriorController {
 
 	@RequestMapping("/interiorGallery.do")
 	public String showInteriorImg(Model model) {
-
+		
 		System.out.println("이미지 보여주기");
 		List<InteriorVO> list = mapper.showInteriorImg();
 		model.addAttribute("list", list);
 		return "interiorGallery";
-
 	}
-
+	
 }
