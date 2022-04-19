@@ -29,7 +29,7 @@
 					</c:choose>
 				</div>
 				<div class="main-text-box">
-					<a href="#"> MyPage</a>
+					<a href="mypage.do"> MyPage</a>
 				</div>
 				<div class="main-text-box">
 					<a href="join.do">Join</a>

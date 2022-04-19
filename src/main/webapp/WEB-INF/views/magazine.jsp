@@ -19,6 +19,7 @@
 .content1 {
 	font-size: large;
 	text-align: center;
+	width: 400px;
 }
 
 h2 {
@@ -53,46 +54,45 @@ h2 {
 		<h2>Magazine Site</h2>
 		<div class="panel-default">
 			<!-- 시작 -->
-<!-- 
-			<%-- <c:forEach var="mg" items="${mzList}" varStatus="${mz_seq}">
-				<c:if test="${mz_seq % 2 != 0}">
+			<c:forEach var="mz" items="${list}" varStatus="i" begin="0" end="19">
+				<c:if test="${((mz.mz_seq + 1) % 2) == 0}">
 					<div class="Panel with panel-default class">
 						<div class="panel-body" style="float: left; margin-left: 20px">
-							<td class="maga-img1"><a href="${mz_site }" target="_blank">
-									<img src="${mz_img }" class="img-thumbnail" />
+							<td class="maga-img1"><a href="${mz.mz_site }" target="_blank">
+									<img src="${mz.mz_img }" class="img-thumbnail" />
 							</a></td>
 						</div>
 						<div class="panel-body"
 							style="float: left; margin-top: 10px; margin-left: 30px">
-							<td class="maga-con1"><a href="${mz_site }" target="_blank">
-									<p class="content1">${mz_title }</p>
+							<td class="maga-con1"><a href="${mz.mz_site }" target="_blank">
+									<p class="content1">${mz.mz_title }</p>
 							</a> <br /> <br /> <br />
-								<p class="content1">${mz_content }</p></td>
+								<p class="content1">${mz.mz_content }</p></td>
 						</div>
 
 					</div>
 				</c:if>
-				<c:otherwise>
+				<c:if test="${((mz.mz_seq + 1) % 2) != 0}">
 					<div class="Panel with panel-default class row">
 						<div class="panel-body" style="float: left; margin-left: 20px">
-							<td class="maga-img1"><a href="${mz_site }" target="_blank">
-									<img src="${mz_img }" class="img-thumbnail" />
+							<td class="maga-img1"><a href="${mz.mz_site }" target="_blank">
+									<img src="${mz.mz_img }" class="img-thumbnail" />
 							</a></td>
 						</div>
 						<div class="panel-body"
 							style="float: left; margin-top: 10px; margin-left: 30px">
-							<td class="maga-con1"><a href="${mz_site }" target="_blank">
-									<p class="content1">${mz_title }</p>
+							<td class="maga-con1"><a href="${mz.mz_site }" target="_blank">
+									<p class="content1">${mz.mz_title }</p>
 							</a> <br /> <br /> <br />
-								<p class="content1">${mz_content }</p></td>
+								<p class="content1">${mz.mz_content }</p></td>
 						</div>
 					</div>
-				</c:otherwise>
-			</c:forEach> --%>
- -->
+				</c:if>
+			</c:forEach>
 
 
-			<div class="Panel with panel-default class">
+
+		<!-- 	<div class="Panel with panel-default class">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
 						href="https://www.benjaminmoore.co.kr/board/view.php?&bdId=trend&sno=8"
@@ -109,7 +109,7 @@ h2 {
 						<p class="content1">여기에 내용이 들어감</p></td>
 				</div>
 			</div>
-			<!-- 끝 -->
+			끝
 			<div class="Panel with panel-default class row">
 				<div class="panel-body" style="float: left; margin-left: 20px">
 					<td class="maga-img1"><a
@@ -180,7 +180,7 @@ h2 {
 					</a> <br /> <br /> <br />
 						<p class="content1">여기에 내용이 들어감</p></td>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 	</div>

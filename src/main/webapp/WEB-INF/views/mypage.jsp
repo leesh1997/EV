@@ -14,498 +14,225 @@
 
 <script src="common-script.js"></script>
 <link rel="stylesheet" href="resources/css/main.css" />
-<link rel="stylesheet" href="resources/css/login.css" />
+<link rel = "stylesheet" href="resources/css/wishlist.css" type="text/css">
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <style>
-.css-18dsw15 e1ivswjr4 {
-	color: #424242;
-	line-height: 1;
-	font-family: OhouseSans, "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕",
-		"Malgun Gothic", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	letter-spacing: -0.4px;
-	font-size: 15px;
-	-webkit-box-direction: normal;
-	-webkit-tap-highlight-color: transparent;
-	margin: 0;
-	-webkit-box-flex: 0;
-	flex: 0 0 auto;
-	position: relative;
-	padding: 0px 0px 40px;
-}
-
-.myhome-nav {
-	position: relative;
+.kXGNQj {
+	position: fixed;
+	padding: 0px 0px 0px;
+	margin: 0px auto;
+	margin-top: -20px;
+	color: rgb(255, 255, 255);
+	background-color: black;
+	height: 235px;
 	width: 100%;
-	margin: 0 auto;
+	z-index: 90;
 }
 
-.page-navigation__item {
+.cOPbLJ {
+	padding: 20px 0px 24px;
+}
+
+h1 {
+	font-size: inherit;
+}
+
+.cOPbLJ>a {
 	display: inline-block;
+	font-family: Musinsa, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	margin-left: 30px;
+	color: rgb(255, 255, 255);
+	line-height: 52px;
+	margin-top: 15px;
 }
 
-.page-navigation__item>a.active, .page-navigation__item>a:not(.active):hover
-	{
-	color: #35c5f0;
-}
-.page-navigation__item>a {
-    display: block;
-    padding: 0 100px;
-    font-weight: 700;
-    position: relative;
-    height: 60px;
-    line-height: 60px;
-    transition: color .15s ease;
-}
-.myhome-nav__owner .page-navigation__item:not(:first-child) {
-    margin-left: 30px;
-}
-.page-navigation {
-    border-bottom: 1px solid #ededed;
-    width: 100%;
-    overflow: hidden;
-}
-.page-navigation>ul {
-    text-align: center;
-    white-space: nowrap;
-}
-ol, ul {
-    list-style: none;
-}
-
- @media (min-width: 768px) 
-.css-itjaqv {
-   padding: 30px 25px 18px;
-    border-radius: 4px;
-    border: 1px solid rgb(218, 220, 224);
-    box-shadow: rgb(63 71 77 / 6%) 0px 2px 4px 0px;
-}
-
-.css-itjaqv {
- /*    position: relative;
-    padding: 0px;
-    border: 1px solid rgb(219, 219, 219); */
-       padding: 55px 25px 18px;
-    border-radius: 4px;
-    border: 1px solid rgb(218, 220, 224);
-    box-shadow: rgb(63 71 77 / 6%) 0px 2px 4px 0px;
-    width: 400px;
-    height: 330px;
-    margin-left: 80px;
-    margin-top: 20px;
-}
-    
-}
- @media (min-width: 768px) 
-.css-1xbefvf {
-    top: 18px;
-    right: 12px;
-}
-.css-1xbefvf {
-    position: absolute;
-    top: -14px;
-    right: -6px;
-    display: flex;
-    align-items: flex-end;
-    z-index: 1;
-}
-.drop-down {
-    position: relative;
-    display: inline-block;
-}
-.css-rmsnvz {
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    background: none;
-    font-style: inherit;
-    font-variant: inherit;
-    font-weight: inherit;
-    font-stretch: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    color: rgb(66, 66, 66);
-    font-size: 24px;
-}
- @media (min-width: 1024px) 
-.css-hdhsoq {
-    padding: 0px;
-}
- @media (min-width: 768px) 
-.css-hdhsoq {
-    min-height: 120px;
-    padding: 14px 0px 0px 140px;
-}
-.css-hdhsoq {
-    position: relative;
-    min-height: 84px;
-    box-sizing: border-box;
-    padding-left: 104px;
-    margin: 0px 0px 20px;
-}
- @media (min-width: 1024px) 
-.css-1uebeg0 {
-    position: relative;
-    margin: 0px auto 24px;
-}
- @media (min-width: 768px) 
-.css-1uebeg0 {
-    width: 120px;
-    height: 120px;
-}
-.css-1uebeg0 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 84px;
-    height: 84px;
-    margin: 0px 20px 0px 0px;
-    border-radius: 100%;
-    background-color: rgb(237, 237, 237);
-    overflow: hidden;
-}
-.css-1cqverl {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-}
-fieldset, img {
-    border: 0;
-}
- @media (min-width: 1024px) 
-.css-oycm3d {
-    text-align: center;
-}
-.myhome-nav {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-}
- @media (min-width: 768px) 
-.myhome-nav__owner {
-    font-size: 18px;
-}
-.myhome-nav__owner {
-    overflow: visible;
-    font-size: 16px;
-}
-.page-navigation {
-    border-bottom: 1px solid #ededed;
-    width: 100%;
-    overflow: hidden;
-}
-.page-navigation>ul {
-    text-align: center;
-    white-space: nowrap;
-    margin-top: 8px;
-	font-size: 18px;
-}
-.page-navigation__item {
-    display: inline-block;
-    user-select: none;
-}
-.myhome-nav__owner .page-navigation__item:not(:first-child) {
-    margin-left: 30px;
-}
-[role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
-    cursor: pointer;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-}
 a {
-    color: inherit;
-    text-decoration: none;
-}
- @media (min-width: 1256px) 
-.css-1x6h9tu {
-    padding: 0px 60px;
-}
- @media (min-width: 1256px) 
-.css-1mux1hm {
-    margin: 0px -10px;
-}
-.css-1mux1hm {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
- @media (min-width: 1024px) 
-.css-i5en0t {
-    width: 25%;
-}
- @media (min-width: 1256px) 
-.css-i5en0t {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.css-i5en0t {
-    box-sizing: border-box;
-/*     width: 100%; */
-    position: relative;
-    padding-top: 30px;
+	/*    color: inherit; */
+	text-decoration: none;
 }
 
- @media (min-width: 1024px) 
-.css-1049nre {
-    padding: 24px 0px 6px;
-}
- @media (min-width: 768px) 
-.css-1049nre {
-    border-top: 1px solid rgb(234, 235, 239);
-    padding: 22px 12px 0px;
-}
- @media (min-width: 1024px) 
-.css-n5l119 {
-    line-height: 1.15;
-}
- @media (min-width: 768px) 
-.css-n5l119 {
-    margin: 0px 0px 10px;
-    font-size: 26px;
-}
-.css-n5l119 {
-    margin: 0px 0px 3px;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1.2;
-    color: rgb(41, 41, 41);
-    overflow-wrap: break-word;
-    word-break: break-all;
-}
- @media (min-width: 1024px) 
-.css-1uy49c8 {
-    margin: 0px 0px 13px;
-}
-.css-1uy49c8 {
-    margin: 0px 0px 7px;
-    display: block;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 19px;
-    color: rgb(130, 140, 148);
-}
-.css-7haicw {
-    display: inline-block;
-    margin-right: 5px;
-}
-.css-7i5a5g {
-    display: inline-block;
-    margin-right: 10px;
-    font-weight: bold;
-    color: rgb(82, 91, 97);
-}
-.css-d2ibel {
-    opacity: 1;
-    transition: opacity 0.1s ease 0s;
-}
-.css-h9lcdg.css-h9lcdg {
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-right: 6px;
-    font-weight: normal;
-    font-size: 12px;
-    color: rgb(41, 41, 41);
-}
-._1XHs9 {
-    padding: 5px 7px 6px;
-    font-size: 15px;
-    line-height: 19px;
-    }
-     ._1zLQC {
-    background-color: #fff;
-    border-color: #dbdbdb;
-    color: #757575;
-}   
- @media (min-width: 1024px) 
-.css-gb61jx {
-    display: none;
-}
-.css-gb61jx {
-/*     display: inline-block;
- */    margin-right: 6px;
-    font-size: 12px;
-    line-height: 19px;
-    padding: 6px 16px 7px;
-    border-radius: 4px;
-    background-color: rgb(239, 251, 255);
-    color: rgb(63, 71, 77);
-}
-.css-gb61jx > b {
-    margin-left: 2px;
-    color: rgb(53, 197, 240);
-}
-.css-134c4us {
-    display: flex;
-    color: rgb(41, 41, 41);
-}
- @media (min-width: 1024px) 
-.css-1p9dybm {
-    padding: 0px;
-}
- @media (min-width: 768px) 
-.css-1p9dybm {
-    padding: 0px 16px;
-}
-.css-1p9dybm {
-    flex: 1 0 0px;
-    display: block;
-    min-width: 0px;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 18px 16px 14px;
-    transition: opacity 0.1s ease 0s;
-}
- @media (min-width: 1024px) 
-.css-1sravj {
-    display: block;
-}
-.css-1sravj {
-    display: none;
-    margin: 14px 0px 0px;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 15px 0px;
-    font-size: 14px;
-    line-height: 20px;
-    border-radius: 4px;
-    background-color: rgb(239, 251, 255);
-    color: rgb(63, 71, 77);
-    text-align: center;
-    transition: background-color 0.1s ease 0s;
-}
- @media (min-width: 1024px) 
-.css-1dm5gv7 {
-    width: 8.33333%;
-}
-@media (min-width: 1256px) 
-.css-1dm5gv7 {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.css-vb69r7 {
-display: none;
-    margin: 0px -10px 20px;
-    border-bottom: 1px solid rgb(237, 237, 237);
-}
- @media (min-width: 1024px) 
-.css-1ltj86z {
-    width: 66.6667%;
-}
- @media (min-width: 1256px) 
-.css-1ltj86z {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.css-1ecfa5v {
-    max-width: 700px;
-/*     margin: 0px auto;
- */    padding: 50px 0px 0px;
-    color: rgb(41, 41, 41);
-    margin-left: 150px;
-}
-.css-j2mjq4 {
-    margin: 0px 0px 60px;
-}
-.css-rd2t8e {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    margin: 0px 0px 20px;
-}
-.css-dyhp2o {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 1;
-}
-.css-1vy2ypg {
-    margin-left: 0.4ch;
-    color: rgb(53, 197, 240);
-}
-.css-vxgh1s {
-    margin: 0px -10px;
-}
-.css-f61xoy {
-    margin: 0px;
-    padding: 0px;
-    background: none;
-    font-style: inherit;
-    font-variant: inherit;
-    font-stretch: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    display: flex;
-    width: 100%;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    height: 175px;
-    border: 1px dashed rgb(219, 219, 219);
-    color: rgb(117, 117, 117);
-    font-size: 13px;
-    font-weight: bold;
-    transition: color 0.1s ease 0s;
-}
-.css-1n1rkai {
-    margin: 0px 5px -2px 0px;
-}
-a * {
-    border: none;
-}
-.css-rd2t8e {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    margin: 0px 0px 20px;
-}
-.css-dyhp2o {
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 1;
-}
-.css-1vy2ypg {
-    margin-left: 0.4ch;
-    color: rgb(53, 197, 240);
-}
-.css-1n1rkai {
-    margin: 0px 5px -2px 0px;
+.dYNmgC {
+	position: absolute;
+	right: 0px;
+	top: 20px;
+	margin-right: 50px;
 }
 
-.page-navigation__item>a.active:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 4px;
-    background: #35c5f0;
-    left: 0;
-    bottom: 0;
-}
-.main2{
-position: relative;
-z-index: 50;
-margin-left: 100px;
-}
-.myhome-nav__owner .page-navigation__item>a.active:after {
-    margin-top: -8px;
-    border-color: transparent transparent #fff;
+.JsGLX {
+	overflow: hidden;
+	padding-left: 40px;
+	margin-top: -30px;
 }
 
-// 회원정보 수정
-/*  input, #ftype {
+.cXbinu {
+	float: left;
+	width: 100px;
+	height: 100px;
+	background: url(resources/img/user2.png) 50% 50%/cover no-repeat;
+	border-radius: 100%;
+	background-color: #ededed;
+	background-size: 101px;
+	/* margin-left: 7px; */
+	margin-top: 20px
+}
+
+.humJtF {
+	display: inline-block;
+	min-width: 18px;
+	height: 18px;
+	padding: 4px 5px 0px;
+	border-radius: 18px;
+	background-color: rgb(0, 120, 255);
+	box-sizing: border-box;
+	font-family: Musinsa, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 1;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	margin: -2px 0px 0px 4px;
+}
+
+.dZrJws {
+	float: left;
+	min-width: calc(100% - 970px);
+	min-height: 148px;
+	padding-left: 30px;
+	box-sizing: border-box;
+	margin-top: 10px;
+}
+
+.dYNmgC>a {
+	display: inline-flex;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 4px 0px;
+	margin-left: 32px;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.JsGLX {
+	overflow: hidden;
+	padding-left: 100px;
+}
+
+.ebnvat {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	vertical-align: baseline;
+	line-height: 60px;
+}
+
+.ebnvat>strong {
+	display: inline-block;
+	font-size: 38px;
+	line-height: 87px;
+	color: rgb(255, 255, 255);
+}
+
+.ebnvat>a {
+	display: inline-block;
+	padding: 4px;
+	margin: 32px 0px 0px 4px;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgb(145, 145, 145);
+}
+
+.xMHPc {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.xMHPc>em {
+	font-family: Musinsa, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+	font-size: 24px;
+	line-height: 36px;
+	color: rgb(255, 255, 255);
+}
+
+.xMHPc>span {
+	display: inline-flex;
+	margin: 4px 0px 0px 8px;
+	font-size: 14px;
+	line-height: 21px;
+	color: rgb(145, 145, 145);
+}
+
+.dwgQoo {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-top: 4px;
+	font-size: 14px;
+	line-height: 21px;
+	color: rgb(209, 209, 209);
+}
+
+.dwgQoo>a {
+	display: inline-block;
+	margin-left: 8px;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgb(145, 145, 145);
+}
+
+.fJZyji {
+	display: flex;
+	float: left;
+	padding: 40px 0px 0px 20px;
+}
+
+.fJZyji>a {
+	display: flex;
+	flex-direction: column;
+	width: 180px;
+	margin-right: 10px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.fJZyji>a>em {
+	display: block;
+	margin: 8px 0px;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+em {
+	font-style: normal;
+	color: white;
+}
+
+.fJZyji>a>strong {
+	display: block;
+	font-family: Musinsa, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+	font-size: 30px;
+	line-height: 45px;
+	color: white;
+}
+
+.main2 {
+	position: relative;
+	z-index: 50;
+	margin-left: 100px;
+}
+
+/* 회원정보 수정 
+input, #ftype {
 	width: 320px;
 	height: 30px;
 	margin-top: 15px;
@@ -513,8 +240,7 @@ margin-left: 100px;
 	margin-left: 15px;
 	border: 1px solid #d1d1d1;
 	border-radius: 5%;
-} */
- 
+}  */
 /* .input_gender {
 	width: 15px;
 	height: 15px;
@@ -522,343 +248,489 @@ margin-left: 100px;
 	margin-bottom: 15px;
 	margin-left: 7px;
 }  */
-
 td.join_title {
 	font-weight: bold;
 }
 
-.join_input2{
-width: 320px;
+.join_input2 {
+	width: 320px;
 	height: 30px;
 	margin-top: 15px;
 	margin-bottom: 5px;
 	margin-left: 15px;
- 	border: 1px solid #d1d1d1;
+	border: 1px solid #d1d1d1;
 }
 
+/* 회원가입 버튼 */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* Box colors */
+.bg-1 {
+	color: #37474f;
+}
+
+/* Common button styles */
+.button {
+	min-width: 150px;
+	/* max-width: 250px; */
+	display: block;
+	margin: auto;
+	padding: 1em 2em;
+	border: none;
+	background: none;
+	color: inherit;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: bold;
+	width: 450px;
+	height: 60px;
+	font-size: 18px;
+}
+
+.bg-1 .button {
+	color: #37474f;
+	border-color: #37474f;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button>span {
+	vertical-align: middle;
+}
+/* Wapasha */
+.button.button--wapasha {
+	background: black;
+	color: #fff;
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.button--wapasha.button--inverted {
+	background: #fff;
+	color: #37474f;
+}
+
+.button--wapasha::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #3f51b5;
+	z-index: -1;
+	border-radius:;
+	opacity: 0;
+	-webkit-transform: scale3d(0.6, 0.6, 1);
+	transform: scale3d(0.6, 0.6, 1);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--wapasha.button--inverted::before {
+	border-color: #7986cb;
+}
+
+.button--wapasha:hover {
+	background-color: #fff;
+	color: #3f51b5;
+}
+
+.button--wapasha.button--inverted:hover {
+	background-color: #37474f;
+	color: #7986cb;
+}
+
+.button--wapasha:hover::before {
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+	opacity: 1;
+}
+
+.mini_title {
+	margin-top: 15px;
+	margin-left: 65px;
+	font-size: 15px;
+	padding-top: 235px;
+	font-weight: bold;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="main2">
-		<div class="css-18dsw15 e1ivswjr4">
-			<div class="myhome-nav myhome-nav--owner">
-			<h1 style="margin-left:50px;"> My Page</h1>
-				<nav class="page-navigation myhome-nav__owner">
-					 <ul style="transform: translateX(0px);">
-						<li class="page-navigation__item"><button class="m_info"
-							href="/users/12467282" target="_self">회원정보</button></li>
-						<li class="page-navigation__item"><a class=""
-							href="/user_shopping_pages/order_list" target="_self">최근 조회</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="wishlist.do" target="_self">위시리스트</a></li>
-						<li class="page-navigation__item"><button class="m_active"
-							href="/users/12467282/edit" target="_self">나의활동</button></li>
-					</ul> 
-				</nav>
-				<nav class="page-navigation myhome-nav__contents m_info11">
-					<ul style="transform: translateX(0px);">
-						<li class="page-navigation__item"><a class="active"
-							href="/users/12467282" target="_self">회원정보 수정</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/card_collections" target="_self">회원 탈퇴</a></li>
-						<!-- <li class="page-navigation__item"><a class=""
-							href="/users/12467282/projects" target="_self">최근 조회</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/advices" target="_self">나의 활동</a></li> -->
-						<!-- <li class="page-navigation__item"><a class=""
-							href="/users/12467282/questions" target="_self">나의 활동</a></li>
-						 <li class="page-navigation__item"><a class=""
-							href="/users/12467282/collections" target="_self">스크랩북</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/praises" target="_self">좋아요</a></li>  -->
-					</ul>
-				</nav>
-				
-				<nav class="page-navigation myhome-nav__contents m_active11">
-					<ul style="transform: translateX(0px);">
-						<li class="page-navigation__item"><a class="active"
-							href="/users/12467282" target="_self">내가 쓴 글</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/card_collections" target="_self">댓글</a></li>
-						<!-- <li class="page-navigation__item"><a class=""
-							href="/users/12467282/projects" target="_self">최근 조회</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/advices" target="_self">나의 활동</a></li> -->
-						<!-- <li class="page-navigation__item"><a class=""
-							href="/users/12467282/questions" target="_self">나의 활동</a></li>
-						 <li class="page-navigation__item"><a class=""
-							href="/users/12467282/collections" target="_self">스크랩북</a></li>
-						<li class="page-navigation__item"><a class=""
-							href="/users/12467282/praises" target="_self">좋아요</a></li>  -->
-					</ul>
-				</nav>
-			</div>
-			<div class="css-1x6h9tu ekbdbra0">
-				<div class="css-1mux1hm el2z1iq0">
-					<div class="css-i5en0t e1ivswjr3">
-						<div class="sticky-container"
-							style="position: sticky; top: 81px; transition: top 0.1s ease 0s;">
-							<div class="sticky-child" style="position: relative;">
-								<div class="css-0 e1ejty664">
-									<div class="css-itjaqv e1ejty663">
-										<!-- <div class="css-1xbefvf e1ejty662">
-											<div class="drop-down css-0 e1ejty661">
-												<button type="button" aria-pressed="false" aria-label="공유"
-													class="css-rmsnvz e1ejty660">
-													<svg width="24" height="24" viewBox="0 0 24 24"
-														fill="currentColor" preserveAspectRatio="xMidYMid meet">
-														<path
-															d="M9.64 14.646a4.5 4.5 0 1 1 0-5.292l4.54-2.476a4.5 4.5 0 1 1 .63.795l-4.675 2.55c.235.545.365 1.146.365 1.777s-.13 1.232-.365 1.777l4.675 2.55a4.5 4.5 0 1 1-.63.795l-4.54-2.476zM18 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM6 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM18 23a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"></path></svg>
-												</button>
-											</div>
-										</div> -->
-										<div class="css-hdhsoq e18gdfbl4">
-											<div class="css-1uebeg0 e18gdfbl3">
-												<img class="css-1cqverl e18gdfbl2"
-													src="resources/img/user2.png">
-											</div>
-											<div class="css-oycm3d e18gdfbl1">
-												<div class="css-n5l119 etfm1it0">닉네임</div>
-												<div class="css-oycm3d e1iro1t99">
-													<dl class="css-1uy49c8 e1iro1t98">
-														<dt class="css-7haicw e1iro1t97">작성글</dt>
-														<dd class="css-7i5a5g e1iro1t96">
-															<a class="css-d2ibel e1iro1t95"
-																href="/users/12467282/follower">0</a>
-														</dd>
-														<dt class="css-7haicw e1iro1t97">댓글</dt>
-														<dd class="css-7i5a5g e1iro1t96">
-															<a class="css-d2ibel e1iro1t95"
-																href="/users/12467282/followee">0</a>
-														</dd>
-													</dl>
-													<!-- <div class="css-0 e1iro1t94">
-														<a class="_3Z6oR _1zLQC _1XHs9 css-h9lcdg e1iro1t93"
-															href="/users/12467282/edit">설정</a><a
-															class="css-gb61jx e1iro1t91"
-															href="/invite_codes/recommend_code">친구 초대 <b>5,000P</b></a>
-													</div> -->
-												</div>
-											</div>
-										</div>
-										<div class="css-1049nre epl9oik0">
-											<div class="css-134c4us ekeuxnk0">
-												<a class="css-1p9dybm e1q26atk3"
-													href="/users/12467282/collections"><div
-														class="css-zpotx6 e1q26atk2">
-														<svg width="24" height="24" viewBox="0 0 24 24"
-															fill="currentColor" preserveAspectRatio="xMidYMid meet">
-															<path fill-rule="evenodd"
-																transform="matrix(1 0 0 -1 0 23.033)"
-																d="M12.943 6.342a2 2 0 0 1-1.886 0L3 2.032V20.5a.5.5 0 0 0 .5.5h17a.5.5 0 0 0 .5-.5V2.033l-8.057 4.309zm-.471-.882l8.056-4.31A1 1 0 0 1 22 2.034V20.5a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 20.5V2.033a1 1 0 0 1 1.472-.882l8.056 4.31a1 1 0 0 0 .944 0z"></path></svg>
-													</div>
-													<div class="css-10ewlqi e1q26atk1">스크랩북</div>
-													<div class="css-2rwq1u e1q26atk0">29</div></a><a
-													class="css-1p9dybm e1q26atk3"
-													href="/users/12467282/praises"><div
-														class="css-zpotx6 e1q26atk2">
-														<svg width="24" height="24" viewBox="0 0 24 24"
-															preserveAspectRatio="xMidYMid meet">
-															<path fill="currentColor"
-																d="M22.971 7.638c-.548-5.17-7.119-7.135-10.57-2.488a.5.5 0 0 1-.802 0C8.148.503 1.577 2.469 1.029 7.625.642 12.451 3.897 17.183 12 21.436c8.104-4.252 11.36-8.984 10.972-13.798zm.996-.093c.428 5.319-3.137 10.446-11.738 14.899a.5.5 0 0 1-.46 0C3.169 17.99-.395 12.864.034 7.532.656 1.67 7.904-.683 12 4.052 16.096-.683 23.344 1.67 23.967 7.545z"></path></svg>
-													</div>
-													<div class="css-10ewlqi e1q26atk1">좋아요</div>
-													<div class="css-2rwq1u e1q26atk0">0</div></a><a
-													class="css-1p9dybm e1q26atk3"
-													href="/user_shopping_pages/coupons"><div
-														class="css-zpotx6 e1q26atk2">
-														<svg width="24" height="24" viewBox="0 0 24 24"
-															preserveAspectRatio="xMidYMid meet">
-															<path fill="#424242" fill-rule="nonzero"
-																d="M22.588 3H1.413C.633 3 0 3.638 0 4.426L0 9.53l.605-.088c.12-.017.243-.026.367-.026 1.413 0 2.558 1.157 2.558 2.584S2.385 14.584.972 14.584c-.124 0-.247-.009-.367-.026L0 14.47l.001 5.104C.001 20.362.633 21 1.413 21h21.175c.78 0 1.412-.638 1.412-1.426V4.426C24 3.638 23.368 3 22.588 3zM1.413 4.07h21.175c.195 0 .353.159.353.356v15.148c0 .197-.158.357-.353.357H1.413l-.071-.008c-.161-.033-.282-.176-.282-.349l-.002-3.923-.086.002c1.997 0 3.617-1.635 3.617-3.653l-.004-.182C4.493 9.945 3.006 8.443 1.152 8.35l-.094-.003.002-3.922c0-.197.158-.357.353-.357zm14.646 2.138c.293 0 .53.237.53.53v1.614c0 .292-.237.53-.53.53-.292 0-.53-.238-.53-.53V6.737c0-.292.238-.53.53-.53zm0 4.455c.293 0 .53.237.53.53v1.614c0 .293-.237.53-.53.53-.292 0-.53-.237-.53-.53v-1.614c0-.293.238-.53.53-.53zm0 4.456c.293 0 .53.237.53.53v1.614c0 .292-.237.53-.53.53-.292 0-.53-.238-.53-.53v-1.615c0-.292.238-.53.53-.53z"></path></svg>
-													</div>
-													<div class="css-10ewlqi e1q26atk1">내 쿠폰</div>
-													<div class="css-2rwq1u e1q26atk0">0</div></a>
-											</div>
-										</div>
-									</div>
-									<a class="css-1sravj e1s6kf711"
-										href="/invite_codes/recommend_code">친구 초대하고 <b>5,000P</b>
-										받기<svg width="1em" height="1em" viewBox="0 0 24 24"
-											preserveAspectRatio="xMidYMid meet"
-											class="css-1pjipdo e1s6kf710">
-											<path fill="currentColor" fill-rule="nonzero"
-												d="M6 19.692L8.25 22 18 12 8.25 2 6 4.308 13.5 12z"></path></svg></a>
-								</div>
-							</div>
+		<div id="commonMypage">
+			<section class="common-mypage__sc-5trtbg-0 kXGNQj">
+				<h1 class="common-mypage__sc-5trtbg-1 cOPbLJ">
+					<a href="https://store.musinsa.com/app/mypage"
+						style="color: white; margin-top: -15px; margin-left: 50px;">My
+						Page</a>
+				</h1>
+				<!-- <div class="common-mypage__sc-5trtbg-2 dYNmgC">
+					<a href="https://store.musinsa.com/app/cart"style="color: white;">장바구니<span
+						data-system="CCommonBadge"
+						class="common-mypage__sc-dlv48s-0 humJtF">6</span></a><a
+						href="https://store.musinsa.com/app/cs"style="color: white;">고객센터</a><a
+						href="https://www.musinsa.com/auth/logout"style="color: white;">로그아웃</a>
+				</div> -->
+				<div class="common-mypage__sc-5trtbg-3 JsGLX">
+					<div class="common-mypage__sc-wme82i-0 cXbinu"></div>
+					<div class="common-mypage__sc-1loaj4c-0 dZrJws">
+						<div class="common-mypage__sc-1loaj4c-1 ebnvat">
+							<strong>닉네임</strong><a
+								href="https://www.musinsa.com/member/mypage">회원정보 수정</a>
 						</div>
+						<div class="common-mypage__sc-1loaj4c-2 xMHPc">
+							<!-- <em>LV.3 멤버</em> -->
+							<span>가입일 : 2017.05.17</span>
+						</div>
+						<!-- <p class="common-mypage__sc-1loaj4c-3 dwgQoo">
+							김*정님 다음 등급인 브론즈까지 22,401점 남았습니다.<a
+								href="https://www.musinsa.com/member/benefit">등급혜택 &gt;</a>
+						</p> -->
 					</div>
-					<div class="css-1dm5gv7 e15wafbq0">
-						<div class="css-vb69r7 e1ivswjr2"></div>
+					<div class="common-mypage__sc-1m1vyak-0 fJZyji">
+						<a href="https://www.musinsa.com/billing/point"><svg
+								width="38" height="38" viewBox="0 0 38 38" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M12.6667 15.0667L16.4667 23.8555L19.0001 17.2639L21.5334 23.8555L25.3334 15.0667"
+									stroke="white"></path>
+								<path d="M11.3999 18.8333H26.5999" stroke="white"></path>
+								<path
+									d="M5.06665 19.9843C5.65768 27.0734 11.6594 32.6444 18.9761 32.6444C26.6845 32.6444 32.9333 26.461 32.9333 18.8333C32.9333 11.2057 26.6845 5.02222 18.9761 5.02222C11.6594 5.02222 5.65768 10.5932 5.06665 17.6824"
+									stroke="white"></path></svg><em>최근 조회 &gt;</em> <!-- <strong>3,584</strong> --></a><a
+							href="wishlist.do"><svg width="38" height="38"
+								viewBox="0 0 38 38" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M16.7834 25.7389L16.7834 13.8111H20.2369C21.8274 13.8111 23.1168 15.1005 23.1168 16.691V16.691C23.1168 18.2815 21.8274 19.5708 20.2369 19.5708H16.7834"
+									stroke="white"></path>
+								<path
+									d="M5.06665 19.9843C5.65768 27.0734 11.6594 32.6444 18.9761 32.6444C26.6845 32.6444 32.9333 26.461 32.9333 18.8333C32.9333 11.2057 26.6845 5.02222 18.9761 5.02222C11.6594 5.02222 5.65768 10.5932 5.06665 17.6824"
+									stroke="white"></path></svg><em>위시리스트 &gt;</em> <!-- <strong>2,800</strong> --></a><a
+							href="whishlist.do"><svg width="38" height="38"
+								viewBox="0 0 38 38" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M5.06665 28.8778H4.56665V29.3778H5.06665V28.8778ZM32.9333 28.8778V29.3778H33.4333V28.8778H32.9333ZM32.9333 21.3444H33.4333V20.8444H32.9333V21.3444ZM32.9333 16.3222V16.8222H33.4333V16.3222H32.9333ZM32.9333 8.78888L33.4333 8.78888V8.28888H32.9333V8.78888ZM5.06665 8.78888V8.28888H4.56665V8.78888H5.06665ZM5.06665 16.3222H4.56665V16.8222H5.06665V16.3222ZM5.06665 21.3444V20.8444H4.56665V21.3444H5.06665ZM25.3333 28.3778H5.06665V29.3778H25.3333V28.3778ZM32.9333 28.3778H25.3333V29.3778H32.9333V28.3778ZM32.4333 21.3444L32.4333 28.8778H33.4333L33.4333 21.3444H32.4333ZM32.9333 20.8444C31.8062 20.8444 30.9 19.9399 30.9 18.8333H29.9C29.9 20.5005 31.2622 21.8444 32.9333 21.8444V20.8444ZM30.9 18.8333C30.9 17.7268 31.8062 16.8222 32.9333 16.8222V15.8222C31.2622 15.8222 29.9 17.1662 29.9 18.8333H30.9ZM32.4333 8.78888L32.4333 16.3222H33.4333L33.4333 8.78888L32.4333 8.78888ZM25.3333 9.28888H32.9333V8.28888H25.3333V9.28888ZM5.06665 9.28888H25.3333V8.28888H5.06665V9.28888ZM5.56665 16.3222V8.78888H4.56665V16.3222H5.56665ZM8.09998 18.8333C8.09998 17.1662 6.73775 15.8222 5.06665 15.8222V16.8222C6.19379 16.8222 7.09998 17.7268 7.09998 18.8333H8.09998ZM5.06665 21.8444C6.73775 21.8444 8.09998 20.5005 8.09998 18.8333H7.09998C7.09998 19.9399 6.19379 20.8444 5.06665 20.8444V21.8444ZM5.56665 28.8778V21.3444H4.56665V28.8778H5.56665ZM24.8333 8.78888V11.3H25.8333V8.78888H24.8333ZM25.8333 28.8778V26.3667H24.8333V28.8778H25.8333Z"
+									fill="white"></path>
+								<path
+									d="M19.6333 15.0667H17.7C15.6197 15.0667 13.9333 16.753 13.9333 18.8333V18.8333C13.9333 20.9136 15.6197 22.6 17.7 22.6H19.6333"
+									stroke="white"></path>
+								<path d="M25.3333 13.8111L25.3333 17.5778" stroke="white"></path>
+								<path d="M25.3333 20.0889L25.3333 23.8555" stroke="white"></path></svg><em>나의
+								활동 &gt;</em> <!-- <strong>131</strong> --></a><a
+							href="https://store.musinsa.com/app/mypage/write_review"><svg
+								width="38" height="38" viewBox="0 0 38 38" fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M31.6666 31.3889H17.7333M6.33325 24.4617L24.6781 6.27777L31.6666 13.205L13.3218 31.3889H6.33325V24.4617Z"
+									stroke="white"></path></svg><em>회원정보 수정 &gt;</em> <!-- <strong>3</strong> --></a>
 					</div>
-				 	<div class="css-1ltj86z e15wafbq0">
-						<div class="css-1ecfa5v emjsage0">
-							<!--  <div>
-								<section class="css-j2mjq4 e17n0xi4">
-									<div class="css-rd2t8e e17n0xi3">
-										<h1 class="css-dyhp2o e17n0xi2">
-											사진<span class="css-1vy2ypg e17n0xi0">0</span>
-										</h1>
-										<div class="css-vxgh1s e17n0xi1"></div>
-									</div>
-									<a class="css-f61xoy e1s15hxd1"
-										href="/contents/card_collections/new"><svg width="16"
-											height="16" viewBox="0 0 16 16"
-											preserveAspectRatio="xMidYMid meet"
-											class="css-1n1rkai e1s15hxd0">
-											<path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg>첫
-										번째 사진을 올려보세요</a>
-								</section>
-								<section class="css-j2mjq4 e17n0xi4">
-									<div class="css-rd2t8e e17n0xi3">
-										<h1 class="css-dyhp2o e17n0xi2">
-											집들이<span class="css-1vy2ypg e17n0xi0">0</span>
-										</h1>
-										<div class="css-vxgh1s e17n0xi1"></div>
-									</div>
-									<a class="css-f61xoy e1s15hxd1" href="/projects/write"><svg
-											width="16" height="16" viewBox="0 0 16 16"
-											preserveAspectRatio="xMidYMid meet"
-											class="css-1n1rkai e1s15hxd0">
-											<path fill="currentColor" d="M9 2v5h5v2H9v5H7V9H2V7h5V2h2z"></path></svg>첫
-										번째 집들이를 올려보세요</a>
-								</section>
-							</div> -->
-							<form action="joinInsert.do" method="post">
-			<div class="main3">
-				<div class="join_wrapper" style="margin: 40px auto">
-					<!-- <div style="text-align: center;">
+				</div>
+			</section>
+		</div>
+		
+<!-- 회원정보 수정 -->		
+		<div class="update">
+			<form action="joinInsert.do" method="post">
+				<div class="main3">
+					<p class="mini_title">My Page > 회원정보 수정</p>
+					<div class="join_wrapper" style="margin: 40px auto;">
+						<!-- <div style="text-align: center;">
 						<img src="resources/img/ev_icon.png" width="150" height="auto"
 							alt="demo" id="btn_goMain" />
 					</div>
 					<hr style="opacity: 0.5;"> -->
-					<form>
-					<table>
-						<tr>
-							<td class="join_title">아이디</td>
-							<td class="join_input"><input type="text" name="user_email"
-								id="user_email" required style="width: 165px; height: 30px; margin-left:15px; border: 1px solid #d1d1d1" 
-								placeholder="이메일 주소"><span id="middle">@</span><input
-								type="text" id="email_address" name=email_address
-								list="user_email_address"
-								style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
-								<datalist id="user_email_address">
-									<option value="naver.com">naver.com</option>
-									<option value="hanmail.net">hanmail.net</option>
-									<option value="daum.net">daum.net</option>
-									<option value="gmail.com">gmail.com</option>
-									<option value="hotmail.com">hotmail.com</option>
-									<option value="icloud.com">icloud.com</option>
-									<option value="직접입력">직접입력</option>
-								</datalist> <input type="hidden" id="m_email" name="m_email" value=""
-								oninput="checkId()"> <!-- <button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button> -->
-							</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><p id="idCheck"
-									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
-						</tr>
-						<tr>
-							<td class="join_title">비밀번호</td>
-							<td class="join_input"><input type="password" name="m_pw"
-								id="pw" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="비밀번호" /></td>
-						</tr>
-						<tr>
-							<td class="join_title">비밀번호 확인</td>
-							<td class="join_input"><input type="password" id="checkpw"
-								name="checkpw" class="join_input2" onkeyup="passConfirm()"
-								size="20" maxlength="30" height="120px" placeholder="비밀번호 확인" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><p id="pwCheck"
-									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px"></p></td>
-						</tr>
-						<tr>
-							<td class="join_title">이름</td>
-							<td class="join_input"><input type="text" name="m_name"
-								id="name" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="이름" /></td>
-						</tr>
-						<tr>
-							<td class="join_title">닉네임</td>
-							<td class="join_input"><input type="text" name="m_nick"
-								id="nick" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="닉네임" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><p id="nickCheck"
-									style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
-						</tr>
-						<tr>
-							<td class="join_title">생년월일</td>
-							<td class="join_input"><input type="date" name="m_birthdate"
-								id="birthdate" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="" /></td>
-						</tr>
-						<tr>
-							<td class="join_title">성별</td>
-							<td class="join_input" colspan="2"><input type="radio"
-								name="m_gender" value="남" class="gender"style="margin-top: 15px;
-    margin-left: 20px;">남자<input
-								type="radio" name="m_gender" value="여" class="gender"  style="margin-top: 15px;
-    margin-left: 20px;">여자<input
-								type="radio" name="m_gender" value="x" class="gender"style="margin-top: 15px;
-    margin-left: 20px;">선택
-								안함</td>
-						</tr>
-						<tr>
-							<td class="join_title">주소</td>
-							<td class="join_input"><input type="text" name="m_addr"
-								id="addr" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="주소" /></td>
-						</tr>
-						<tr>
-							<td class="join_title">주거 형태</td>
-							<td class="join_input"><select id="ftype" name="m_ftype"
-								style="width: 320px; height: 30px;  border: 1px solid #d1d1d1; margin-left: 15px;
-    margin-top: 15px;">
-									<option value="원룸">원룸</option>
-									<option value="오피스텔">오피스텔</option>
-									<option value="아파트">아파트</option>
-									<option value="연립">연립</option>
-									<option value="빌라">빌라</option>
-									<option value="주택">주택</option>
-							</select></td>
-						</tr>
-						<tr>
-							<td class="join_title">가구 수</td>
-							<td class="join_input"><input type="text" name="m_fsize"
-								id="size" class="join_input2" size="20" maxlength="30"
-								height="120px" placeholder="ex) 1인" /></td>
-						</tr>
-					</table>
-					</form>
-					
-					<hr style="opacity: 0.5;">
-					<!-- 					<button type="submit" class="join_btn">회원가입</button>
+						<form>
+							<table style="margin: auto;">
+								<tr>
+									<td class="join_title">아이디</td>
+									<td class="join_input"><input type="text"
+										name="user_email" id="user_email" required
+										style="width: 165px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1"
+										placeholder="이메일 주소"><span id="middle">@</span><input
+										type="text" id="email_address" name=email_address
+										list="user_email_address"
+										style="width: 140px; height: 30px; border: 1px solid #d1d1d1; border-radius: 5%;">
+										<datalist id="user_email_address">
+											<option value="naver.com">naver.com</option>
+											<option value="hanmail.net">hanmail.net</option>
+											<option value="daum.net">daum.net</option>
+											<option value="gmail.com">gmail.com</option>
+											<option value="hotmail.com">hotmail.com</option>
+											<option value="icloud.com">icloud.com</option>
+											<option value="직접입력">직접입력</option>
+										</datalist> <input type="hidden" id="m_email" name="m_email" value=""
+										oninput="checkId()"> <!-- <button class="btn btn-info btn-sm" id="idCheck" type="button">중복체크</button> -->
+									</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><p id="idCheck"
+											style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
+								</tr>
+								<tr>
+									<td class="join_title">비밀번호</td>
+									<td class="join_input"><input type="password" name="m_pw"
+										id="pw" class="join_input2" size="20" maxlength="30"
+										height="120px" placeholder="비밀번호" /></td>
+								</tr>
+								<tr>
+									<td class="join_title">비밀번호 확인</td>
+									<td class="join_input"><input type="password" id="checkpw"
+										name="checkpw" class="join_input2" onkeyup="passConfirm()"
+										size="20" maxlength="30" height="120px" placeholder="비밀번호 확인" /></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><p id="pwCheck"
+											style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px"></p></td>
+								</tr>
+								<tr>
+									<td class="join_title">이름</td>
+									<td class="join_input"><input type="text" name="m_name"
+										id="name" class="join_input2" size="20" maxlength="30"
+										height="120px" placeholder="이름" /></td>
+								</tr>
+								<tr>
+									<td class="join_title">닉네임</td>
+									<td class="join_input"><input type="text" name="m_nick"
+										id="nick" class="join_input2" size="20" maxlength="30"
+										height="120px" placeholder="닉네임" /></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td><p id="nickCheck"
+											style="text-align: left; margin-left: 15px; margin-top: 0px; margin-bottom: 5px;"></p></td>
+								</tr>
+								<tr>
+									<td class="join_title">생년월일</td>
+									<td class="join_input"><input type="date"
+										name="m_birthdate" id="birthdate" class="join_input2"
+										size="20" maxlength="30" height="120px" placeholder="" /></td>
+								</tr>
+								<tr>
+									<td class="join_title">성별</td>
+									<td class="join_input" colspan="2"><input type="radio"
+										name="m_gender" value="남" class="gender"
+										style="margin-top: 15px; margin-left: 20px;">남자<input
+										type="radio" name="m_gender" value="여" class="gender"
+										style="margin-top: 15px; margin-left: 20px;">여자<input
+										type="radio" name="m_gender" value="x" class="gender"
+										style="margin-top: 15px; margin-left: 20px;">선택 안함</td>
+								</tr>
+								<tr>
+									<td class="join_title">주소</td>
+									<td class="join_input"><input type="text" name="m_addr"
+										id="addr" class="join_input2" size="20" maxlength="30"
+										height="120px" placeholder="주소" /></td>
+								</tr>
+								<tr>
+									<td class="join_title">주거 형태</td>
+									<td class="join_input"><select id="ftype" name="m_ftype"
+										style="width: 320px; height: 30px; border: 1px solid #d1d1d1; margin-left: 15px; margin-top: 15px;">
+											<option value="원룸">원룸</option>
+											<option value="오피스텔">오피스텔</option>
+											<option value="아파트">아파트</option>
+											<option value="연립">연립</option>
+											<option value="빌라">빌라</option>
+											<option value="주택">주택</option>
+									</select></td>
+								</tr>
+								<tr>
+									<td class="join_title">가구 수</td>
+									<td class="join_input"><input type="text" name="m_fsize"
+										id="size" class="join_input2" size="20" maxlength="30"
+										height="120px" placeholder="ex) 1인" /></td>
+								</tr>
+							</table>
+						</form>
+
+						<hr style="opacity: 0.5;">
+						<!-- 					<button type="submit" class="join_btn">회원가입</button>
  -->
-					<div class="box bg-1">
-						<p>
-							<button class="button button--wapasha button--round-s"
-								type="submit" style="text-align: center;">회원정보 수정</button>
-						</p>
+						<div class="box bg-1">
+							<p>
+								<button class="button button--wapasha button--round-s"
+									type="submit" style="text-align: center;">회원정보 수정</button>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</form>
-						</div>
-					</div> 
+			</form>
+		</div>
+		
+<!-- 최근 조회 -->		
+		<div class="recent">
+		<p class="mini_title">My Page > 최근 조회</p>
+			<div class="choose">
+		<div class="list_box">
+		<form action="pwish_delete.do" method="post">
+		<div class="title">Interior<button type="button" class="no1 updown">Open</button>
+		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
+		<div class="title list1 lis">
+		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
+		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
+		<div class= "list-full">
+		<c:forEach var="p_list" items="${ p_list}"  varStatus="i">
+			<div class="inpalette"> 
+			<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
+<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
+					
+			
+				<div class= "point">
+		
+					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
+				
+					</div>
+					<div class ="palette-name">${p_list.pl_seq}</div>
+				</div>
+				<div class= "point">
+		
+					<div class="palette cl2" style="background-color: ${p_list.pl_c2}">
+	
+
+					</div>
+					<div class ="palette-name">${cnt }</div>
+				</div>
+				<div class= "point">
+		
+					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
+				
+					</div>
+					<div class ="palette-name"> 색상</div>
+				</div>
+				<div class= "point">
+		
+					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
+					
+					</div>
+					<div class ="palette-name"> 색상</div>
+				</div>
+				<div class= "point">
+		
+					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
+					
+					</div>
+					<div class ="palette-name"> 색상</div>
 				</div>
 			</div>
+			</div>
+				</c:forEach>
+			</div> 
+				<%-- <div>
+					<ul>
+						<c:forEach var="pg_num" begin="1" end="${cnt }">
+							<li>${pg_num}</li>
+						</c:forEach>
+						
+					</ul>
+				</div>
+			 --%>
+		</div>
+		</form>
+		</div>
+		</div>
+		<div class="list_box">
+		<div class="title">Video<button type="button" class="no2 updown">Open</button>
+		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
+		<div class="title list2 lis">
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+		</div>
+		</div>
+		<div class="list_box">
+		<div class="title">Furniture<button  type="button" class="no3 updown">Open</button>
+		<button class="delete" href="#"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
+		<div class="title list3 lis">
+			<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+				<div class= "eeun-ae">
+			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
+				<div class= "jjim_text_list">
+					<span>제목</span>
+					<span>ㅉㅉㅉ</span>
+				</div>
+				
+			</div>
+			
+		</div>
+		</div>
+	<!-- 	
+		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
+		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
 		</div>
 	</div>
+		
+		</div>
+		
+	</div>
+
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$('.m_info11').show();
 			$('.m_active11').hide();
 			$('.ekbdbra0').show();
@@ -868,12 +740,75 @@ width: 320px;
 			$('.m_active11').hide();
 			$('.ekbdbra0').show();
 		})
-		$('.m_active').click(function () {
+		$('.m_active').click(function() {
 			$('.m_info11').hide();
 			$('.m_active11').show();
 			$('.ekbdbra0').hide();
 		})
-	
+		
+		// 최근 조회
+		$(document).ready(function(){
+		$('.list1, .list2, .list3').hide();
+	})
+	/* 1번버튼 */
+		$('.no1').click(function() {
+		if($('.no1').text()=='Open'){
+			$('.no1').text('Close');
+			$('.list1').slideDown(500);
+			if($('.no2').text()=="Close"){
+				$('.no2').text('Open');
+				$('.list2').slideUp(500);
+			}
+			if($('.no3').text()=='Close'){
+				$('.no3').text('Open');
+				$('.list3').slideUp(500);
+			}
+		}
+		else if($('.no1').text()=='Close'){
+			$('.no1').text('Open');
+			$('.list1').slideUp(500);
+		}
+		})
+		/* 2번버튼 */
+		$('.no2').click(function() {
+		if($('.no2').text()=='Open'){
+			$('.no2').text('Close');
+			$('.list2').slideDown(500);
+			if($('.no1').text()=='Close'){
+				$('.no1').text('Open');
+				$('.list1').slideUp(500);
+			}
+			if($('.no3').text()=='Close'){
+				$('.no3').text('Open');
+				$('.list3').slideUp(500);
+			}
+		}
+		else if($('.no2').text()=='Close'){
+			$('.no2').text('Open');
+			$('.list2').slideUp(500);
+		}
+		})
+	/*3번버튼  */
+	$('.no3').click(function() {
+		if($('.no3').text()=='Open'){
+			$('.no3').text('Close');
+			$('.list3').slideDown(500);
+			if($('.no2').text()=='Close'){
+				$('.no2').text('Open');
+				$('.list2').slideUp(500);
+			}
+			if($('.no1').text()=='Close'){
+				$('.no1').text('Open');
+				$('.list1').slideUp(500);
+			}
+		}
+		else if($('.no3').text()=='Close'){
+			$('.no3').text('Open');
+			$('.list3').slideUp(500);
+		}
+			
+	})
+		
 	</script>
 </body>
 </html>

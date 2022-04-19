@@ -3,9 +3,14 @@
 <mapper namespace="kr.ev.model.VideoMapper">
     
 
-	<select id="video" resultType="kr.ev.model.VideoVO">
+	<select id="video" resultType="kr.ev.model.VideoVO" parameterType="kr.ev.model.VideoVO">
 		<!--select * from t_qna order by q_date desc  -->
 		 select * from t_video order by v_seq desc Limit 15 Offset #{pageCount}
+<!-- 		 <where>
+		     <if test="search_word != null">
+		         where v_title like concat('%',#{search_word}, '%')
+		     </if>
+		 </where> -->
 	</select>
 	
 	

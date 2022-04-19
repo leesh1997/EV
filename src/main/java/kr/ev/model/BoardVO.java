@@ -18,5 +18,5 @@ public class BoardVO {
 	private String m_nick;
 	private int b_cnt;
 	private int b_likes;
-
+	private String b_thumbImg;
 }

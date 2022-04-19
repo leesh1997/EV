@@ -7,6 +7,6 @@
     </select>
     
      <insert id="boardInsert" parameterType="kr.ev.model.BoardVO">
-         insert into t_board (b_title, b_content, b_file) values (#{b_title}, #{b_content}, #{b_file})
+         insert into t_board (b_title, b_content, b_file, b_thumbImg) values (#{b_title}, #{b_content}, #{b_file}, #{b_thumbImg})
      </insert>
 </mapper>

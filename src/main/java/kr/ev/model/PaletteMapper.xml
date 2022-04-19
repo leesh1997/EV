@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ev.model.PaletteMapper">
-    
-    
-    
-    
-    <select id="colorGallery" resultType="kr.ev.model.ColorVO">
-        
-        select c_seq, c_rgb, c_name from t_color 
-        
-    </select>
-    <insert id="saveColors" parameterType="kr.ev.model.PaletteVO">
-        insert into t_palette(pl_c1, pl_c2, pl_c3, pl_c4, pl_c5) values (#{pl_c1}, #{pl_c2}, #{pl_c3}, #{pl_c4}, #{pl_c5})
-    </insert>
+
+
+
+
+	<select id="colorGallery" resultType="kr.ev.model.ColorVO">
+
+		select c_seq, c_rgb, c_name
+		from t_color
+
+	</select>
+
+	<insert id="saveColors" parameterType="kr.ev.model.PaletteVO">
+
+		insert into
+		t_palette(pl_c1, pl_c2, pl_c3, pl_c4, pl_c5) values (#{pl_c1},
+		#{pl_c2}, #{pl_c3}, #{pl_c4}, #{pl_c5})
+
+	</insert>
+
+	<select id="paletteGallery" resultType="kr.ev.model.InteriorVO">
+
+		select i_seq, i_rgb1,
+		i_rgb2, i_rgb3, i_rgb4, i_rgb5, i_colorname1, i_colorname2, i_colorname3,
+		i_colorname4, i_colorname5 from t_interior
+
+	</select>
 </mapper>
