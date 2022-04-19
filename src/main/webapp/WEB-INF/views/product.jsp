@@ -262,7 +262,7 @@ input[type="submit"]:hover{
 		      });
 		  function resultJson(data){
 			  $('#like').find("#Layer_1").css({ fill: 'pink' });
-		  }
+		  };
 		
 		/* $(".gallery_items_like").click(function () {
 			if($(this).find("#Layer_1").css({ fill: 'black' })){

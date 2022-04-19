@@ -28,4 +28,10 @@
     <select id="pluslike" resultType="kr.ev.model.WishlistVO">
         insert into t_wishlist (w_type,p_seq) value ('p',#{likeint})
     </select>
+    <select id="checklike" resultType="kr.ev.model.WishlistVO">
+        select * from t_wishlist where p_seq = #{likeint}
+    </select>
+    <select id="deletelike" resultType="kr.ev.model.WishlistVO">
+         delete from t_wishlist where p_seq=#{likeint}       
+    </select>
 </mapper>

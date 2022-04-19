@@ -131,7 +131,17 @@ public class ProductController {
 	public @ResponseBody WishlistVO he(String likee) {
 		System.out.println("확인!!"+likee);
 		int likeint= Integer.parseInt(likee);
-		WishlistVO vo = mapper.pluslike(likeint);
+		WishlistVO vo;
+		vo= mapper.checklike(likeint);
+		if(vo==null) {
+			System.out.println("생성"+likeint);
+			 vo = mapper.pluslike(likeint);
+		}
+		else {
+			System.out.println("삭제"+likeint);
+			 vo = mapper.deletelike(likeint);
+		}
+	
 		return vo;
 	}
 }
