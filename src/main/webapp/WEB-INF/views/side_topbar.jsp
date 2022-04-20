@@ -93,9 +93,27 @@
 					<div class="he-text">information</div></a>
 			</div>
 			<div class="he st4">
+			<c:choose>
+			<c:when test="${info!=null}">
 				<a href="wishlist.do"><img src="resources/img/inte3.png"
 					class="he-img st4im">
 					<div class="he-text">wishlist</div></a>
+			</c:when>
+			<c:otherwise>
+				<a href="#" class="melong"><img src="resources/img/inte3.png"
+					class="he-img st4im">
+					<div class="he-text">wishlist</div></a>
+				<script type="text/javascript">
+					$('.melong').click(function () {
+						alert('로그인 해주세요');
+						location.href("main.do");
+					})
+				
+				
+				</script>	
+			</c:otherwise>
+			
+		</c:choose>
 			</div>
 			<div class="he st5">
 				<a href="board.do"><img src="resources/img/inte3.png"

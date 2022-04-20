@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.WishListMapper">
     
     <select id="wishlist" resultType="kr.ev.model.PaletteVO">
-        select * from t_palette;
+        select * from t_palette where m_email=#{m_email};
     </select>
     <delete id="pwish_delete" parameterType="kr.ev.model.PaletteVO">
         delete from t_palette where pl_seq=#{delete_seq};

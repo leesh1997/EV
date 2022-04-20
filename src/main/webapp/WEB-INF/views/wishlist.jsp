@@ -40,7 +40,7 @@
 					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
 				
 					</div>
-					<div class ="palette-name">색상</div>
+				<!-- 	<div class ="palette-name">색상</div> -->
 				</div>
 				<div class= "point">
 		
@@ -48,28 +48,28 @@
 	
 
 					</div>
-					<div class ="palette-name">색상</div>
+					<!-- <div class ="palette-name">색상</div> -->
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
 				
 					</div>
-					<div class ="palette-name"> 색상</div>
+				<!-- 	<div class ="palette-name"> 색상</div> -->
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
 					
 					</div>
-					<div class ="palette-name"> 색상</div>
+					<!-- <div class ="palette-name"> 색상</div> -->
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
 					
 					</div>
-					<div class ="palette-name"> 색상</div>
+				<!-- 	<div class ="palette-name"> 색상</div> -->
 				</div>
 			</div>
 			</div>
