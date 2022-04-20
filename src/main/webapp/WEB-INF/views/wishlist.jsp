@@ -40,7 +40,7 @@
 					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
 				
 					</div>
-				<!-- 	<div class ="palette-name">색상</div> -->
+					<div class ="palette-name">색상</div> 
 				</div>
 				<div class= "point">
 		
@@ -48,28 +48,28 @@
 	
 
 					</div>
-					<!-- <div class ="palette-name">색상</div> -->
+					 <div class ="palette-name">색상</div> 
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
 				
 					</div>
-				<!-- 	<div class ="palette-name"> 색상</div> -->
+				 	<div class ="palette-name"> 색상</div> 
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
 					
 					</div>
-					<!-- <div class ="palette-name"> 색상</div> -->
+					 <div class ="palette-name"> 색상</div> 
 				</div>
 				<div class= "point">
 		
 					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
 					
 					</div>
-				<!-- 	<div class ="palette-name"> 색상</div> -->
+					<div class ="palette-name"> 색상</div> 
 				</div>
 			</div>
 			</div>
@@ -130,38 +130,19 @@
 		<div class="title">My Product<button  type="button" class="no3 updown">Open</button>
 		<button class="delete" href="#"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
 		<div class="title list3 lis">
-			<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
+			<div class= "list-full">
+			<c:forEach var="w_list" items="${w_list}"  varStatus="i">
 				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+				<div class= "jjim_img_list"><img src="${w_list. }" class="jjim_img"> </div>	
+					<div class= "jjim_text_list">
+						<span>제목</span>
+						<span>ㅉㅉㅉ</span>
+					</div>
+					
 				</div>
+			</c:forEach>
 				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
-				
-			</div>
+			
 			
 		</div>
 		</div>

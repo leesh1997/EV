@@ -10,4 +10,6 @@ public interface WishListMapper {
 
 	List<PaletteVO> wishlist(String m_email);
 
+	List<ProductVO> wishlist2(String m_email);
+
 }

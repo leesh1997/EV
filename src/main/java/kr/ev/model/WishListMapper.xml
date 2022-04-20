@@ -5,6 +5,9 @@
     <select id="wishlist" resultType="kr.ev.model.PaletteVO">
         select * from t_palette where m_email=#{m_email};
     </select>
+     <select id="wishlist" resultType="kr.ev.model.ProductVO">
+        select * from t_product;
+    </select>
     <delete id="pwish_delete" parameterType="kr.ev.model.PaletteVO">
         delete from t_palette where pl_seq=#{delete_seq};
        
