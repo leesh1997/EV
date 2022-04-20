@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +21,14 @@
 	margin-left: 20px;
 }
 
+.palette_view {
+	display: flex;
+	justify-content: center;
+}
+
 .interior_list_gallery {
 	justify-content: center;
-	margin-left: 100px;
+	margin-left: 10px;
 	padding: 10px;
 }
 
@@ -74,7 +81,7 @@ input[type="submit"] {
 	margin-left: 20px;
 }
 
-.paging ul li{
+.paging ul li {
 	display: inline-block;
 	position: relative;
 	margin-bottom: 50px;
@@ -90,6 +97,27 @@ input[type="submit"] {
 				Gallery</h1>
 		</div>
 		<hr id="line" />
+		<div class="palette_view">
+			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0" end="4">
+				<div class="palette_colors" data-index="${palette.pl_seq}">
+					<div class="block" style="background-color: rgb(${palette.pl_c1}); color: rgb(${palette.pl_c1})" >
+						<div class="color_name"></div>
+					</div>
+					<div class="block" style="background-color: rgb(${palette.pl_c2}); color: rgb(${palette.pl_c2})">
+						<div class="color_name"></div>
+					</div>
+					<div class="block" style="background-color: rgb(${palette.pl_c3}); color: rgb(${palette.pl_c3})">
+						<div class="color_name"></div>
+					</div>
+					<div class="block" style="background-color: rgb(${palette.pl_c4}); color: rgb(${palette.pl_c4})">
+						<div class="color_name"></div>
+					</div>
+					<div class="block" style="background-color: rgb(${palette.pl_c5}); color: rgb(${palette.pl_c5})">
+						<div class="color_name"></div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
 		<div class="interior_style_list">
 			<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
@@ -111,7 +139,7 @@ input[type="submit"] {
 					<li>
 						<div class="interior_img_container" data-index="${imgs.i_seq}">
 							<div class="interior_img">
-								<img src="${imgs.i_url}" width="100%" height="360"
+								<img src="${imgs.i_url}" width="100%" height="300"
 									class="gallery_items">
 							</div>
 							<div class="colors_interior">
@@ -163,9 +191,9 @@ input[type="submit"] {
 
 	<script>
 
-$(".bottom_count"+${page}).css('color','grey');
+		$(".bottom_count"+${page}).css('color','grey');
 
-</script>
+	</script>
 
 
 </body>
