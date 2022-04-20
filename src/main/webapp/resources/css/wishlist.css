@@ -17,9 +17,7 @@
 	margin: 0 auto;
 
 	}
-.palette-name{
-	text-align: center;
-}
+
 .title{
 	/* display: block; */
 }
@@ -99,9 +97,10 @@ button.updown{
 	height: auto
 }
 .eeun-ae{
-	display: inline-block;
+	display: inline-flex;
 	position: relative;
 	vertical-align: top;
+	width: 100%;
 	
 }
 .jjim_img_list{
@@ -134,6 +133,7 @@ button.updown{
 .point{
 	display: flex;
 	flex-direction:column;
+	text-align:center;
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
