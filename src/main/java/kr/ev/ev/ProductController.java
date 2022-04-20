@@ -27,7 +27,7 @@ import kr.ev.model.ZzimVO;
 public class ProductController {
 	@Inject
 	private ProductMapper mapper;
-	
+//	페이지시작
 	@RequestMapping("/product.do")
 	public String product(@RequestParam("pageNum") int pageNum, Model model, ProductVO page, HttpServletRequest request) {
 		/*
@@ -72,6 +72,7 @@ public class ProductController {
 		return "product";
 		
 	}
+// 검색기능
 	@RequestMapping("/product_search.do")
 	public String product_search(@RequestParam("pageNum") int pageNum,@RequestParam("searchinfo")String searchinfo , Model model, ProductVO page,
 			HttpServletRequest request, SearchPageVO spvo) {
@@ -131,7 +132,7 @@ public class ProductController {
 		}
 		
 		}
-	
+// 좋아요 누를시 지워지면 검은색 아니면 분홍색 하게 해주는 db 비교 ㄱ코드
 	@RequestMapping("/he.do")
 	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session) {
 		
@@ -173,6 +174,7 @@ public class ProductController {
 		
 		}
 	}
+// 	시작시 좋아요리스트 표시
 	@RequestMapping("/wishlistcheck.do")
 	public @ResponseBody ArrayList<WishlistVO> wishlistcheck(ArrayList<WishlistVO> wish,
 			Model model,String likee,HttpSession session) {
