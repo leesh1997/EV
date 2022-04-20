@@ -40,7 +40,7 @@
 					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
 				
 					</div>
-					<div class ="palette-name">${p_list.pl_seq}</div>
+					<div class ="palette-name">색상</div>
 				</div>
 				<div class= "point">
 		
@@ -48,7 +48,7 @@
 	
 
 					</div>
-					<div class ="palette-name">${cnt }</div>
+					<div class ="palette-name">색상</div>
 				</div>
 				<div class= "point">
 		
@@ -96,7 +96,7 @@
 			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
 				<div class= "jjim_text_list">
 					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+					<!-- <span>ㅉㅉㅉ</span> -->
 				</div>
 				
 			</div>
@@ -104,7 +104,7 @@
 			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
 				<div class= "jjim_text_list">
 					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+				<!-- 	<span>ㅉㅉㅉ</span> -->
 				</div>
 				
 			</div>
@@ -112,7 +112,7 @@
 			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
 				<div class= "jjim_text_list">
 					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
+				<!-- 	<span>ㅉㅉㅉ</span> -->
 				</div>
 				
 			</div>
@@ -120,8 +120,8 @@
 			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
 				<div class= "jjim_text_list">
 					<span>제목</span>
-					<span>ㅉㅉㅉ</span>
-				</div>
+					<!-- <span>ㅉㅉㅉ</span>-->
+ 			</div>
 				
 			</div>
 		</div>
