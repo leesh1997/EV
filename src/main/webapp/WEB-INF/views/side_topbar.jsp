@@ -112,38 +112,7 @@
 			$('.to3').css('opacity', 0);
 		})
 
-		//    $('.to1').animate({opacity:'0'});
-		// $('.to2').animate({opacity:'1'});
-		function care() {
-			if ($('.to1').css('opacity') == 1) {
 
-				$('.to1').animate({
-					opacity : '0'
-				});
-				$('.to2').animate({
-					opacity : '1'
-				});
-
-				$('.to3').css('opacity', 0);
-			} else if ($('.to2').css('opacity') == 1) {
-				$('.to1').css('opacity', 0);
-				$('.to2').animate({
-					opacity : '0'
-				});
-				$('.to3').animate({
-					opacity : '1'
-				});
-				;
-			} else if ($('.to3').css('opacity') == 1) {
-				$('.to1').animate({
-					opacity : '1'
-				});
-				$('.to2').css('opacity', 0);
-				$('.to3').animate({
-					opacity : '0'
-				});
-			}
-		}
 
 		setInterval(function() {
 			care();

@@ -63,8 +63,8 @@
 	display: table-cell;
 	margin-left: 7px;
 	margin-right: 7px;
-	width: 70px;
-	height: 70px;
+	width: 80px;
+	height: 80px;
 }
 
 .interior_style_list {
@@ -139,7 +139,7 @@ input[type="submit"] {
 					<li>
 						<div class="interior_img_container" data-index="${imgs.i_seq}">
 							<div class="interior_img">
-								<img src="${imgs.i_url}" width="100%" height="300"
+								<img src="${imgs.i_url}" width="100%" height="320px;"
 									class="gallery_items">
 							</div>
 							<div class="colors_interior">

@@ -122,10 +122,10 @@ button{
     opacity: 0;
     z-index: 25;
 } 
-/* .he{
+.he{
     animation: img-on 0.5s;
     animation-fill-mode: forwards;
-} */
+}
  .he-img:hover{
    animation: img-on 0.5s;
    animation-fill-mode: forwards;
