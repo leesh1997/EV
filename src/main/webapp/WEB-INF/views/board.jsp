@@ -97,10 +97,14 @@ button {
 					<a href="board_writing_form.do"><button>게시물 작성</button></a>
 						</c:when>
 						<c:when test="${info == null}">
+						<button id="btn1" type="button">게시물 작성</button>
 						<script type="text/javascript">
-						<a href="board_writing_form.do"><button>게시물 작성</button></a>
-							alert("로그인 시 이용해주세요");
-							history.go(-1);
+						
+						$("#btn1").click(function () {
+					        alert("로그인 후 이용해주세요");
+					        location.href="board.do";
+					      });
+								
 						</script>
 						</c:when>
 					</c:choose>

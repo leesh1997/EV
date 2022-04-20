@@ -15,5 +15,11 @@
 	WHERE m_email = #{m_email}
 	  AND m_pw = #{m_pw}  
 </delete>
-    
+   
+     <select id="getBoardCnt" resultType="int" >
+        select count(*) from t_board where m_nick = #{m_nick}              
+    </select>
+     
+   
+   
 </mapper>

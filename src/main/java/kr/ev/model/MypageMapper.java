@@ -11,6 +11,8 @@ public interface MypageMapper {
 	void memberUpdate(MemberVO vo);
 
 	void memberDelete(MemberVO vo);
+
+	int getBoardCnt(MemberVO vo);
 	
 
 }

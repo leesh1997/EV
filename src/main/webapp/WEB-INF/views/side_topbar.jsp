@@ -28,9 +28,30 @@
 						</c:when>
 					</c:choose>
 				</div>
-				<div class="main-text-box">
+				
+				
+				<c:choose>
+						<c:when test="${info != null}">
+					<div class="main-text-box">
 					<a href="mypage.do"> MyPage</a>
 				</div>
+						</c:when>
+						<c:when test="${info == null}">
+						<div class="main-text-box">
+					<a href="#" id="btn1"> MyPage</a>
+				</div>
+						<script type="text/javascript">
+						
+						$("#btn1").click(function () {
+					        alert("로그인 후 이용해주세요");
+					        location.href="main.do";
+					      });
+						</script>
+						</c:when>
+					</c:choose>
+				
+
+				
 				<div class="main-text-box">
 					<a href="join.do">Join</a>
 				</div>
@@ -63,7 +84,7 @@
 				<div class="he-text">palette</div></A>
 			</div>
 			<div class="he st2">
-				<a href="interiorGallery.do"><img src="resources/img/inte1.png"
+				<a href="interiorGallery.do?pageNum=1"><img src="resources/img/inte1.png"
 					class="he-img st2im">
 				<div class="he-text">interior</div></a>
 			</div>
@@ -112,38 +133,7 @@
 			$('.to3').css('opacity', 0);
 		})
 
-		//    $('.to1').animate({opacity:'0'});
-		// $('.to2').animate({opacity:'1'});
-		function care() {
-			if ($('.to1').css('opacity') == 1) {
 
-				$('.to1').animate({
-					opacity : '0'
-				});
-				$('.to2').animate({
-					opacity : '1'
-				});
-
-				$('.to3').css('opacity', 0);
-			} else if ($('.to2').css('opacity') == 1) {
-				$('.to1').css('opacity', 0);
-				$('.to2').animate({
-					opacity : '0'
-				});
-				$('.to3').animate({
-					opacity : '1'
-				});
-				;
-			} else if ($('.to3').css('opacity') == 1) {
-				$('.to1').animate({
-					opacity : '1'
-				});
-				$('.to2').css('opacity', 0);
-				$('.to3').animate({
-					opacity : '0'
-				});
-			}
-		}
 
 		setInterval(function() {
 			care();
