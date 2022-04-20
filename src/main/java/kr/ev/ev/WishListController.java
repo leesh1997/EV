@@ -24,12 +24,13 @@ public class WishListController {
 
 		mem = (MemberVO) session.getAttribute("info");
 		 List<PaletteVO> list = mapper.wishlist(mem.getM_email());	
-		 List<ProductVO> list2=mapper.wishlist2(mem.getM_email());
+			/* List<ProductVO> list2=mapper.wishlist2(mem.getM_email()); */
 		 for(int i = 0; i<list.size(); i++) {
 		 }
 		model.addAttribute("p_list",list);
-		model.addAttribute("w_list",list2);
-		
+		/*
+		 * model.addAttribute("w_list",list2);
+		 */
 		
 		
 	}
