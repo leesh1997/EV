@@ -1,11 +1,13 @@
 package kr.ev.ev;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -134,11 +136,11 @@ public class ProductController {
 		}
 // 좋아요 누를시 지워지면 검은색 아니면 분홍색 하게 해주는 db 비교 ㄱ코드
 	@RequestMapping("/he.do")
-	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session) {
+	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session,HttpServletResponse response) {
 		
 		MemberVO memvo= (MemberVO)session.getAttribute("info");
 		if(memvo.getM_email()==null) {
-		
+			
 			return null;
 		}
 		else {
