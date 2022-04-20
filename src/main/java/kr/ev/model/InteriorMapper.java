@@ -6,4 +6,8 @@ public interface InteriorMapper {
 
 	List<InteriorVO> showInteriorImg();
 
+	int getVisitCount();
+
+	List<InteriorVO> showInteriorImg(int startNum);
+
 }

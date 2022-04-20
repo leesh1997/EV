@@ -11,10 +11,6 @@
    	body{
    		overflow: hidden;
    	}
-   	
-   	.list-care{
-   	width: 100%
-   	}
    </style>
 </head>
 <body >

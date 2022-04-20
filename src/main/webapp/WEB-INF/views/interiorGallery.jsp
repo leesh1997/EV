@@ -73,6 +73,12 @@ input[type="submit"] {
 	font-size: 10px;
 	margin-left: 20px;
 }
+
+.paging ul li{
+	display: inline-block;
+	position: relative;
+	margin-bottom: 50px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -101,12 +107,11 @@ input[type="submit"] {
 		<hr id="line" />
 		<div class="interior_list_gallery">
 			<ul>
-				<c:forEach var="imgs" items="${list}" varStatus="i" begin="0"
-					end="8">
+				<c:forEach var="imgs" items="${list}" varStatus="i">
 					<li>
 						<div class="interior_img_container" data-index="${imgs.i_seq}">
 							<div class="interior_img">
-								<img src="${imgs.i_url}" width="100%" height="400"
+								<img src="${imgs.i_url}" width="100%" height="360"
 									class="gallery_items">
 							</div>
 							<div class="colors_interior">
@@ -124,50 +129,10 @@ input[type="submit"] {
 						</div>
 					</li>
 				</c:forEach>
-				<li>
-					<div class="interior_img_container">
-						<div class="interior_img">
-							<img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="400" class="gallery_items">
-						</div>
-						<div class="colors_interior">
-							<div class="pl_colors"
-								style="background-color: rgb(119, 126, 132); color: rgb(119, 126, 132)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(181, 185, 189); color: rgb(181, 185, 189)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(161, 164, 169); color: rgb(161, 164, 169)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(245, 176, 151); color: rgb(245, 176, 151)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(211, 206, 201); color: rgb(211, 206, 201)"></div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="interior_img_container">
-						<div class="interior_img">
-							<img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="400" class="gallery_items">
-						</div>
-						<div class="colors_interior">
-							<div class="pl_colors"
-								style="background-color: rgb(119, 126, 132); color: rgb(119, 126, 132)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(181, 185, 189); color: rgb(181, 185, 189)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(161, 164, 169); color: rgb(161, 164, 169)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(245, 176, 151); color: rgb(245, 176, 151)"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(211, 206, 201); color: rgb(211, 206, 201)"></div>
-						</div>
-					</div>
-				</li>
 			</ul>
 		</div>
+
+
 
 
 		<div class="paging" style="text-align: center; font-size: 15px">
@@ -180,12 +145,12 @@ input[type="submit"] {
 				</c:choose>
 				<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
 					step="1" varStatus="status">
-					<li><a href="interiorGallery?pageNum=${status.index}"
+					<li><a href="interiorGallery.do?pageNum=${status.index}"
 						class="bottom_count${status.index}">${status.index}</a></li>
 				</c:forEach>
 				<c:choose>
 					<c:when test="${paging.next}">
-						<li><a href="interiorGallery?pageNum=${paging.endPage+1}">Next</a></li>
+						<li><a href="interiorGallery.do?pageNum=${paging.endPage+1}">Next</a></li>
 					</c:when>
 				</c:choose>
 			</ul>
@@ -196,6 +161,11 @@ input[type="submit"] {
 
 	</div>
 
+	<script>
+
+$(".bottom_count"+${page}).css('color','grey');
+
+</script>
 
 
 </body>
