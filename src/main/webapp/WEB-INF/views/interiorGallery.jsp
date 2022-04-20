@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
-
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <style>
 .interior_wrap {
@@ -24,6 +28,7 @@
 .palette_view {
 	display: flex;
 	justify-content: center;
+	margin-top: 100px;
 }
 
 .interior_list_gallery {
@@ -37,6 +42,7 @@
 	display: inline-block;
 	margin-right: 20px;
 	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .interior_list_gallery ul li {
@@ -57,6 +63,8 @@
 
 .interior_img {
 	padding-bottom: 20px;
+	position: relative;
+	z-index: 1000;
 }
 
 .pl_colors {
@@ -86,9 +94,50 @@ input[type="submit"] {
 	position: relative;
 	margin-bottom: 50px;
 }
+
+.interior_img_container {
+	position: relative;
+	margin-bottom: 15px;
+	z-index: 50;
+	height: 350.7px;
+}
+
+interior_modal_popup.reveal {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	z-index: 10000000;
+}
+
+interior_modal_popup .interior_wrapper {
+	position: relative;
+	width: 80%;
+	padding-bottom: 45%;
+	margin-right: 150px;
+	z-index: 500
+}
+
+interior_modal_popup .interior_wrapper p {
+	position: absolute;
+}
+
+interior_modal_popup_closer.reveal .interior_modal_popup_closer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .9);
+	z-index: 300
+}
 </style>
 <body>
-	<jsp:include page="side_topbar.jsp"></jsp:include>
+	<%-- <jsp:include page="side_topbar.jsp"></jsp:include> --%>
 
 	<div class="interior_wrap">
 
@@ -98,21 +147,27 @@ input[type="submit"] {
 		</div>
 		<hr id="line" />
 		<div class="palette_view">
-			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0" end="4">
+			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0"
+				end="4">
 				<div class="palette_colors" data-index="${palette.pl_seq}">
-					<div class="block" style="background-color: rgb(${palette.pl_c1}); color: rgb(${palette.pl_c1})" >
+					<div class="block"
+						style="background-color: rgb(${palette.pl_c1}); color: rgb(${palette.pl_c1})">
 						<div class="color_name"></div>
 					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c2}); color: rgb(${palette.pl_c2})">
+					<div class="block"
+						style="background-color: rgb(${palette.pl_c2}); color: rgb(${palette.pl_c2})">
 						<div class="color_name"></div>
 					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c3}); color: rgb(${palette.pl_c3})">
+					<div class="block"
+						style="background-color: rgb(${palette.pl_c3}); color: rgb(${palette.pl_c3})">
 						<div class="color_name"></div>
 					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c4}); color: rgb(${palette.pl_c4})">
+					<div class="block"
+						style="background-color: rgb(${palette.pl_c4}); color: rgb(${palette.pl_c4})">
 						<div class="color_name"></div>
 					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c5}); color: rgb(${palette.pl_c5})">
+					<div class="block"
+						style="background-color: rgb(${palette.pl_c5}); color: rgb(${palette.pl_c5})">
 						<div class="color_name"></div>
 					</div>
 				</div>
@@ -139,8 +194,8 @@ input[type="submit"] {
 					<li>
 						<div class="interior_img_container" data-index="${imgs.i_seq}">
 							<div class="interior_img">
-								<img src="${imgs.i_url}" width="100%" height="320px;"
-									class="gallery_items">
+								<a data-img="${imgs.i_url}"><img src="${imgs.i_url}" width="100%" height="320px;"
+									class="gallery_items"></a>
 							</div>
 							<div class="colors_interior">
 								<div class="pl_colors"
@@ -157,9 +212,14 @@ input[type="submit"] {
 						</div>
 					</li>
 				</c:forEach>
+
 			</ul>
 		</div>
-
+		
+				<div class="interior_modal_popup" style="margin-left: 150px">
+					<div class="interior_modal_popup_closer"></div>
+					<div class="modal-footer"></div>
+				</div>
 
 
 
@@ -192,6 +252,18 @@ input[type="submit"] {
 	<script>
 
 		$(".bottom_count"+${page}).css('color','grey');
+		
+		
+		$(".interior_img a").click(function() {
+		    $(".interior_modal_popup").addClass("reveal"),
+		    $(".interior_modal_popup .interior_wrapper").remove(),
+		    $(".interior_modal_popup").append("<div class='interior_wrapper'><p>안뇽 난 모달창</p></div>")
+		}),
+		$(".interior_modal_popup_closer").click(function() {
+		    $(".interior_modal_popup .interior_wrapper").remove(),
+		    $(".interior_modal_popup").removeClass("reveal")
+		});
+
 
 	</script>
 
