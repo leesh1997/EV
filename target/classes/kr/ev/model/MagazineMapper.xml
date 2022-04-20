@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.MagazineMapper">
     
     <select id="magazine" resultType="kr.ev.model.MagazineVO">
-		select mz_seq, mz_title, mz_img, mz_site, mz_content from t_magazine order by mz_seq desc Limit 12 Offset #{pageCount}
+		select mz_seq, mz_title, mz_img, mz_site, mz_content from t_magazine order by mz_seq Limit 12 Offset #{pageCount}
     </select>
     
     <select id="getMagaVisitCount" resultType="int">

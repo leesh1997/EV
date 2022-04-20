@@ -1,10 +1,13 @@
 package kr.ev.ev;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -20,12 +23,13 @@ import kr.ev.model.ProductVO;
 import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
 import kr.ev.model.WishlistVO;
+import kr.ev.model.ZzimVO;
 
 @Controller
 public class ProductController {
 	@Inject
 	private ProductMapper mapper;
-	
+//	페이지시작
 	@RequestMapping("/product.do")
 	public String product(@RequestParam("pageNum") int pageNum, Model model, ProductVO page, HttpServletRequest request) {
 		/*
@@ -70,6 +74,7 @@ public class ProductController {
 		return "product";
 		
 	}
+// 검색기능
 	@RequestMapping("/product_search.do")
 	public String product_search(@RequestParam("pageNum") int pageNum,@RequestParam("searchinfo")String searchinfo , Model model, ProductVO page,
 			HttpServletRequest request, SearchPageVO spvo) {
@@ -129,23 +134,49 @@ public class ProductController {
 		}
 		
 		}
+// 좋아요 누를시 지워지면 검은색 아니면 분홍색 하게 해주는 db 비교 ㄱ코드
 	@RequestMapping("/he.do")
-	public @ResponseBody WishlistVO he(String likee) {
+	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session,HttpServletResponse response) {
+		
+		MemberVO memvo= (MemberVO)session.getAttribute("info");
+		if(memvo.getM_email()==null) {
+			
+			return null;
+		}
+		else {
 		System.out.println("확인!!"+likee);
+		System.out.println("아이디!!"+memvo.getM_email());
 		int likeint= Integer.parseInt(likee);
-		WishlistVO vo;
-		vo= mapper.checklike(likeint);
+		/*
+		 * String email=memvo.getM_email(); vo.setM_email(email); vo.setP_seq(likeint);
+		 */
+		
+		zzim.setM_email(memvo.getM_email());
+		zzim.setP_seq(likeint);
+		
+	
+		vo= mapper.checklike(zzim);
+		System.out.println(vo);
 		if(vo==null) {
+			
+			
+			
 			System.out.println("생성"+likeint);
-			 vo = mapper.pluslike(likeint);
+			 vo = mapper.pluslike(zzim);
+			 zzim.setSuccess("success");
+			 return zzim;
 		}
 		else {
 			System.out.println("삭제"+likeint);
-			 vo = mapper.deletelike(likeint);
+			 vo = mapper.deletelike(zzim);
+			 zzim.setSuccess("delete");
+			 return zzim;
 		}
 	
-		return vo;
+		
+		}
 	}
+// 	시작시 좋아요리스트 표시
 	@RequestMapping("/wishlistcheck.do")
 	public @ResponseBody ArrayList<WishlistVO> wishlistcheck(ArrayList<WishlistVO> wish,
 			Model model,String likee,HttpSession session) {

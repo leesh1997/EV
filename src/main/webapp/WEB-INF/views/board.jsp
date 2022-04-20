@@ -2,8 +2,8 @@
 <%@page import="kr.ev.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +72,6 @@ button {
 	font-size: 10px;
 }
 
-
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -91,24 +90,24 @@ button {
 					<input type="text">
 					<button>검색</button>
 				</div>
-				<div class="board_btn_writingform">
 				<c:choose>
-						<c:when test="${info != null}">
-					<a href="board_writing_form.do"><button>게시물 작성</button></a>
-						</c:when>
-						<c:when test="${info == null}">
-						<button id="btn1" type="button">게시물 작성</button>
-						<script type="text/javascript">
-						
-						$("#btn1").click(function () {
-					        alert("로그인 후 이용해주세요");
-					        location.href="board.do";
-					      });
-								
+					<c:when test="${info != null}">
+						<div class="board_btn_writingform">
+							<a href="board_writing_form.do"><button>게시물 작성</button></a>
+						</div>
+					</c:when>
+					<c:when test="${info == null}">
+						<div class="board_btn_writingform">
+							<a id="btn22" href="#"><button>게시물 작성</button></a>
+						</div>
+						<script>
+							$("#btn22").click(function() {
+								alert("로그인 후 이용해주세요");
+								location.href = "login.do";
+							});
 						</script>
-						</c:when>
-					</c:choose>
-				</div>
+					</c:when>
+				</c:choose>
 			</div>
 		</div>
 		<hr id="line" />

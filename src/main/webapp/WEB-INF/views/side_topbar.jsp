@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,30 +28,29 @@
 						</c:when>
 					</c:choose>
 				</div>
-				
-				
-				<c:choose>
-						<c:when test="${info != null}">
-					<div class="main-text-box">
-					<a href="mypage.do"> MyPage</a>
-				</div>
-						</c:when>
-						<c:when test="${info == null}">
-						<div class="main-text-box">
-					<a href="#" id="btn1"> MyPage</a>
-				</div>
-						<script type="text/javascript">
-						
-						$("#btn1").click(function () {
-					        alert("로그인 후 이용해주세요");
-					        location.href="main.do";
-					      });
-						</script>
-						</c:when>
-					</c:choose>
-				
 
-				
+
+				<c:choose>
+					<c:when test="${info != null}">
+						<div class="main-text-box">
+							<a href="mypage.do"> MyPage</a>
+						</div>
+					</c:when>
+					<c:when test="${info == null}">
+						<div class="main-text-box">
+							<a href="#" id="btn1"> MyPage</a>
+						</div>
+						<script type="text/javascript">
+							$("#btn1").click(function() {
+								alert("로그인 후 이용해주세요");
+								location.href = "login.do";
+							});
+						</script>
+					</c:when>
+				</c:choose>
+
+
+
 				<div class="main-text-box">
 					<a href="join.do">Join</a>
 				</div>
@@ -59,7 +58,7 @@
 
 			</div>
 			<div class="hambuger">
-				<button class="open">></button>
+				<button class="open"><a href="#">></a></button>
 			</div>
 
 		</div>
@@ -81,27 +80,27 @@
 			<div class="he st1">
 				<A href="palette_menu.do"><img src="resources/img/bora.png"
 					class="he-img st1im" alt="content">
-				<div class="he-text">palette</div></A>
+					<div class="he-text">palette</div></A>
 			</div>
 			<div class="he st2">
-				<a href="interiorGallery.do?pageNum=1"><img src="resources/img/inte1.png"
-					class="he-img st2im">
-				<div class="he-text">interior</div></a>
+				<a href="interiorGallery.do?pageNum=1"><img
+					src="resources/img/inte1.png" class="he-img st2im">
+					<div class="he-text">interior</div></a>
 			</div>
 			<div class="he st3">
-				<a href="choise_product_or_magazine.do"><img src="resources/img/inte2222.PNG"
-					class="he-img st3im">
-				<div class="he-text">information</div></a>
+				<a href="choise_product_or_magazine.do"><img
+					src="resources/img/inte2222.PNG" class="he-img st3im">
+					<div class="he-text">information</div></a>
 			</div>
 			<div class="he st4">
 				<a href="wishlist.do"><img src="resources/img/inte3.png"
 					class="he-img st4im">
-				<div class="he-text">wishlist</div></a>
+					<div class="he-text">wishlist</div></a>
 			</div>
 			<div class="he st5">
 				<a href="board.do"><img src="resources/img/inte3.png"
 					class="he-img st5im">
-				<div class="he-text">community</div></a>
+					<div class="he-text">community</div></a>
 			</div>
 
 		</div>
@@ -132,12 +131,6 @@
 			$('.to2').css('opacity', 0);
 			$('.to3').css('opacity', 0);
 		})
-
-
-
-		setInterval(function() {
-			care();
-		}, 5000);
 	</script>
 </body>
 </html>
