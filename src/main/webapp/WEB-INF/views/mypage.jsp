@@ -535,7 +535,7 @@ button.updown {
 }
 
 input[type='checkbox'] {
-	margin-top: 3vw;
+	/* margin-top: 3vw; */
 	padding-right: 20px;
 }
 
@@ -575,6 +575,18 @@ input[type='checkbox'] {
  */
 
 /*  나의 활동 */
+input#num_check,div.num{
+text-align: center;
+}
+
+tr.tr1{
+height: 30px;
+}
+
+tr.tr2{
+height: 50px;
+}
+
 </style>
 </head>
 <body>
@@ -996,37 +1008,61 @@ input[type='checkbox'] {
 			<div class="board">
 				<span style="font-weight: bold; margin-left: 100px;">내가 작성한
 					게시물 : ${count} 개</span>
-				</div>
-			<div class="comment">
-			<span style="font-weight: bold; margin-left: 100px;">내가 작성한
+			</div>
+			<!-- <div class="comment">
+				<span style="font-weight: bold; margin-left: 100px;">내가 작성한
 					댓글 : __ 개</span>
-			</div>		
-				
-			<div class="mylogtb" style="margin-top: 60px; margin-left: 50px;">
-				<table style="width: 1500px; height: 500px; border: 2px solid #d1d1d1; ">
-						<tr style="text-align: center;">
-							<th></th>
-							<th>NO.</th>
-							<th>제목</th>
-							<th>작성일</th>
-							<th>조회수</th>
-						</tr>
-						<tr>
-							<td><div class="num">
-									<input id="num_check" type="checkbox">
-								</div>
-							<td>1</td>
-							<td>1</td>
-							<td>1</td>
-							<td>1</td>	
-								
+			</div>
+ -->
+			<div class="mylogtb" style="margin-top: 20px; margin-left: 50px;">
+				<table id="log"
+					style="width: 1300px; height: 450px; border: 2px solid #d1d1d1; margin: auto;">
+					<tr class="tr1" style="text-align: center;">
+						<th></th>
+						<th>NO.</th>
+						<th>제목</th>
+						<th>작성일</th>
+						<th>조회수</th>
+					</tr>
+					<tr class="tr2">
+						<td><div class="num" >
+								<input id="num_check" type="checkbox">
+							</div>
+						<td>1</td>
+						<td>우리집 예쁘지~~~~~~~~</td>
+						<td>22.04.20</td>
+						<td>16</td>
+					</tr>
+					<tr class="tr2">
+						<td><div class="num">
+								<input id="num_check" type="checkbox">
+							</div>
+						<td>2</td>
+						<td>초록초록</td>
+						<td>22.04.20</td>
+						<td>37</td>
+					</tr>
+					<tr class="tr2" >
+						<td><div class="num">
+								<input id="num_check" type="checkbox">
+							</div>
+						<td>3</td>
+						<td>우리집 구경하쇼</td>
+						<td>22.04.20</td>
+						<td>3</td>
+					</tr>
 				</table>
+				<div class="box bg-1">
+							<p>
+								<button class="button button--wapasha button--round-s"
+									type="submit" style="text-align: center; width: 80px; height: 50px;  margin-top: 20px;">선택 삭제</button>
+							</p>
+						</div>
 			</div>
 
 		</div>
 
 	</div>
-
 
 	<script>
 		$(document).ready(function() {
