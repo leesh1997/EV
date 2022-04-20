@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
 <style>
 .interior_wrap {
@@ -58,6 +59,20 @@
 	width: 70px;
 	height: 70px;
 }
+
+.interior_style_list {
+	display: flex;
+	justify-content: center;
+}
+
+input[type="submit"] {
+	background-color: black;
+	color: white;
+	height: 25px;
+	border-radius: 15px;
+	font-size: 10px;
+	margin-left: 20px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -69,7 +84,21 @@
 				Gallery</h1>
 		</div>
 		<hr id="line" />
+		<div class="interior_style_list">
+			<input type="submit" class="list_items" value="침실"> <input
+				type="submit" class="list_items" value="욕실"> <input
+				type="submit" class="list_items" value="거실"> <input
+				type="submit" class="list_items" value="드레스룸"> <input
+				type="submit" class="list_items" value="서재"> <input
+				type="submit" class="list_items" value="주방"> <input
+				type="submit" class="list_items" value="홈오피스"> <input
+				type="submit" class="list_items" value="홈카페"> <input
+				type="submit" class="list_items" value="홈바"> <input
+				type="submit" class="list_items" value="테라스"> <input
+				type="submit" class="list_items" value="정원">
 
+		</div>
+		<hr id="line" />
 		<div class="interior_list_gallery">
 			<ul>
 				<c:forEach var="imgs" items="${list}" varStatus="i" begin="0"
@@ -162,13 +191,12 @@
 			</ul>
 		</div>
 
+
+
+
 	</div>
 
-	<script>
-	
-	$(".bottom_count"+${page}).css('color','red');
-	
-	</script>
+
 
 </body>
 </html>
