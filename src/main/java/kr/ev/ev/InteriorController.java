@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ev.model.InteriorMapper;
 import kr.ev.model.InteriorVO;
 import kr.ev.model.Paging;
+import kr.ev.model.PaletteVO;
 import kr.ev.model.VideoVO;
 
 @Controller
@@ -25,6 +26,7 @@ public class InteriorController {
 	public String showInteriorImg(@RequestParam("pageNum") int pageNum, Model model, InteriorVO page, HttpServletRequest request) {
 		
 		System.out.println("이미지 보여주기");
+		System.out.println("팔레트 보여주기");
 		System.out.println("게시물 수" + pageNum );
 		
 		int pages;
@@ -58,13 +60,17 @@ public class InteriorController {
 		int startNum = (pages - 1) * 12 + 1;
 		int endNum = pages * 12;		
 		
-		
+		List<PaletteVO> p_list = mapper.showPalette();
 		List<InteriorVO> list = mapper.showInteriorImg(startNum);
+		model.addAttribute("p_list", p_list);
+		System.out.println(p_list);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		
 		
 		return "interiorGallery";
 	}
+	
+
 	
 }

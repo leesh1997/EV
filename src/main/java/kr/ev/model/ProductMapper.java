@@ -24,11 +24,11 @@ public interface ProductMapper {
 
 	List<VideoVO> product_result(SearchPageVO spvo);
 
-	WishlistVO pluslike(int likeint);
+	WishlistVO pluslike(ZzimVO zzim);
 
-	WishlistVO checklike(int likeint);
+	WishlistVO checklike(ZzimVO zzim);
 
-	WishlistVO deletelike(int likeint);
+	WishlistVO deletelike(ZzimVO zzim);
 
 	ArrayList<WishlistVO> startcheck(String info);
 

@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document </title>
-    <link rel = "stylesheet" href="resources/css/main.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <style>
-   	body{
-   		overflow: hidden;
-   	}
-   </style>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="resources/css/main.css" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body {
+	overflow: hidden;
+}
+
+.main-img {
+	position: relative;
+	width: 800;
+	/* 	max-height: auto; */
+	/* animation: move_img2 5s infinite; */
+	z-index: 1;
+}
+</style>
 </head>
-<body >
-	<jsp:include page = "side_topbar.jsp"></jsp:include>
- 
-<div class ="main">  
-   
-   <div class="list-care"> <img src="resources/img/m7.jpg" class="main-img to1"> </div>
-<div class="list-care"><img src="resources/img/ma.jpg" class="main-img to2"> </div>
-<div class="list-care"><img src="resources/img/ma2.jpg" class="main-img to3"></div>
+<body>
+	<jsp:include page="side_topbar.jsp"></jsp:include>
 
-     
-  
- </div>
+	<div class="main">
 
-  
-   <script>
-       
-  
-       
-       function care(){
-            if($('.to1').css('opacity')==1){
-             
-              $('.to1').animate({opacity:'0'});
-                 $('.to2').animate({opacity:'1'});
+		<div class="list-care">
+			<img src="resources/img/main.jpg" class="main-img to1">
+		</div>
 
-                $('.to3').css('opacity',0);
-            }
-            else if($('.to2').css('opacity')==1){
-                $('.to1').css('opacity',0);
-                $('.to2').animate({opacity:'0'});
-                $('.to3').animate({opacity:'1'});;
-            }
-            else if($('.to3').css('opacity')==1){
-                $('.to1').animate({opacity:'1'});
-                $('.to2').css('opacity',0);
-                $('.to3').animate({opacity:'0'});
-            }
-       }
-  
-     setInterval(function(){
-         care();
-     }, 5000); 
-      
-   </script>
+
+	</div>
+
+
+
 </body>
 </html>

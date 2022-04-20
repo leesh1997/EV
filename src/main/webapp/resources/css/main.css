@@ -68,13 +68,7 @@ div{
     border-right: rgba(0,0,0,.05) solid 1px;
 }
 
-.main-img{
-    position: relative;
-  width: 2000px;
-  height: 1000px;
-    /* animation: move_img2 5s infinite; */
-  z-index: 1;
- }
+/* 
 @keyframes move_img {
     from{transform: scale(1);}
     to{transform: scale(1.2);}
@@ -82,7 +76,7 @@ div{
 @keyframes move_img2 {
     from{transform: translateX(0px);}
     to{transform: translateX(30px);}
-}
+} */
 .hero{
     position: absolute;
     
@@ -128,10 +122,10 @@ button{
     opacity: 0;
     z-index: 25;
 } 
-/* .he{
-    animation: img-on 0.5s;
-    animation-fill-mode: forwards;
-} */
+.he{
+ /*    animation: img-on 0.5s; */
+   /*  animation-fill-mode: forwards; */
+}
  .he-img:hover{
    animation: img-on 0.5s;
    animation-fill-mode: forwards;
