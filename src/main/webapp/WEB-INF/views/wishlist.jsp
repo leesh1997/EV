@@ -131,7 +131,7 @@
 		<button class="delete" href="#"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
 		<div class="title list3 lis">
 			<div class= "list-full">
-			<c:forEach var="w_list" items="${w_list}"  varStatus="i">
+		<%-- 	<c:forEach var="w_list" items="${w_list}"  varStatus="i">
 				<div class= "eeun-ae">
 				<div class= "jjim_img_list"><img src="${w_list. }" class="jjim_img"> </div>	
 					<div class= "jjim_text_list">
@@ -141,7 +141,7 @@
 					
 				</div>
 			</c:forEach>
-				
+				 --%>
 			
 			
 		</div>
