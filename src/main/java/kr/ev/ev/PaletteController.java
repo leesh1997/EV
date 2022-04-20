@@ -3,6 +3,7 @@ package kr.ev.ev;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ev.model.ColorVO;
 import kr.ev.model.InteriorVO;
+import kr.ev.model.MemberVO;
 import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
 
@@ -31,7 +33,10 @@ public class PaletteController {
 	}
 	
 	@RequestMapping("/saveColors.do")
-	public String saveColors(Model model, PaletteVO vo) {
+	public String saveColors(Model model, MemberVO mem,PaletteVO vo, HttpSession session) {
+		mem= (MemberVO) session.getAttribute("info");
+		System.out.println("리메일값" +mem.getM_email());
+		vo.setM_email(mem.getM_email()); 
 		System.out.println("팔레트 저장");
 		System.out.println(vo);
 		mapper.saveColors(vo);

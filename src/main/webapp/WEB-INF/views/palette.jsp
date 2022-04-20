@@ -183,7 +183,27 @@
 
 						<div>
 							<button class="btn_empty" type="button" onclick="">비우기</button>
+							<c:choose>	
+							<c:when test="${info!=null }">
 							<button class="btn_create" type="submit">팔레트 생성</button>
+							<script type="text/javascript">
+							$('.btn_create').click(function () {
+								alert('생성 완료!');
+							})
+								
+							</script>
+							</c:when>
+							<c:otherwise>
+							<button class="btn_create" type="button">팔레트 생성</button>
+							<script type="text/javascript">
+							$('.btn_create').click(function () {
+								alert('로그인시 이용 가능합니다');
+							})
+								
+							</script>
+							</c:otherwise>
+							</c:choose>
+							
 						</div>
 					</div>
 				</form>
