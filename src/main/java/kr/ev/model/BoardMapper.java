@@ -18,6 +18,8 @@ public interface BoardMapper {
 
 	// public BoardVO fileboard(@Param("b_title") String title, @Param("b_content") String content, @Param("m_nick") String nick) throws Exception;
 	public void fileboard(BoardVO vo);
+
+	public int getBoardCnt(MemberVO vo);
 	
 
 }

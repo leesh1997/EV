@@ -10,5 +10,10 @@
          insert into t_board (b_title, b_content, b_file, m_nick) values (#{b_title}, #{b_content}, #{b_file}, #{m_nick})
      </insert>
      
+      <select id="getBoardCnt" resultType="int" >
+        select count(*) from t_board where m_nick = #{m_nick}              
+    </select>
+      
+     
      
 </mapper>

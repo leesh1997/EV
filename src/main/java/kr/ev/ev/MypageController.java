@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ev.model.BoardMapper;
+import kr.ev.model.BoardVO;
 import kr.ev.model.MemberVO;
 import kr.ev.model.MypageMapper;
 ;
@@ -20,11 +22,18 @@ public class MypageController {
 	
 	@Inject
 	private MypageMapper mapper;
+	private BoardMapper mapper2;
 	
 	
 	@RequestMapping("/mypage.do")
-	public String Mypage(Model model) {
+	public String Mypage(Model model,HttpSession session) {
 		System.out.println("마이페이지~!");
+		System.out.println("나의 활동");
+		MemberVO vo=(MemberVO) session.getAttribute("info");
+		System.out.println(vo);
+		int cnt=mapper.getBoardCnt(vo);
+		model.addAttribute("count", cnt);
+		System.out.println(cnt);
 		return "mypage";
 	}
 	
@@ -48,7 +57,21 @@ public class MypageController {
 			return "redirect:/main.do";
 		}
 		
+   // 나의 활동
+		@RequestMapping("/myLog.do")
+		public void myLog(String m_nick,Model model,HttpSession session) {
+			System.out.println("나의 활동");
+			MemberVO vo=(MemberVO) session.getAttribute("info");
+			m_nick=vo.getM_nick();
+			System.out.println(vo);
+			int cnt=mapper.getBoardCnt(vo);
+			model.addAttribute("count", cnt);
+			System.out.println(cnt);
+		}
 		
+
+		
+		  
 
 
 }
