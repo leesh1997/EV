@@ -123,9 +123,7 @@ input[type="submit"]:hover{
 	    position: absolute;
     margin-top: -21px;
     right: 10px;
-}
-#like{
-	background-color:white;
+    background-color:white;
 }
 </style>
 <body>
@@ -180,7 +178,7 @@ input[type="submit"]:hover{
 								<a href="${post.p_url }"> <img src="${post.p_imgurl}" width="130%"
 									height="auto" class="gallery_items" style="margin-left: -15%">
 								</a>
-								<button id="like" class="gallery_items_like" value="${post.p_seq }">
+								<button id="like${post.p_seq}" class="gallery_items_like" value="${post.p_seq}">
 						 	<svg baseProfile="tiny" height="24px" id="Layer_1" version="1.2" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M12,20c-0.195,0-0.391-0.057-0.561-0.172c-0.225-0.151-5.508-3.73-7.146-5.371C2.462,12.626,2.25,10.68,2.25,9.375   C2.25,6.411,4.661,4,7.625,4C9.427,4,11.023,4.891,12,6.256C12.977,4.891,14.573,4,16.375,4c2.964,0,5.375,2.411,5.375,5.375   c0,1.305-0.212,3.251-2.043,5.082c-1.641,1.641-6.923,5.22-7.146,5.371C12.391,19.943,12.195,20,12,20z M7.625,6   C5.764,6,4.25,7.514,4.25,9.375c0,1.093,0.173,2.384,1.457,3.668c1.212,1.212,4.883,3.775,6.293,4.746   c1.41-0.971,5.081-3.534,6.293-4.746c1.284-1.284,1.457-2.575,1.457-3.668C19.75,7.514,18.236,6,16.375,6S13,7.514,13,9.375   c0,0.552-0.447,1-1,1s-1-0.448-1-1C11,7.514,9.486,6,7.625,6z"/></g></svg>
 							</button>
 							</div>
@@ -241,12 +239,12 @@ input[type="submit"]:hover{
 	<script type="text/javascript">
 		$(".btn_count"+${page}).css('color','violet');
 		$(".btn_count"+${page}).css('border-bottom','solid 1px violet');
-		
-		 $('.gallery_items_like').ready(function() {
+		   var likeee=$('#like').val();
+		 $(document).ready(function() {
 
 		      /*   var likee = $(this).val(); */
-		        console.log("눌림");
-				console.log(likee);
+		   
+		        console.log("시작확인");
 		         $.ajax({
 		            url : "wishlistcheck.do",
 		            type : "post",
@@ -254,14 +252,22 @@ input[type="submit"]:hover{
 		         /*    data : {
 		               "likee" : likee
 		            }, */
-		            success : resultJson,
+		            success : resultJson1,
 		            error : function(e) {
 		               console.log(e);
 		            }
 		         });
 		      }); 
-		      function resultJson(data){
-				  $('#like').find("#Layer_1").css({ fill: 'pink' });
+		      function resultJson1(data){
+		    	  for (var i =0; i<data.length; i++){
+		    		  console.log(data[i].p_seq);
+		    		
+		    			$('#like'+data[i].p_seq).find("#Layer_1").css({ fill: 'pink' }); 
+		    		
+		    		  
+		    	  }
+		    	
+				 
 			  };
 		  $('.gallery_items_like').on('click', function() {
 
@@ -281,7 +287,7 @@ input[type="submit"]:hover{
 		            }
 		         });
 		      });
-		
+
 		
 		/* $(".gallery_items_like").click(function () {
 			if($(this).find("#Layer_1").css({ fill: 'black' })){

@@ -1,18 +1,19 @@
 package kr.ev.ev;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ev.model.MemberVO;
 import kr.ev.model.Paging;
 import kr.ev.model.ProductMapper;
 import kr.ev.model.ProductVO;
@@ -146,26 +147,33 @@ public class ProductController {
 		return vo;
 	}
 	@RequestMapping("/wishlistcheck.do")
-	public @ResponseBody String wishlistcheck(String likee,HttpSession session) {
-		String info=(String)session.getAttribute("info");
-		if(info==null) {
-			System.out.println("값이없정"+info);
-			return "";
-		}
-		else {
-			System.out.println("시작!" + info);
-			/* int likeint= Integer.parseInt(likee); */
-			WishlistVO vo;
-			vo = mapper.startcheck(info);
-			if (vo.getW_seq()==0) {
-				System.out.println(vo);
-				return "";
-				
+	public @ResponseBody ArrayList<WishlistVO> wishlistcheck(ArrayList<WishlistVO> wish,
+			Model model,String likee,HttpSession session) {
+	
+		try{
+			MemberVO vo= (MemberVO)session.getAttribute("info");
+			System.out.println(session.getAttribute("info"));
+			if (vo==null) {
+				System.out.println("hehe");
+				return null;
 			}
 			else {
-				return "a";	
+				System.out.println(vo.getM_email());
+				String info = vo.getM_email();
+				System.out.println("info값"+ info);
+				wish= mapper.startcheck(info);
+				System.out.println("wish값 등장!"+wish);
+				model.addAttribute("wish", wish);
+				return wish;
 			}
-		
 		}
+		catch (Exception e) {
+			System.out.println("error");
+			return null;
+		}
+		
+	
+		
+	
 	}
 }

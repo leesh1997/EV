@@ -1,5 +1,6 @@
 package kr.ev.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -29,7 +30,7 @@ public interface ProductMapper {
 
 	WishlistVO deletelike(int likeint);
 
-	WishlistVO startcheck(String info);
+	ArrayList<WishlistVO> startcheck(String info);
 
 
 	
