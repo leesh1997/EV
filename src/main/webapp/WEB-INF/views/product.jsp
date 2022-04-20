@@ -226,7 +226,7 @@ input[type="submit"]:hover{
 				<li><a href="product_search.do?searchinfo=${search_info}&pageNum=${status.index}"
 				 class= "btn_count${status.index}">${status.index}</a></li>
 				
-		 </c:forEach> 
+			 </c:forEach> 
 			<li class="right_btn"><a href="product_search.do?searchinfo=${search_info}&pageNum=${paging.endPage+1}" >&gt;</a></li>
 			<li><a href="product_search.do?searchinfo=${search_info}&pageNum=${paging.totalPage }">&gt;&gt;</a></li>
 			</ul>
