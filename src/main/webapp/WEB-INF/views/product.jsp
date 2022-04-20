@@ -295,7 +295,7 @@ input[type="submit"]:hover{
 		         });
 		      });
 		  function resultJson(data){
-			  if(data.success=="delete"){
+		  		if(data.success=="delete"){
 				  console.log("삭제완료");
 				  $('#like'+data.p_seq).find("#Layer_1").css({ fill: 'black' });
 			  }

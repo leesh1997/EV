@@ -1,5 +1,6 @@
 package kr.ev.ev;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,6 +137,7 @@ public class ProductController {
 		
 		MemberVO memvo= (MemberVO)session.getAttribute("info");
 		if(memvo.getM_email()==null) {
+		
 			return null;
 		}
 		else {
