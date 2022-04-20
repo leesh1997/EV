@@ -4,8 +4,14 @@
     
     	<select id="showInteriorImg" resultType="kr.ev.model.InteriorVO">
 
-		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior
+		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior order by i_seq desc Limit 12 Offset #{pageCount}
 
 	</select>
+	
+    	<select id="getVisitCount" resultType="int">
+    	    
+    	     select count(*) from t_interior
+    	     
+    	</select>
     
 </mapper>

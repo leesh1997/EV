@@ -23,7 +23,7 @@
 	<!-- 로그인  -->
 	<select id="loginSelect" parameterType="kr.ev.model.MemberVO"
 		resultType="kr.ev.model.MemberVO">
-		select * from t_member where m_email=#{m_email} and m_pw= #{m_pw}
+		select m_email, m_pw, m_name, m_nick, m_birthdate, m_gender, m_addr, m_ftype, m_fsize, m_joindate, m_kind from t_member where m_email=#{m_email} and m_pw= #{m_pw}
 	</select>
 	
 

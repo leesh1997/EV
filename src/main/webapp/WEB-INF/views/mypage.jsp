@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -737,7 +737,12 @@ input[type='checkbox'] {
 									<td class="join_input"><!-- <input type="date"
 										name="m_birthdate" id="birthdate" class="join_input2"
 										size="20" maxlength="30" height="120px" placeholder="" /> -->
-										<p style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1">${info.m_birthdate}</p>
+										<p style="width: 320px; height: 30px; margin-left: 15px; border: 1px solid #d1d1d1">
+										<c:set var="tel" value="${fn:split(info.m_birthdate,' ')}"/>
+										<c:forEach var="telNum" items="${tel}" varStatus="g">
+											<c:if test="${g.count == 1}">${telNum}</c:if>
+										</c:forEach>
+										</p>
 										</td>
 								</tr>
 								<tr>
