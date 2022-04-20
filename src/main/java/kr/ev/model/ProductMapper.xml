@@ -35,6 +35,6 @@
          delete from t_wishlist where p_seq=#{likeint}       
     </select>
     <select id="startcheck" resultType="kr.ev.model.WishlistVO">
-        select * from t_wishlist where p_seq=#{likeint}
+        select * from t_wishlist where =#{likeint}
     </select>
 </mapper>

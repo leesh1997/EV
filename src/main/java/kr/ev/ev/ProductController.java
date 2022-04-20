@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
@@ -145,15 +146,17 @@ public class ProductController {
 		return vo;
 	}
 	@RequestMapping("/wishlistcheck.do")
-	public @ResponseBody String wishlistcheck(String likee) {
-		if(likee==null) {
+	public @ResponseBody String wishlistcheck(String likee,HttpSession session) {
+		String info=(String)session.getAttribute("info");
+		if(info==null) {
+			System.out.println("값이없정"+info);
 			return "";
 		}
 		else {
-			System.out.println("시작!" + likee);
-			int likeint= Integer.parseInt(likee);
+			System.out.println("시작!" + info);
+			/* int likeint= Integer.parseInt(likee); */
 			WishlistVO vo;
-			vo = mapper.startcheck(likeint);
+			vo = mapper.startcheck(info);
 			if (vo.getW_seq()==0) {
 				System.out.println(vo);
 				return "";
