@@ -217,6 +217,20 @@ a {
 	line-height: 21px;
 }
 
+.fJZyji>button>em {
+	display: block;
+	margin: 8px 0px;
+	font-size: 14px;
+	line-height: 21px;
+}
+.fJZyji>button {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    margin-right: 10px;
+}
+
+
 em {
 	font-style: normal;
 	color: white;
@@ -412,10 +426,12 @@ body {
 }
 
 .title {
-	width: 80%;
+	width: 90%;
 	margin-left: 5%;
-	/* 	font-size: 30px; */
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
+	font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
 }
 
 button.delete {
@@ -565,23 +581,15 @@ input[type='checkbox'] {
 		<div id="commonMypage">
 			<section class="common-mypage__sc-5trtbg-0 kXGNQj">
 				<h1 class="common-mypage__sc-5trtbg-1 cOPbLJ">
-					<a href="https://store.musinsa.com/app/mypage"
+					<a href="mypage.do"
 						style="color: white; margin-top: -15px; margin-left: 50px;">My
 						Page</a>
 				</h1>
-				<!-- <div class="common-mypage__sc-5trtbg-2 dYNmgC">
-					<a href="https://store.musinsa.com/app/cart"style="color: white;">장바구니<span
-						data-system="CCommonBadge"
-						class="common-mypage__sc-dlv48s-0 humJtF">6</span></a><a
-						href="https://store.musinsa.com/app/cs"style="color: white;">고객센터</a><a
-						href="https://www.musinsa.com/auth/logout"style="color: white;">로그아웃</a>
-				</div> -->
 				<div class="common-mypage__sc-5trtbg-3 JsGLX">
 					<div class="common-mypage__sc-wme82i-0 cXbinu"></div>
 					<div class="common-mypage__sc-1loaj4c-0 dZrJws">
 						<div class="common-mypage__sc-1loaj4c-1 ebnvat">
-							<strong>${info.m_nick}</strong><a
-								href="https://www.musinsa.com/member/mypage">회원정보 수정</a>
+							<strong>${info.m_nick}</strong>
 						</div>
 						<div class="common-mypage__sc-1loaj4c-2 xMHPc">
 					
@@ -594,34 +602,32 @@ input[type='checkbox'] {
 									탈퇴</button>
 									<script type="text/javascript">
 										$("#delBtn").click(function(){
-											alert('탈퇴한다?ㅠㅠ')
+											alert('탈퇴 완료')
 										});
 									</script>
 							</form>
-
-
-						</div>
-						<!-- <p class="common-mypage__sc-1loaj4c-3 dwgQoo">
-							김*정님 다음 등급인 브론즈까지 22,401점 남았습니다.<a
-								href="https://www.musinsa.com/member/benefit">등급혜택 &gt;</a>
-						</p> -->
+						</div>			
 					</div>
 					<div class="common-mypage__sc-1m1vyak-0 fJZyji">
-						<a href="https://www.musinsa.com/billing/point"><svg
-								data-name="Layer 1" id="Layer_1" width="35px" height="35px"
+					<!-- 최근 조회 -->
+					<button class="recentBtn" style="background: none;"><svg data-name="Layer 1" id="Layer_1" width="35px" height="35px"
 								viewBox="0 0 500 500" style="fill: white"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M478,256A222,222,0,0,1,99,413,220.55,220.55,0,0,1,34,256H63.92c0,105.91,86.17,192.08,192.08,192.08S448.08,361.91,448.08,256,361.91,63.92,256,63.92A191.8,191.8,0,0,0,116.58,124H175v29.92H70V49H99.93v49.3A221.93,221.93,0,0,1,478,256ZM250,139V280H373V250H280V139Z" /></svg><em>최근
-								조회 &gt;</em> <!-- <strong></strong> --></a><a href="wishlist.do"> <svg
+								조회 &gt;</em></button>
+							
+					<!-- 위시리스트 -->
+								<a href="wishlist.do"> <svg
 								enable-background="new 0 0 48 48" height="35px" id="Layer_1"
 								version="1.1" viewBox="0 0 48 48" width="35px" fill="white"
 								xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
 								xmlns:xlink="http://www.w3.org/1999/xlink">
 								<path clip-rule="evenodd"
 									d="M24.804,43.648L24,44l-0.804-0.352C12.862,37.313,2,22.893,2,14.884  C2.035,8.326,7.404,3.002,14,3.002c4.169,0,7.849,2.128,10,5.349c2.151-3.221,5.831-5.349,10-5.349c6.596,0,11.965,5.324,12,11.882  C46,22.893,35.138,37.313,24.804,43.648z M34,4.993c-3.354,0-6.469,1.667-8.335,4.46L24,11.946l-1.665-2.494  C20.469,6.66,17.354,4.993,14,4.993c-5.484,0-9.971,4.442-10,9.891c0,7.064,10.234,20.808,20,26.917  c9.766-6.109,20-19.852,20-26.907C43.971,9.435,39.484,4.993,34,4.993z"
-									fill-rule="evenodd" /></svg><em>위시리스트 &gt;</em></a> <a
-							href="whishlist.do"><svg enable-background="new 0 0 32 32"
+									fill-rule="evenodd" /></svg><em>위시리스트 &gt;</em></a> 
+					<!-- 나의 활동 -->
+									<a href="whishlist.do"><svg enable-background="new 0 0 32 32"
 								height="35px" id="svg2" version="1.1" viewBox="0 0 32 32"
 								width="35px" xml:space="preserve"
 								xmlns="http://www.w3.org/2000/svg"
@@ -637,13 +643,16 @@ input[type='checkbox'] {
 								<path
 									d="M26,8H8v2h18V8z M26,12H8v2h15h3V12z M30,17.35V2H2l0,28h2.414l6.002-6h3.643c0.498,4.498,4.309,7.998,8.941,8   c4.97-0.002,8.998-4.03,9-9C31.999,20.858,31.248,18.895,30,17.35z M14.059,22H9.584L4,27.583V4h24v11.518   C26.569,14.56,24.851,14,23,14c-2.143,0-4.106,0.751-5.652,2H8v2h7.517C14.734,19.169,14.221,20.531,14.059,22z M23,29.882   c-3.801-0.008-6.876-3.083-6.885-6.882c0.009-3.801,3.084-6.876,6.885-6.885c3.799,0.009,6.874,3.084,6.882,6.885   C29.874,26.799,26.799,29.874,23,29.882z" />
 								<polygon points="18,23 20,21 22,23 26,19 28,21 22,27  " /></g></svg> <em>나의
-								활동 &gt;</em></a> <a
-							href="https://store.musinsa.com/app/mypage/write_review"><svg
-								width="38" height="38" viewBox="0 0 38 38" fill="none"
+								활동 &gt;</em></a> 
+					<!-- 회원정보 수정 -->
+					<button class="updateBtn" style="background: none;">
+					<svg width="38" height="38" viewBox="0 0 38 38" fill="none"
 								xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M31.6666 31.3889H17.7333M6.33325 24.4617L24.6781 6.27777L31.6666 13.205L13.3218 31.3889H6.33325V24.4617Z"
-									stroke="white"></path></svg><em>회원정보 수정 &gt;</em></a>
+									stroke="white"></path></svg><em>회원정보 수정 &gt;</em>
+					</button> 
+					
 
 					</div>
 				</div>
@@ -791,9 +800,9 @@ input[type='checkbox'] {
 						<div class="title">
 							Interior
 							<button type="button" class="no1 updown">Open</button>
-							<button class="delete">
+							<!-- <button class="delete">
 								<img src="resources/img/trash.png" class="trashimg trash1">
-							</button>
+							</button> -->
 						</div>
 						<div class="title list1 lis">
 							<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
@@ -854,13 +863,15 @@ input[type='checkbox'] {
 					</form>
 				</div>
 			</div>
+			
+		<div class="choose">
 			<div class="list_box">
 				<div class="title">
 					Video
 					<button type="button" class="no2 updown">Open</button>
-					<button class="delete">
+					<!-- <button class="delete">
 						<img src="resources/img/trash.png" class="trashimg trash2">
-					</button>
+					</button> -->
 				</div>
 				<div class="title list2 lis">
 					<div class="eeun-ae">
@@ -901,13 +912,15 @@ input[type='checkbox'] {
 					</div>
 				</div>
 			</div>
+			</div>
+		<div class="choose">	
 			<div class="list_box">
 				<div class="title">
 					Furniture
 					<button type="button" class="no3 updown">Open</button>
-					<button class="delete" href="#">
+					<!-- <button class="delete" href="#">
 						<img src="resources/img/trash.png" class="trashimg trash3">
-					</button>
+					</button> -->
 				</div>
 				<div class="title list3 lis">
 					<div class="eeun-ae">
@@ -954,22 +967,24 @@ input[type='checkbox'] {
 		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
 		</div>
 	</div>
+</div>
 
-	</div>
-
-	</div>
 
 	<script>
 		$(document).ready(function() {
-			$('.m_info11').show();
-			$('.m_active11').hide();
-			$('.ekbdbra0').show();
+			$('.recent').show();
+			$('.update').hide();
+/* 			$('.ekbdbra0').show();
+ */		})
+		 $('.updateBtn').click(function () {
+			$('.update').show();
+			$('.recent').hide();
 		})
-		$('.m_info').click(function() {
-			$('.m_info11').show();
-			$('.m_active11').hide();
-			$('.ekbdbra0').show();
-		})
+		$('.recentBtn').click(function() {
+			$('.recent').show();
+			$('.update').hide();
+/* 			$('.ekbdbra0').show();
+ */		})
 		$('.m_active').click(function() {
 			$('.m_info11').hide();
 			$('.m_active11').show();
