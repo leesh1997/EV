@@ -8,7 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
 .interior_wrap {
@@ -55,7 +57,7 @@
 	justify-content: space-between;
 }
 
-.interior_img {
+.popupModalVideo {
 	padding-bottom: 20px;
 }
 
@@ -86,6 +88,57 @@ input[type="submit"] {
 	position: relative;
 	margin-bottom: 50px;
 }
+
+.popupModalVideo{
+	position:relative;
+	margin-bottom: 15px;
+	z-index: 50;
+	height: 350.7px;
+}
+
+.video_modal_popup.reveal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999
+}
+
+.video_modal_popup .img-wrapper {
+    position: relative;
+    width: 80%;
+    padding-bottom: 45%;
+    margin-right: 150px;
+    z-index: 500
+}
+
+.video_modal_popup .img-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.video_modal_popup.reveal .video_modal_popup-closer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .9);
+    z-index: 300
+}
+
+.img-wrapper{
+	width: 400px;
+	height: 300px;
+	margin-left: 150px;
+	margin-top: 100px;
+}
+
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -134,30 +187,31 @@ input[type="submit"] {
 		</div>
 		<hr id="line" />
 		<div class="interior_list_gallery">
-			<ul>
 				<c:forEach var="imgs" items="${list}" varStatus="i">
-					<li>
-						<div class="interior_img_container" data-index="${imgs.i_seq}">
-							<div class="interior_img">
-								<img src="${imgs.i_url}" width="100%" height="320px;"
-									class="gallery_items">
-							</div>
-							<div class="colors_interior">
-								<div class="pl_colors"
-									style="background-color: rgb(${imgs.i_rgb1}); color: rgb(${imgs.i_rgb1})"></div>
-								<div class="pl_colors"
-									style="background-color: rgb(${imgs.i_rgb2}); color: rgb(${imgs.i_rgb2})"></div>
-								<div class="pl_colors"
-									style="background-color: rgb(${imgs.i_rgb3}); color: rgb(${imgs.i_rgb3})"></div>
-								<div class="pl_colors"
-									style="background-color: rgb(${imgs.i_rgb4}); color: rgb(${imgs.i_rgb4})"></div>
-								<div class="pl_colors"
-									style="background-color: rgb(${imgs.i_rgb5}); color: rgb(${imgs.i_rgb5})"></div>
-							</div>
-						</div>
-					</li>
+					<div class="col-sm-4 popupModalVideo">
+						<a data-img="${imgs.i_url}"><img src="${imgs.i_url}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
+					
+							<div class="pl_colors"
+								style="background-color: rgb(${imgs.i_rgb1}); color: rgb(${imgs.i_rgb1})"></div>
+							<div class="pl_colors"
+								style="background-color: rgb(${imgs.i_rgb2}); color: rgb(${imgs.i_rgb2})"></div>
+							<div class="pl_colors"
+								style="background-color: rgb(${imgs.i_rgb3}); color: rgb(${imgs.i_rgb3})"></div>
+							<div class="pl_colors"
+								style="background-color: rgb(${imgs.i_rgb4}); color: rgb(${imgs.i_rgb4})"></div>
+							<div class="pl_colors"
+								style="background-color: rgb(${imgs.i_rgb5}); color: rgb(${imgs.i_rgb5})"></div>
+					
+					</div>
+					
+					
 				</c:forEach>
-			</ul>
+				<div class="video_modal_popup" style="margin-left: 150px">
+				  	<div class="video_modal_popup-closer"></div>
+				  	<div class="modal-footer">
+	      		</div>
+			</div>	
+			
 		</div>
 
 
@@ -192,6 +246,17 @@ input[type="submit"] {
 	<script>
 
 		$(".bottom_count"+${page}).css('color','grey');
+		
+		$(".popupModalVideo a").click(function() {
+		    $(".video_modal_popup").addClass("reveal"),
+		    $(".video_modal_popup .img-wrapper").remove(),
+		    $(".video_modal_popup").append("<div class='img-wrapper'><img src="+ $(this).data("img")+"></div>")
+		    
+		}),
+		$(".video_modal_popup-closer").click(function() {
+		    $(".video_modal_popup .img-wrapper").remove(),
+		    $(".video_modal_popup").removeClass("reveal")
+		});
 
 	</script>
 
