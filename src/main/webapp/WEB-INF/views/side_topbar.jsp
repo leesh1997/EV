@@ -63,7 +63,7 @@
 				<div class="he-text">palette</div></A>
 			</div>
 			<div class="he st2">
-				<a href="#"><img src="resources/img/inte1.png"
+				<a href="interiorGallery.do"><img src="resources/img/inte1.png"
 					class="he-img st2im">
 				<div class="he-text">interior</div></a>
 			</div>
