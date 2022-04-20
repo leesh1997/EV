@@ -44,7 +44,7 @@
 						
 						$("#btn1").click(function () {
 					        alert("로그인 후 이용해주세요");
-					        location.href="main.do";
+					        location.href="login.do";
 					      });
 						</script>
 						</c:when>
