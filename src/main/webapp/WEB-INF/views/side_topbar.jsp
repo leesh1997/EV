@@ -28,9 +28,30 @@
 						</c:when>
 					</c:choose>
 				</div>
-				<div class="main-text-box">
+				
+				
+				<c:choose>
+						<c:when test="${info != null}">
+					<div class="main-text-box">
 					<a href="mypage.do"> MyPage</a>
 				</div>
+						</c:when>
+						<c:when test="${info == null}">
+						<div class="main-text-box">
+					<a href="#" id="btn1"> MyPage</a>
+				</div>
+						<script type="text/javascript">
+						
+						$("#btn1").click(function () {
+					        alert("로그인 후 이용해주세요");
+					        location.href="main.do";
+					      });
+						</script>
+						</c:when>
+					</c:choose>
+				
+
+				
 				<div class="main-text-box">
 					<a href="join.do">Join</a>
 				</div>
