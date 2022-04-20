@@ -243,7 +243,14 @@ input[type="submit"]:hover{
 		 $(document).ready(function() {
 
 		      /*   var likee = $(this).val(); */
-		   
+		      if(<%=session.getAttribute("info")%>==null){
+		    	   $(".gallery_items_like").attr("disabled", true);
+		      }
+		      else{
+		    	   $(".gallery_items_like").attr("disabled", false);
+		      }
+		  
+
 		        console.log("시작확인");
 		         $.ajax({
 		            url : "wishlistcheck.do",
@@ -287,7 +294,11 @@ input[type="submit"]:hover{
 		            }
 		         });
 		      });
-
+		  function resultJson(data){
+			  
+		  }
+		
+		
 		
 		/* $(".gallery_items_like").click(function () {
 			if($(this).find("#Layer_1").css({ fill: 'black' })){

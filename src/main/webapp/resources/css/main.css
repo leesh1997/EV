@@ -70,8 +70,8 @@ div{
 
 .main-img{
     position: relative;
-  width: 2000px;
-  height: 1000px;
+  width:1800px;
+  max-height: auto;
     /* animation: move_img2 5s infinite; */
   z-index: 1;
  }
