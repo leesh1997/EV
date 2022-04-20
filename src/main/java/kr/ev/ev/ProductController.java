@@ -20,6 +20,7 @@ import kr.ev.model.ProductVO;
 import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
 import kr.ev.model.WishlistVO;
+import kr.ev.model.ZzimVO;
 
 @Controller
 public class ProductController {
@@ -129,22 +130,46 @@ public class ProductController {
 		}
 		
 		}
+	
 	@RequestMapping("/he.do")
-	public @ResponseBody WishlistVO he(String likee) {
+	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session) {
+		
+		MemberVO memvo= (MemberVO)session.getAttribute("info");
+		if(memvo.getM_email()==null) {
+			return null;
+		}
+		else {
 		System.out.println("확인!!"+likee);
+		System.out.println("아이디!!"+memvo.getM_email());
 		int likeint= Integer.parseInt(likee);
-		WishlistVO vo;
-		vo= mapper.checklike(likeint);
+		/*
+		 * String email=memvo.getM_email(); vo.setM_email(email); vo.setP_seq(likeint);
+		 */
+		
+		zzim.setM_email(memvo.getM_email());
+		zzim.setP_seq(likeint);
+		
+	
+		vo= mapper.checklike(zzim);
+		System.out.println(vo);
 		if(vo==null) {
+			
+			
+			
 			System.out.println("생성"+likeint);
-			 vo = mapper.pluslike(likeint);
+			 vo = mapper.pluslike(zzim);
+			 zzim.setSuccess("success");
+			 return zzim;
 		}
 		else {
 			System.out.println("삭제"+likeint);
-			 vo = mapper.deletelike(likeint);
+			 vo = mapper.deletelike(zzim);
+			 zzim.setSuccess("delete");
+			 return zzim;
 		}
 	
-		return vo;
+		
+		}
 	}
 	@RequestMapping("/wishlistcheck.do")
 	public @ResponseBody ArrayList<WishlistVO> wishlistcheck(ArrayList<WishlistVO> wish,

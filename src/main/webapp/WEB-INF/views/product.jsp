@@ -243,12 +243,12 @@ input[type="submit"]:hover{
 		 $(document).ready(function() {
 
 		      /*   var likee = $(this).val(); */
-		      if(<%=session.getAttribute("info")%>==null){
+		    <%--   if(<%=session.getAttribute("info")%>==null){
 		    	   $(".gallery_items_like").attr("disabled", true);
 		      }
 		      else{
 		    	   $(".gallery_items_like").attr("disabled", false);
-		      }
+		      } --%>
 		  
 
 		        console.log("시작확인");
@@ -295,8 +295,17 @@ input[type="submit"]:hover{
 		         });
 		      });
 		  function resultJson(data){
-			  
-		  }
+			  if(data.success=="delete"){
+				  console.log("삭제완료");
+				  $('#like'+data.p_seq).find("#Layer_1").css({ fill: 'black' });
+			  }
+			  else{
+				  console.log("생성완료");
+				  console.log(data);
+				  $('#like'+data.p_seq).find("#Layer_1").css({ fill: 'pink' }); 
+			  }
+			 
+		  };
 		
 		
 		
