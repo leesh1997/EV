@@ -47,9 +47,9 @@ public class FileUploadController {
 		System.out.println(session.getServletContext().getRealPath("resources/test"));
 		String b_file = session.getServletContext().getRealPath("resources/test");
 		logger.info("fileUpload={}", file);
-		String uuid = UUID.randomUUID().toString();
+		//String uuid = UUID.randomUUID().toString();
 		// file upload to system
-		File converFile = new File(b_file, uuid + file.getOriginalFilename());
+		File converFile = new File(b_file, file.getOriginalFilename());
 		logger.info("fileUpload converFile={}", converFile);
 		file.transferTo(converFile);
 		MemberVO Mvo = (MemberVO) session.getAttribute("info");
@@ -60,13 +60,19 @@ public class FileUploadController {
 		System.out.println(m_nick);
 		System.out.println("==========");
 		System.out.println(b_file);
-		String msg = file.getOriginalFilename() + " is saved in server db";
+		String msg = file.getOriginalFilename();
 		redirectAttributes.addFlashAttribute("msg", msg);
 		System.out.println("msg뭐야!!!!!" + msg);
 		logger.info("fileUpload={}", msg);
 		
+
+		String lo = b_file +'\\' + msg;
+		String b_fileLO = lo.replace('\\', '/');
+		String b_file1[] = b_fileLO.split("EV/");
+		b_file = b_file1[1];
+		System.out.println(b_file);
 		
-		BoardVO b_vo = new BoardVO(0, b_title, b_content, b_file, null, m_nick, 0, 0, null);
+		BoardVO b_vo = new BoardVO(0, b_title, b_content, b_file, null, m_nick, 0, 0);
 		mapper.fileboard(b_vo);
 		System.out.println("파일 저장 완료");
 
