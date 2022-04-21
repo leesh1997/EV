@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Interior Gallery</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script
@@ -289,9 +289,6 @@ input[type="submit"] {
 				</c:choose>
 			</ul>
 		</div>
-
-
-
 
 	</div>
 

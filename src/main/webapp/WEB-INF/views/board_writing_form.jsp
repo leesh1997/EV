@@ -75,8 +75,7 @@
 
 	<div class="board_wrap">
 		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Interior
-				Gallery</h1>
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">EV 게시판</h1>
 		</div>
 		<hr id="line" />
 		<div class="board_indication">
