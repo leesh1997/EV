@@ -3,10 +3,20 @@
 <mapper namespace="kr.ev.model.WishListMapper">
     
     <select id="wishlist" resultType="kr.ev.model.PaletteVO">
-        select * from t_palette;
+        select * from t_palette where m_email=#{m_email};
+    </select>
+     <select id="wishlist2" resultType="kr.ev.model.ProductVO">
+        select * from t_product A
+        inner join t_wishlist B
+        on A.p_seq = B.p_seq
+       	where B.m_email=#{m_email};
     </select>
     <delete id="pwish_delete" parameterType="kr.ev.model.PaletteVO">
         delete from t_palette where pl_seq=#{delete_seq};
        
+    </delete>
+    <delete id="wwish_delete" parameterType="kr.ev.model.WishlistVO">
+          delete from t_wishlist where p_seq=#{delete_seq};
+        
     </delete>
 </mapper>

@@ -580,11 +580,12 @@ text-align: center;
 }
 
 tr.tr1{
-height: 30px;
+height: 21px;
 }
 
 tr.tr2{
-height: 50px;
+height: 30px;
+border: 2px solid #d1d1d1;
 }
 
 </style>
@@ -913,7 +914,7 @@ height: 50px;
 								<img src="resources/img/bora.png" class="jjim_img">
 							</div>
 							<div class="jjim_text_list">
-								<span>제목</span> <span>ㅉㅉㅉ</span>
+								<span>제목</span> 
 							</div>
 
 						</div>
@@ -922,7 +923,7 @@ height: 50px;
 								<img src="resources/img/bora.png" class="jjim_img">
 							</div>
 							<div class="jjim_text_list">
-								<span>제목</span> <span>ㅉㅉㅉ</span>
+								<span>제목</span>
 							</div>
 
 						</div>
@@ -931,7 +932,7 @@ height: 50px;
 								<img src="resources/img/bora.png" class="jjim_img">
 							</div>
 							<div class="jjim_text_list">
-								<span>제목</span> <span>ㅉㅉㅉ</span>
+								<span>제목</span> 
 							</div>
 
 						</div>
@@ -1005,9 +1006,9 @@ height: 50px;
 		<!-- 나의 활동 -->
 		<div class="mylog">
 			<p class="mini_title">My Page > 나의 활동</p>
-			<div class="board">
-				<span style="font-weight: bold; margin-left: 100px;">내가 작성한
-					게시물 : ${count} 개</span>
+			<div class="board" style="margin-top: 25px;">
+				<span style="font-weight: bold; margin-left: 100px; font-size: 20px;">내가 작성한
+					게시글 : ${count} 개</span>
 			</div>
 			<!-- <div class="comment">
 				<span style="font-weight: bold; margin-left: 100px;">내가 작성한

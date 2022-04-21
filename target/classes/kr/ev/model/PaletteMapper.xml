@@ -15,8 +15,8 @@
 	<insert id="saveColors" parameterType="kr.ev.model.PaletteVO">
 
 		insert into
-		t_palette(pl_c1, pl_c2, pl_c3, pl_c4, pl_c5,m_email) values (#{pl_c1},
-		#{pl_c2}, #{pl_c3}, #{pl_c4}, #{pl_c5},#{m_email})
+		t_palette(pl_c1, pl_name1, pl_c2, pl_name2, pl_c3, pl_name3, pl_c4, pl_name4, pl_c5, pl_name5, m_email) values (#{pl_c1}, #{pl_name1},
+		#{pl_c2}, #{pl_name2}, #{pl_c3}, #{pl_name3}, #{pl_c4}, #{pl_name4}, #{pl_c5}, #{pl_name5}, #{m_email})
 
 	</insert>
 

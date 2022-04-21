@@ -8,4 +8,10 @@ public interface WishListMapper {
 
 	void pwish_delete(String string);
 
+	List<PaletteVO> wishlist(String m_email);
+
+	List<ProductVO> wishlist2(String m_email);
+
+	void wwish_delete(String string);
+
 }
