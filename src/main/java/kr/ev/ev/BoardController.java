@@ -27,7 +27,7 @@ public class BoardController {
 	public void showBoard(Model model) {
 		System.out.println("게시판 보기");
 		List<BoardVO> list = mapper.showBoard();
-		
+		System.out.println(list);
 		System.out.println(list.get(0).getB_file());
 		model.addAttribute("list", list);
 		

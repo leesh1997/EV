@@ -19,5 +19,19 @@
 		select pl_seq, pl_c1, pl_c2, pl_c3, pl_c4, pl_c5 from t_palette
 
 	</select>
+	
+  	<select id="standardColorGallery" resultType="kr.ev.model.ColorVO">
+
+		select c_seq, c_rgb, c_name
+		from t_color
+		where c_seq = 10 or c_seq = 20 or c_seq = 30
+			or c_seq = 40 or c_seq = 50 or c_seq = 60
+			or c_seq = 70 or c_seq = 80 or c_seq = 90
+			or c_seq = 100 or c_seq = 110 or c_seq = 120
+			or c_seq = 130 or c_seq = 140 or c_seq = 150
+			or c_seq = 160 or c_seq = 170 or c_seq = 180
+			or c_seq = 190 
+
+	</select>
     
 </mapper>

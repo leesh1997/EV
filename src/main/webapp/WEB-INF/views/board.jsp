@@ -8,7 +8,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>EV Board</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
 .board_wrap {
@@ -42,7 +48,7 @@
 
 .board_list_gallery {
 	justify-content: center;
-	margin-left: 100px;
+	margin-left: -20px;
 	padding: 10px;
 }
 
@@ -72,14 +78,61 @@ button {
 	font-size: 10px;
 }
 
+.popupModalImg {
+	padding-bottom: 20px;
+}
+
+.popupModalImg {
+	position: relative;
+	margin-bottom: 15px;
+	z-index: 50;
+	height: 350.7px;
+}
+
+.img_modal_popup.reveal {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999999
+}
+
+.img_modal_popup .img-wrapper {
+	position: relative;
+	width: 60%;
+	padding-bottom: 45%;
+	margin-right: 150px;
+	z-index: 500
+}
+
+.img_modal_popup.reveal .img_modal_popup-closer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .9);
+	z-index: 300
+}
+
+.img-wrapper {
+	width: 400px;
+	height: 300px;
+	margin-left: 150px;
+	margin-top: 100px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 
 	<div class="board_wrap">
 		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Interior
-				Gallery</h1>
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">EV
+				게시판</h1>
 		</div>
 		<hr id="line" />
 		<div class="board_indication">
@@ -114,184 +167,55 @@ button {
 
 		<div class="board_list_gallery">
 			<ul>
-				<c:forEach var="post" items="${list}" varStatus="i">
-					<li style="width: 22%">
-						<div class="gallery_container">
-							<div class="board_img">
-								<a href="#"> <img src="${post.b_file}" width="100%"
-									height="300" class="gallery_items">
-								</a>
-							</div>
-							<div class="gallery_info_cont">
-
-								<div class="board_tit">
-									<a href="#"> <strong>${post.b_title}</strong>
+				<c:forEach var="imgs" items="${list}" varStatus="i">
+					<div class="col-lg-4 popupModalImg">
+						<li style="width: 100%">
+							<div class="gallery_container">
+								<div class="board_img">
+									<a href="#"> <img src="${post.b_file}" width="100%"
+										height="300" class="gallery_items">
 									</a>
-									<p>${post.m_nick}</p>
 								</div>
-							</div>
-							<!-- //gallery_info_cont -->
-						</div> <!-- //gallery_cont -->
-					</li>
+								<div class="gallery_info_cont">
+
+									<div class="board_tit">
+										<a href="#"> <strong>${post.b_title}</strong>
+										</a>
+										<p>${post.m_nick}</p>
+									</div>
+								</div>
+								<!-- //gallery_info_cont -->
+							</div> <!-- //gallery_cont -->
+						</li>
+
+					</div>
+
 				</c:forEach>
-
-
-				<li style="width: 22%">
-					<div class="gallery_container">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Sherwood%20Green%20HC-118_@gomigomigom.gom(3).jpg"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_container">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/Simply%20White_OC-117@__gongzone(1).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
-				<li style="width: 22%">
-					<div class="gallery_cont">
-						<div class="board_img">
-							<a href="#"> <img
-								src="https://bmp1883jpg.hgodo.com/data/color%20review/220304/484_White%20Dove%20OC-17_@al_satang(2).png"
-								width="100%" height="300" class="gallery_items">
-							</a>
-						</div>
-						<div class="gallery_info_cont">
-
-							<div class="board_tit">
-								<a href="#"> <strong>title</strong>
-								</a>
-								<p>writer</p>
-							</div>
-						</div>
-						<!-- //gallery_info_cont -->
-					</div> <!-- //gallery_cont -->
-				</li>
 			</ul>
+			<div class="img_modal_popup" style="margin-left: 150px">
+				<div class="img_modal_popup-closer"></div>
+				<div class="modal-footer"></div>
+			</div>
+
+
 		</div>
 
 	</div>
+	<script>
+		$(".popupModalImg li").click(
+				function() {
+					$(".img_modal_popup").addClass("reveal"), $(
+							".img_modal_popup .img-wrapper").remove(), $(
+							".img_modal_popup").append(
+							"<div class='img-wrapper'><img src="
+									+ $(this).data("img") + "></div>")
+
+				}), $(".img_modal_popup-closer").click(
+				function() {
+					$(".img_modal_popup .img-wrapper").remove(), $(
+							".img_modal_popup").removeClass("reveal")
+				});
+	</script>
 
 </body>
 </html>

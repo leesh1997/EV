@@ -12,4 +12,6 @@ public interface InteriorMapper {
 
 	List<PaletteVO> showPalette();
 
+	List<ColorVO> standardColorGallery();
+
 }

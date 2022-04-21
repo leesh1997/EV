@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Interior Gallery</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
 .interior_wrap {
@@ -57,7 +60,7 @@
 	justify-content: space-between;
 }
 
-.popupModalVideo {
+.popupModalImg {
 	padding-bottom: 20px;
 }
 
@@ -89,56 +92,109 @@ input[type="submit"] {
 	margin-bottom: 50px;
 }
 
-.popupModalVideo{
-	position:relative;
+.popupModalImg {
+	position: relative;
 	margin-bottom: 15px;
 	z-index: 50;
 	height: 350.7px;
 }
 
-.video_modal_popup.reveal {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999999
+.img_modal_popup.reveal {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999999
 }
 
-.video_modal_popup .img-wrapper {
-    position: relative;
-    width: 80%;
-    padding-bottom: 45%;
-    margin-right: 150px;
-    z-index: 500
+.img_modal_popup .img-wrapper {
+	position: relative;
+	width: 60%;
+	padding-bottom: 45%;
+	margin-right: 150px;
+	z-index: 500
 }
 
-.video_modal_popup .img-wrapper iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.img_modal_popup.reveal .img_modal_popup-closer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .9);
+	z-index: 300
 }
 
-.video_modal_popup.reveal .video_modal_popup-closer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, .9);
-    z-index: 300
-}
-
-.img-wrapper{
+.img-wrapper {
 	width: 400px;
 	height: 300px;
 	margin-left: 150px;
 	margin-top: 100px;
 }
 
+.pager li>a, .pager li>span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 0px;
+}
+
+.block {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 25px;
+	height: 25px;
+	margin: 1px;
+	/* border: 10px solid #fff; */
+	cursor: pointer;
+	justify-content: center;
+	border-radius: 50%;
+	transition: all 0.5s cubic-bezier(0, 0.99, 0, 0.99);
+	position: relative;
+}
+
+#colorGallery {
+	display: flex;
+	flex-direction: row;
+}
+
+#dropColor1, #dropColor2 {
+	display: flex;
+	flex-direction: row;
+	width: 270px;
+	margin-left: 100px;
+}
+
+#dropPalette1, #dropPalette2 {
+	display: flex;
+	flex-direction: column;
+	width: 270px;
+	margin-left: 100px;
+}
+
+#colorButton, #mypaletteButton {
+	background-color: black;
+	color: white;
+	height: 25px;
+	border-radius: 15px;
+	font-size: 10px;
+	margin-left: 20px;
+}
+
+.palette_view {
+	display: none;
+}
+
+.palette_colors {
+	display: flex;
+	flex-direction: row;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -150,28 +206,12 @@ input[type="submit"] {
 				Gallery</h1>
 		</div>
 		<hr id="line" />
-		<div class="palette_view">
-			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0" end="4">
-				<div class="palette_colors" data-index="${palette.pl_seq}">
-					<div class="block" style="background-color: rgb(${palette.pl_c1}); color: rgb(${palette.pl_c1})" >
-						<div class="color_name"></div>
-					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c2}); color: rgb(${palette.pl_c2})">
-						<div class="color_name"></div>
-					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c3}); color: rgb(${palette.pl_c3})">
-						<div class="color_name"></div>
-					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c4}); color: rgb(${palette.pl_c4})">
-						<div class="color_name"></div>
-					</div>
-					<div class="block" style="background-color: rgb(${palette.pl_c5}); color: rgb(${palette.pl_c5})">
-						<div class="color_name"></div>
-					</div>
-				</div>
-			</c:forEach>
-		</div>
+
+
+
 		<div class="interior_style_list">
+			<button type="button" id="colorButton">색상</button>
+			<button type="button" id="mypaletteButton">나의 팔레트</button>
 			<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
 				type="submit" class="list_items" value="거실"> <input
@@ -185,33 +225,45 @@ input[type="submit"] {
 				type="submit" class="list_items" value="정원">
 
 		</div>
+		<div>
+			<div id="dropColor1"></div>
+			<div id="dropColor2"></div>
+		</div>
+
+		<div>
+			<div id="dropPalette1" style="margin-left: 500px;"></div>
+			<div id="dropPalette2"></div>
+		</div>
 		<hr id="line" />
+
+
 		<div class="interior_list_gallery">
-				<c:forEach var="imgs" items="${list}" varStatus="i">
-					<div class="col-sm-4 popupModalVideo">
-						<a data-img="${imgs.i_url}"><img src="${imgs.i_url}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
-					
-							<div class="pl_colors"
-								style="background-color: rgb(${imgs.i_rgb1}); color: rgb(${imgs.i_rgb1})"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(${imgs.i_rgb2}); color: rgb(${imgs.i_rgb2})"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(${imgs.i_rgb3}); color: rgb(${imgs.i_rgb3})"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(${imgs.i_rgb4}); color: rgb(${imgs.i_rgb4})"></div>
-							<div class="pl_colors"
-								style="background-color: rgb(${imgs.i_rgb5}); color: rgb(${imgs.i_rgb5})"></div>
-					
-					</div>
-					
-					
-				</c:forEach>
-				<div class="video_modal_popup" style="margin-left: 150px">
-				  	<div class="video_modal_popup-closer"></div>
-				  	<div class="modal-footer">
-	      		</div>
-			</div>	
-			
+			<c:forEach var="imgs" items="${list}" varStatus="i">
+				<div class="col-sm-4 popupModalImg">
+					<a data-img="${imgs.i_url}"><img src="${imgs.i_url}"
+						class="img-thumbnail"
+						style="margin-bottom: 15px; width: 400px; height: 250px" /></a>
+
+					<div class="pl_colors"
+						style="background-color: rgb(${imgs.i_rgb1}); color: rgb(${imgs.i_rgb1})"></div>
+					<div class="pl_colors"
+						style="background-color: rgb(${imgs.i_rgb2}); color: rgb(${imgs.i_rgb2})"></div>
+					<div class="pl_colors"
+						style="background-color: rgb(${imgs.i_rgb3}); color: rgb(${imgs.i_rgb3})"></div>
+					<div class="pl_colors"
+						style="background-color: rgb(${imgs.i_rgb4}); color: rgb(${imgs.i_rgb4})"></div>
+					<div class="pl_colors"
+						style="background-color: rgb(${imgs.i_rgb5}); color: rgb(${imgs.i_rgb5})"></div>
+
+				</div>
+
+
+			</c:forEach>
+			<div class="img_modal_popup" style="margin-left: 150px">
+				<div class="img_modal_popup-closer"></div>
+				<div class="modal-footer"></div>
+			</div>
+
 		</div>
 
 
@@ -238,28 +290,114 @@ input[type="submit"] {
 			</ul>
 		</div>
 
-
-
-
 	</div>
 
 	<script>
 
 		$(".bottom_count"+${page}).css('color','grey');
 		
-		$(".popupModalVideo a").click(function() {
-		    $(".video_modal_popup").addClass("reveal"),
-		    $(".video_modal_popup .img-wrapper").remove(),
-		    $(".video_modal_popup").append("<div class='img-wrapper'><img src="+ $(this).data("img")+"></div>")
+		$(".popupModalImg a").click(function() {
+		    $(".img_modal_popup").addClass("reveal"),
+		    $(".img_modal_popup .img-wrapper").remove(),
+		    $(".img_modal_popup").append("<div class='img-wrapper'><img src="+ $(this).data("img")+"></div>")
 		    
 		}),
-		$(".video_modal_popup-closer").click(function() {
-		    $(".video_modal_popup .img-wrapper").remove(),
-		    $(".video_modal_popup").removeClass("reveal")
+		$(".img_modal_popup-closer").click(function() {
+		    $(".img_modal_popup .img-wrapper").remove(),
+		    $(".img_modal_popup").removeClass("reveal")
 		});
 
-	</script>
+		/* 색상  */
+		const my_btn = document.getElementById('colorButton');
 
+	    my_btn.addEventListener('click', function() {
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+	    }, {once : true});
+			
+				$(document).ready(function(){
+					$('#dropColor1, #dropColor2').hide();
+					
+				})
+				
+			$('#colorButton').click(function() {
+					if($('#dropPalette1, #dropPalette2').hide()){
+				if($('#colorButton').text()=='색상'){
+				$('#colorButton').text('Close');
+				$('#dropColor1').slideDown(500);
+				$('#dropColor2').slideDown(500);
+			}
+				
+			else if($('#colorButton').text()=='Close'){
+				$('#colorButton').text('색상');
+				$('#dropColor1').slideUp(500);
+				$('#dropColor2').slideUp(500);
+			}
+					} else if($('#dropPalette1, #dropPalette2').show()){
+						$('#dropPalette1, #dropPalette2').hide();
+					}
+			})
+				
+			
+			/* 마이팔레트  */
+			const palette_btn = document.getElementById('mypaletteButton');
+
+				palette_btn.addEventListener('click', function() {
+	        $("#dropPalette1").append("<c:forEach var='palette' items='${p_list}' varStatus='i' begin='0' end='4'> "+ 
+	        						 "<div class='palette_colors' data-index='${palette.pl_seq}'> "+ 
+	        						 "<div class='block' style='background-color: ${palette.pl_c1};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c2};'> </div> "+ 
+	        						 "<div class='block' style='background-color: ${palette.pl_c3};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c4};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c5};'> </div> </div> </c:forEach>" )
+	    }, {once : true});
+			
+				$(document).ready(function(){
+					$('#dropPalette1, #dropPalette2').hide();
+				})
+				
+			$('#mypaletteButton').click(function() {
+				if($('#dropColor1, #dropColor2').hide()){
+					if($('#mypaletteButton').text()=='나의 팔레트'){
+						$('#mypaletteButton').text('Close');
+						$('#dropPalette1').slideDown(500);
+						$('#dropPalette2').slideDown(500);
+					}
+					else if($('#mypaletteButton').text()=='Close'){
+						$('#mypaletteButton').text('나의 팔레트');
+						$('#dropPalette1').slideUp(500);
+						$('#dropPalette2').slideUp(500);
+					}
+			} 
+				else if($('#dropColor1, #dropColor2').show()){
+					$('#dropColor1, #dropColor2').hide();
+				}
+			})
+			
+			
+	</script>
+	<%-- <div class="palette_view">
+			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0"
+				end="4">
+				<div class="palette_colors" data-index="${palette.pl_seq}">
+					<div class="block"
+						style="background-color: ${palette.pl_c1}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c2}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c3}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c4}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c5}; ">
+					</div>
+				</div>
+			</c:forEach>
+		</div> --%>
 
 </body>
 </html>

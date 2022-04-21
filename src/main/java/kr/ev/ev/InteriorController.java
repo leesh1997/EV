@@ -10,9 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.ev.model.ColorVO;
 import kr.ev.model.InteriorMapper;
 import kr.ev.model.InteriorVO;
 import kr.ev.model.Paging;
+import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
 import kr.ev.model.VideoVO;
 
@@ -21,6 +23,7 @@ public class InteriorController {
 
 	@Inject
 	private InteriorMapper mapper;
+	private PaletteMapper mapper2;
 
 	@RequestMapping("/interiorGallery.do")
 	public String showInteriorImg(@RequestParam("pageNum") int pageNum, Model model, InteriorVO page, HttpServletRequest request) {
@@ -68,8 +71,19 @@ public class InteriorController {
 		model.addAttribute("paging", paging);
 		
 		
+		// 대표 색상 보여주기
+		List<ColorVO> standardList = mapper.standardColorGallery();
+		
+		System.out.println(standardList);
+		model.addAttribute("standardList", standardList);
+		
+		
 		return "interiorGallery";
 	}
+	
+	
+	
+	
 	
 
 	
