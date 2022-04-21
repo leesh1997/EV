@@ -108,8 +108,8 @@ h2 {
 							<div class="panel-body"
 								style="float: left; margin-top: 10px; margin-left: 30px;">
 								<div class="board_tit">
-									<label style="margin-right: 10px; float: left">제목</label>
-									<br><br>
+<!-- 									<label style="margin-right: 10px; float: left">제목</label>
+ -->									<br><br>
 									<td class="maga-con1"><a href="${mz.mz_site }"
 										target="_blank"> <strong class="content1">${mz.mz_title }</strong>
 									</a>
