@@ -146,11 +146,12 @@ input[type="submit"] {
 
 .block {
 	display: flex;
-	flex-direction: column; position : relative;
-	width: 6vw;
-	height: 6vw;
-	margin: 1vw;
-	border: 10px solid #fff;
+	flex-direction: column;
+	position: relative;
+	width: 25px;
+	height: 25px;
+	margin: 1px;
+	/* border: 10px solid #fff; */
 	cursor: pointer;
 	justify-content: center;
 	border-radius: 50%;
@@ -163,7 +164,37 @@ input[type="submit"] {
 	flex-direction: row;
 }
 
-    
+#dropColor1, #dropColor2 {
+	display: flex;
+	flex-direction: row;
+	width: 270px;
+	margin-left: 100px;
+}
+
+#dropPalette1, #dropPalette2 {
+	display: flex;
+	flex-direction: column;
+	width: 270px;
+	margin-left: 100px;
+}
+
+#colorButton, #mypaletteButton {
+	background-color: black;
+	color: white;
+	height: 25px;
+	border-radius: 15px;
+	font-size: 10px;
+	margin-left: 20px;
+}
+
+.palette_view {
+	display: none;
+}
+
+.palette_colors {
+	display: flex;
+	flex-direction: row;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -176,35 +207,11 @@ input[type="submit"] {
 		</div>
 		<hr id="line" />
 
-	<div class="dropdown">
-	  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">컬러
-	  <span class="caret"></span></button>
-	  <ul class="dropdown-menu">
-	    <li><c:forEach var="color" items="${standardList}" varStatus="i">
-				<div class="block" data-index="${color.c_seq}" 
-					style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
-				</div>
-			</c:forEach></li>
-	  </ul>
-	</div>
 
-		<button type="button" id="colorButton">컬러</button>
-		
-		
-		
-		<%-- <div id="colorGallery" class="gallery-container">
-			<c:forEach var="color" items="${standardList}" varStatus="i">
-				<div class="block" data-index="${color.c_seq}" onClick=""
-					style="background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb})">
-				</div>
-			</c:forEach>
-		</div> --%>
-
-		<div id="resultMemberList" style="display: none;">
-		
-		</div>
 
 		<div class="interior_style_list">
+			<button type="button" id="colorButton">색상</button>
+			<button type="button" id="mypaletteButton">나의 팔레트</button>
 			<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
 				type="submit" class="list_items" value="거실"> <input
@@ -218,7 +225,18 @@ input[type="submit"] {
 				type="submit" class="list_items" value="정원">
 
 		</div>
+		<div>
+			<div id="dropColor1"></div>
+			<div id="dropColor2"></div>
+		</div>
+
+		<div>
+			<div id="dropPalette1" style="margin-left: 500px;"></div>
+			<div id="dropPalette2"></div>
+		</div>
 		<hr id="line" />
+
+
 		<div class="interior_list_gallery">
 			<c:forEach var="imgs" items="${list}" varStatus="i">
 				<div class="col-sm-4 popupModalImg">
@@ -292,8 +310,97 @@ input[type="submit"] {
 		    $(".img_modal_popup").removeClass("reveal")
 		});
 
-	</script>
+		/* 색상  */
+		const my_btn = document.getElementById('colorButton');
 
+	    my_btn.addEventListener('click', function() {
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+	    }, {once : true});
+			
+				$(document).ready(function(){
+					$('#dropColor1, #dropColor2').hide();
+					
+				})
+				
+			$('#colorButton').click(function() {
+					if($('#dropPalette1, #dropPalette2').hide()){
+				if($('#colorButton').text()=='색상'){
+				$('#colorButton').text('Close');
+				$('#dropColor1').slideDown(500);
+				$('#dropColor2').slideDown(500);
+			}
+				
+			else if($('#colorButton').text()=='Close'){
+				$('#colorButton').text('색상');
+				$('#dropColor1').slideUp(500);
+				$('#dropColor2').slideUp(500);
+			}
+					} else if($('#dropPalette1, #dropPalette2').show()){
+						$('#dropPalette1, #dropPalette2').hide();
+					}
+			})
+				
+			
+			/* 마이팔레트  */
+			const palette_btn = document.getElementById('mypaletteButton');
+
+				palette_btn.addEventListener('click', function() {
+	        $("#dropPalette1").append("<c:forEach var='palette' items='${p_list}' varStatus='i' begin='0' end='4'> "+ 
+	        						 "<div class='palette_colors' data-index='${palette.pl_seq}'> "+ 
+	        						 "<div class='block' style='background-color: ${palette.pl_c1};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c2};'> </div> "+ 
+	        						 "<div class='block' style='background-color: ${palette.pl_c3};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c4};'> </div> "+
+	        						 "<div class='block' style='background-color: ${palette.pl_c5};'> </div> </div> </c:forEach>" )
+	    }, {once : true});
+			
+				$(document).ready(function(){
+					$('#dropPalette1, #dropPalette2').hide();
+				})
+				
+			$('#mypaletteButton').click(function() {
+				if($('#dropColor1, #dropColor2').hide()){
+					if($('#mypaletteButton').text()=='나의 팔레트'){
+						$('#mypaletteButton').text('Close');
+						$('#dropPalette1').slideDown(500);
+						$('#dropPalette2').slideDown(500);
+					}
+					else if($('#mypaletteButton').text()=='Close'){
+						$('#mypaletteButton').text('나의 팔레트');
+						$('#dropPalette1').slideUp(500);
+						$('#dropPalette2').slideUp(500);
+					}
+			} 
+				else if($('#dropColor1, #dropColor2').show()){
+					$('#dropColor1, #dropColor2').hide();
+				}
+			})
+			
+			
+	</script>
+	<%-- <div class="palette_view">
+			<c:forEach var="palette" items="${p_list}" varStatus="i" begin="0"
+				end="4">
+				<div class="palette_colors" data-index="${palette.pl_seq}">
+					<div class="block"
+						style="background-color: ${palette.pl_c1}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c2}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c3}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c4}; ">
+					</div>
+					<div class="block"
+						style="background-color: ${palette.pl_c5}; ">
+					</div>
+				</div>
+			</c:forEach>
+		</div> --%>
 
 </body>
 </html>
