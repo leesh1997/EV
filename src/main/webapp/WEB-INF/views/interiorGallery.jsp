@@ -211,7 +211,20 @@ input[type="submit"] {
 
 		<div class="interior_style_list">
 			<button type="button" id="colorButton">색상</button>
+			<c:choose>
+			<c:when test="${info != null}">
 			<button type="button" id="mypaletteButton">나의 팔레트</button>
+			</c:when>
+			<c:when test="${info == null}">
+			<a href="#"><button type="button" id="mypaletteButton">나의 팔레트</button></a>
+			<script type="text/javascript">
+				$("#mypaletteButton").click(function(){
+					alert("로그인 후 이용 가능합니다.");
+					location.href("interiorGallery.do");
+				})
+			</script>
+			</c:when>
+			</c:choose>
 			<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
 				type="submit" class="list_items" value="거실"> <input

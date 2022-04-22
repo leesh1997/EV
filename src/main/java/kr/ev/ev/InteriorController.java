@@ -1,9 +1,12 @@
 package kr.ev.ev;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ev.model.ColorVO;
 import kr.ev.model.InteriorMapper;
 import kr.ev.model.InteriorVO;
+import kr.ev.model.MemberVO;
 import kr.ev.model.Paging;
 import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
@@ -23,11 +27,9 @@ public class InteriorController {
 
 	@Inject
 	private InteriorMapper mapper;
-	private PaletteMapper mapper2;
 
 	@RequestMapping("/interiorGallery.do")
-	public String showInteriorImg(@RequestParam("pageNum") int pageNum, Model model, InteriorVO page, HttpServletRequest request) {
-		
+	public String showInteriorImg(@RequestParam("pageNum") int pageNum, MemberVO mem, Model model, InteriorVO page,HttpSession session , HttpServletRequest request, HttpServletResponse response, PrintWriter out) {
 		System.out.println("이미지 보여주기");
 		System.out.println("팔레트 보여주기");
 		System.out.println("게시물 수" + pageNum );
@@ -62,11 +64,22 @@ public class InteriorController {
 		
 		int startNum = (pages - 1) * 12 + 1;
 		int endNum = pages * 12;		
+		try {
+			mem = (MemberVO) session.getAttribute("info");
+			List<PaletteVO> p_list = mapper.showPalette(mem.getM_email());
+			model.addAttribute("p_list", p_list);
+			System.out.println(p_list);
+			
+		} 
+		catch (Exception e) {
+			response.setContentType("text/html; charset = UTF-8");
+			
+			out.print("<script>alert('마이 팔레트 생성 후 이용 가능합니다.');</script>");
+			
+		}
 		
-		List<PaletteVO> p_list = mapper.showPalette();
 		List<InteriorVO> list = mapper.showInteriorImg(startNum);
-		model.addAttribute("p_list", p_list);
-		System.out.println(p_list);
+		
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		
