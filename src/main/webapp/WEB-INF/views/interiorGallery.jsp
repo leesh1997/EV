@@ -220,7 +220,7 @@ input[type="submit"] {
 			<script type="text/javascript">
 				$("#mypaletteButton").click(function(){
 					alert("로그인 후 이용 가능합니다.");
-					location.href("interiorGallery.do");
+					location.href="login.do";
 				})
 			</script>
 			</c:when>

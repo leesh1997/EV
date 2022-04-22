@@ -1,3 +1,4 @@
+<%@page import="kr.ev.model.BoardVO"%>
 <%@page import="com.mysql.cj.Session"%>
 <%@page import="kr.ev.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -126,39 +127,42 @@ button {
 	margin-top: 100px;
 }
 
-.img-wrapper>img{
-width: 800px;
-height: 600px;
-float: right;
-margin-right: 90px;
+.img-wrapper>img {
+	width: 800px;
+	height: 600px;
+	float: right;
+	margin-right: 90px;
 }
 
-.closeBtn{
-font-size: 20px;
-    float: right;
-    margin-top: 30px;
-    margin-right: 45px;
-    /* font-weight: bold; */
-    background: none;
-}
-.contentTable{
-color: white;
-    float: right;
-    border: 2px solid white;
-    width: 650px;
-    height: 600px;
-    margin-top: 115px;
-}
-.contentTable>tbody>tr>td{
-text-align: center;
-}
-.title{
-height: 70px;
-}
-.writer{
-height: 30px;
+.closeBtn {
+	font-size: 20px;
+	float: right;
+	margin-top: 30px;
+	margin-right: 45px;
+	/* font-weight: bold; */
+	background: none;
 }
 
+.contentTable {
+	color: white;
+	float: right;
+	border: 2px solid white;
+	width: 650px;
+	height: 600px;
+	margin-top: 115px;
+}
+
+.contentTable>tbody>tr>td {
+	text-align: center;
+}
+
+.title {
+	height: 70px;
+}
+
+.writer {
+	height: 30px;
+}
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -203,11 +207,12 @@ height: 30px;
 			<ul style="margin: auto;">
 				<c:forEach var="imgs" items="${list}" varStatus="i">
 					<div class="col-lg-4 popupModalImg">
-						<li style="width: 100%; margin-top:-15px;">
+						<li style="width: 100%; margin-top: -15px;">
 							<div class="gallery_container">
 								<div class="board_img" data-index="${imgs.b_seq }">
-									<a data-img="${imgs.b_file}"> <img src="${imgs.b_file}" width="100%"
-										height="300" class="gallery_items">
+									<input type="hidden" id="hiddenSeq" value="${imgs.b_seq }"> <a
+										data-img="${imgs.b_file}" data-title="${imgs.b_title}" data-nick="${imgs.m_nick}" data-date="${imgs.b_date}" data-content="${imgs.b_content}"> <img src="${imgs.b_file}"
+										width="100%" height="300" class="gallery_items">
 									</a>
 								</div>
 								<div class="gallery_info_cont">
@@ -230,27 +235,28 @@ height: 30px;
 				<div class="img_modal_popup-closer">
 					<button class="closeBtn">X</button>
 					<div class="content">
+
 						<table class="contentTable">
-							<tr class="title">
+							<tr class="title" id="title2">
 								<td>제목</td>
-								<td >${imgs.b_title}gdgdg</td>
+								<td></td>
 							</tr>
-							<tr class="writer">
-								<td >작성자</td>
-								<td>${imgs.m_nick}gdgsg</td>
+							<tr class="writer" id="nick2">
+								<td>작성자</td>
+								<td></td>
 							</tr>
-							<tr class="writer">
+							<tr class="writer" id="date2">
 								<td>작성일</td>
-								<td>${imgs.b_date}dgdgg</td>
-							</tr> 
-							<tr>
- 								<td colspan=2>내용 ${imgs.b_content}</td>
+								<td></td>
+							</tr>
+							<tr id="content2">
+								<td>내용</td>
+								<td></td>
 							</tr>
 						</table>
-				</div>
-					
 					</div>
-			<!-- 	<div class="modal-footer"></div> -->
+				</div>
+				<!-- 	<div class="modal-footer"></div> -->
 			</div>
 
 
@@ -264,13 +270,24 @@ height: 30px;
 							".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").append(
 							"<div class='img-wrapper' style='width:300px;'><img src="
-									+ $(this).data("img") + "></div>")
-
+									+ $(this).data("img") + "> <div><p> "
+									+ $(this).data("title") + "</p></div>"),
+									$("#title2 td:nth-child(2)").append($(this).data("title")),
+									$("#nick2 td:nth-child(2)").append($(this).data("nick")),
+									$("#date2 td:nth-child(2)").append($(this).data("date")),
+									$("#content2 td:nth-child(2)").append($(this).data("content"))
+									
 				}), $(".img_modal_popup-closer").click(
 				function() {
 					$(".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").removeClass("reveal")
 				});
+		
+		function resultJson() {
+			alert("성공");
+			console.log(vovo);
+		}
+		
 	</script>
 
 </body>

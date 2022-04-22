@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.BoardMapper">
     
      <select id="showBoard" resultType="kr.ev.model.BoardVO">
-        select b_title, b_file, m_nick,b_content from t_board order by b_seq
+        select b_seq, b_title, b_file, m_nick, b_date, b_content from t_board order by b_seq
     </select>
     
      <insert id="fileboard" parameterType="kr.ev.model.BoardVO">
@@ -12,6 +12,10 @@
      
       <select id="getBoardCnt" resultType="int" >
         select count(*) from t_board where m_nick = #{m_nick}              
+    </select>
+    
+      <select id="showDetailBoard" resultType="kr.ev.model.BoardVO">
+        select b_seq, b_title, m_nick,b_content, b_date from t_board where b_seq = #{b_seq}
     </select>
       
      

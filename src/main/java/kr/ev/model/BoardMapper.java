@@ -20,6 +20,9 @@ public interface BoardMapper {
 	public void fileboard(BoardVO vo);
 
 	public int getBoardCnt(MemberVO vo);
+
+	public BoardVO showDetailBoard(String img_url);
+
 	
 
 }
