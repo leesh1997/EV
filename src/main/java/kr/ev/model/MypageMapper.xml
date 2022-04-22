@@ -16,9 +16,18 @@
 	  AND m_pw = #{m_pw}  
 </delete>
    
+   <!-- 내가 작성한 게시글 수 -->
      <select id="getBoardCnt" resultType="int" >
         select count(*) from t_board where m_nick = #{m_nick}              
     </select>
+    
+    <!-- 내가 작성한 게시글 확인 -->
+     <select id="myContent" resultType="kr.ev.model.BoardVO" >
+		SELECT * FROM t_board WHERE m_nick=#{m_nick}
+	</select>
+ 
+     
+     
      
    
    

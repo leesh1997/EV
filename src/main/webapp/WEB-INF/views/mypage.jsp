@@ -1038,33 +1038,19 @@ height: 50px;
                   <th>작성일</th>
                   <th>조회수</th>
                </tr>
-               <tr class="tr2">
+               <c:forEach var="myView" items="${myContent}" varStatus="i">
+               	<tr class="tr2">
                   <td><div class="num" >
                         <input id="num_check" type="checkbox">
                      </div>
-                  <td>1</td>
-                  <td><a href="#">우리집 예쁘지~~~~~~~~</a></td>
-                  <td>22.04.20</td>
+                  <td>${i.count}</td>
+                  <td>${myView.b_title}</td>
+                  <td>${myView.b_date}</td>
                   <td>16</td>
                </tr>
-               <tr class="tr2">
-                  <td><div class="num">
-                        <input id="num_check" type="checkbox">
-                     </div>
-                  <td>2</td>
-                  <td>초록초록</td>
-                  <td>22.04.20</td>
-                  <td>37</td>
-               </tr>
-               <tr class="tr2" >
-                  <td><div class="num">
-                        <input id="num_check" type="checkbox">
-                     </div>
-                  <td>3</td>
-                  <td>우리집 구경하쇼</td>
-                  <td>22.04.20</td>
-                  <td>3</td>
-               </tr>
+               </c:forEach>
+               
+        
             </table>
             <div class="box bg-1">
                      <p>
