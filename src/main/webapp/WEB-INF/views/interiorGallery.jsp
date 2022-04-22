@@ -164,7 +164,7 @@ input[type="submit"] {
 	flex-direction: row;
 }
 
-#dropColor1, #dropColor2,#dropColor3 {
+#dropColor1, #dropColor2, #dropColor3 {
 	display: flex;
 	flex-direction: row;
 	width: 270px;
@@ -196,7 +196,7 @@ input[type="submit"] {
 	flex-direction: row;
 }
 </style>
-<body style="overflow-x : hidden">
+<body style="overflow-x: hidden">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 
 	<div class="interior_wrap">
@@ -212,18 +212,19 @@ input[type="submit"] {
 		<div class="interior_style_list">
 			<button type="button" id="colorButton">색상</button>
 			<c:choose>
-			<c:when test="${info != null}">
-			<button type="button" id="mypaletteButton">나의 팔레트</button>
-			</c:when>
-			<c:when test="${info == null}">
-			<a href="#"><button type="button" id="mypaletteButton">나의 팔레트</button></a>
-			<script type="text/javascript">
+				<c:when test="${info != null}">
+					<button type="button" id="mypaletteButton">나의 팔레트</button>
+				</c:when>
+				<c:when test="${info == null}">
+					<a href="#"><button type="button" id="mypaletteButton">나의
+							팔레트</button></a>
+					<script type="text/javascript">
 				$("#mypaletteButton").click(function(){
 					alert("로그인 후 이용 가능합니다.");
 					location.href="login.do";
 				})
 			</script>
-			</c:when>
+				</c:when>
 			</c:choose>
 			<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
@@ -239,9 +240,9 @@ input[type="submit"] {
 
 		</div>
 		<div>
-			<div id="dropColor1"></div>
-			<div id="dropColor2"></div>
-			<div id="dropColor3"></div>
+				<div id="dropColor1"></div>
+				<div id="dropColor2"></div>
+				<div id="dropColor3"></div>
 		</div>
 
 		<div>
@@ -325,9 +326,9 @@ input[type="submit"] {
 		const my_btn = document.getElementById('colorButton');
 
 	    my_btn.addEventListener('click', function() {
-	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
-			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
-			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
 	    }, {once : true});
 			
 				$(document).ready(function(){
