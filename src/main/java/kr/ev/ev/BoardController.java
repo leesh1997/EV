@@ -24,13 +24,12 @@ public class BoardController {
 	private BoardMapper mapper;
 
 	@RequestMapping("/board.do")
-	public void showBoard(Model model) {
+	public void showBoard(Model model, HttpServletRequest request) {
 		System.out.println("게시판 보기");
 		List<BoardVO> list = mapper.showBoard();
 		System.out.println(list);
 		System.out.println(list.get(0).getB_file());
 		model.addAttribute("list", list);
-		
 
 	}
 	
@@ -56,6 +55,20 @@ public class BoardController {
 	 * @RequestMapping("/boardContent.do") public String boardContent(Model model) {
 	 * model. }
 	 */
+	
+	@RequestMapping("/boardSelect.do")
+	public String boardSelect(@RequestParam("img_url") String img_url, Model model) {
+		
+		System.out.println("보드 셀렉트 접근");
+		System.out.println(img_url);
+		BoardVO vovo = mapper.showDetailBoard(img_url);
+		/* List<BoardVO> coList = mapper.showDetailBoard(img_url); */
+		System.out.println("데이터 : " + vovo);
+		model.addAttribute("vovo", vovo);
+		System.out.println("성공했나");
+		
+		return "redirect:/board.do";
+	}
 	
 }
 
