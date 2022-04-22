@@ -125,6 +125,40 @@ button {
 	margin-left: 150px;
 	margin-top: 100px;
 }
+
+.img-wrapper>img{
+width: 800px;
+height: 600px;
+float: right;
+margin-right: 90px;
+}
+
+.closeBtn{
+font-size: 20px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 45px;
+    /* font-weight: bold; */
+    background: none;
+}
+.contentTable{
+color: white;
+    float: right;
+    border: 2px solid white;
+    width: 650px;
+    height: 600px;
+    margin-top: 115px;
+}
+.contentTable>tbody>tr>td{
+text-align: center;
+}
+.title{
+height: 70px;
+}
+.writer{
+height: 30px;
+}
+
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -166,10 +200,10 @@ button {
 		<hr id="line" />
 
 		<div class="board_list_gallery">
-			<ul>
+			<ul style="margin: auto;">
 				<c:forEach var="imgs" items="${list}" varStatus="i">
 					<div class="col-lg-4 popupModalImg">
-						<li style="width: 100%">
+						<li style="width: 100%; margin-top:-15px;">
 							<div class="gallery_container">
 								<div class="board_img">
 									<a data-img="${imgs.b_file}"> <img src="${imgs.b_file}" width="100%"
@@ -178,10 +212,10 @@ button {
 								</div>
 								<div class="gallery_info_cont">
 
-									<div class="board_tit">
+									<div class="board_tit" style="margin-top: 5px;">
 										<a href="#"> <strong>${imgs.b_title}</strong>
 										</a>
-										<p>${imgs.m_nick}</p>
+										<p style="font-size: 15px;">${imgs.m_nick}</p>
 									</div>
 								</div>
 								<!-- //gallery_info_cont -->
@@ -193,8 +227,30 @@ button {
 				</c:forEach>
 			</ul>
 			<div class="img_modal_popup" style="margin-left: 150px">
-				<div class="img_modal_popup-closer"></div>
-				<div class="modal-footer"></div>
+				<div class="img_modal_popup-closer">
+					<button class="closeBtn">X</button>
+					<div class="content">
+						<table class="contentTable">
+							<tr class="title">
+								<td>제목</td>
+								<td >fsdfsdfsdf</td>
+							</tr>
+							<tr class="writer">
+								<td >작성자</td>
+								<td>${list.m_nick}</td>
+							</tr>
+							<tr class="writer">
+								<td>작성일</td>
+								<td>${imgs.b_date}</td>
+							</tr> 
+							<tr>
+ 								<td colspan=2>내용 ${imgs.b_content}</td>
+							</tr>
+						</table>
+				</div>
+					
+					</div>
+			<!-- 	<div class="modal-footer"></div> -->
 			</div>
 
 
