@@ -40,6 +40,9 @@
 		  });
 			
 	</script>
+	   <div>
+	   	<p> ${result }</p>
+	   </div>
 	   
 	
 </body>
