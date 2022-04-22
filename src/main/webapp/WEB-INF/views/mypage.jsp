@@ -1043,7 +1043,7 @@ height: 50px;
                         <input id="num_check" type="checkbox">
                      </div>
                   <td>1</td>
-                  <td>우리집 예쁘지~~~~~~~~</td>
+                  <td><a href="#">우리집 예쁘지~~~~~~~~</a></td>
                   <td>22.04.20</td>
                   <td>16</td>
                </tr>
