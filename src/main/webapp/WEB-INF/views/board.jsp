@@ -264,24 +264,31 @@ button {
 
 	</div>
 	<script>
+	var cnt = 1;
 		$(".board_img a").click(
 				function() {
 					$(".img_modal_popup").addClass("reveal"), $(
 							".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").append(
 							"<div class='img-wrapper' style='width:300px;'><img src="
-									+ $(this).data("img") + "> <div><p> "
-									+ $(this).data("title") + "</p></div>"),
+									+ $(this).data("img") + "></div> "),
 									$("#title2 td:nth-child(2)").append($(this).data("title")),
 									$("#nick2 td:nth-child(2)").append($(this).data("nick")),
 									$("#date2 td:nth-child(2)").append($(this).data("date")),
 									$("#content2 td:nth-child(2)").append($(this).data("content"))
-									
 				}), $(".img_modal_popup-closer").click(
 				function() {
 					$(".img_modal_popup .img-wrapper").remove(), $(
-							".img_modal_popup").removeClass("reveal")
+							".img_modal_popup").removeClass("reveal"),
+							$("#title2 td:nth-child(2), #nick2 td:nth-child(2), #date2 td:nth-child(2), #content2 td:nth-child(2)").detach(),
+							$("#title2").append("<td></td>"),
+							$("#nick2").append("<td></td>"),
+							$("#date2").append("<td></td>"),
+							$("#content2").append("<td></td>")
+							
+							
 				});
+		
 		
 		function resultJson() {
 			alert("성공");
