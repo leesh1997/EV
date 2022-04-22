@@ -93,6 +93,11 @@ public class InteriorController {
 		
 		return "interiorGallery";
 	}
+	@RequestMapping("/interiorSearch.do")
+	public String interiorSearch (int inSer)	{
+		System.out.println("제발나와라요"+ inSer);
+		return "interiorGallery";
+	}
 	
 	
 	

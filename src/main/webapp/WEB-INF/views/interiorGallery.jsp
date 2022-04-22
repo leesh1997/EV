@@ -326,9 +326,9 @@ input[type="submit"] {
 		const my_btn = document.getElementById('colorButton');
 
 	    my_btn.addEventListener('click', function() {
-	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'><input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
 	    }, {once : true});
 			
 				$(document).ready(function(){
