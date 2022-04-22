@@ -50,7 +50,13 @@ public class BoardController {
 		return "vo";
 	}
 
-
+	/*
+	 * // 게시판 내용
+	 * 
+	 * @RequestMapping("/boardContent.do") public String boardContent(Model model) {
+	 * model. }
+	 */
+	
 }
 
 

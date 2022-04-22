@@ -205,7 +205,7 @@ height: 30px;
 					<div class="col-lg-4 popupModalImg">
 						<li style="width: 100%; margin-top:-15px;">
 							<div class="gallery_container">
-								<div class="board_img">
+								<div class="board_img" data-index="${imgs.b_seq }">
 									<a data-img="${imgs.b_file}"> <img src="${imgs.b_file}" width="100%"
 										height="300" class="gallery_items">
 									</a>
@@ -233,15 +233,15 @@ height: 30px;
 						<table class="contentTable">
 							<tr class="title">
 								<td>제목</td>
-								<td >fsdfsdfsdf</td>
+								<td >${imgs.b_title}gdgdg</td>
 							</tr>
 							<tr class="writer">
 								<td >작성자</td>
-								<td>${list.m_nick}</td>
+								<td>${imgs.m_nick}gdgsg</td>
 							</tr>
 							<tr class="writer">
 								<td>작성일</td>
-								<td>${imgs.b_date}</td>
+								<td>${imgs.b_date}dgdgg</td>
 							</tr> 
 							<tr>
  								<td colspan=2>내용 ${imgs.b_content}</td>

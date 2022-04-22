@@ -3,7 +3,7 @@
 <mapper namespace="kr.ev.model.BoardMapper">
     
      <select id="showBoard" resultType="kr.ev.model.BoardVO">
-        select b_title, b_file, m_nick,b_content from t_board order by b_seq desc
+        select b_title, b_file, m_nick,b_content from t_board order by b_seq
     </select>
     
      <insert id="fileboard" parameterType="kr.ev.model.BoardVO">
