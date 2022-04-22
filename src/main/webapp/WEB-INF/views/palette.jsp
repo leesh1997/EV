@@ -65,8 +65,8 @@
 	margin: 1vw;
 	display: block;
 	margin-top: 3vw;
-	background-color: black; 
-	color : white;
+	background-color: black;
+	color: white;
 	border-radius: 2px;
 }
 
@@ -140,7 +140,7 @@
 }
 </style>
 </head>
-<body>
+<body style="overflow-x : hidden;">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="palette_top">
@@ -157,58 +157,73 @@
 						<div class="chosen_colors" style="background-color: rgb()"
 							data-index="">
 							<div class="color_name"></div>
-							<input type="text" name="pl_c1" id="pl_c1" class="colors" />
-							<input type="hidden" name="pl_name1" id="pl_name1" />
+							<input type="text" name="pl_c1" id="pl_c1" class="colors" /> <input
+								type="hidden" name="pl_name1" id="pl_name1" />
 						</div>
 						<div class="chosen_colors" style="background-color: rgb()"
 							data-index="">
 							<div class="color_name"></div>
-							<input type="text" name="pl_c2" id="pl_c2" class="colors" />
-							<input type="hidden" name="pl_name2" id="pl_name2" />
+							<input type="text" name="pl_c2" id="pl_c2" class="colors" /> <input
+								type="hidden" name="pl_name2" id="pl_name2" />
 						</div>
 						<div class="chosen_colors" style="background-color: rgb()"
 							data-index="">
 							<div class="color_name"></div>
-							<input type="text" name="pl_c3" id="pl_c3" class="colors" />
-							<input type="hidden" name="pl_name3" id="pl_name3" />
+							<input type="text" name="pl_c3" id="pl_c3" class="colors" /> <input
+								type="hidden" name="pl_name3" id="pl_name3" />
 						</div>
 						<div class="chosen_colors" style="background-color: rgb()"
 							data-index="">
 							<div class="color_name"></div>
-							<input type="text" name="pl_c4" id="pl_c4" class="colors" />
-							<input type="hidden" name="pl_name4" id="pl_name4" />
+							<input type="text" name="pl_c4" id="pl_c4" class="colors" /> <input
+								type="hidden" name="pl_name4" id="pl_name4" />
 						</div>
 						<div class="chosen_colors" style="background-color: rgb()"
 							data-index="">
 							<div class="color_name"></div>
-							<input type="text" name="pl_c5" id="pl_c5" class="colors" />
-							<input type="hidden" name="pl_name5" id="pl_name5" />
+							<input type="text" name="pl_c5" id="pl_c5" class="colors" /> <input
+								type="hidden" name="pl_name5" id="pl_name5" />
 						</div>
 
 
 						<div>
 							<button class="btn_empty" type="button" onclick="">비우기</button>
-							<c:choose>	
-							<c:when test="${info!=null }">
-							<button class="btn_create" type="submit">팔레트 생성</button>
-							<script type="text/javascript">
-							$('.btn_create').click(function () {
-								alert('생성 완료!');
-							})
-								
-							</script>
-							</c:when>
-							<c:otherwise>
-							<button class="btn_create" type="button">팔레트 생성</button>
-							<script type="text/javascript">
-							$('.btn_create').click(function () {
-								alert('로그인시 이용 가능합니다');
-							})
-								
-							</script>
-							</c:otherwise>
+							<c:choose>
+								<c:when test="${info!=null }">
+									<c:choose>
+										<c:when test="${list != null }">
+											<button class="btn_create" type="submit">팔레트 생성</button>
+											<script type="text/javascript">
+												$('.btn_create').click(
+														function() {
+															alert('생성 완료!');
+														})
+											</script>
+										</c:when>
+										<c:when test="${list == null }">
+											<a href="#"><button class="btn_create" type="submit">팔레트 생성</button></a>
+											<script type="text/javascript">
+												$('.btn_create').click(
+														function() {
+															alert('팔레트를 모두 채워주세요!');
+															location.href("palette.do");
+														})
+											</script>
+										</c:when>
+									</c:choose>
+								</c:when>
+								<c:otherwise>
+									<a href="#"><button class="btn_create" type="button">팔레트
+											생성</button></a>
+									<script type="text/javascript">
+										$('.btn_create').click(function() {
+											alert('로그인시 이용 가능합니다');
+											location.href("palette.do");
+										})
+									</script>
+								</c:otherwise>
 							</c:choose>
-							
+
 						</div>
 					</div>
 				</form>
@@ -249,9 +264,9 @@
 					document.getElementById("pl_c" + (index + 1)).setAttribute(
 							"value", color);
 
-					document.getElementById("pl_name" + (index + 1)).setAttribute(
-							"value", color_text);
-					
+					document.getElementById("pl_name" + (index + 1))
+							.setAttribute("value", color_text);
+
 					colorDiv = $(".chosen_colors");
 					$(colorDiv[index]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
 

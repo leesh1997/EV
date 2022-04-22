@@ -126,7 +126,7 @@ input[type="submit"]:hover{
     background-color:white;
 }
 </style>
-<body>
+<body style="overflow-x : hidden">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 
 	<div class="board_wrap">

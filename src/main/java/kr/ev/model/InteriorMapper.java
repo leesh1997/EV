@@ -10,8 +10,9 @@ public interface InteriorMapper {
 
 	List<InteriorVO> showInteriorImg(int startNum);
 
-	List<PaletteVO> showPalette();
 
 	List<ColorVO> standardColorGallery();
+
+	List<PaletteVO> showPalette(String m_email);
 
 }
