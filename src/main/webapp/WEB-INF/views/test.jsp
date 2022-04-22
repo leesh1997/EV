@@ -16,17 +16,43 @@
                <button type="button" id="file_upload"
                   class="genric-btn primary radius exp_button"
                   onclick="onclick=document.all.file.click()">사진 업로드</button>
-
-               <input id="file" type="file" name="img" style="display: none" />
+				<div>
+               <input id="file" type="file" name="img"/>
+               </div>
+               <div class="select_img"><img src=""></div>
          <%--       <input type="hidden" name="user_id" value="${info.mb_email }"> --%>
 
                <button type="submit" class="genric-btn primary radius exp_button">적용</button>
-        
+        		<div class="select_img"><img src="" /></div>
          </div>
      
 	</form>
-	
+	<script type="text/javascript">
+		
+	 $("#file").change(function(){
+		   if(this.files && this.files[0]) {
+		    var reader = new FileReader;
+		    reader.onload = function(data) {
+		     $(".select_img img").attr("src", data.target.result).width(500);        
+		    }
+		    reader.readAsDataURL(this.files[0]);
+		   }
+		  });
+			
+	</script>
 	   
 	
 </body>
+
+<script>
+$("#file").change(function(){
+	   if(this.files && this.files[0]) {
+	    var reader = new FileReader;
+	    reader.onload = function(data) {
+	     $(".select_img img").attr("src", data.target.result).width(500);        
+	    }
+	    reader.readAsDataURL(this.files[0]);
+	   }
+	  });
+</script>
 </html>
