@@ -24,10 +24,12 @@ public class PaletteController {
 	private PaletteMapper mapper;
 	
 	@RequestMapping("/palette.do")
-	public String showPalette(Model model) {
+	public String showPalette(Model model, HttpSession session) {
 		System.out.println("된다!");
 		List<ColorVO> list = mapper.colorGallery(); 
 		model.addAttribute("list", list);
+		session.setAttribute("list", list);
+		
 		/* System.out.println(list.get(0).getC_name()); */
 		return "palette";
 	}

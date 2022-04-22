@@ -196,7 +196,7 @@ input[type="submit"] {
 	flex-direction: row;
 }
 </style>
-<body>
+<body style="overflow-x : hidden">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 
 	<div class="interior_wrap">
