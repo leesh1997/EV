@@ -18,7 +18,7 @@ body {
 	width: 800;
 	/* 	max-height: auto; */
 	/* animation: move_img2 5s infinite; */
-	z-index: 1;
+	z-index: 1; 
 }
 </style>
 </head>
