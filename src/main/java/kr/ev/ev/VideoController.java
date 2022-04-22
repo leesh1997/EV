@@ -60,7 +60,16 @@ public class VideoController {
 		int endNum = pages * 15;		
 
 		List<VideoVO> list = mapper.video(startNum);
+		
+		for(int i=0; i<list.size(); i++) {
+			 String vTitle =list.get(i).getV_title();
+			String ftitle= vTitle.replace("?", "");
+			list.get(i).setV_title(ftitle);
+			
+		}
+		
 		model.addAttribute("list", list);
+		
 		model.addAttribute("paging", paging);
 //		// 종뱅
 //		
