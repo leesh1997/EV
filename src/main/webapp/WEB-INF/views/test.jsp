@@ -27,7 +27,7 @@
          </div>
      
 	</form>
-	<script type="text/javascript">
+	<%-- <script type="text/javascript">
 		
 	 $("#file").change(function(){
 		   if(this.files && this.files[0]) {
@@ -57,5 +57,5 @@ $("#file").change(function(){
 	    reader.readAsDataURL(this.files[0]);
 	   }
 	  });
-</script>
+</script> --%>
 </html>

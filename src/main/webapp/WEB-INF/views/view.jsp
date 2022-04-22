@@ -52,6 +52,15 @@ display:flex;
             <img src="{{ url_for('static', filename=obj.dir) }}" width="175" height="175">
         </p>
     {% endfor %} -->
+    <script type="text/javascript">
+	    const url = new URL(window.location.href);
+	    const urlParams = url.searchParams;
+	    var tr =null; 
+	    tr = urlParams.get('resultData');
+	    console.log(tr);
+	    
+    
+    </script>
 	
 </body>
 </html>

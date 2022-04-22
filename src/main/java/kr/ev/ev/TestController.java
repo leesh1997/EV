@@ -19,10 +19,11 @@ public class TestController {
 	
 	@RequestMapping("/test.do")
 	public void test(Model model,InteriorVO vo) {
-		List<InteriorVO> list= mapper.test();
-		model.addAttribute("test", list);
-		
-		System.out.println("list : "+ list);
+		/*
+		 * List<InteriorVO> list= mapper.test(); model.addAttribute("test", list);
+		 * 
+		 * System.out.println("list : "+ list);
+		 */
 	}
 
 }
