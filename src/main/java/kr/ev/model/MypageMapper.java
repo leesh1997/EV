@@ -13,6 +13,8 @@ public interface MypageMapper {
 	void memberDelete(MemberVO vo);
 
 	int getBoardCnt(MemberVO vo);
+
+	List<BoardVO> myContent(MemberVO vo);
 	
 
 }

@@ -34,6 +34,11 @@ public class MypageController {
 		int cnt=mapper.getBoardCnt(vo);
 		model.addAttribute("count", cnt);
 		System.out.println(cnt);
+		
+
+		String m_nick=vo.getM_nick();
+		List<BoardVO>bvo=mapper.myContent(vo);
+		model.addAttribute("myContent", bvo);
 		return "mypage";
 	}
 	
@@ -57,7 +62,7 @@ public class MypageController {
 			return "redirect:/main.do";
 		}
 		
-   // 나의 활동
+   // 나의 활동-내가 작성한 게시글 수
 		@RequestMapping("/myLog.do")
 		public void myLog(String m_nick,Model model,HttpSession session) {
 			System.out.println("나의 활동");
@@ -69,12 +74,27 @@ public class MypageController {
 			System.out.println(cnt);
 		}
 		
+	// 나의 활동-내가 작성한 게시글 보기
+	/*	@RequestMapping("/myContent.do")
+		public void myContent(String m_nick,Model model,HttpSession session,BoardVO vo) {
+		System.out.println("내가 작성한 게시글 보기");	
+		MemberVO mvo=(MemberVO) session.getAttribute("info");
+		m_nick=mvo.getM_nick();
+		vo=mapper.myContent(m_nick);
+		model.addAttribute("myContent", vo);*/
 
+		
+		 
+
+	
+		}
+
+		
 		
 		  
 
 
-}
+
 
 
 
