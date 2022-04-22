@@ -21,7 +21,7 @@
          <%--       <input type="hidden" name="user_id" value="${info.mb_email }"> --%>
 
                <button type="submit" class="genric-btn primary radius exp_button">적용</button>
-        
+        		<div class="select_img"><img src="" /></div>
          </div>
      
 	</form>
@@ -29,4 +29,16 @@
 	   
 	
 </body>
+
+<script>
+$("#file").change(function(){
+	   if(this.files && this.files[0]) {
+	    var reader = new FileReader;
+	    reader.onload = function(data) {
+	     $(".select_img img").attr("src", data.target.result).width(500);        
+	    }
+	    reader.readAsDataURL(this.files[0]);
+	   }
+	  });
+</script>
 </html>
