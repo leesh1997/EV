@@ -37,7 +37,7 @@ public class FileUploadController {
 	@Inject
 	private BoardMapper mapper;
 
-	// 파일 저장할 위치
+	// 파일 저장할 위치 
 	// 파일 등록 매핑
 	@RequestMapping("/fileUpload.do")
 	public String fileUpload(MultipartFile file, String b_title, String b_content, String m_nick,
