@@ -30,8 +30,10 @@
 			or c_seq = 100 or c_seq = 110 or c_seq = 120
 			or c_seq = 130 or c_seq = 140 or c_seq = 150
 			or c_seq = 160 or c_seq = 170 or c_seq = 180
-			or c_seq = 190 
-
+			or c_seq = 190 or c_seq = 200 or c_seq = 210
+			or c_seq = 220 or c_seq = 230 or c_seq = 240
+			or c_seq = 250 or c_seq = 260 or c_seq = 270
+			or c_seq = 280 or c_seq = 290 or c_seq =300
 	</select>
     
 </mapper>

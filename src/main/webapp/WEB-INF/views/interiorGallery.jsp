@@ -164,7 +164,7 @@ input[type="submit"] {
 	flex-direction: row;
 }
 
-#dropColor1, #dropColor2 {
+#dropColor1, #dropColor2,#dropColor3 {
 	display: flex;
 	flex-direction: row;
 	width: 270px;
@@ -241,6 +241,7 @@ input[type="submit"] {
 		<div>
 			<div id="dropColor1"></div>
 			<div id="dropColor2"></div>
+			<div id="dropColor3"></div>
 		</div>
 
 		<div>
@@ -326,6 +327,7 @@ input[type="submit"] {
 	    my_btn.addEventListener('click', function() {
 	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
 			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
+			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'> </div> </c:forEach>" )
 	    }, {once : true});
 			
 				$(document).ready(function(){
