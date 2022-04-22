@@ -208,7 +208,7 @@ input[type="submit"]:hover{
 			<li class="left_btn"><a href="product.do?pageNum=${paging.beginPage-1}">&lt;</a></li>
 			<c:forEach var="i" begin="${paging.beginPage }" end="${paging.endPage }"
 				varStatus = "status">
-				<li><a href="http://localhost:8081/ev/product.do?pageNum=${status.index}"
+				<li><a href="product.do?pageNum=${status.index}"
 				class= "btn_count${status.index}">${status.index}</a></li>
 				
 			</c:forEach>
