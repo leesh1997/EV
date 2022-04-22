@@ -20,7 +20,7 @@ body {
 	/* animation: move_img2 5s infinite; */
 	z-index: 1; 
 }
-</style>
+</style> 
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
