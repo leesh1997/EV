@@ -172,16 +172,16 @@ button {
 						<li style="width: 100%">
 							<div class="gallery_container">
 								<div class="board_img">
-									<a href="#"> <img src="${post.b_file}" width="100%"
+									<a data-img="${imgs.b_file}"> <img src="${imgs.b_file}" width="100%"
 										height="300" class="gallery_items">
 									</a>
 								</div>
 								<div class="gallery_info_cont">
 
 									<div class="board_tit">
-										<a href="#"> <strong>${post.b_title}</strong>
+										<a href="#"> <strong>${imgs.b_title}</strong>
 										</a>
-										<p>${post.m_nick}</p>
+										<p>${imgs.m_nick}</p>
 									</div>
 								</div>
 								<!-- //gallery_info_cont -->
@@ -202,12 +202,12 @@ button {
 
 	</div>
 	<script>
-		$(".popupModalImg li").click(
+		$(".board_img a").click(
 				function() {
 					$(".img_modal_popup").addClass("reveal"), $(
 							".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").append(
-							"<div class='img-wrapper'><img src="
+							"<div class='img-wrapper' style='width:300px;'><img src="
 									+ $(this).data("img") + "></div>")
 
 				}), $(".img_modal_popup-closer").click(
