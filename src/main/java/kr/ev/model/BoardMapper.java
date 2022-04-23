@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -22,6 +23,9 @@ public interface BoardMapper {
 	public int getBoardCnt(MemberVO vo);
 
 	public BoardVO showDetailBoard(String img_url);
+
+	@Update("update t_board set b_cnt = b_cnt + 1 where b_seq = #{b_seq}")
+	public BoardVO b_cnt(int b_seq);
 
 	
 

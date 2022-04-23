@@ -131,7 +131,8 @@ button {
 	width: 800px;
 	height: 600px;
 	float: right;
-	margin-right: 90px;
+	margin-right: 200px;
+	margin-top: 30px;
 }
 
 .closeBtn {
@@ -150,6 +151,8 @@ button {
 	width: 650px;
 	height: 600px;
 	margin-top: 115px;
+	margin-right: 130px;
+	table-layout: fixed;
 }
 
 .contentTable>tbody>tr>td {
@@ -158,11 +161,14 @@ button {
 
 .title {
 	height: 70px;
+	font-size: 20px;
 }
 
 .writer {
 	height: 30px;
+	font-size: 13px;
 }
+content_
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -211,7 +217,7 @@ button {
 							<div class="gallery_container">
 								<div class="board_img" data-index="${imgs.b_seq }">
 									<input type="hidden" id="hiddenSeq" value="${imgs.b_seq }"> <a
-										data-img="${imgs.b_file}" data-title="${imgs.b_title}" data-nick="${imgs.m_nick}" data-date="${imgs.b_date}" data-content="${imgs.b_content}"> <img src="${imgs.b_file}"
+										data-img="${imgs.b_file}" data-seq="${imgs.b_seq }" data-title="${imgs.b_title}" data-nick="${imgs.m_nick}" data-date="${imgs.b_date}" data-content="${imgs.b_content}" data-cnt="${imgs.b_cnt}"> <img src="${imgs.b_file}"
 										width="100%" height="300" class="gallery_items">
 									</a>
 								</div>
@@ -238,16 +244,20 @@ button {
 
 						<table class="contentTable">
 							<tr class="title" id="title2">
-								<td>제목</td>
+								<td  style="font-weight: bold; width: 140px;">제목</td>
 								<td></td>
 							</tr>
 							<tr class="writer" id="nick2">
-								<td>작성자</td>
-								<td></td>
+								<td style="font-weight: bold;width: 140px;">작성자</td>
+								<td style=float:left;"></td>
 							</tr>
 							<tr class="writer" id="date2">
-								<td>작성일</td>
-								<td></td>
+								<td style="font-weight: bold;width: 140px;">작성일</td>
+								<td style="float:left;"></td>
+							</tr>
+							<tr class="writer" id="cnt">
+								<td style="font-weight: bold;width: 140px;">조회수</td>
+								<td style="float:left;"></td>
 							</tr>
 							<tr id="content2">
 								<td>내용</td>
@@ -275,16 +285,37 @@ button {
 									$("#title2 td:nth-child(2)").append($(this).data("title")),
 									$("#nick2 td:nth-child(2)").append($(this).data("nick")),
 									$("#date2 td:nth-child(2)").append($(this).data("date")),
-									$("#content2 td:nth-child(2)").append($(this).data("content"))
+									$("#content2 td:nth-child(2)").append($(this).data("content")),
+									 $.ajax({
+
+							               url : "boardCnt.do",
+							               type : "POST",
+							               dataType : "JSON",
+							               data : {
+							                  "b_seq" : $(this).data("seq")
+							               },
+							               success : function (data) {
+							            	   console.log("성공");
+												$("#cnt td:nth-child(2)").append($(this).data("cnt"));
+											
+										},
+							               error : function(e) {
+							                  console.log("ㅠㅠ");
+							               }
+
+							            });
+						
+						
 				}), $(".img_modal_popup-closer").click(
 				function() {
 					$(".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").removeClass("reveal"),
-							$("#title2 td:nth-child(2), #nick2 td:nth-child(2), #date2 td:nth-child(2), #content2 td:nth-child(2)").detach(),
+							$("#title2 td:nth-child(2), #nick2 td:nth-child(2), #date2 td:nth-child(2), #content2 td:nth-child(2),#cnt td:nth-child(2)").detach(),
 							$("#title2").append("<td></td>"),
 							$("#nick2").append("<td></td>"),
 							$("#date2").append("<td></td>"),
-							$("#content2").append("<td></td>")
+							$("#content2").append("<td></td>"),
+							$("#cnt").append("<td></td>")
 							
 							
 				});

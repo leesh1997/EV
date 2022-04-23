@@ -56,20 +56,16 @@ public class BoardController {
 	 * model. }
 	 */
 	
-	@RequestMapping("/boardSelect.do")
-	public String boardSelect(@RequestParam("img_url") String img_url, Model model) {
-		
-		System.out.println("보드 셀렉트 접근");
-		System.out.println(img_url);
-		BoardVO vovo = mapper.showDetailBoard(img_url);
-		/* List<BoardVO> coList = mapper.showDetailBoard(img_url); */
-		System.out.println("데이터 : " + vovo);
-		model.addAttribute("vovo", vovo);
-		System.out.println("성공했나");
-		
-		return "redirect:/board.do";
+	// 게시판 내용 보기
+	@RequestMapping("/boardCnt.do")
+	public String boardCnt( Model model,int b_seq) {
+		BoardVO vo=mapper.b_cnt(b_seq);
+		model.addAttribute("vo", vo);
+		return "vo";
+			
 	}
 	
+
 }
 
 

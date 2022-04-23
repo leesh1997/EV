@@ -1024,7 +1024,7 @@ height: 50px;
      
           <p class="mini_title">My Page > 나의 활동</p>
          <div class="board">
-            <span style="font-weight: bold; margin-left: 100px;">내가 작성한
+            <span style="font-weight: bold; margin-left: 100px; font-size:20px;">내가 작성한
                게시물 : ${count} 개</span>
          </div>
 
