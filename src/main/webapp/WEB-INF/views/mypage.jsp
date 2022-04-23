@@ -1074,7 +1074,7 @@ height: 50px;
          $('.mylog').hide();
 
       })
-      $('.recentBtn').click(function() {
+      $('.recentBtn').click(function() {																									
          $('.recent').show();
          $('.update').hide();
          $('.mylog').hide();

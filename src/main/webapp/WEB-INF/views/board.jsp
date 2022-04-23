@@ -150,9 +150,10 @@ button {
 	border: 2px solid white;
 	width: 650px;
 	height: 600px;
-	margin-top: 115px;
+	margin-top: 145px;
 	margin-right: 130px;
 	table-layout: fixed;
+	background: black;
 }
 
 .contentTable>tbody>tr>td {
@@ -161,14 +162,26 @@ button {
 
 .title {
 	height: 70px;
-	font-size: 20px;
+	font-size: 23px;
 }
 
 .writer {
 	height: 30px;
 	font-size: 13px;
 }
-content_
+#content2>td{
+    padding-right: 70px;
+    padding-left: 70px;
+    font-size: 15px;
+    text-align:left;
+    padding-bottom: 280px;
+}
+#nick2 td:nth-child(1),#date2 td:nth-child(1){
+text-align:left; 
+padding-left:70px;
+}
+
+
 </style>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -238,35 +251,33 @@ content_
 				</c:forEach>
 			</ul>
 			<div class="img_modal_popup" style="margin-left: 150px">
-				<div class="img_modal_popup-closer">
-					<button class="closeBtn">X</button>
+			 	<div class="img_modal_popup-closer">
+					 <button class="closeBtn">X</button>
 					<div class="content">
 
 						<table class="contentTable">
 							<tr class="title" id="title2">
-								<td  style="font-weight: bold; width: 140px;">제목</td>
-								<td></td>
+								<td colspan="2"></td>
 							</tr>
 							<tr class="writer" id="nick2">
-								<td style="font-weight: bold;width: 140px;">작성자</td>
-								<td style=float:left;"></td>
+								<td colspan="2" style="font-weight: bold;">작성자 : </td>
 							</tr>
 							<tr class="writer" id="date2">
-								<td style="font-weight: bold;width: 140px;">작성일</td>
-								<td style="float:left;"></td>
+								<td colspan="2" style="font-weight: bold;">작성일 : </td>
+						
 							</tr>
-							<tr class="writer" id="cnt">
+							<!-- <tr class="writer" id="cnt">
 								<td style="font-weight: bold;width: 140px;">조회수</td>
 								<td style="float:left;"></td>
-							</tr>
+							</tr> -->
 							<tr id="content2">
-								<td>내용</td>
-								<td></td>
+								<td colspan="2"></td>
 							</tr>
 						</table>
-					</div>
-				</div>
-				<!-- 	<div class="modal-footer"></div> -->
+					</div> 
+					
+				</div> 
+				
 			</div>
 
 
@@ -281,40 +292,24 @@ content_
 							".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").append(
 							"<div class='img-wrapper' style='width:300px;'><img src="
-									+ $(this).data("img") + "></div> "),
-									$("#title2 td:nth-child(2)").append($(this).data("title")),
-									$("#nick2 td:nth-child(2)").append($(this).data("nick")),
-									$("#date2 td:nth-child(2)").append($(this).data("date")),
-									$("#content2 td:nth-child(2)").append($(this).data("content")),
-									 $.ajax({
-
-							               url : "boardCnt.do",
-							               type : "POST",
-							               dataType : "JSON",
-							               data : {
-							                  "b_seq" : $(this).data("seq")
-							               },
-							               success : function (data) {
-							            	   console.log("성공");
-												$("#cnt td:nth-child(2)").append($(this).data("cnt"));
-											
-										},
-							               error : function(e) {
-							                  console.log("ㅠㅠ");
-							               }
-
-							            });
-						
+									+ $(this).data("img") + "></div> "
+									),
+									
+								
+									$("#title2 td:nth-child(1)").append($(this).data("title")),
+									$("#nick2 td:nth-child(1)").append($(this).data("nick")),
+									$("#date2 td:nth-child(1)").append($(this).data("date")),
+									$("#content2 td:nth-child(1)").append($(this).data("content"))
 						
 				}), $(".img_modal_popup-closer").click(
 				function() {
 					$(".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").removeClass("reveal"),
-							$("#title2 td:nth-child(2), #nick2 td:nth-child(2), #date2 td:nth-child(2), #content2 td:nth-child(2),#cnt td:nth-child(2)").detach(),
+							$("#title2 td:nth-child(1), #nick2 td:nth-child(1), #date2 td:nth-child(1), #content2 td:nth-child(1),#cnt td:nth-child(2)").detach(),
 							$("#title2").append("<td></td>"),
 							$("#nick2").append("<td></td>"),
 							$("#date2").append("<td></td>"),
-							$("#content2").append("<td></td>"),
+							$("#content2").append("<td colspan=2></td>"),
 							$("#cnt").append("<td></td>")
 							
 							
