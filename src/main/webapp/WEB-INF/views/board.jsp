@@ -158,6 +158,7 @@ button {
 
 .contentTable>tbody>tr>td {
 	text-align: center;
+	width: 100%;
 }
 
 .title {
@@ -285,9 +286,13 @@ padding-left:70px;
 
 	</div>
 	<script>
+	$(document).ready(function () {
+		$('.contentTable').hide();
+	})
 	var cnt = 1;
-		$(".board_img a").click(
+		$(".board_img a").click( 
 				function() {
+					$('.contentTable').show();
 					$(".img_modal_popup").addClass("reveal"), $(
 							".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").append(
@@ -303,6 +308,7 @@ padding-left:70px;
 						
 				}), $(".img_modal_popup-closer").click(
 				function() {
+					$('.contentTable').hide();
 					$(".img_modal_popup .img-wrapper").remove(), $(
 							".img_modal_popup").removeClass("reveal"),
 							$("#title2 td:nth-child(1), #nick2 td:nth-child(1), #date2 td:nth-child(1), #content2 td:nth-child(1),#cnt td:nth-child(2)").detach(),
