@@ -1020,6 +1020,7 @@ height: 50px;
 
    </div>
    <!-- 나의 활동 -->
+   
      <div class="mylog">
      
           <p class="mini_title">My Page > 나의 활동</p>
@@ -1027,8 +1028,9 @@ height: 50px;
             <span style="font-weight: bold; margin-left: 100px; font-size:20px;">내가 작성한
                게시물 : ${count} 개</span>
          </div>
-
+		
          <div class="mylogtb" style="margin-top: 20px; margin-left: 50px;">
+         <div style="max-height: 430px; width: auto;overflow: auto;">
             <table id="log"
                style="width: 1300px; height: 450px; border: 2px solid #d1d1d1; margin: auto;">
                <tr class="tr1" style="text-align: center;">
@@ -1036,7 +1038,7 @@ height: 50px;
                   <th>NO.</th>
                   <th>제목</th>
                   <th>작성일</th>
-                  <th>조회수</th>
+               <!--    <th>조회수</th> -->
                </tr>
                <c:forEach var="myView" items="${myContent}" varStatus="i">
                	<tr class="tr2">
@@ -1046,12 +1048,13 @@ height: 50px;
                   <td>${i.count}</td>
                   <td>${myView.b_title}</td>
                   <td>${myView.b_date}</td>
-                  <td>16</td>
+          <!--         <td>16</td> -->
                </tr>
                </c:forEach>
                
         
             </table>
+             </div>
             <div class="box bg-1">
                      <p>
                         <button class="button button--wapasha button--round-s"
@@ -1060,8 +1063,8 @@ height: 50px;
                   </div>
          </div>
 
-      </div>
-
+     
+	</div>
    <script>
       $(document).ready(function() {
          $('.recent').hide();
