@@ -332,7 +332,7 @@ input[type="submit"] {
 	    }, {once : true});
 			
 				$(document).ready(function(){
-					$('#dropColor1, #dropColor2').hide();
+					$('#dropColor1, #dropColor2, #dropColor3').hide();
 					
 				})
 				
@@ -342,12 +342,14 @@ input[type="submit"] {
 				$('#colorButton').text('Close');
 				$('#dropColor1').slideDown(500);
 				$('#dropColor2').slideDown(500);
+				$('#dropColor3').slideDown(500);
 			}
 				
 			else if($('#colorButton').text()=='Close'){
 				$('#colorButton').text('색상');
 				$('#dropColor1').slideUp(500);
 				$('#dropColor2').slideUp(500);
+				$('#dropColor3').slideUp(500);
 			}
 					} else if($('#dropPalette1, #dropPalette2').show()){
 						$('#dropPalette1, #dropPalette2').hide();
@@ -373,7 +375,7 @@ input[type="submit"] {
 				})
 				
 			$('#mypaletteButton').click(function() {
-				if($('#dropColor1, #dropColor2').hide()){
+				if($('#dropColor1, #dropColor2, #dropColor3').hide()){
 					if($('#mypaletteButton').text()=='나의 팔레트'){
 						$('#mypaletteButton').text('Close');
 						$('#dropPalette1').slideDown(500);
@@ -385,10 +387,12 @@ input[type="submit"] {
 						$('#dropPalette2').slideUp(500);
 					}
 			} 
-				else if($('#dropColor1, #dropColor2').show()){
+				else if($('#dropColor1, #dropColor2, #dropColor').show()){
 					$('#dropColor1, #dropColor2').hide();
 				}
-			})
+			});
+			
+			
 			
 			
 	</script>

@@ -24,16 +24,16 @@
 
 		select c_seq, c_rgb, c_name
 		from t_color
-		where c_seq = 10 or c_seq = 20 or c_seq = 30
-			or c_seq = 40 or c_seq = 50 or c_seq = 60
-			or c_seq = 70 or c_seq = 80 or c_seq = 90
-			or c_seq = 100 or c_seq = 110 or c_seq = 120
-			or c_seq = 130 or c_seq = 140 or c_seq = 150
-			or c_seq = 160 or c_seq = 170 or c_seq = 180
-			or c_seq = 190 or c_seq = 200 or c_seq = 210
-			or c_seq = 220 or c_seq = 230 or c_seq = 240
-			or c_seq = 250 or c_seq = 260 or c_seq = 270
-			or c_seq = 280 or c_seq = 290 or c_seq =300
+		where c_seq = 5 or c_seq = 15 or c_seq = 25
+			or c_seq = 35 or c_seq = 45 or c_seq = 55
+			or c_seq = 65 or c_seq = 75 or c_seq = 85
+			or c_seq = 95 or c_seq = 105 or c_seq = 115
+			or c_seq = 125 or c_seq = 135 or c_seq = 145
+			or c_seq = 155 or c_seq = 165 or c_seq = 175
+			or c_seq = 185 or c_seq = 195 or c_seq = 205
+			or c_seq = 215 or c_seq = 225 or c_seq = 235
+			or c_seq = 245 or c_seq = 255 or c_seq = 265
+			or c_seq = 275 or c_seq = 291 or c_seq = 300
 	</select>
     
 </mapper>
