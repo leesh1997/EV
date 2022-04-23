@@ -15,7 +15,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<style>
+<style> 
 .interior_wrap {
 	margin-left: 100px;
 	position: relative;
