@@ -52,26 +52,34 @@
 
 	<div class="maain">
 		<h1>flask시작</h1>
-		<form action="http://f4.project-jupyter.ddns.net:8874/img"
-			method="post" enctype="multipart/form-data">
+	<!-- 	<form action="http://f4.project-jupyter.ddns.net:8874/img"
+			method="post" enctype="multipart/form-data"> -->
 			<div>
 
 				<!-- 				<button type="button" id="file_upload"
 					class="genric-btn primary radius exp_button"
 					onclick="onclick=document.all.file.click()">사진 업로드</button> -->
 				<div>
-					<input id="file" type="file" name="img" style="border: 1px solid black;"/>
-					<div class="select_img">
+					<input id="file" type="file" style="border: 1px solid black;"
+					 aria-label="Upload" aria-describedby="submitBtn" />
+					<div class="select_img" >
 						<img src="">
 					</div>
-				</div>
+				</div> 
+				<button type="button" id="submitBtn"
+					class="genric-btn primary radius exp_button"  onclick = 'predict()'>적용</button>
 				<%--       <input type="hidden" name="user_id" value="${info.mb_email }"> --%>
-
-				<button type="submit" id="submitBtn"
-					class="genric-btn primary radius exp_button">적용</button>
-			</div>
-
-		</form>
+				<!-- git에서 훔쳐옴 -->
+			<!-- 	<div class="input-group">
+					<input  type='file' accept='image/*' class="form-control my-2" id="inputGroupFile04"
+								aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
+					<img src="resources/images/dogsize.PNG" class="img-thumbnail my-2"
+						style="display: flex; justify-content: center; align-items: center" />
+				</div>
+				
+			</div> -->
+			<!-- 여기까지 -->
+		<!-- </form> -->
 		<br> <br> 
 		<!-- <a href="http://52.79.227.159:8080/final_EV/test.do"><button
 				id="backBtn">뒤로가기</button></a> -->
@@ -107,13 +115,19 @@
             <img src="{{ url_for('static', filename=obj.dir) }}" width="175" height="175">
         </p>
     {% endfor %} -->
+    </div>
+ <!--    
+    <script type="text/javascript">
+    src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'></script> -->
 	<script type="text/javascript">
-		const url = new URL(window.location.href);
+	
+	/* 	const url = new URL(window.location.href);
 		const urlParams = url.searchParams;
 		var tr = null;
 		tr = urlParams.get('resultData');
-		console.log(tr);
-
+		console.log(tr); */
+		
+		
 		$("#file")
 				.change(
 						function() {
@@ -126,6 +140,42 @@
 								reader.readAsDataURL(this.files[0]);
 							}
 						});
+		
+		
+		 function predict() {
+		    	
+		    	var form = $('#file')[0].files[0];
+		    	console.log(form);
+				var formData = new FormData();
+				formData.append('img', form);
+		    	$.ajax({
+		            url : "http://f4.project-jupyter.ddns.net:8874/img",
+		            type : "POST",
+		            enctype: 'multipart/form-data',
+		            data : formData,
+		            processData: false,
+			        contentType: false,
+			        cache: false,
+		            success : function(result_f){
+		            	console.log(result_f['cl1']);
+		            	console.log(result_f['cl2']);
+		            	
+		            	/* if (result['err']==0){
+		            		$('#ani_back_len').val(result['back']);
+		                    $('#ani_neck_len').val(result['neck']);
+		                    $('#ani_chest_len').val(result['chest']);
+		            	} else if (result['err']==1) {
+		            		alert("카드 인식 실패");
+		            	} else {
+		            		alert("강아지 인식 실패")
+		            	}
+		                 */
+		            },
+		            error : function(){
+		            	alert("error!"); 
+		            }
+		        })
+			};
 	</script>
 
 </body>
