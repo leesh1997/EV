@@ -58,8 +58,8 @@
 	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO"
 		resultType="kr.ev.model.InteriorVO">
 
-		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5
-		from t_interior
+		select * from t_interior;
+		
 
 	</select>
 
