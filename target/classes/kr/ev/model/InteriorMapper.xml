@@ -29,98 +29,97 @@
    	<select id="colorList" resultType="kr.ev.model.ColorVO">
    	    select * from t_color 
    	    <where>
-		     <if test="c_seq != null">
-		         <if test="c_seq.equals('5')">
-		             where c_seq between 1 and 10
+		         <if test="'5'.equals(c_seq2)">
+		             where #{c_seq} between 1 and 10
 		         </if>
-		         <if test="c_seq.equals('15')">
-		             where c_seq between 11 and 20
+		         <if test="'15'.equals(c_seq2)">
+		             where #{c_seq} between 11 and 20
 		         </if>
-		         <if test="c_seq.equals('25')">
-		             where c_seq between 21 and 30
+		         <if test="'25'.equals(c_seq2)">
+		             where #{c_seq} between 21 and 30
 		         </if>
-		         <if test="c_seq.equals('35')">
-		             where c_seq between 31 and 40
+		         <if test="'35'.equals(c_seq2)">
+		             where #{c_seq} between 31 and 40
 		         </if>
-		         <if test="c_seq.equals('45')">
-		             where c_seq between 41 and 50
+		         <if test="'45'.equals(c_seq2)">
+		             where #{c_seq} between 41 and 50
 		         </if>
-		         <if test="c_seq.equals('55')">
-		             where c_seq between 51 and 60
+		         <if test="'55'.equals(c_seq2)">
+		             where #{c_seq} between 51 and 60
 		         </if>
-		         <if test="c_seq.equals('65')">
-		             where c_seq between 61 and 70
+		         <if test="'65'.equals(c_seq2)">
+		             where #{c_seq} between 61 and 70
 		         </if>
-		         <if test="c_seq.equals('75')">
-		             where c_seq between 71 and 80
+		         <if test="'75'.equals(c_seq2)">
+		             where #{c_seq} between 71 and 80
 		         </if>
-		         <if test="c_seq.equals('85')">
-		             where c_seq between 81 and 90
+		         <if test="'85'.equals(c_seq2)">
+		             where #{c_seq} between 81 and 90
 		         </if>
-		         <if test="c_seq.equals('95')">
-		             where c_seq between 91 and 100
+		         <if test="'95'.equals(c_seq2)">
+		             where #{c_seq} between 91 and 100
 		         </if>
-		         <if test="c_seq.equals('105')">
-		             where c_seq between 101 and 110
+		         <if test="'105'.equals(c_seq2)">
+		             where #{c_seq} between 101 and 110
 		         </if>
-		         <if test="c_seq.equals('115')">
-		             where c_seq between 111 and 120
+		         <if test="'115'.equals(c_seq2)">
+		             where #{c_seq} between 111 and 120
 		         </if>
-		         <if test="c_seq.equals('125')">
-		             where c_seq between 121 and 130
+		         <if test="'125'.equals(c_seq2)">
+		             where #{c_seq} between 121 and 130
 		         </if>
-		         <if test="c_seq.equals('135')">
-		             where c_seq between 131 and 140
+		         <if test="'135'.equals(c_seq2)">
+		             where #{c_seq} between 131 and 140
 		         </if>
-		         <if test="c_seq.equals('145')">
-		             where c_seq between 141 and 150
+		         <if test="'145'.equals(c_seq2)">
+		             where #{c_seq} between 141 and 150
 		         </if>
-		         <if test="c_seq.equals('155')">
-		             where c_seq between 151 and 160
+		         <if test="'155'.equals(c_seq2)">
+		             where #{c_seq} between 151 and 160
 		         </if>
-		         <if test="c_seq.equals('165')">
-		             where c_seq between 161 and 170
+		         <if test="'165'.equals(c_seq2)">
+		             where #{c_seq} between 161 and 170
 		         </if>
-		         <if test="c_seq.equals('175')">
-		             where c_seq between 171 and 180
+		         <if test="'175'.equals(c_seq2)">
+		             where #{c_seq} between 171 and 180
 		         </if>
-		         <if test="c_seq.equals('185')">
-		             where c_seq between 181 and 190
+		         <if test="'185'.equals(c_seq2)">
+		             where #{c_seq} between 181 and 190
 		         </if>
-		         <if test="c_seq.equals('195')">
-		             where c_seq between 191 and 200
+		         <if test="'195'.equals(c_seq2)">
+		             where #{c_seq} between 191 and 200
 		         </if>
-		         <if test="c_seq.equals('205')">
-		             where c_seq between 201 and 210
+		         <if test="'205'.equals(c_seq2)">
+		             where #{c_seq} between 201 and 210
 		         </if>
-		         <if test="c_seq.equals('215')">
-		             where c_seq between 211 and 220
+		         <if test="'215'.equals(c_seq2)">
+		             where #{c_seq} between 211 and 220
 		         </if>
-		         <if test="c_seq.equals('225')">
-		             where c_seq between 221 and 230
+		         <if test="'225'.equals(c_seq2)">
+		             where #{c_seq} between 221 and 230
 		         </if>
-		         <if test="c_seq.equals('235')">
-		             where c_seq between 231 and 240
+		         <if test="'235'.equals(c_seq2)">
+		             where #{c_seq} between 231 and 240
 		         </if>
-		         <if test="c_seq.equals('245')">
-		             where c_seq between 241 and 250
+		         <if test="'245'.equals(c_seq2)">
+		             where #{c_seq} between 241 and 250
 		         </if>
-		         <if test="c_seq.equals('255')">
-		             where c_seq between 251 and 260
+		         <if test="'255'.equals(c_seq2)">
+		             where #{c_seq} between 251 and 260
 		         </if>
-		         <if test="c_seq.equals('265')">
-		             where c_seq between 261 and 270
+		         <if test="'265'.equals(c_seq2)">
+		             where #{c_seq} between 261 and 270
 		         </if>
-		         <if test="c_seq.equals('275')">
-		             where c_seq between 271 and 280
+		         <if test="'275'.equals(c_seq2)">
+		             where #{c_seq} between 271 and 280
 		         </if>
-		         <if test="c_seq.equals('281')">
-		             where c_seq between 281 and 290
+		         <if test="'281'.equals(c_seq2)">
+		             where #{c_seq} between 281 and 290
 		         </if>
-		         <if test="c_seq.equals('300')">
-		             where c_seq between 291 and 300
+		         <if test="'300'.equals(c_seq2)">
+		             where #{c_seq} between 291 and 300
 		         </if>
-		     </if>
+		
 		 </where>
 		 
    	    

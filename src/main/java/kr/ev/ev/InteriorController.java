@@ -95,8 +95,8 @@ public class InteriorController {
 		return "interiorGallery";
 	}
 	@RequestMapping("/interiorSearch.do")
-	public String interiorSearch (@RequestParam("pageNum") int pageNum, HttpServletRequest request, SearchPageVO vo, String c_seq, Model model)	{
-		System.out.println("제발나와라요"+ c_seq);
+	public String interiorSearch (@RequestParam("pageNum") int pageNum, HttpServletRequest request, SearchPageVO vo, ColorVO cvo, String c_seq2, Model model)	{
+		System.out.println("제발나와라요"+ c_seq2);
 		System.out.println("게시물 수" + pageNum );
 		
 		int pages;
@@ -131,9 +131,11 @@ public class InteriorController {
 		int endNum = pages * 12;
 
 		//List<ColorVO> cvo = mapper.colorList(vo);
-		List<ColorVO> cvo = mapper.colorList(c_seq);
 		
-		System.out.println("그퀀스는? "+cvo);
+		cvo.setC_seq2(c_seq2);
+		List<ColorVO> cList = mapper.colorList(cvo);
+		
+		System.out.println("그퀀스는? "+cList);
 		
 		// ㅠ.ㅠ
 		//vo.setC_rgb(inSer);
