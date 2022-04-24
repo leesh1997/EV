@@ -149,7 +149,6 @@
 			</div>
 		</form>
 	</div>
-
 </body>
 <script>
 	$(document).ready(function() {

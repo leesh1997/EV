@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ev.model.ViewMapper">
+    
+    <select id="view" resultType="kr.ev.model.ViewVO">
+        select * from t_choicecl order by cho_seq desc Limit 1
+    </select>
+    
+    
+</mapper>
