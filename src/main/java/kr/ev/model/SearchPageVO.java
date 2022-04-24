@@ -11,6 +11,7 @@ public class SearchPageVO{
 	private int startNum;
 	private String searchinfo;
 	private String c_rgb;
+	private int c_seq;
 	
 	
 	

@@ -19,4 +19,8 @@ public interface InteriorMapper {
 
 	int getVisitCount2();
 
+	List<ColorVO> colorList(String c_seq);
+
+
+
 }

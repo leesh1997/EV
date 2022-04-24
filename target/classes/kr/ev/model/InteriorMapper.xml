@@ -26,6 +26,107 @@
 
 	</select>
 	
+   	<select id="colorList" resultType="kr.ev.model.ColorVO">
+   	    select * from t_color 
+   	    <where>
+		     <if test="c_seq != null">
+		         <if test="c_seq.equals('5')">
+		             where c_seq between 1 and 10
+		         </if>
+		         <if test="c_seq.equals('15')">
+		             where c_seq between 11 and 20
+		         </if>
+		         <if test="c_seq.equals('25')">
+		             where c_seq between 21 and 30
+		         </if>
+		         <if test="c_seq.equals('35')">
+		             where c_seq between 31 and 40
+		         </if>
+		         <if test="c_seq.equals('45')">
+		             where c_seq between 41 and 50
+		         </if>
+		         <if test="c_seq.equals('55')">
+		             where c_seq between 51 and 60
+		         </if>
+		         <if test="c_seq.equals('65')">
+		             where c_seq between 61 and 70
+		         </if>
+		         <if test="c_seq.equals('75')">
+		             where c_seq between 71 and 80
+		         </if>
+		         <if test="c_seq.equals('85')">
+		             where c_seq between 81 and 90
+		         </if>
+		         <if test="c_seq.equals('95')">
+		             where c_seq between 91 and 100
+		         </if>
+		         <if test="c_seq.equals('105')">
+		             where c_seq between 101 and 110
+		         </if>
+		         <if test="c_seq.equals('115')">
+		             where c_seq between 111 and 120
+		         </if>
+		         <if test="c_seq.equals('125')">
+		             where c_seq between 121 and 130
+		         </if>
+		         <if test="c_seq.equals('135')">
+		             where c_seq between 131 and 140
+		         </if>
+		         <if test="c_seq.equals('145')">
+		             where c_seq between 141 and 150
+		         </if>
+		         <if test="c_seq.equals('155')">
+		             where c_seq between 151 and 160
+		         </if>
+		         <if test="c_seq.equals('165')">
+		             where c_seq between 161 and 170
+		         </if>
+		         <if test="c_seq.equals('175')">
+		             where c_seq between 171 and 180
+		         </if>
+		         <if test="c_seq.equals('185')">
+		             where c_seq between 181 and 190
+		         </if>
+		         <if test="c_seq.equals('195')">
+		             where c_seq between 191 and 200
+		         </if>
+		         <if test="c_seq.equals('205')">
+		             where c_seq between 201 and 210
+		         </if>
+		         <if test="c_seq.equals('215')">
+		             where c_seq between 211 and 220
+		         </if>
+		         <if test="c_seq.equals('225')">
+		             where c_seq between 221 and 230
+		         </if>
+		         <if test="c_seq.equals('235')">
+		             where c_seq between 231 and 240
+		         </if>
+		         <if test="c_seq.equals('245')">
+		             where c_seq between 241 and 250
+		         </if>
+		         <if test="c_seq.equals('255')">
+		             where c_seq between 251 and 260
+		         </if>
+		         <if test="c_seq.equals('265')">
+		             where c_seq between 261 and 270
+		         </if>
+		         <if test="c_seq.equals('275')">
+		             where c_seq between 271 and 280
+		         </if>
+		         <if test="c_seq.equals('281')">
+		             where c_seq between 281 and 290
+		         </if>
+		         <if test="c_seq.equals('300')">
+		             where c_seq between 291 and 300
+		         </if>
+		     </if>
+		 </where>
+		 
+   	    
+   	</select>
+   
+	
   	<select id="standardColorGallery" resultType="kr.ev.model.ColorVO">
 
 		select c_seq, c_rgb, c_name
@@ -39,12 +140,12 @@
 			or c_seq = 185 or c_seq = 195 or c_seq = 205
 			or c_seq = 215 or c_seq = 225 or c_seq = 235
 			or c_seq = 245 or c_seq = 255 or c_seq = 265
-			or c_seq = 275 or c_seq = 291 or c_seq = 300
+			or c_seq = 275 or c_seq = 281 or c_seq = 300
 	</select>
 	
   	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO" resultType="kr.ev.model.InteriorVO">
 
-		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior where i_rgb1 = '142, 132, 115'
+		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior
 
 	</select>
   	
