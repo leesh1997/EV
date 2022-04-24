@@ -132,13 +132,104 @@ public class InteriorController {
 
 		//List<ColorVO> cvo = mapper.colorList(vo);
 		
-		cvo.setC_seq2(c_seq2);
-		List<ColorVO> cList = mapper.colorList(cvo);
 		
-		System.out.println("그퀀스는? "+cList);
+	if(c_seq2.equals("5")) {	
+		cvo.setC_seq2("1");
+		List<ColorVO> cList = mapper.colorList(cvo);
+		System.out.println("cList는? " + cList);
+	} else if(c_seq2.equals("15")) {
+		cvo.setC_seq2("2");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("25")) {
+		cvo.setC_seq2("3");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("35")) {
+		cvo.setC_seq2("4");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("45")) {
+		cvo.setC_seq2("5");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("55")) {
+		cvo.setC_seq2("6");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("65")) {
+		cvo.setC_seq2("7");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("75")) {
+		cvo.setC_seq2("8");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("85")) {
+		cvo.setC_seq2("9");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("95")) {
+		cvo.setC_seq2("10");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("105")) {
+		cvo.setC_seq2("11");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("115")) {
+		cvo.setC_seq2("12");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("125")) {
+		cvo.setC_seq2("13");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("135")) {
+		cvo.setC_seq2("14");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("145")) {
+		cvo.setC_seq2("15");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("155")) {
+		cvo.setC_seq2("16");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("165")) {
+		cvo.setC_seq2("17");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("175")) {
+		cvo.setC_seq2("18");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("185")) {
+		cvo.setC_seq2("19");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("195")) {
+		cvo.setC_seq2("20");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("205")) {
+		cvo.setC_seq2("21");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("215")) {
+		cvo.setC_seq2("22");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("225")) {
+		cvo.setC_seq2("23");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("235")) {
+		cvo.setC_seq2("24");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("245")) {
+		cvo.setC_seq2("25");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("255")) {
+		cvo.setC_seq2("26");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("265")) {
+		cvo.setC_seq2("27");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("275")) {
+		cvo.setC_seq2("28");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("281")) {
+		cvo.setC_seq2("29");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} else if(c_seq2.equals("300")) {
+		cvo.setC_seq2("30");
+		List<ColorVO> cList = mapper.colorList(cvo);
+	} 
+		
+		
 		
 		// ㅠ.ㅠ
-		//vo.setC_rgb(inSer);
+		//vo.setC_rgb(c_seq2);
 		vo.setStartNum(startNum);
 		System.out.println("vo는 나오냐? " + vo);
 		List<InteriorVO> list = mapper.getSelect(vo);
