@@ -243,6 +243,7 @@ input[type="submit"] {
 				<div id="dropColor1"></div>
 				<div id="dropColor2"></div>
 				<div id="dropColor3"></div>
+				<div id='shit'><a data-holy="응애"><button>ddd</button></a></div>
 		</div>
 
 		<div>
@@ -324,12 +325,17 @@ input[type="submit"] {
 
 		/* 색상  */
 		const my_btn = document.getElementById('colorButton');
-
+		
 	    my_btn.addEventListener('click', function() {
-	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-			$("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-			$("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a href='interiorSearch.do?inSer=${color.c_seq}'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?inSer=${color.c_rgb}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?inSer=${color.c_rgb}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?inSer=${color.c_rgb}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
 	    }, {once : true});
+	    
+	    $("dropColor1 a").click (function() {
+	    	console.log("눌렀나");
+	    	$("#shit button").append("<p>왜 안되냐</p>");
+	    });
 			
 				$(document).ready(function(){
 					$('#dropColor1, #dropColor2, #dropColor3').hide();
@@ -372,7 +378,7 @@ input[type="submit"] {
 			
 				$(document).ready(function(){
 					$('#dropPalette1, #dropPalette2').hide();
-				})
+				});
 				
 			$('#mypaletteButton').click(function() {
 				if($('#dropColor1, #dropColor2, #dropColor3').hide()){
@@ -391,6 +397,7 @@ input[type="submit"] {
 					$('#dropColor1, #dropColor2').hide();
 				}
 			});
+			
 			
 			
 			
