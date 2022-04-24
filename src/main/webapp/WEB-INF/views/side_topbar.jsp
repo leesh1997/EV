@@ -96,9 +96,9 @@
 			<div class="he st4">
 			<c:choose>
 			<c:when test="${info!=null}">
-				<a href="wishlist.do"><img src="resources/img/inte3.png"
+				<a href="view.do"><img src="resources/img/inte3.png"
 					class="he-img st4im">
-					<div class="he-text">wishlist</div></a>
+					<div class="he-text">view</div></a>
 			</c:when>
 			<c:otherwise>
 				<a href="#" class="melong"><img src="resources/img/inte3.png"
