@@ -15,7 +15,8 @@
 	<div class="hero">
 		<div class="sidebar">
 			<div class="sidetext-top">
-				<a href="main.do"><h1>EV</h1></a>
+				<a href="main.do"><img src="resources/img/ev_icon-removebg-preview.png"
+				style="height: auto; width: 70px;margin-top: 10px"></a>
 			</div>
 			<div>
 				<div class="main-text-box">

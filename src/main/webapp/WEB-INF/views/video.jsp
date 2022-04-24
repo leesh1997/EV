@@ -122,8 +122,8 @@
 
 <body style="overflow-x : hidden">
 	<jsp:include page = "side_topbar.jsp"></jsp:include>
-<div style="margin-top: 50px; margin-left: 150px">
-	<h1 style="font-weight: bold">Video</h1>
+<div style= "margin-left: 150px;padding-top: 15px;">
+	<h1 style="font-weight: bold;margin-top: 10px;">Video</h1>
 	
 </div>
 
