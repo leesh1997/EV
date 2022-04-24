@@ -15,4 +15,12 @@ public interface InteriorMapper {
 
 	List<PaletteVO> showPalette(String m_email);
 
+	List<InteriorVO> getSelect(SearchPageVO vo);
+
+	int getVisitCount2();
+
+	List<ColorVO> colorList(String c_seq);
+
+
+
 }

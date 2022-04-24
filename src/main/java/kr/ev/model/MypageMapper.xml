@@ -26,7 +26,11 @@
 		SELECT * FROM t_board WHERE m_nick=#{m_nick}
 	</select>
  
-     
+      <!-- 게시글 삭제 -->
+    <delete id="boardDelete">
+    <!-- 매개변수가 하나일때는 type 작성하지 않아도 된다 -->    
+        delete from t_board  where  b_seq= #{b_seq}
+    </delete>
      
      
    

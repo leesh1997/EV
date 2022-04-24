@@ -20,6 +20,7 @@ import kr.ev.model.MemberVO;
 import kr.ev.model.Paging;
 import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
+import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
 
 @Controller
@@ -94,8 +95,54 @@ public class InteriorController {
 		return "interiorGallery";
 	}
 	@RequestMapping("/interiorSearch.do")
-	public String interiorSearch (int inSer)	{
-		System.out.println("제발나와라요"+ inSer);
+	public String interiorSearch (@RequestParam("pageNum") int pageNum, HttpServletRequest request, SearchPageVO vo, String c_seq, Model model)	{
+		System.out.println("제발나와라요"+ c_seq);
+		System.out.println("게시물 수" + pageNum );
+		
+		int pages;
+		
+		if (request.getParameter("pageNum") != null) {
+			pages = Integer.parseInt(request.getParameter("pageNum"));
+		} else {
+			pages = 1;
+		}
+		
+		
+		model.addAttribute("page", pages);
+		System.out.println("page : " + pages);
+		Paging paging = new Paging();
+		paging.setPage(pages);
+		
+		int pageCount = 0;
+		pageCount = mapper.getVisitCount2();
+		model.addAttribute("pageCount", pageCount);
+
+		System.out.println("pageCount : " + pageCount);
+		paging.setTotalCount(pageCount);
+		paging.setPage(pages);
+		
+		
+		System.out.println("총 끝페이지는 !!!!!!!"+ paging.getTotalPage());
+		int totalPage = paging.getTotalPage();
+		System.out.println("끝페이지 뜨나?" + totalPage);
+		model.addAttribute("totalPage", totalPage);
+		
+		int startNum = (pages - 1) * 12 + 1;
+		int endNum = pages * 12;
+
+		//List<ColorVO> cvo = mapper.colorList(vo);
+		List<ColorVO> cvo = mapper.colorList(c_seq);
+		
+		System.out.println("그퀀스는? "+cvo);
+		
+		// ㅠ.ㅠ
+		//vo.setC_rgb(inSer);
+		vo.setStartNum(startNum);
+		System.out.println("vo는 나오냐? " + vo);
+		List<InteriorVO> list = mapper.getSelect(vo);
+		System.out.println(list);
+		model.addAttribute("list", list);
+		
 		return "interiorGallery";
 	}
 	
