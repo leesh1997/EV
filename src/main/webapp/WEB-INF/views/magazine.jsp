@@ -86,7 +86,7 @@ h2 {
 	
 	<div class="container-md main_content magazine"
 		style="margin-left: 150px;">
-		<h2>Magazine Site</h2>
+		<h1 style="font-weight: bold;">Magazine</h1>
 		<hr id="line" />
 	<div>
 	<br>
