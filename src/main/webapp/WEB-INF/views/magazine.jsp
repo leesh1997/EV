@@ -17,7 +17,7 @@
 <title>매거진 페이지</title>
 <style>
 .content1 {
-	font-size: large;
+	font-size: 22px;
 	text-align: center;
 	width: 300px;
 }
@@ -57,7 +57,7 @@ h2 {
 	position: relative;
 	font-size: 18px;
 	text-align: center;
-	padding: 0 20px 80px;
+	padding: 0 20px 20px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -67,13 +67,13 @@ h2 {
 	display: inline-block;
 	padding: 5px 14px;
 	background-color: #fff;
-	border: 1px solid #ddd;
 	border-radius: 0px;
 }
 
 .img-thumbnail {
 	width: 400px;
-	height: 400px;
+	height: 450px;
+	border-radius:4%; 
 }
 
 #line {
@@ -97,7 +97,7 @@ h2 {
 			<!-- 시작 -->
 			<ul>
 				<c:forEach var="mz" items="${list}">
-					<li style="width: 30%">
+					<li style="width: 30%; margin-right: -120px; margin-left: -30px; ">
 						<%-- <c:if test="${((mz.mz_seq + 1) % 2) == 0}"> --%>
 						<div class="Panel with panel-default class">
 							<div class="panel-body" style="float: left; margin-left: 20px;">
@@ -106,10 +106,10 @@ h2 {
 								</a>
 							</div>
 							<div class="panel-body"
-								style="float: left; margin-top: 10px; margin-left: 30px;">
+								style="float: left; margin-top: 0px; margin-left: 30px; padding-top: 0px;">
 								<div class="board_tit">
 <!-- 									<label style="margin-right: 10px; float: left">제목</label>
- -->									<br><br>
+ -->									
 									<td class="maga-con1"><a href="${mz.mz_site }"
 										target="_blank"> <strong class="content1">${mz.mz_title }</strong>
 									</a>
