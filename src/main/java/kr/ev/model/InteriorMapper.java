@@ -15,4 +15,8 @@ public interface InteriorMapper {
 
 	List<PaletteVO> showPalette(String m_email);
 
+	List<InteriorVO> getSelect(SearchPageVO vo);
+
+	int getVisitCount2();
+
 }

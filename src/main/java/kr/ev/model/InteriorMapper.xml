@@ -14,6 +14,12 @@
     	     
     	</select>
     	
+    	<select id="getVisitCount2" resultType="int">
+    	    
+    	     select count(*) from t_interior where i_rgb1 = '142, 132, 115'
+    	     
+    	</select>
+    	
     	    	<select id="showPalette" resultType="kr.ev.model.PaletteVO">
 
 		select pl_seq, pl_c1, pl_c2, pl_c3, pl_c4, pl_c5 from t_palette where m_email = #{m_email};
@@ -35,5 +41,12 @@
 			or c_seq = 245 or c_seq = 255 or c_seq = 265
 			or c_seq = 275 or c_seq = 291 or c_seq = 300
 	</select>
+	
+  	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO" resultType="kr.ev.model.InteriorVO">
+
+		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior where i_rgb1 = '142, 132, 115'
+
+	</select>
+  	
     
 </mapper>
