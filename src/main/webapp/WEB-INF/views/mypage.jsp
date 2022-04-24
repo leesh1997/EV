@@ -1028,24 +1028,28 @@ height: 50px;
             <span style="font-weight: bold; margin-left: 100px; font-size:20px;">내가 작성한
                게시물 : ${count} 개</span>
          </div>
-		
+      
          <div class="mylogtb" style="margin-top: 20px; margin-left: 50px;">
-         <div style="max-height: 430px; width: auto;overflow: auto;">
+            <form action="boardDelete.do" method="post">
+         <div style="/* max-height: 430px; */ width: auto;overflow: auto;">
             <table id="log"
                style="width: 1300px; height: 450px; border: 2px solid #d1d1d1; margin: auto;">
-               <tr class="tr1" style="text-align: center;">
+               <tr class="tr1" style="text-align: center; font-size: 18px;">
                   <th></th>
-                  <th>NO.</th>
+                  <th style="text-align: center;">NO.</th>
                   <th>제목</th>
                   <th>작성일</th>
                <!--    <th>조회수</th> -->
                </tr>
+            
                <c:forEach var="myView" items="${myContent}" varStatus="i">
-               	<tr class="tr2">
+                  <tr class="tr2">
                   <td><div class="num" >
-                        <input id="num_check" type="checkbox">
-                     </div>
-                  <td>${i.count}</td>
+                        <input id="num_check" type="checkbox" name="delete_seq" value="${myView.b_seq}">
+                        
+                     </div></td>
+              
+                  <td style="text-align: center;">${i.count}</td>
                   <td>${myView.b_title}</td>
                   <td>${myView.b_date}</td>
           <!--         <td>16</td> -->
@@ -1056,15 +1060,17 @@ height: 50px;
             </table>
              </div>
             <div class="box bg-1">
-                     <p>
+                    
                         <button class="button button--wapasha button--round-s"
-                           type="submit" style="text-align: center; width: 80px; height: 50px;  margin-top: 20px;">선택 삭제</button>
-                     </p>
+                            style="text-align: center; width: 80px; height: 50px;  margin-top: 20px;">선택 삭제</button>
+                  
+                                          
                   </div>
+           </form>
          </div>
 
      
-	</div>
+   </div>
    <script>
       $(document).ready(function() {
          $('.recent').hide();
@@ -1077,7 +1083,7 @@ height: 50px;
          $('.mylog').hide();
 
       })
-      $('.recentBtn').click(function() {																									
+      $('.recentBtn').click(function() {                                                                           
          $('.recent').show();
          $('.update').hide();
          $('.mylog').hide();

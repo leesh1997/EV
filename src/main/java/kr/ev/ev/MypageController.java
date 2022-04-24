@@ -84,7 +84,14 @@ public class MypageController {
 		model.addAttribute("myContent", vo);*/
 
 		
-		 
+		// 나의 활동-게시글 삭제
+		@RequestMapping("/boardDelete.do")
+		public String boardDelete(int delete_seq) {
+			System.out.println("게시판 삭제 기능 동작" + delete_seq);
+			int b_seq=delete_seq;
+			mapper.boardDelete(b_seq);
+			return "redirect:/mypage.do";
+		} 
 
 	
 		}

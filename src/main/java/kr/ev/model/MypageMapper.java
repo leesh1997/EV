@@ -15,6 +15,8 @@ public interface MypageMapper {
 	int getBoardCnt(MemberVO vo);
 
 	List<BoardVO> myContent(MemberVO vo);
+
+	void boardDelete(int b_seq);
 	
 
 }
