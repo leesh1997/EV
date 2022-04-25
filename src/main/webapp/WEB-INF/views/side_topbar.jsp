@@ -93,18 +93,18 @@ body{
 
 
 			<div class="he st1">
-				<A href="palette_menu.do"><img src="resources/img/bora.png"
+				<A href="palette_menu.do"><img src="resources/img/menu1.png"
 					class="he-img st1im" alt="content">
 					<div class="he-text">palette</div></A>
 			</div>
 			<div class="he st2">
 				<a href="interior_menu.do"><img
-					src="resources/img/inte1.png" class="he-img st2im">
+					src="resources/img/menu2.png" class="he-img st2im">
 					<div class="he-text">interior</div></a>
 			</div>
 			<div class="he st3">
 				<a href="choise_product_or_magazine.do"><img
-					src="resources/img/inte2222.PNG" class="he-img st3im">
+					src="resources/img/menu3.png" class="he-img st3im">
 					<div class="he-text">information</div></a>
 			</div>
 		<!-- 	<div class="he st4">
@@ -114,7 +114,7 @@ body{
 	
 			</div> -->
 			<div class="he st5">
-				<a href="board.do"><img src="resources/img/inte3.png"
+				<a href="board.do"><img src="resources/img/menu6.png"
 					class="he-img st5im">
 					<div class="he-text">community</div></a>
 			</div>
