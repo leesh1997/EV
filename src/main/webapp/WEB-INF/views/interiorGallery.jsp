@@ -201,6 +201,8 @@ input[type="submit"] {
     margin-right:230px;
     background-color:white;
 }
+#Layer_1{
+display: flex;}
 </style>
 <body style="overflow-x: hidden">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -261,7 +263,7 @@ input[type="submit"] {
 		<div class="interior_list_gallery">
 			<c:forEach var="imgs" items="${list}" varStatus="i">
 				<div class="col-sm-4 popupModalImg">
-				<div>
+				<div class='mak' style="display: flex;">
 					<a data-img="${imgs.i_url}"><img src="${imgs.i_url}"
 						class="img-thumbnail"
 						style="margin-bottom: 15px; width: 400px; height: 250px" />
