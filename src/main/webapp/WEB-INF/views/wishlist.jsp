@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<jsp:include page = "side_topbar.jsp"></jsp:include>
+<jsp:include page="side_topbar.jsp"></jsp:include> 
 	<div class = "main-content">
 	
 		<h1 style="margin-top: 0; padding-left:20px; padding-top: 22px; text-align: left;">My WishList</h1>

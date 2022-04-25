@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>영상 페이지</title> 
+<title>Video</title> 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -122,9 +122,8 @@
 
 <body style="overflow-x : hidden">
 	<jsp:include page = "side_topbar.jsp"></jsp:include>
-<div style="margin-top: 50px; margin-left: 150px">
-	<h1 style="font-weight: bold">Information</h1>
-	<h3>video</h3>
+<div style="padding-top: 15px; margin-left: 150px">
+	<h1 style="font-weight: bold">Video</h1>
 	
 </div>
 
@@ -163,14 +162,14 @@
 		</ul>
 	</div>
 	
-		<div class="search_line" style="text-align: center;">
+		<!-- <div class="search_line" style="text-align: center;">
 			<form action="search.do">
 				<input type="text" name="search_word" class="search_bar">
 				<button type="submit" class="search_button">검색</button>
 			</form>
 			<a href="videoSearch.do?pageNum=1?search_word=인테리어">검색 테스트 링크</a>
 		</div>
-
+ -->
 	
 
 <script>

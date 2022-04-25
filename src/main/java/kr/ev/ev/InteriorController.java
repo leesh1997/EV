@@ -20,6 +20,7 @@ import kr.ev.model.MemberVO;
 import kr.ev.model.Paging;
 import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
+import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
 
 @Controller
@@ -94,9 +95,152 @@ public class InteriorController {
 		return "interiorGallery";
 	}
 	@RequestMapping("/interiorSearch.do")
-	public String interiorSearch (int inSer)	{
-		System.out.println("제발나와라요"+ inSer);
+	public String interiorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("c_seq2")int c_seq2,HttpServletRequest request,
+			SearchPageVO vo, ColorVO cvo,  Model model)	{
+		System.out.println("제발나와라요"+ c_seq2);
+		System.out.println("게시물 수" + pageNum );
+		
+		int pages;
+		
+		if (request.getParameter("pageNum") != null) {
+			pages = Integer.parseInt(request.getParameter("pageNum"));
+		} else {
+			pages = 1;
+		}
+		
+		
+		model.addAttribute("page", pages);
+		System.out.println("page : " + pages);
+		Paging paging = new Paging();
+		paging.setPage(pages);
+		
+		int pageCount = 0;
+		pageCount = mapper.getVisitCount2();
+		model.addAttribute("pageCount", pageCount);
+
+		System.out.println("pageCount : " + pageCount);
+		paging.setTotalCount(pageCount);
+		paging.setPage(pages);
+		
+		
+		System.out.println("총 끝페이지는 !!!!!!!"+ paging.getTotalPage());
+		int totalPage = paging.getTotalPage();
+		System.out.println("끝페이지 뜨나?" + totalPage);
+		model.addAttribute("totalPage", totalPage);
+		
+		int startNum = (pages - 1) * 12 + 1;
+		int endNum = pages * 12;
+		vo.setStartNum(startNum);
+		vo.setC_seq(c_seq2);
+		/* vo.setC_seq(cvo.) */
+//		System.out.println("vo는 나오냐? " + vo);
+		List<InteriorVO> list = mapper.getSelect(vo);
+		System.out.println(list);
+		model.addAttribute("list", list);
+		
 		return "interiorGallery";
+
+		//List<ColorVO> cvo = mapper.colorList(vo);
+		
+		
+//	if(c_seq2.equals("5")) {	
+//		cvo.setC_seq2("1");
+//		cList = mapper.colorList(cvo);
+//		System.out.println("cList는? " + cList);
+//	} else if(c_seq2.equals("15")) {
+//		cvo.setC_seq2("2");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("25")) {
+//		cvo.setC_seq2("3");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("35")) {
+//		cvo.setC_seq2("4");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("45")) {
+//		cvo.setC_seq2("5");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("55")) {
+//		cvo.setC_seq2("6");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("65")) {
+//		cvo.setC_seq2("7");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("75")) {
+//		cvo.setC_seq2("8");
+//	 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("85")) {
+//		cvo.setC_seq2("9");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("95")) {
+//		cvo.setC_seq2("10");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("105")) {
+//		cvo.setC_seq2("11");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("115")) {
+//		cvo.setC_seq2("12");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("125")) {
+//		cvo.setC_seq2("13");
+//	 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("135")) {
+//		cvo.setC_seq2("14");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("145")) {
+//		cvo.setC_seq2("15");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("155")) {
+//		cvo.setC_seq2("16");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("165")) {
+//		cvo.setC_seq2("17");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("175")) {
+//		cvo.setC_seq2("18");
+//	 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("185")) {
+//		cvo.setC_seq2("19");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("195")) {
+//		cvo.setC_seq2("20");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("205")) {
+//		cvo.setC_seq2("21");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("215")) {
+//		cvo.setC_seq2("22");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("225")) {
+//		cvo.setC_seq2("23");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("235")) {
+//		cvo.setC_seq2("24");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("245")) {
+//		cvo.setC_seq2("25");
+//		cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("255")) {
+//		cvo.setC_seq2("26");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("265")) {
+//		cvo.setC_seq2("27");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("275")) {
+//		cvo.setC_seq2("28");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("281")) {
+//		cvo.setC_seq2("29");
+//		 cList = mapper.colorList(cvo);
+//	} else if(c_seq2.equals("300")) {
+//		cvo.setC_seq2("30");
+//		 cList = mapper.colorList(cvo);
+//	} 
+//		
+		
+		
+		// ㅠ.ㅠ
+		//vo.setC_rgb(c_seq2);
+	
 	}
 	
 	

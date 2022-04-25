@@ -13,7 +13,7 @@
 
 .palette_wrap {
    margin-left: 100px;
-}
+} 
 .menu_wrap {
 	width: 100%;
 	height: 1000px;
@@ -102,7 +102,7 @@ button {
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Magazine & Product</h1>
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Magazine & Product & Video</h1>
 		</div>
 		<div class="menu_wrap">
 			<div class="menu_choice">

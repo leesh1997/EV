@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Product</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -131,8 +131,7 @@ input[type="submit"]:hover{
 
 	<div class="board_wrap">
 		<div class="header">
-			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Interior
-				Gallery</h1>
+			<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Product</h1>
 		</div>
 		<hr id="line" />
 		<div class="board_indication">
