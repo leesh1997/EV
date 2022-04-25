@@ -289,7 +289,7 @@ input[type="submit"] {
 			<div class="img_modal_popup" style="margin-left: 150px">
 				<div class="img_modal_popup-closer"></div>
 				<div class="modal-footer"></div>
-			</div>
+			</div> 
 
 		</div>
 
