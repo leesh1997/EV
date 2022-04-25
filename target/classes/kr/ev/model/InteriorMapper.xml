@@ -45,11 +45,55 @@
 		where c_group = #{c_group})
 
 	</select>
+	
+	<select id="getVisitCount3" resultType="int">
+
+		select * from t_interior
+		where i_colorname1 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+
+	</select>
 
 	<select id="showPalette" resultType="kr.ev.model.PaletteVO">
 
-		select pl_seq, pl_c1, pl_c2,
-		pl_c3, pl_c4, pl_c5 from t_palette where m_email = #{m_email};
+		select * from t_palette where m_email = #{m_email};
 
 	</select>
 
@@ -80,6 +124,39 @@
 	</select>
 
 	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO"
+		resultType="kr.ev.model.InteriorVO">
+
+		select * from t_interior
+		where i_colorname1 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname3 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname4 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname5 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		order by i_seq
+		Limit 12 Offset #{startNum}
+		
+	</select>
+	
+	<select id="getPlSelect" parameterType="kr.ev.model.SearchPageVO"
 		resultType="kr.ev.model.InteriorVO">
 
 		select * from t_interior

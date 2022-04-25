@@ -21,6 +21,10 @@ public interface InteriorMapper {
 
 	List<ColorVO> colorList(ColorVO cvo);
 
+	int getVisitCount3(SearchPageVO vo);
+
+	List<InteriorVO> getPlSelect(SearchPageVO vo);
+
 
 
 }
