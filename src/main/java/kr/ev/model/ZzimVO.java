@@ -11,4 +11,5 @@ public class ZzimVO {
 	private String m_email;
 	private int p_seq;
 	private String success;
+	private int i_seq;
 }

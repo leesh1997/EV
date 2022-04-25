@@ -1,6 +1,7 @@
 package kr.ev.ev;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ev.model.ColorVO;
 import kr.ev.model.InteriorMapper;
@@ -22,6 +24,8 @@ import kr.ev.model.PaletteMapper;
 import kr.ev.model.PaletteVO;
 import kr.ev.model.SearchPageVO;
 import kr.ev.model.VideoVO;
+import kr.ev.model.WishlistVO;
+import kr.ev.model.ZzimVO;
 
 @Controller
 public class InteriorController {
@@ -141,7 +145,11 @@ public class InteriorController {
 		model.addAttribute("vo", vo);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
+		// 대표 색상 보여주기
+		List<ColorVO> standardList = mapper.standardColorGallery();
 		
+		System.out.println(standardList);
+		model.addAttribute("standardList", standardList);
 		
 		return "interiorGallery";
 		
@@ -200,7 +208,11 @@ public class InteriorController {
 		model.addAttribute("pvo", pvo);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
+		// 대표 색상 보여주기
+		List<ColorVO> standardList = mapper.standardColorGallery();
 		
+		System.out.println(standardList);
+		model.addAttribute("standardList", standardList);
 		
 		return "interiorGallery";
 		
@@ -212,6 +224,77 @@ public class InteriorController {
 	public void interior_menu(Model model) {
 		System.out.println("인테리어 메뉴");
 
+	}
+	@RequestMapping("/ihe.do")
+	public @ResponseBody ZzimVO he(ZzimVO zzim ,WishlistVO vo,String likee,HttpSession session,HttpServletResponse response) {
+		
+		MemberVO memvo= (MemberVO)session.getAttribute("info");
+		if(memvo.getM_email()==null) {
+			
+			return null;
+		}
+		else {
+		System.out.println("확인!!"+likee);
+		System.out.println("아이디!!"+memvo.getM_email());
+		int likeint= Integer.parseInt(likee);
+		/*
+		 * String email=memvo.getM_email(); vo.setM_email(email); vo.setP_seq(likeint);
+		 */
+		
+		zzim.setM_email(memvo.getM_email());
+		zzim.setI_seq(likeint);
+		
+	
+		vo= mapper.Ichecklike(zzim);
+		System.out.println(vo);
+		if(vo==null) {
+			
+			
+			
+			System.out.println("생성"+likeint);
+			 vo = mapper.Ipluslike(zzim);
+			 zzim.setSuccess("success");
+			 return zzim;
+		}
+		else {
+			System.out.println("삭제"+likeint);
+			 vo = mapper.Ideletelike(zzim);
+			 zzim.setSuccess("delete");
+			 return zzim;
+		}
+	
+		
+		}
+	}
+	@RequestMapping("/iwishlistcheck.do")
+	public @ResponseBody ArrayList<WishlistVO> wishlistcheck(ArrayList<WishlistVO> wish,
+			Model model,String likee,HttpSession session) {
+	
+		try{
+			MemberVO vo= (MemberVO)session.getAttribute("info");
+			System.out.println(session.getAttribute("info"));
+			if (vo==null) {
+				System.out.println("hehe");
+				return null;
+			}
+			else {
+				System.out.println(vo.getM_email());
+				String info = vo.getM_email();
+				System.out.println("info값"+ info);
+				wish= mapper.istartcheck(info);
+				System.out.println("wish값 등장!"+wish);
+				model.addAttribute("wish", wish);
+				return wish;
+			}
+		}
+		catch (Exception e) {
+			System.out.println("error");
+			return null;
+		}
+		
+	
+		
+	
 	}
 	
 

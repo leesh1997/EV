@@ -1,5 +1,6 @@
 package kr.ev.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface InteriorMapper {
@@ -24,6 +25,16 @@ public interface InteriorMapper {
 	int getVisitCount3(SearchPageVO vo);
 
 	List<InteriorVO> getPlSelect(SearchPageVO vo);
+
+	ArrayList<WishlistVO> startcheck(String info);
+
+	WishlistVO Ichecklike(ZzimVO zzim);
+
+	WishlistVO Ipluslike(ZzimVO zzim);
+
+	WishlistVO Ideletelike(ZzimVO zzim);
+
+	ArrayList<WishlistVO> istartcheck(String info);
 
 
 

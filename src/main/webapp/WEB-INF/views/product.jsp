@@ -252,14 +252,6 @@ input[type="submit"]:hover{
 		$(".btn_count"+${page}).css('border-bottom','solid 1px violet');
 		   var likeee=$('#like').val();
 		 $(document).ready(function() {
-
-		      /*   var likee = $(this).val(); */
-		    <%--   if(<%=session.getAttribute("info")%>==null){
-		    	   $(".gallery_items_like").attr("disabled", true);
-		      }
-		      else{
-		    	   $(".gallery_items_like").attr("disabled", false);
-		      } --%>
 		  
 
 		        console.log("시작확인");

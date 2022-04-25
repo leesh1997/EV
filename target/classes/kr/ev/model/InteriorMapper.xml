@@ -207,6 +207,16 @@
 		Limit 12 Offset #{startNum}
 		
 	</select>
-
-
+  <select id="Ipluslike" parameterType="kr.ev.model.ZzimVO" resultType="kr.ev.model.WishlistVO">
+        insert into t_wishlist (w_type,i_seq,m_email) value ('i',#{i_seq},#{m_email})
+    </select>
+    <select id="Ichecklike" parameterType="kr.ev.model.ZzimVO" resultType="kr.ev.model.WishlistVO">
+        select * from t_wishlist where i_seq = #{i_seq} and m_email=#{m_email}
+    </select>
+    <select id="Ideletelike" parameterType="kr.ev.model.ZzimVO" resultType="kr.ev.model.WishlistVO">
+         delete from t_wishlist where i_seq=#{i_seq} and  m_email=#{m_email}    
+    </select>
+ <select id="istartcheck" resultType="kr.ev.model.WishlistVO">
+        select i_seq from t_wishlist where m_email=#{info}
+    </select>
 </mapper>
