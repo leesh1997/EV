@@ -352,7 +352,7 @@ td.join_title {
 }
 
 .mini_title {
-   margin-top: 15px;
+   margin-top: 0px;
    margin-left: 65px;
    font-size: 15px;
    padding-top: 235px;
@@ -564,4 +564,13 @@ height: 50px;
 }
 .wishlist_hehe{
 padding-top: 300px;
+}
+.recent {
+	margin-top:-15px;
+}
+.mylog{
+	margin-top: -15px;
+}
+.udpate{
+	margin-top: -15px;
 }

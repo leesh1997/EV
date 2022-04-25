@@ -11,6 +11,14 @@
         on A.p_seq = B.p_seq
        	where B.m_email=#{m_email};
     </select>
+    <select id="wishlist3" resultType="kr.ev.model.InteriorVO">
+          select * from t_interior A
+        inner join t_wishlist B
+        on A.i_seq = B.i_seq
+       	where B.m_email=#{m_email};
+        
+        
+    </select>
     <delete id="pwish_delete" parameterType="kr.ev.model.PaletteVO">
         delete from t_palette where pl_seq=#{delete_seq};
        

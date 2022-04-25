@@ -92,36 +92,24 @@
 		<div class="title">My Interior<button type="button" class="no2 updown">Open</button>
 		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
 		<div class="title list2 lis">
+			<div class= "list-full">
+		 	<c:forEach var="i_list" items="${i_list}"  varStatus="i">
 				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<!-- <span>ㅉㅉㅉ</span> -->
+				<input type="checkbox" name="delete_seq" value="${i_list.p_seq}">
+				<div class= "jjim_img_list"><img src="${i_list.p_imgurl }" class="jjim_img"> </div>	
+					<div class= "jjim_text_list">
+						<span style="display:block; margin-top: 10px;">이름 : ${i_list.p_name }</span>
+						<span style="display:block">종류 : ${i_list.p_type }</span>
+						<span style="display:block">가격 : ${i_list.p_price }</span>
+					</div>
+					
 				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-				<!-- 	<span>ㅉㅉㅉ</span> -->
-				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-				<!-- 	<span>ㅉㅉㅉ</span> -->
-				</div>
-				
-			</div>
-				<div class= "eeun-ae">
-			<div class= "jjim_img_list"><img src="resources/img/bora.png" class="jjim_img"> </div>	
-				<div class= "jjim_text_list">
-					<span>제목</span>
-					<!-- <span>ㅉㅉㅉ</span>-->
- 			</div>
+			</c:forEach>
+				 
+			
+			
+		</div>
+			
 				
 			</div>
 		</div>

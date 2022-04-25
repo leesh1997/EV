@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ev.model.InteriorVO;
 import kr.ev.model.MemberVO;
 import kr.ev.model.PaletteVO;
 import kr.ev.model.ProductVO;
@@ -27,11 +28,13 @@ public class WishListController {
 			mem = (MemberVO) session.getAttribute("info");
 			 List<PaletteVO> list = mapper.wishlist(mem.getM_email());	
 			 List<ProductVO> list2=mapper.wishlist2(mem.getM_email());
+			 List<InteriorVO> list3=mapper.wishlist3(mem.getM_email());
 			 for(int i = 0; i<list2.size(); i++) {
 				 System.out.println("값 나오나?"+list2.get(i));
 			 }
 			model.addAttribute("p_list",list);
 			model.addAttribute("w_list",list2);
+			model.addAttribute("i_list",list3);
 			
 			return "wishlist";
 		}

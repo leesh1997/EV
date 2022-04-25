@@ -14,4 +14,6 @@ public interface WishListMapper {
 
 	void wwish_delete(String string);
 
+	List<InteriorVO> wishlist3(String m_email);
+
 }
