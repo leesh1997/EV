@@ -56,6 +56,8 @@
 	background-color: black;
 	color: white;
 	border-radius: 2px;
+	font-size: 16px;
+    font-weight: bold;
 }
 
 .btn_empty {
@@ -68,6 +70,8 @@
 	background-color: black;
 	color: white;
 	border-radius: 2px;
+	font-size: 16px;
+    font-weight: bold;
 }
 
 .gallery-container {

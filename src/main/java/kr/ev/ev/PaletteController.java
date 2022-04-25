@@ -60,7 +60,10 @@ public class PaletteController {
 	}
 	
 	@RequestMapping("/savePalette.do")
-	public String savePalette(Model model, PaletteVO vo) {
+	public String savePalette(Model model, MemberVO mem, PaletteVO vo, HttpSession session) {
+		mem= (MemberVO) session.getAttribute("info");
+		System.out.println("리메일값" +mem.getM_email());
+		vo.setM_email(mem.getM_email()); 
 		System.out.println("팔레트 저장");
 		System.out.println(vo);
 		mapper.savePalette(vo);

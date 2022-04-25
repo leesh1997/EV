@@ -63,6 +63,8 @@ button {
 	z-index: 1;
 	-webkit-transition: all 0.3s linear;
 	transition: all 0.3s linear;
+	font-size: 16px;
+    font-weight: bold;
 }
 
 .menu:hover {

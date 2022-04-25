@@ -17,7 +17,7 @@
 <title>매거진 페이지</title>
 <style>
 .content1 {
-	font-size: 22px;
+	font-size: 20px;
 	text-align: center;
 	width: 300px;
 }

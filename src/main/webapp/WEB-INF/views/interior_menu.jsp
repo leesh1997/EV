@@ -63,6 +63,8 @@ button {
 	z-index: 1;
 	-webkit-transition: all 0.3s linear;
 	transition: all 0.3s linear;
+	font-size: 16px;
+    font-weight: bold;
 }
 
 .menu:hover {
@@ -102,8 +104,8 @@ button {
 	<jsp:include page="side_topbar.jsp"></jsp:include>
 	<div class="palette_wrap">
 		<div class="header">
-		<!-- 	<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">My
-				palette</h1> -->
+		 	<h1 style="margin-top: 0; margin-left: 50px; padding-top: 20px">Interior
+				</h1>
 		</div>
 		<div class="menu_wrap">
 			<div class="menu_choice">
