@@ -16,6 +16,18 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>매거진 페이지</title>
 <style>
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+   	font-family: 'NanumSquareRound';
+ /*    overflow: hidden; */
+}
 .content1 {
 	font-size: 20px;
 	text-align: center;

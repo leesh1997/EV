@@ -10,6 +10,20 @@
 <link rel="stylesheet" href="resources/css/main.css" type="text/css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style type="text/css">
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+   	font-family: 'NanumSquareRound';
+ /*    overflow: hidden; */
+}
+</style>
 </head>
 <body>
 	<div class="hero">

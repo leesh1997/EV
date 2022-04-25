@@ -8,6 +8,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+   	font-family: 'NanumSquareRound';
+ /*    overflow: hidden; */
+}
 .maain {
 	margin-left: 130px;
 	max-height: auto;

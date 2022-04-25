@@ -14,7 +14,18 @@
 <script src="//code.jquery.com/jquery-1.12.4.min.js" crossorigin="anonymous"></script>
 
 <style>
- 
+ @font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+   	font-family: 'NanumSquareRound';
+ /*    overflow: hidden; */
+}
 .video_view{
 	position:relative;
 	display: inline;

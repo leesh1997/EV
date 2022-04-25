@@ -20,6 +20,18 @@
 
 
 <style>
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+   	font-family: 'NanumSquareRound';
+ /*    overflow: hidden; */
+}
 input, #ftype {
 	width: 320px;
 	height: 30px;
