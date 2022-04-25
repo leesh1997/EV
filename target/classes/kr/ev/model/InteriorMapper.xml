@@ -56,6 +56,38 @@
 		select c_group
 		from t_color
 		where c_name = #{pl_color}))
+        or
+        i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname3 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname4 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname5 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
 		
 		
 
@@ -129,6 +161,7 @@
 	<select id="getPlSelect" parameterType="kr.ev.model.SearchPageVO"
 		resultType="kr.ev.model.InteriorVO">
 
+
 		select * from t_interior
 		where i_colorname1 in (
 		select c_name
@@ -137,7 +170,38 @@
 		select c_group
 		from t_color
 		where c_name = #{pl_color}))
-		
+        or
+        i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname3 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname4 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
+        or
+        i_colorname5 in (
+		select c_name
+		from t_color
+		where c_group in(
+		select c_group
+		from t_color
+		where c_name = #{pl_color}))
 		
 		order by i_seq
 		Limit 12 Offset #{startNum}

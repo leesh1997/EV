@@ -294,7 +294,7 @@ input[type="submit"] {
 		</div>
 
 	<c:choose>
-	<c:when test="${empty vo}">
+	<c:when test="${empty vo and empty pvo}">
 
 		<div class="paging" style="text-align: center; font-size: 15px">
 			<ul class="pagination pager">
@@ -319,9 +319,32 @@ input[type="submit"] {
 		
 	</c:when>
 	
+	<c:when test="${not empty pvo}">
+		<div class="paging" style="text-align: center; font-size: 15px">
+			<ul class="pagination pager">
+				<c:choose>
+					<c:when test="${paging.prev}">
+						<li><a
+							href="plInteriorSearch.do?pl_color=${pvo.pl_color}&pageNum==${paging.beginPage-1}">Previous</a></li>
+					</c:when>
+				</c:choose>
+				<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
+					step="1" varStatus="status">
+					<li><a href="plInteriorSearch.do?pl_color=${pvo.pl_color}&pageNum=${status.index}"
+						class="bottom_count${status.index}">${status.index}</a></li>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${paging.next}">
+						<li><a href="plInteriorSearch.do?pl_color=${pvo.pl_color}&pageNum=${paging.endPage+1}">Next</a></li>
+					</c:when>
+				</c:choose>
+			</ul>
+		</div>
+	
+	</c:when>
+	
 	<c:otherwise>
-	
-	
+
 		<div class="paging" style="text-align: center; font-size: 15px">
 			<ul class="pagination pager">
 				<c:choose>

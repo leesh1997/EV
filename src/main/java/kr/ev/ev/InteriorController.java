@@ -150,7 +150,7 @@ public class InteriorController {
 	
 	@RequestMapping("/plInteriorSearch.do")
 	public String plInteriorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("pl_color") String pl_color, HttpServletRequest request,
-			SearchPageVO vo, ColorVO cvo,  Model model)	{
+			SearchPageVO pvo, ColorVO cvo,  Model model)	{
 		
 		System.out.println("제발나와라요"+ pl_color);
 		
@@ -167,8 +167,8 @@ public class InteriorController {
 			pages = 1;
 		}
 		
-		vo.setPl_color(pl_color);
-		System.out.println("vo는 나오냐? " + vo);
+		pvo.setPl_color(pl_color);
+		System.out.println("vo는 나오냐? " + pvo);
 		
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
@@ -176,7 +176,7 @@ public class InteriorController {
 		paging.setPage(pages);
 		
 		int pageCount = 0;
-		pageCount = mapper.getVisitCount3(vo);
+		pageCount = mapper.getVisitCount3(pvo);
 		model.addAttribute("pageCount", pageCount);
 
 		System.out.println("pageCount : " + pageCount);
@@ -192,12 +192,12 @@ public class InteriorController {
 		int startNum = (pages - 1) * 12 + 1;
 		int endNum = pages * 12;
 		
-		vo.setStartNum(startNum);
+		pvo.setStartNum(startNum);
 		
 
-		List<InteriorVO> list = mapper.getPlSelect(vo);
+		List<InteriorVO> list = mapper.getPlSelect(pvo);
 		System.out.println(list);
-		model.addAttribute("vo", vo);
+		model.addAttribute("pvo", pvo);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		
