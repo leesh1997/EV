@@ -18,7 +18,31 @@
 
 	<select id="getVisitCount2" resultType="int">
 
-		select count(*) from t_interior where i_rgb1 = '142, 132, 115'
+		select count(*) from t_interior
+		where i_colorname1 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname3 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname4 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname5 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
 
 	</select>
 
@@ -40,7 +64,7 @@
 	<select id="standardColorGallery"
 		resultType="kr.ev.model.ColorVO">
 
-		select c_seq, c_rgb, c_name
+		select c_seq, c_rgb, c_name, c_group
 		from t_color
 		where c_seq = 5 or
 		c_seq = 15 or c_seq = 25
@@ -58,9 +82,34 @@
 	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO"
 		resultType="kr.ev.model.InteriorVO">
 
-		select * from t_interior;
+		select * from t_interior
+		where i_colorname1 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname2 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname3 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname4 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		or
+		i_colorname5 in (
+		select c_name
+		from t_color
+		where c_group = #{c_group})
+		order by i_seq
+		Limit 12 Offset #{startNum}
 		
-
 	</select>
 
 
