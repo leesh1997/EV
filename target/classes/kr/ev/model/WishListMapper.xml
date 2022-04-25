@@ -27,4 +27,8 @@
           delete from t_wishlist where p_seq=#{delete_seq};
         
     </delete>
+     <delete id="iwish_delete" parameterType="kr.ev.model.WishlistVO">
+          delete from t_wishlist where i_seq=#{delete_seq};
+        
+    </delete>
 </mapper>

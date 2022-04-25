@@ -95,9 +95,10 @@ public class InteriorController {
 		return "interiorGallery";
 	}
 	@RequestMapping("/interiorSearch.do")
-	public String interiorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("c_seq2")int c_seq2,HttpServletRequest request,
+	public String interiorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("c_group") int c_group, HttpServletRequest request,
 			SearchPageVO vo, ColorVO cvo,  Model model)	{
-		System.out.println("제발나와라요"+ c_seq2);
+		
+		System.out.println("제발나와라요"+ c_group);
 		System.out.println("게시물 수" + pageNum );
 		
 		int pages;
@@ -108,6 +109,7 @@ public class InteriorController {
 			pages = 1;
 		}
 		
+		vo.setC_group(c_group);
 		
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
@@ -115,7 +117,7 @@ public class InteriorController {
 		paging.setPage(pages);
 		
 		int pageCount = 0;
-		pageCount = mapper.getVisitCount2();
+		pageCount = mapper.getVisitCount2(vo);
 		model.addAttribute("pageCount", pageCount);
 
 		System.out.println("pageCount : " + pageCount);
@@ -130,15 +132,22 @@ public class InteriorController {
 		
 		int startNum = (pages - 1) * 12 + 1;
 		int endNum = pages * 12;
+		
 		vo.setStartNum(startNum);
-		vo.setC_seq(c_seq2);
-		/* vo.setC_seq(cvo.) */
-//		System.out.println("vo는 나오냐? " + vo);
+		
+		
+		
+		System.out.println("vo는 나오냐? " + vo);
 		List<InteriorVO> list = mapper.getSelect(vo);
 		System.out.println(list);
 		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		
 		
 		return "interiorGallery";
+		
+		
+		
 
 		//List<ColorVO> cvo = mapper.colorList(vo);
 		

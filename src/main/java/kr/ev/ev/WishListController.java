@@ -64,6 +64,13 @@ public class WishListController {
 		}
 		return "redirect:/wishlist.do";
 	}
+	@RequestMapping("/iwish_delete.do")
+	public String iwish_delete( String delete_seq[]) {
+		for(int i =0; i<delete_seq.length; i++) {
+			mapper.iwish_delete(delete_seq[i]);
+		}
+		return "redirect:/wishlist.do";
+	}
 	
 	
 	

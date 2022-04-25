@@ -15,6 +15,6 @@ public class ColorVO {
 	private String c_name;
 	private String m_email;
 	private String c_seq2;
-	private String c_group;
+	private int c_group;
 	
 }

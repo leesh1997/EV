@@ -21,131 +21,135 @@
 
 		<br>
 		<div class="choose">
-		<div class="list_box">
-		<form action="pwish_delete.do" method="post">
-		<div class="title">My Palette<button type="button" class="no1 updown">Open</button>
-		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
-		<div class="title list1 lis">
-		<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
-		<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
-		<div class= "list-full">
-		<c:forEach var="p_list" items="${ p_list}"  varStatus="i">
-			<div class="inpalette"> 
-			<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
-<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
-					
-			
-				<div class= "point">
-		
-					<div class="palette cl1" style="background-color:${p_list.pl_c1};">
-				
-					</div>
-					<div class ="palette-name">${p_list.pl_name1 }</div> 
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl2" style="background-color: ${p_list.pl_c2}">
-	
-
-					</div>
-					 <div class ="palette-name">${p_list.pl_name2 }</div> 
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
-				
-					</div>
-				 	<div class ="palette-name">${p_list.pl_name3 }</div> 
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl4" style="background-color:${p_list.pl_c4}">
-					
-					</div>
-					 <div class ="palette-name">${p_list.pl_name4 }</div> 
-				</div>
-				<div class= "point">
-		
-					<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
-					
-					</div>
-					<div class ="palette-name">${p_list.pl_name5}</div> 
-				</div>
-			</div>
-			</div>
-				</c:forEach>
-			</div> 
-				<%-- <div>
-					<ul>
-						<c:forEach var="pg_num" begin="1" end="${cnt }">
-							<li>${pg_num}</li>
-						</c:forEach>
+			<div class="list_box">
+			<form action="pwish_delete.do" method="post">
+			<div class="title">My Palette<button type="button" class="no1 updown">Open</button>
+			<button class="delete"><img src="resources/img/trash.png" class="trashimg trash1"></button></div>
+			<div class="title list1 lis">
+			<%-- <fmt:formatNumber var = "page" value="${fn:length(p_list)}"/>
+			<fmt:parseNumber var = "cnt" integerOnly="true" value="${((page)/10)+1 }"/> --%>
+			<div class= "list-full">
+			<c:forEach var="p_list" items="${ p_list}"  varStatus="i">
+				<div class="inpalette"> 
+				<div class="check"><input type="checkbox" name="delete_seq" value="${p_list.pl_seq}">
+	<%-- 			<input type="text" name="pl_seq" value="${p_list.pl_seq}"> --%>
 						
-					</ul>
-				</div>
-			 --%>
-		</div>
-		</form>
-		</div>
-		</div>
-		<div class="list_box">
-		<div class="title">My Interior<button type="button" class="no2 updown">Open</button>
-		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
-		<div class="title list2 lis">
-			<div class= "list-full">
-		 	<c:forEach var="i_list" items="${i_list}"  varStatus="i">
-				<div class= "eeun-ae">
-				<input type="checkbox" name="delete_seq" value="${i_list.p_seq}">
-				<div class= "jjim_img_list"><img src="${i_list.p_imgurl }" class="jjim_img"> </div>	
-					<div class= "jjim_text_list">
-						<span style="display:block; margin-top: 10px;">이름 : ${i_list.p_name }</span>
-						<span style="display:block">종류 : ${i_list.p_type }</span>
-						<span style="display:block">가격 : ${i_list.p_price }</span>
-					</div>
-					
-				</div>
-			</c:forEach>
-				 
-			
-			
-		</div>
-			
 				
+					<div class= "point">
+			
+						<div class="palette cl1" style="background-color:${p_list.pl_c1};">
+					
+						</div>
+						<div class ="palette-name">${p_list.pl_name1 }</div> 
+					</div>
+					<div class= "point">
+			
+						<div class="palette cl2" style="background-color: ${p_list.pl_c2}">
+		
+	
+						</div>
+						 <div class ="palette-name">${p_list.pl_name2 }</div> 
+					</div>
+					<div class= "point">
+			
+						<div class="palette cl3" style="background-color: ${p_list.pl_c3}">
+					
+						</div>
+					 	<div class ="palette-name">${p_list.pl_name3 }</div> 
+					</div>
+					<div class= "point">
+			
+						<div class="palette cl4" style="background-color:${p_list.pl_c4}">
+						
+						</div>
+						 <div class ="palette-name">${p_list.pl_name4 }</div> 
+					</div>
+					<div class= "point">
+			
+						<div class="palette cl5" style="background-color: ${p_list.pl_c5}">
+						
+						</div>
+						<div class ="palette-name">${p_list.pl_name5}</div> 
+					</div>
+				</div>
+				</div>
+					</c:forEach>
+				</div> 
+					<%-- <div>
+						<ul>
+							<c:forEach var="pg_num" begin="1" end="${cnt }">
+								<li>${pg_num}</li>
+							</c:forEach>
+							
+						</ul>
+					</div>
+				 --%>
+			</div>
+			
+			</form>
 			</div>
 		</div>
-		</div>
-		<div class="list_box">
-			<form action="wwish_delete.do" method="post">
-		<div class="title">My Product<button  type="button" class="no3 updown">Open</button>
-	
-		<button class="delete"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
-	
-		<div class="title list3 lis">
-			<div class= "list-full">
-		 	<c:forEach var="w_list" items="${w_list}"  varStatus="i">
-				<div class= "eeun-ae">
-				<input type="checkbox" name="delete_seq" value="${w_list.p_seq}">
-				<div class= "jjim_img_list"><img src="${w_list.p_imgurl }" class="jjim_img"> </div>	
-					<div class= "jjim_text_list">
-						<span style="display:block; margin-top: 10px;">이름 : ${w_list.p_name }</span>
-						<span style="display:block">종류 : ${w_list.p_type }</span>
-						<span style="display:block">가격 : ${w_list.p_price }</span>
+		<!-- 인테리어찜 -->
+			<div class="list_box">
+			<form action="iwish_delete.do" method="post">
+			<div class="title">My Interior<button type="button" class="no2 updown">Open</button>
+			<button class="delete"><img src="resources/img/trash.png" class="trashimg trash2"></button></div>
+			<div class="title list2 lis">
+				<div class= "list-full">
+			 	<c:forEach var="i_list" items="${i_list}"  varStatus="i">
+					<div class= "eeun-ae">
+					<input type="checkbox" name="delete_seq" value="${i_list.i_seq}">
+					<div class= "jjim_img_list"><img src="${i_list.i_url }" class="jjim_img"> </div>	
+						<div class= "jjim_text_list">
+							<span style="display:block; margin-top: 10px;">이름 : ${i_list.i_name }</span>
+						<%-- 	<span style="display:block">종류 : ${i_list.p_type }</span>
+							<span style="display:block">가격 : ${i_list.p_price }</span> --%>
+						</div>
+						
 					</div>
+				</c:forEach>
+					 
+				
+				
+			</div>
+				</div>
+					</form>	
+			</div>
+			<!--소품찜  -->
+					<div class="list_box">
+					<form action="wwish_delete.do" method="post">
+				<div class="title">My Product<button  type="button" class="no3 updown">Open</button>
+			
+				<button class="delete"><img src="resources/img/trash.png" class="trashimg trash3"></button></div>
+			
+				<div class="title list3 lis">
+					<div class= "list-full">
+				 	<c:forEach var="w_list" items="${w_list}"  varStatus="i">
+						<div class= "eeun-ae">
+						<input type="checkbox" name="delete_seq" value="${w_list.p_seq}">
+						<div class= "jjim_img_list"><img src="${w_list.p_imgurl }" class="jjim_img"> </div>	
+							<div class= "jjim_text_list">
+								<span style="display:block; margin-top: 10px;">이름 : ${w_list.p_name }</span>
+								<span style="display:block">종류 : ${w_list.p_type }</span>
+								<span style="display:block">가격 : ${w_list.p_price }</span>
+							</div>
+							
+						</div>
+					</c:forEach>
+						 
+					
 					
 				</div>
-			</c:forEach>
-				 
-			
-			
-		</div>
-		</div>
-		</form>
-	<!-- 	
-		<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
-		<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
-		</div>
-	</div>
+				</div>
+				</form>
+			<!-- 	
+				<div class="half jepum"><img src="resources/img/sam.jpg" class="half-img"><a href="wishlist_palette.do">팔레트</a></div>
+				<div class="half palt"><img src="resources/img/inte1.png"class="half-img"><a href="wishlist_product.do">제품</a></div> -->
+				</div>
 	
+			
+		</div>
+		
 </body>
 <script type="text/javascript">
 	$(document).ready(function(){
