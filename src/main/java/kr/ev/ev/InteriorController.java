@@ -135,127 +135,18 @@ public class InteriorController {
 		
 		vo.setStartNum(startNum);
 		
-		
-		
 		System.out.println("vo는 나오냐? " + vo);
 		List<InteriorVO> list = mapper.getSelect(vo);
 		System.out.println(list);
+		model.addAttribute("vo", vo);
 		model.addAttribute("list", list);
 		model.addAttribute("paging", paging);
 		
 		
 		return "interiorGallery";
 		
-		
-		
-
-		//List<ColorVO> cvo = mapper.colorList(vo);
-		
-		
-//	if(c_seq2.equals("5")) {	
-//		cvo.setC_seq2("1");
-//		cList = mapper.colorList(cvo);
-//		System.out.println("cList는? " + cList);
-//	} else if(c_seq2.equals("15")) {
-//		cvo.setC_seq2("2");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("25")) {
-//		cvo.setC_seq2("3");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("35")) {
-//		cvo.setC_seq2("4");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("45")) {
-//		cvo.setC_seq2("5");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("55")) {
-//		cvo.setC_seq2("6");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("65")) {
-//		cvo.setC_seq2("7");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("75")) {
-//		cvo.setC_seq2("8");
-//	 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("85")) {
-//		cvo.setC_seq2("9");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("95")) {
-//		cvo.setC_seq2("10");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("105")) {
-//		cvo.setC_seq2("11");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("115")) {
-//		cvo.setC_seq2("12");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("125")) {
-//		cvo.setC_seq2("13");
-//	 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("135")) {
-//		cvo.setC_seq2("14");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("145")) {
-//		cvo.setC_seq2("15");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("155")) {
-//		cvo.setC_seq2("16");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("165")) {
-//		cvo.setC_seq2("17");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("175")) {
-//		cvo.setC_seq2("18");
-//	 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("185")) {
-//		cvo.setC_seq2("19");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("195")) {
-//		cvo.setC_seq2("20");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("205")) {
-//		cvo.setC_seq2("21");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("215")) {
-//		cvo.setC_seq2("22");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("225")) {
-//		cvo.setC_seq2("23");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("235")) {
-//		cvo.setC_seq2("24");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("245")) {
-//		cvo.setC_seq2("25");
-//		cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("255")) {
-//		cvo.setC_seq2("26");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("265")) {
-//		cvo.setC_seq2("27");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("275")) {
-//		cvo.setC_seq2("28");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("281")) {
-//		cvo.setC_seq2("29");
-//		 cList = mapper.colorList(cvo);
-//	} else if(c_seq2.equals("300")) {
-//		cvo.setC_seq2("30");
-//		 cList = mapper.colorList(cvo);
-//	} 
-//		
-		
-		
-		// ㅠ.ㅠ
-		//vo.setC_rgb(c_seq2);
 	
 	}
 	
-	
-	
-	
-	
 
-	
 }

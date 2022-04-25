@@ -293,8 +293,8 @@ input[type="submit"] {
 
 		</div>
 
-
-
+	<c:choose>
+	<c:when test="${empty vo}">
 
 		<div class="paging" style="text-align: center; font-size: 15px">
 			<ul class="pagination pager">
@@ -316,7 +316,35 @@ input[type="submit"] {
 				</c:choose>
 			</ul>
 		</div>
-
+		
+	</c:when>
+	
+	<c:otherwise>
+	
+	
+		<div class="paging" style="text-align: center; font-size: 15px">
+			<ul class="pagination pager">
+				<c:choose>
+					<c:when test="${paging.prev}">
+						<li><a
+							href="interiorSearch.do?c_group=${vo.c_group}&pageNum=${paging.beginPage-1}">Previous</a></li>
+					</c:when>
+				</c:choose>
+				<c:forEach begin="${paging.beginPage}" end="${paging.endPage}"
+					step="1" varStatus="status">
+					<li><a href="interiorSearch.do?c_group=${vo.c_group}&pageNum=${status.index}"
+						class="bottom_count${status.index}">${status.index}</a></li>
+				</c:forEach>
+				<c:choose>
+					<c:when test="${paging.next}">
+						<li><a href="interiorSearch.do?c_group=${vo.c_group}&pageNum=${paging.endPage+1}">Next</a></li>
+					</c:when>
+				</c:choose>
+			</ul>
+		</div>
+	
+	</c:otherwise>
+	</c:choose>
 	</div>
 
 	<script>
