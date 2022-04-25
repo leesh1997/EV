@@ -207,7 +207,12 @@ public class InteriorController {
 	
 	}
 	
-	
+	// 인테리어 메뉴
+	@RequestMapping("/interior_menu.do")
+	public void interior_menu(Model model) {
+		System.out.println("인테리어 메뉴");
+
+	}
 	
 
 }

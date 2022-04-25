@@ -14,6 +14,9 @@
 	position: relative;
 	z-index: 50;
 	display: flex;
+	margin-top: -90px;
+    margin-left: 255px;
+}
 }
 
 .merong {
@@ -86,7 +89,7 @@ margin-top: 80px;
 }
 
 .result{
-margin-top: 115px;
+margin-top: 130px;
 margin-left: -40px;
 }
 .viewbtn{
@@ -117,9 +120,12 @@ position: absolute;
 </head>
 <body>
 	<jsp:include page="side_topbar.jsp"></jsp:include>
-
+	<div>
+	 <h1 style="    margin-left: 137px;
+    margin-top: 0px;
+    padding-top: 18px;">Image Palette</h1> 
 	<div class="maain">
-		 <h1 style="margin-left: 70px">View</h1> 
+		
 				<div class="viewmain">		
 		<form action="http://f4.project-jupyter.ddns.net:8874/img"
 			method="post" enctype="multipart/form-data">
@@ -127,7 +133,7 @@ position: absolute;
 			<!-- 				<button type="button" id="file_upload"
 					class="genric-btn primary radius exp_button"
 					onclick="onclick=document.all.file.click()">사진 업로드</button> -->
-						<p style="font-weight: bold;">색상 추출을 원하는 사진을 올려주세요.</p>
+						<p style="font-weight: bold; font-size:20px;">색상 추출을 원하는 사진을 올려주세요.</p>
 			
 			
 				<div class="viewbtn">
@@ -168,7 +174,7 @@ position: absolute;
 			<c:forEach var="listLi" items="${listLi }" varStatus="i">
 				<div>
 					<img src='${listLi.cho_img}' class="merong"
-						style="margin-left: 100px; margin-top: 60px"> <br> <br>
+						style="margin-left: 100px; margin-top: 60px; width: 700px;"> <br> <br>
 				</div>
 				<div class="allin">
 					<ul>
@@ -192,7 +198,7 @@ position: absolute;
 			</c:forEach>
 		</div>
 	</div>
-
+	</div>
 	<!--  {% for result range (0,1)}
         <p>
             <img src="{{ url_for('static', filename=obj.dir) }}" width="175" height="175">
