@@ -53,6 +53,9 @@
 .colors {
 	display: none;
 }
+.names {
+	display: none;
+}
 
 .gallery-container {
 	width: inherit;
@@ -167,26 +170,31 @@ input[type="radio"] {
 							style="background-color: rgb()">
 							<div class="color_name" id="text1"></div>
 							<input type="text" name="pl_c1" id="pl_c1" class="colors" />
+							<input type="text" name="pl_name1" id="pl_name1" class="names">
 						</div>
 						<div id="p2" class="chosen_palette"
 							style="background-color: rgb()">
 							<div class="color_name" id="text2"></div>
 							<input type="text" name="pl_c2" id="pl_c2" class="colors" />
+							<input type="text" name="pl_name2" id="pl_name2" class="names">
 						</div>
 						<div id="p3" class="chosen_palette"
 							style="background-color: rgb()">
 							<div class="color_name" id="text3"></div>
 							<input type="text" name="pl_c3" id="pl_c3" class="colors" />
+							<input type="text" name="pl_name3" id="pl_name3" class="names">
 						</div>
 						<div id="p4" class="chosen_palette"
 							style="background-color: rgb()">
 							<div class="color_name" id="text4"></div>
 							<input type="text" name="pl_c4" id="pl_c4" class="colors" />
+							<input type="text" name="pl_name4" id="pl_name4" class="names">
 						</div>
 						<div id="p5" class="chosen_palette"
 							style="background-color: rgb()" >
 							<div class="color_name" id="text5"></div>
 							<input type="text" name="pl_c5" id="pl_c5" class="colors" />
+							<input type="text" name="pl_name5" id="pl_name5" class="names">
 						</div>
 
 
