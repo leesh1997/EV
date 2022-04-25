@@ -189,7 +189,7 @@ input[type="submit"] {
 }
 
 .palette_view {
-	display: none;
+	display: none; 
 }
 
 .palette_colors {
