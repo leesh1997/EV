@@ -148,5 +148,66 @@ public class InteriorController {
 	
 	}
 	
+	@RequestMapping("/plInteriorSearch.do")
+	public String plInteriorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("pl_color") String pl_color, HttpServletRequest request,
+			SearchPageVO vo, ColorVO cvo,  Model model)	{
+		
+		System.out.println("제발나와라요"+ pl_color);
+		
+		//pl_color = pl_color.substring(4, 15);
+		//System.out.println("잘라졌나? " + pl_color);
+		
+		System.out.println("게시물 수" + pageNum );
+		
+		int pages;
+		
+		if (request.getParameter("pageNum") != null) {
+			pages = Integer.parseInt(request.getParameter("pageNum"));
+		} else {
+			pages = 1;
+		}
+		
+		vo.setPl_color(pl_color);
+		System.out.println("vo는 나오냐? " + vo);
+		
+		model.addAttribute("page", pages);
+		System.out.println("page : " + pages);
+		Paging paging = new Paging();
+		paging.setPage(pages);
+		
+		int pageCount = 0;
+		pageCount = mapper.getVisitCount3(vo);
+		model.addAttribute("pageCount", pageCount);
+
+		System.out.println("pageCount : " + pageCount);
+		paging.setTotalCount(pageCount);
+		paging.setPage(pages);
+		
+		
+		System.out.println("총 끝페이지는 !!!!!!!"+ paging.getTotalPage());
+		int totalPage = paging.getTotalPage();
+		System.out.println("끝페이지 뜨나?" + totalPage);
+		model.addAttribute("totalPage", totalPage);
+		
+		int startNum = (pages - 1) * 12 + 1;
+		int endNum = pages * 12;
+		
+		vo.setStartNum(startNum);
+		
+
+		List<InteriorVO> list = mapper.getPlSelect(vo);
+		System.out.println(list);
+		model.addAttribute("vo", vo);
+		model.addAttribute("list", list);
+		model.addAttribute("paging", paging);
+		
+		
+		return "interiorGallery";
+		
+	
+	}
+	
+	
+	
 
 }

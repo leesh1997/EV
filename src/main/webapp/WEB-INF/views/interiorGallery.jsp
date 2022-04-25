@@ -366,9 +366,9 @@ input[type="submit"] {
 		const my_btn = document.getElementById('colorButton');
 		
 	    my_btn.addEventListener('click', function() {
-	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-	        $("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
-	        $("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor1").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='0' end='9'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' style='color:rgb(${color.c_rgb});' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor2").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='10' end='19'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' style='color:rgb(${color.c_rgb});' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
+	        $("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' style='color:rgb(${color.c_rgb});' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
 	    }, {once : true});
 	    
 	    $("dropColor1 a").click (function() {
@@ -409,10 +409,16 @@ input[type="submit"] {
 	        $("#dropPalette1").append("<c:forEach var='palette' items='${p_list}' varStatus='i' begin='0' end='4'> "+ 
 	        						 "<div class='palette_colors' data-index='${palette.pl_seq}'> "+ 
 	        						 "<div class='block' style='background-color: ${palette.pl_c1};'> </div> "+
+	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name1}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name1}'></a>" +
 	        						 "<div class='block' style='background-color: ${palette.pl_c2};'> </div> "+ 
+	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name2}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name2}'></a>" +
 	        						 "<div class='block' style='background-color: ${palette.pl_c3};'> </div> "+
+	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name3}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name3}'></a>" +
 	        						 "<div class='block' style='background-color: ${palette.pl_c4};'> </div> "+
-	        						 "<div class='block' style='background-color: ${palette.pl_c5};'> </div> </div> </c:forEach>" )
+	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name4}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name4}'></a>" +
+	        						 "<div class='block' style='background-color: ${palette.pl_c5};'> </div> "+
+	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name5}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name5}'></a>" +
+	        						 "</div> </c:forEach>" )
 	    }, {once : true});
 			
 				$(document).ready(function(){
