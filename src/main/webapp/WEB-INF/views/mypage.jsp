@@ -38,7 +38,9 @@
                   Page</a>
             </h1>
             <div class="common-mypage__sc-5trtbg-3 JsGLX">
-               <div class="common-mypage__sc-wme82i-0 cXbinu"></div>
+               <div class="common-mypage__sc-wme82i-0 cXbinu">
+               <img src="resources/img/user2.png"
+				style="height: auto; width: 100px"></div>
                <div class="common-mypage__sc-1loaj4c-0 dZrJws">
                   <div class="common-mypage__sc-1loaj4c-1 ebnvat">
                      <strong>${info.m_nick}</strong>
@@ -271,12 +273,12 @@
             <div class="list_box">
                <div class="title">
                   Interior
-                  <button type="button" class="no1 updown">Open</button>
+                  <button type="button" class="no1_my updown">Open</button>
                   <!-- <button class="delete">
                   <img src="resources/img/trash.png" class="trashimg trash2">
                </button> -->
                </div>
-               <div class="title list1 lis">
+               <div class="title list1_my lis">
                   <div class="eeun-ae">
                      <div class="jjim_img_list">
                         <img src="resources/img/인1.jpg" class="jjim_img">
@@ -327,12 +329,12 @@
             <div class="list_box">
                <div class="title">
                   Video
-                  <button type="button" class="no2 updown">Open</button>
+                  <button type="button" class="no2_my updown">Open</button>
                   <!-- <button class="delete">
                   <img src="resources/img/trash.png" class="trashimg trash2">
                </button> -->
                </div>
-               <div class="title list2 lis">
+               <div class="title list2_my lis">
                   <div class="eeun-ae">
                      <div class="jjim_img_list">
                         <img src="resources/img/영1.jpg" class="jjim_img">
@@ -376,12 +378,12 @@
             <div class="list_box">
                <div class="title">
                    Product
-                  <button type="button" class="no3 updown">Open</button>
+                  <button type="button" class="no3_my updown">Open</button>
                   <!-- <button class="delete" href="#">
                   <img src="resources/img/trash.png" class="trashimg trash3">
                </button> -->
                </div>
-               <div class="title list3 lis">
+               <div class="title list3_my lis">
                   <div class="eeun-ae">
                      <div class="jjim_img_list">
                         <img src="resources/img/소1.jpg" class="jjim_img">
@@ -507,9 +509,9 @@
      
    </div>
    <!-- 위시리스트 -->
-   <div class="wishlist_hehe">
-  <%--  <jsp:include page = "wishlist.jsp"></jsp:include>  --%>
-   </div>
+  <%--  <div class="wishlist_hehe">
+ <jsp:include page = "wishlist.jsp"></jsp:include>
+   </div> --%>
    <script>
       $(document).ready(function() {
          $('.recent').show();
@@ -536,60 +538,60 @@
 
       // 최근 조회
       $(document).ready(function() {
-         $('.list1, .list2, .list3').hide();
+         $('.list1_my, .list2_my, .list3_my').hide();
       })
       /* 1번버튼 */
-      $('.no1').click(function() {
-         if ($('.no1').text() == 'Open') {
-            $('.no1').text('Close');
-            $('.list1').slideDown(500);
-            if ($('.no2').text() == "Close") {
-               $('.no2').text('Open');
-               $('.list2').slideUp(500);
+      $('.no1_my').click(function() {
+         if ($('.no1_my').text() == 'Open') {
+            $('.no1_my').text('Close');
+            $('.list1_my').slideDown(500);
+            if ($('.no2_my').text() == "Close") {
+               $('.no2_my').text('Open');
+               $('.list2_my').slideUp(500);
             }
-            if ($('.no3').text() == 'Close') {
-               $('.no3').text('Open');
-               $('.list3').slideUp(500);
+            if ($('.no3_my').text() == 'Close') {
+               $('.no3_my').text('Open');
+               $('.list3_my').slideUp(500);
             }
-         } else if ($('.no1').text() == 'Close') {
-            $('.no1').text('Open');
-            $('.list1').slideUp(500);
+         } else if ($('.no1_my').text() == 'Close') {
+            $('.no1_my').text('Open');
+            $('.list1_my').slideUp(500);
          }
       })
       /* 2번버튼 */
-      $('.no2').click(function() {
-         if ($('.no2').text() == 'Open') {
-            $('.no2').text('Close');
-            $('.list2').slideDown(500);
-            if ($('.no1').text() == 'Close') {
-               $('.no1').text('Open');
-               $('.list1').slideUp(500);
+      $('.no2_my').click(function() {
+         if ($('.no2_my').text() == 'Open') {
+            $('.no2_my').text('Close');
+            $('.list2_my').slideDown(500);
+            if ($('.no1_my').text() == 'Close') {
+               $('.no1_my').text('Open');
+               $('.list1_my').slideUp(500);
             }
-            if ($('.no3').text() == 'Close') {
-               $('.no3').text('Open');
-               $('.list3').slideUp(500);
+            if ($('.no3_my').text() == 'Close') {
+               $('.no3_my').text('Open');
+               $('.list3_my').slideUp(500);
             }
-         } else if ($('.no2').text() == 'Close') {
-            $('.no2').text('Open');
-            $('.list2').slideUp(500);
+         } else if ($('.no2_my').text() == 'Close') {
+            $('.no2_my').text('Open');
+            $('.list2_my').slideUp(500);
          }
       })
       /*3번버튼  */
-      $('.no3').click(function() {
-         if ($('.no3').text() == 'Open') {
-            $('.no3').text('Close');
-            $('.list3').slideDown(500);
-            if ($('.no2').text() == 'Close') {
-               $('.no2').text('Open');
-               $('.list2').slideUp(500);
+      $('.no3_my').click(function() {
+         if ($('.no3_my').text() == 'Open') {
+            $('.no3_my').text('Close');
+            $('.list3_my').slideDown(500);
+            if ($('.no2_my').text() == 'Close') {
+               $('.no2_my').text('Open');
+               $('.list2_my').slideUp(500);
             }
-            if ($('.no1').text() == 'Close') {
-               $('.no1').text('Open');
-               $('.list1').slideUp(500);
+            if ($('.no1_my').text() == 'Close') {
+               $('.no1_my').text('Open');
+               $('.list1_my').slideUp(500);
             }
-         } else if ($('.no3').text() == 'Close') {
-            $('.no3').text('Open');
-            $('.list3').slideUp(500);
+         } else if ($('.no3_my').text() == 'Close') {
+            $('.no3_my').text('Open');
+            $('.list3_my').slideUp(500);
          }
 
       })
