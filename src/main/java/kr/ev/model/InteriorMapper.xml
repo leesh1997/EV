@@ -48,7 +48,7 @@
 	
 	<select id="getVisitCount3" resultType="int">
 
-		select * from t_interior
+		select count(*) from t_interior
 		where i_colorname1 in (
 		select c_name
 		from t_color
@@ -56,38 +56,8 @@
 		select c_group
 		from t_color
 		where c_name = #{pl_color}))
-		or
-		i_colorname2 in (
-		select c_name
-		from t_color
-		where c_group in(
-		select c_group
-		from t_color
-		where c_name = #{pl_color}))
-		or
-		i_colorname2 in (
-		select c_name
-		from t_color
-		where c_group in(
-		select c_group
-		from t_color
-		where c_name = #{pl_color}))
-		or
-		i_colorname2 in (
-		select c_name
-		from t_color
-		where c_group in(
-		select c_group
-		from t_color
-		where c_name = #{pl_color}))
-		or
-		i_colorname2 in (
-		select c_name
-		from t_color
-		where c_group in(
-		select c_group
-		from t_color
-		where c_name = #{pl_color}))
+		
+		
 
 	</select>
 
@@ -163,27 +133,12 @@
 		where i_colorname1 in (
 		select c_name
 		from t_color
-		where c_group = #{c_group})
-		or
-		i_colorname2 in (
-		select c_name
+		where c_group in(
+		select c_group
 		from t_color
-		where c_group = #{c_group})
-		or
-		i_colorname3 in (
-		select c_name
-		from t_color
-		where c_group = #{c_group})
-		or
-		i_colorname4 in (
-		select c_name
-		from t_color
-		where c_group = #{c_group})
-		or
-		i_colorname5 in (
-		select c_name
-		from t_color
-		where c_group = #{c_group})
+		where c_name = #{pl_color}))
+		
+		
 		order by i_seq
 		Limit 12 Offset #{startNum}
 		
