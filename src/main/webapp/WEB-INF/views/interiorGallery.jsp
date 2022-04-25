@@ -179,12 +179,13 @@ input[type="submit"] {
 }
 
 #colorButton, #mypaletteButton {
-	background-color: black;
-	color: white;
-	height: 25px;
-	border-radius: 15px;
-	font-size: 10px;
-	margin-left: 20px;
+	    background-color: black;
+    color: white;
+    height: 40px;
+    width: 200px;
+    border-radius: 0;
+    font-size: 15px;
+    margin-left: 20px;
 }
 
 .palette_view {
@@ -212,6 +213,9 @@ display: flex;}
     text-align: center;
     align-content: stretch;
     flex-direction: column;
+}
+.choice_droppalette{
+    margin-left: 340px;
 }
 </style>
 <body style="overflow-x: hidden">
@@ -263,7 +267,7 @@ display: flex;}
 				<div id="dropColor3"></div>
 		</div>
 
-		<div>
+		<div class="choice_droppalette">
 			<div id="dropPalette1" style="margin-left: 500px;"></div>
 			<div id="dropPalette2"></div>
 		</div>
