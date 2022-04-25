@@ -203,6 +203,16 @@ input[type="submit"] {
 }
 #Layer_1{
 display: flex;}
+.choice_palette{
+	    margin-left: 650px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    align-content: stretch;
+    flex-direction: column;
+}
 </style>
 <body style="overflow-x: hidden">
 	<jsp:include page="side_topbar.jsp"></jsp:include>
@@ -247,7 +257,7 @@ display: flex;}
 				type="submit" class="list_items" value="정원"> -->
 
 		</div>
-		<div>
+		<div class="choice_palette">
 				<div id="dropColor1"></div>
 				<div id="dropColor2"></div>
 				<div id="dropColor3"></div>
