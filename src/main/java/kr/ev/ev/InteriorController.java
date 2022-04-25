@@ -99,8 +99,9 @@ public class InteriorController {
 		return "interiorGallery";
 	}
 	@RequestMapping("/interiorSearch.do")
-	public String interiorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("c_group") int c_group, HttpServletRequest request,
-			SearchPageVO vo, ColorVO cvo,  Model model)	{
+	public String interiorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("c_group") int c_group,
+			HttpSession session , HttpServletRequest request, HttpServletResponse response, PrintWriter out,
+			SearchPageVO vo, ColorVO cvo,MemberVO mem, Model model)	{
 		
 		System.out.println("제발나와라요"+ c_group);
 		System.out.println("게시물 수" + pageNum );
@@ -114,6 +115,19 @@ public class InteriorController {
 		}
 		
 		vo.setC_group(c_group);
+		try {
+			mem = (MemberVO) session.getAttribute("info");
+			List<PaletteVO> p_list = mapper.showPalette(mem.getM_email());
+			model.addAttribute("p_list", p_list);
+			System.out.println(p_list);
+			
+		} 
+		catch (Exception e) {
+			response.setContentType("text/html; charset = UTF-8");
+			
+			out.print("<script>alert('마이 팔레트 생성 후 이용 가능합니다.');</script>");
+			
+		}
 		
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
@@ -157,8 +171,9 @@ public class InteriorController {
 	}
 	
 	@RequestMapping("/plInteriorSearch.do")
-	public String plInteriorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("pl_color") String pl_color, HttpServletRequest request,
-			SearchPageVO pvo, ColorVO cvo,  Model model)	{
+	public String plInteriorSearch (@RequestParam("pageNum") int pageNum, @RequestParam("pl_color") String pl_color,
+			HttpSession session , HttpServletRequest request, HttpServletResponse response, PrintWriter out,
+			SearchPageVO pvo, ColorVO cvo,MemberVO mem,   Model model)	{
 		
 		System.out.println("제발나와라요"+ pl_color);
 		
@@ -178,6 +193,19 @@ public class InteriorController {
 		pvo.setPl_color(pl_color);
 		System.out.println("vo는 나오냐? " + pvo);
 		
+		try {
+			mem = (MemberVO) session.getAttribute("info");
+			List<PaletteVO> p_list = mapper.showPalette(mem.getM_email());
+			model.addAttribute("p_list", p_list);
+			System.out.println(p_list);
+			
+		} 
+		catch (Exception e) {
+			response.setContentType("text/html; charset = UTF-8");
+			
+			out.print("<script>alert('마이 팔레트 생성 후 이용 가능합니다.');</script>");
+			
+		}
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
 		Paging paging = new Paging();

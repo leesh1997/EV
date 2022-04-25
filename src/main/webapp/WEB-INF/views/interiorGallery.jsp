@@ -232,7 +232,7 @@ input[type="submit"] {
 			</script>
 				</c:when>
 			</c:choose>
-			<input type="submit" class="list_items" value="침실"> <input
+		<!-- 	<input type="submit" class="list_items" value="침실"> <input
 				type="submit" class="list_items" value="욕실"> <input
 				type="submit" class="list_items" value="거실"> <input
 				type="submit" class="list_items" value="드레스룸"> <input
@@ -242,7 +242,7 @@ input[type="submit"] {
 				type="submit" class="list_items" value="홈카페"> <input
 				type="submit" class="list_items" value="홈바"> <input
 				type="submit" class="list_items" value="테라스"> <input
-				type="submit" class="list_items" value="정원">
+				type="submit" class="list_items" value="정원"> -->
 
 		</div>
 		<div>
@@ -492,16 +492,16 @@ input[type="submit"] {
 				palette_btn.addEventListener('click', function() {
 	        $("#dropPalette1").append("<c:forEach var='palette' items='${p_list}' varStatus='i' begin='0' end='4'> "+ 
 	        						 "<div class='palette_colors' data-index='${palette.pl_seq}'> "+ 
-	        						 "<div class='block' style='background-color: ${palette.pl_c1};'> </div> "+
-	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name1}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name1}'></a>" +
-	        						 "<div class='block' style='background-color: ${palette.pl_c2};'> </div> "+ 
-	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name2}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name2}'></a>" +
-	        						 "<div class='block' style='background-color: ${palette.pl_c3};'> </div> "+
-	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name3}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name3}'></a>" +
-	        						 "<div class='block' style='background-color: ${palette.pl_c4};'> </div> "+
-	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name4}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name4}'></a>" +
-	        						 "<div class='block' style='background-color: ${palette.pl_c5};'> </div> "+
-	        						 "<a href='plInteriorSearch.do?pl_color=${palette.pl_name5}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name5}'></a>" +
+	        						 "<div class='block' style='background-color: ${palette.pl_c1};'>"+
+	        						 "<a style='color:${palette.pl_c1};' href='plInteriorSearch.do?pl_color=${palette.pl_name1}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name1}'></a> </div> " +
+	        						 "<div class='block' style='background-color: ${palette.pl_c2};'>"+ 
+	        						 "<a style='color:${palette.pl_c2};' href='plInteriorSearch.do?pl_color=${palette.pl_name2}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name2}'></a> </div> " +
+	        						 "<div class='block' style='background-color: ${palette.pl_c3};'>  "+
+	        						 "<a style='color:${palette.pl_c3};' href='plInteriorSearch.do?pl_color=${palette.pl_name3}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name3}'></a></div>" +
+	        						 "<div class='block' style='background-color: ${palette.pl_c4};'>  "+
+	        						 "<a style='color:${palette.pl_c4};' href='plInteriorSearch.do?pl_color=${palette.pl_name4}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name4}'></a> </div>" +
+	        						 "<div class='block' style='background-color: ${palette.pl_c5};'>  "+
+	        						 "<a style='color:${palette.pl_c5};' href='plInteriorSearch.do?pl_color=${palette.pl_name5}&pageNum=1'>1<input type='hidden' name='inSer' value='${palette.pl_name5}'></a> </div>" +
 	        						 "</div> </c:forEach>" )
 	    }, {once : true});
 			
