@@ -80,7 +80,7 @@ height: 150px;
 					onclick="onclick=document.all.file.click()">사진 업로드</button> -->
 			<p>색상 추출 원하는 사진 올려~!</p>
 			<div>
-				<input id="file" type="file" name="file"/>
+				<input id="file" type="file" name="img"/>
 
 				<div id="viewimg">
 					<div class="select_img">
