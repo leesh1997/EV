@@ -68,6 +68,9 @@
 	border-radius: 15px;
 	font-size: 10px;
 }
+label{
+font-size: 16px;
+}
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@
 					</div>
 					<div class="blocks">
 						<input class="title_box" type="text" class="input_text"
-							name="b_title" id="title">
+							name="b_title" id="title" placeholder="제목을 입력하세요.">
 					</div>
 				</div>
 
@@ -124,14 +127,14 @@
 					</div>
 					<div class="blocks">
 						<textarea class="text_box" rows="10" class="input_text"
-							name="b_content" id="content"></textarea>
+							name="b_content" id="content" placeholder="내용을 입력하세요."></textarea>
 					</div>
 				</div>
 
 				<div class="gallery_writing_form">
 					<div class="blocks">
 						<label for="img_up">파일첨부</label> <input type="file" name="file"
-							style="margin-left: 100px" multiple value="이미지 첨부" id="b_file"/><br /> <br />
+							style="margin-left: 100px" multiple value="이미지 첨부" id="b_file"/>
 					</div>
 					<div class="select_img"><img src="" /></div>
 				</div>
@@ -140,7 +143,7 @@
 					<div class="blocks">
 						<label for="insert_btn"></label>
 					</div>
-					<div class="blocks">
+					<div class="blocks" style="margin-left: 350px;">
 						<button type="button" class="insert_btn" id="insert_btn">
 							작성 완료</button>
 					</div>
