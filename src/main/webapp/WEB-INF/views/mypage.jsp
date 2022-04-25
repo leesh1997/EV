@@ -340,7 +340,7 @@
                         <img src="resources/img/영1.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
+                         
                      </div>
 
                   </div>
@@ -349,7 +349,7 @@
                         <img src="resources/img/영2.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span>
+                    
                      </div>
 
                   </div>
@@ -358,7 +358,7 @@
                         <img src="resources/img/영3.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
+                       
                      </div>
 
                   </div>
@@ -367,7 +367,7 @@
                         <img src="resources/img/영4.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
+                     
                      </div>
 
                   </div>
@@ -389,7 +389,6 @@
                         <img src="resources/img/소1.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> <span>ㅉㅉㅉ</span>
                      </div>
 
                   </div>
@@ -398,7 +397,6 @@
                         <img src="resources/img/소2.png" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
                      </div>
 
                   </div>
@@ -407,7 +405,6 @@
                         <img src="resources/img/소3.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
                      </div>
 
                   </div>
@@ -416,7 +413,6 @@
                         <img src="resources/img/소4.png" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
                      </div>
                   </div>
                         <div class="eeun-ae">
@@ -424,7 +420,6 @@
                         <img src="resources/img/소5.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> <span>ㅉㅉㅉ</span>
                      </div>
 
                   </div>
@@ -433,7 +428,6 @@
                         <img src="resources/img/소6.png" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
                      </div>
 
                   </div>
@@ -442,7 +436,6 @@
                         <img src="resources/img/소7.jpg" class="jjim_img">
                      </div>
                      <div class="jjim_text_list">
-                        <span>제목</span> 
                      </div>
 
                </div>
