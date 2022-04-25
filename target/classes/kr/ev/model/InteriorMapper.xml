@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ev.model.InteriorMapper">
-    
-    	<select id="showInteriorImg" resultType="kr.ev.model.InteriorVO">
 
-		select i_seq, i_url, i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior order by i_seq Limit 12 Offset #{pageCount}
+	<select id="showInteriorImg" resultType="kr.ev.model.InteriorVO">
 
-	</select>
-	
-    	<select id="getVisitCount" resultType="int">
-    	    
-    	     select count(*) from t_interior
-    	     
-    	</select>
-    	
-    	    	<select id="showPalette" resultType="kr.ev.model.PaletteVO">
-
-		select pl_seq, pl_c1, pl_c2, pl_c3, pl_c4, pl_c5 from t_palette where m_email = #{m_email};
+		select i_seq, i_url,
+		i_rgb1, i_rgb2, i_rgb3, i_rgb4, i_rgb5 from t_interior order by i_seq
+		Limit 12 Offset #{pageCount}
 
 	</select>
-	
-  	<select id="standardColorGallery" resultType="kr.ev.model.ColorVO">
+
+	<select id="getVisitCount" resultType="int">
+
+		select count(*) from t_interior
+
+	</select>
+
+	<select id="getVisitCount2" resultType="int">
+
+		select count(*) from t_interior where i_rgb1 = '142, 132, 115'
+
+	</select>
+
+	<select id="showPalette" resultType="kr.ev.model.PaletteVO">
+
+		select pl_seq, pl_c1, pl_c2,
+		pl_c3, pl_c4, pl_c5 from t_palette where m_email = #{m_email};
+
+	</select>
+
+	<select id="colorList" resultType="kr.ev.model.ColorVO">
+		select c_rgb from t_color where c_group = #{c_seq2}
+		
+
+
+	</select>
+
+
+	<select id="standardColorGallery"
+		resultType="kr.ev.model.ColorVO">
 
 		select c_seq, c_rgb, c_name
 		from t_color
-		where c_seq = 5 or c_seq = 15 or c_seq = 25
-			or c_seq = 35 or c_seq = 45 or c_seq = 55
-			or c_seq = 65 or c_seq = 75 or c_seq = 85
-			or c_seq = 95 or c_seq = 105 or c_seq = 115
-			or c_seq = 125 or c_seq = 135 or c_seq = 145
-			or c_seq = 155 or c_seq = 165 or c_seq = 175
-			or c_seq = 185 or c_seq = 195 or c_seq = 205
-			or c_seq = 215 or c_seq = 225 or c_seq = 235
-			or c_seq = 245 or c_seq = 255 or c_seq = 265
-			or c_seq = 275 or c_seq = 291 or c_seq = 300
+		where c_seq = 5 or
+		c_seq = 15 or c_seq = 25
+		or c_seq = 35 or c_seq = 45 or c_seq = 55
+		or c_seq = 65 or c_seq = 75 or c_seq = 85
+		or c_seq = 95 or c_seq = 105 or c_seq = 115
+		or c_seq = 125 or c_seq = 135 or c_seq = 145
+		or c_seq = 155 or c_seq = 165 or c_seq = 175
+		or c_seq = 185 or c_seq = 195 or c_seq = 205
+		or c_seq = 215 or c_seq = 225 or c_seq = 235
+		or c_seq = 245 or c_seq = 255 or c_seq = 265
+		or c_seq = 275 or c_seq = 281 or c_seq = 300
 	</select>
-    
+
+	<select id="getSelect" parameterType="kr.ev.model.SearchPageVO"
+		resultType="kr.ev.model.InteriorVO">
+
+		select * from t_interior;
+		
+
+	</select>
+
+
 </mapper>
