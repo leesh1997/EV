@@ -51,6 +51,8 @@ button {
 	transition: all 0.3s ease;
 	position: relative;
 	display: inline-block;
+	font-size: 16px;
+    font-weight: bold;
 	
 }
 
