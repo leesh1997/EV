@@ -93,30 +93,12 @@
 					src="resources/img/inte2222.PNG" class="he-img st3im">
 					<div class="he-text">information</div></a>
 			</div>
-			<div class="he st4">
+		<!-- 	<div class="he st4">
 				<a href="view.do"><img src="resources/img/inte3.png"
 					class="he-img st4im">
 					<div class="he-text">view</div></a>
-		<%-- 	<c:choose>
-			<c:when test="${info!=null}">
-			
-			</c:when>
-			<c:otherwise>
-				<a href="#" class="melong"><img src="resources/img/inte3.png"
-					class="he-img st4im">
-					<div class="he-text">wishlist</div></a>
-				<script type="text/javascript">
-					$('.melong').click(function () {
-						alert('로그인 해주세요');
-						location.href("main.do");
-					})
-				
-				
-				</script>	
-			</c:otherwise>
-			
-		</c:choose> --%>
-			</div>
+	
+			</div> -->
 			<div class="he st5">
 				<a href="board.do"><img src="resources/img/inte3.png"
 					class="he-img st5im">
@@ -141,8 +123,8 @@
 			$('.st1').toggle(500);
 			$('.st2').toggle(550);
 			$('.st3').toggle(600);
-			$('.st4').toggle(650);
-			$('.st5').toggle(700);
+		/* 	$('.st4').toggle(650); */
+			$('.st5').toggle(650);
 
 		})
 
