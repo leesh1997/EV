@@ -94,11 +94,12 @@
 					<div class="he-text">information</div></a>
 			</div>
 			<div class="he st4">
-			<c:choose>
-			<c:when test="${info!=null}">
 				<a href="view.do"><img src="resources/img/inte3.png"
 					class="he-img st4im">
 					<div class="he-text">view</div></a>
+		<%-- 	<c:choose>
+			<c:when test="${info!=null}">
+			
 			</c:when>
 			<c:otherwise>
 				<a href="#" class="melong"><img src="resources/img/inte3.png"
@@ -114,7 +115,7 @@
 				</script>	
 			</c:otherwise>
 			
-		</c:choose>
+		</c:choose> --%>
 			</div>
 			<div class="he st5">
 				<a href="board.do"><img src="resources/img/inte3.png"

@@ -13,7 +13,7 @@
 
 .palette_wrap {
    margin-left: 100px;
-}
+} 
 .menu_wrap {
 	width: 100%;
 	height: 1000px;
