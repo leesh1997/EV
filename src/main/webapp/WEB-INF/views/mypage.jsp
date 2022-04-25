@@ -511,7 +511,7 @@
    <!-- 위시리스트 -->
   <%--  <div class="wishlist_hehe">
  <jsp:include page = "wishlist.jsp"></jsp:include>
-   </div> --%>
+   </div>  --%>
    <script>
       $(document).ready(function() {
          $('.recent').show();
@@ -523,7 +523,6 @@
          $('.update').show();
          $('.recent').hide();
          $('.mylog').hide();
-
       })
       $('.recentBtn').click(function() {                                                                           
          $('.recent').show();
@@ -535,7 +534,6 @@
          $('.recent').hide();
          $('.update').hide();
       })
-
       // 최근 조회
       $(document).ready(function() {
          $('.list1_my, .list2_my, .list3_my').hide();
