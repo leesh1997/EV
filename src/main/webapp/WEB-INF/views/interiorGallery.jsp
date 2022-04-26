@@ -190,7 +190,7 @@ input[type="submit"] {
 
 .palette_view {
 	display: none; 
-}
+} 
 
 .palette_colors {
 	display: flex;
