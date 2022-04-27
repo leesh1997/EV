@@ -286,7 +286,8 @@ body{
 							.setAttribute("value", color_text);
 
 					colorDiv = $(".chosen_colors");
-					$(colorDiv[index]).css('background-color', color); // == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
+					$(colorDiv[index]).css('background-color', color);
+					// == <div class="chosen_colors"style="background-color: rgb()" data-index=""></div>
 
 					colorText = $(".color_name");
 					$(colorText[index++]).text(color_text);

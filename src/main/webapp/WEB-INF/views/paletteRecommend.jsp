@@ -105,6 +105,7 @@ body{
 	background-color: black;
 	color: white;
 	border-radius: 2px;
+	font-family: 'NanumSquareRound';
 	font-size: 16px;
     font-weight: bold;
 }
@@ -119,6 +120,7 @@ body{
 	background-color: black;
 	color: white;
 	border-radius: 2px;
+	font-family: 'NanumSquareRound';
 	font-size: 16px;
     font-weight: bold;
 }
