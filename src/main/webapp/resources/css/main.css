@@ -11,6 +11,11 @@ body{
  /*    overflow: hidden; */
 }
 
+* button{
+	
+	font-fmaily : 'NanumSquareRound';
+}
+
 h1{
     color : black
 }

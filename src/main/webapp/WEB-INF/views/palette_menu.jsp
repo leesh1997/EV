@@ -37,6 +37,7 @@ body{
 }
 
 .menu_choice {
+	font-family: 'NanumSquareRound';
 	margin-top: 300px;
 }
 

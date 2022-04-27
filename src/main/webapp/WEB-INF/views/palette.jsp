@@ -70,6 +70,7 @@ body{
 	border-radius: 2px;
 	font-size: 16px;
     font-weight: bold;
+    font-family: 'NanumSquareRound';
 }
 
 .btn_empty {
@@ -84,6 +85,7 @@ body{
 	border-radius: 2px;
 	font-size: 16px;
     font-weight: bold;
+    font-family: 'NanumSquareRound';
 }
 
 .gallery-container {
