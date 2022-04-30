@@ -53,7 +53,8 @@
 
 
 # 6. 팀원 단위 업무 분장 및 결과표
-![image](https://user-images.githubusercontent.com/97093411/166114404-7e65fbc2-21db-41a0-abb7-33b7c20d4908.png)
+![image](https://user-images.githubusercontent.com/97093411/166114508-9dc63580-aed1-4353-a1f5-c485f5c25fae.png)
+
   
 
 
