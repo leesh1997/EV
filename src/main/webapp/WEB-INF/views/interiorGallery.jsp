@@ -471,10 +471,6 @@ display: flex;}
 	        $("#dropColor3").append("<c:forEach var='color' items='${standardList}' varStatus='i' begin='20' end='29'> <div class='block' data-index='${color.c_seq}' style='background-color: rgb(${color.c_rgb}); color: rgb(${color.c_rgb});'><a data-colors='${color.c_rgb}' style='color:rgb(${color.c_rgb});' href='interiorSearch.do?c_group=${color.c_group}&pageNum=1'>1<input type='hidden' name='inSer' value='${color.c_seq}'></a> </div> </c:forEach>" )
 	    }, {once : true});
 	    
-	    $("dropColor1 a").click (function() {
-	    	console.log("눌렀나");
-	    	$("#shit button").append("<p>왜 안되냐</p>");
-	    });
 			
 				$(document).ready(function(){
 					$('#dropColor1, #dropColor2, #dropColor3').hide();
