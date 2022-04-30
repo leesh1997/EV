@@ -12,7 +12,7 @@
 
 # 2. 개발 환경
 
-- 사용언어: JAVA / HTML / CSS / PYTHON / JAJVASCRIPT
+- 사용언어: JAVA / HTML / CSS / PYTHON / JAVASCRIPT
 - 개발도구: Eclipse / JUPYTER / VSCODE
 - 서버환경: tomcat 8.5 / flask / aws
 - 데이터베이스: Mysql
