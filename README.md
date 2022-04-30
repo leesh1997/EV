@@ -30,17 +30,27 @@
 **1. 회원 관리**
 ![image](https://user-images.githubusercontent.com/97093411/166113118-046d83ff-4010-4f33-8ccf-d188cdaeddbb.png)
 
+
+
 **2. 팔레트 생성 및 저장**
 ![image](https://user-images.githubusercontent.com/97093411/166113124-e8180067-caba-4b52-bbcd-fd54887b3829.png)
+
+
 
 **3. 인테리어 이미지 추천**
 ![image](https://user-images.githubusercontent.com/97093411/166113134-3f74aaf5-b215-4253-bee6-f549575359da.png)
 
+
+
 **4. 매거진, 제품, 영상**
 ![image](https://user-images.githubusercontent.com/97093411/166113145-838bd146-2851-49c7-8280-51bca1586083.png)
 
+
+
 **5. 커뮤니티**
 ![image](https://user-images.githubusercontent.com/97093411/166113152-375e1612-11a4-45f0-a7ed-b5a230c08abf.png)
+
+
 
 # 6. 팀원 단위 업무 분장 및 결과표
 |이름|역할 및 분담업무|
