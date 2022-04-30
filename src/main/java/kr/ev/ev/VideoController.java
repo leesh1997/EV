@@ -35,9 +35,7 @@ public class VideoController {
 		} else {
 			pages = 1;
 		}
-		
-		
-		
+
 		model.addAttribute("page", pages);
 		System.out.println("page : " + pages);
 		Paging paging = new Paging();
@@ -61,37 +59,13 @@ public class VideoController {
 
 		List<VideoVO> list = mapper.video(startNum);
 		
-		for(int i=0; i<list.size(); i++) {
-			 String vTitle =list.get(i).getV_title();
-			String ftitle= vTitle.replace("?", "");
-			list.get(i).setV_title(ftitle);
-			
+		for(int i = 0; i < list.size(); i++) {
+			String vTitle = list.get(i).getV_title();
+			String fTitle = vTitle.replace("?", "");
+			list.get(i).setV_title(fTitle);
 		}
-		
 		model.addAttribute("list", list);
-		
 		model.addAttribute("paging", paging);
-//		// 종뱅
-//		
-//		//시작 게시물
-//		int postStart = 0;
-//		
-//		if (pageNum >= 1) {
-//			postStart = (pageNum - 1) * 10 ;
-//		}
-//		// 전체 게시글 수
-//		int amount = mapper.boardAmount();
-//		System.out.println(amount);
-//		// 마지막페이지
-//		int endPageNum = (amount - 1) / 10 + 1;
-//		
-//		int postStart1 = postStart;
-//		System.out.println(postStart1);
-//		List<VideoVO> list = mapper.video(postStart);		
-//		model.addAttribute("endPageNum", endPageNum);
-//		model.addAttribute("postStart", postStart1);
-		
-//		System.out.println("끝");
 		return "video";		
 	}
 	
@@ -134,8 +108,4 @@ public class VideoController {
 		
 		return "video";
 	}
-	
-	
-	
-
 }

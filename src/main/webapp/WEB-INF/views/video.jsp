@@ -141,9 +141,9 @@ body{
 	<div class="item">
 			<c:forEach var="vd" items="${requestScope.list}">
 				<div class="col-sm-4 popupModalVideo">
-			    	<a data-video="${vd.v_url}"><img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
+			    	<a data-video="${vd.v_url}">
+			    	<img src="${vd.v_img}" class="img-thumbnail" style="margin-bottom: 15px; width: 400px; height : 250px"/></a>
 			    	<p class="vdtitle" style="text-overflow:ellipsis;">${vd.v_title}</p>
-			    	<!-- <div style="margin-bottom: 100px"></div> -->
 			    </div>
 			</c:forEach>
 			<div class="video_modal_popup" style="margin-left: 150px">
@@ -172,17 +172,6 @@ body{
 			</c:choose>
 		</ul>
 	</div>
-	
-		<!-- <div class="search_line" style="text-align: center;">
-			<form action="search.do">
-				<input type="text" name="search_word" class="search_bar">
-				<button type="submit" class="search_button">검색</button>
-			</form>
-			<a href="videoSearch.do?pageNum=1?search_word=인테리어">검색 테스트 링크</a>
-		</div>
- -->
-	
-
 <script>
 
 $(".bottom_count"+${page}).css('color','red');
@@ -190,7 +179,10 @@ $(".bottom_count"+${page}).css('color','red');
 $(".popupModalVideo a").click(function() {
     $(".video_modal_popup").addClass("reveal"),
     $(".video_modal_popup .video-wrapper").remove(),
-    $(".video_modal_popup").append("<div class='video-wrapper'><iframe width='560' height='315' src='https://youtube.com/embed/" + $(this).data("video") + "?rel=0&playsinline=1&autoplay=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>")
+    $(".video_modal_popup").append("<div class='video-wrapper'>" + 
+    		"<iframe width='560' height='315' src='https://youtube.com/embed/" + 
+    		$(this).data("video") + "?rel=0&playsinline=1&autoplay=1' " + 
+    				"allow='autoplay; encrypted-media' allowfullscreen></iframe></div>")
 }),
 $(".video_modal_popup-closer").click(function() {
     $(".video_modal_popup .video-wrapper").remove(),
